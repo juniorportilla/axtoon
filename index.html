@@ -990,17 +990,17 @@ button{font:inherit;cursor:pointer}
 
   <div class="ax-topbar">
     <button class="ax-hamburger" id="axHamburger"><i class="fas fa-bars"></i></button>
-    <div class="lang"><i class="fas fa-flag-usa"></i> English</div>
+    <div class="lang"><i class="fas fa-flag-usa"></i> Español</div>
     <div class="currency"><i class="fas fa-dollar-sign"></i> <span id="axTopTotal">0</span></div>
     <div class="user">
-      <span>estiben</span>
+      <span>junior estiben portilla</span>
       <div class="ax-avatar">E</div>
     </div>
   </div>
 
   <div class="strip">
     <div class="strip-in">
-      <span><span class="dot"></span>Pedidos mayoristas a todo Colombia</span>
+      <span><span class="dot"></span>Pedidos mayoristas y minoristas a todo Colombia</span>
       <span>Confirmación por WhatsApp · <b>+57 322 375 2541</b></span>
     </div>
   </div>
@@ -1417,7 +1417,7 @@ function renderCart(){
   if(btnWa){
     btnWa.addEventListener('click', () => {
       if(!CART.length){ showToast('Tu carrito está vacío'); return; }
-      let msg = 'Hola Axtoon 👋, quiero confirmar este pedido mayorista:\n\n';
+      let msg = 'Hola Axtoon 👋, quiero confirmar este pedido :\n\n';
       CART.forEach(i => {
         msg += '• ' + i.name + ' (' + i.sku + ') — ' + i.qty + ' ' + (i.unit||'und') + ' × $' + i.price.toLocaleString('es-CO') + '\n';
       });
