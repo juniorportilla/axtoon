@@ -388,6 +388,7 @@ button{font:inherit;cursor:pointer}
   background:var(--brand);color:#fff;font-weight:700;font-size:11.5px;
   transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:5px;
   font-family:var(--ui);white-space:nowrap;padding:0 8px;
+  min-width:0;
 }
 .ax-card-add:hover{background:#0a3826}
 .ax-card-add:active{transform:scale(.97)}
@@ -568,6 +569,36 @@ button{font:inherit;cursor:pointer}
   .ax-section-chip .count{display:none}
   .wa-float span{display:none}
   .wa-float{padding:14px;border-radius:50%}
+
+  /* === FIX BOTÓN AGREGAR EN MÓVIL === */
+  .ax-card{
+    padding:9px;
+  }
+  .ax-card-actions{
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+  }
+  .ax-card-qty{
+    justify-content:center;
+    align-self:center;
+  }
+  .ax-card-add{
+    width:100%;
+    font-size:11px;
+    height:34px;
+    padding:0 10px;
+  }
+  .ax-card-send{
+    font-size:10.5px;
+    height:30px;
+  }
+  .ax-card-title{
+    font-size:13px;
+  }
+  .ax-card-price-now{
+    font-size:16px;
+  }
 }
 .ax-overlay{
   display:none;position:fixed;inset:0;background:rgba(20,19,16,.5);
@@ -1092,7 +1123,7 @@ button{font:inherit;cursor:pointer}
   <div class="strip">
     <div class="strip-in">
       <span><span class="dot"></span>Pedidos mayoristas y minoristas a todo Colombia</span>
-      <span>Confirmación por WhatsApp · <b>+57 322 375 2541</b></span>
+      <span>Confirmación por WhatsApp · <b>+57 322 375 2547</b></span>
     </div>
   </div>
 
@@ -1156,7 +1187,7 @@ button{font:inherit;cursor:pointer}
 </div>
 
 <!-- BOTÓN WHATSAPP FLOTANTE -->
-<a class="wa-float" href="https://wa.me/573223752541" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+<a class="wa-float" href="https://wa.me/573223752547" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.37 2.15 11.75c0 1.89.5 3.73 1.44 5.35L2 22l5.07-1.54A10.1 10.1 0 0 0 12.04 21.5C17.5 21.5 21.93 17.13 21.93 11.75S17.5 2 12.04 2Zm5.73 14.36c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.93-1.26-4.83-4.18-4.98-4.38-.14-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.24-.27.64-.4 1.02-.4.12 0 .24 0 .34.01.3.01.45.03.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.15-.29.31-.12.6.16.3.73 1.2 1.56 1.94 1.08.96 1.98 1.26 2.3 1.4.3.13.48.11.66-.07.18-.18.77-.9.98-1.2.2-.3.41-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.34.08.13.08.73-.16 1.4Z"/></svg>
   <span>Pedir ahora</span>
 </a>
@@ -1191,7 +1222,7 @@ button{font:inherit;cursor:pointer}
     <p class="sub">Ajustes rápidos de la tienda Axtoon.</p>
 
     <label for="adminWa">Número de WhatsApp (con indicativo)</label>
-    <input type="tel" id="adminWa" placeholder="573223752541">
+    <input type="tel" id="adminWa" placeholder="573223752547">
 
     <label for="adminMsg">Mensaje inicial para el cliente</label>
     <textarea id="adminMsg" rows="3" placeholder="Hola, quiero confirmar mi pedido mayorista:"></textarea>
@@ -1301,7 +1332,7 @@ button{font:inherit;cursor:pointer}
 /* ============================================================
    CONFIGURACIÓN GLOBAL
    ============================================================ */
-const WA = '573223752541';
+const WA = '573223752547';
 let COUPON = 'AXTOON10';
 
 /* ============================================================
@@ -1632,7 +1663,7 @@ function renderOrderProducts(){
       msg += '\n*Total a pagar:* $' + orderItemsTotal().toLocaleString('es-CO');
       msg += '\n\n¿Me confirman disponibilidad, flete y forma de pago?';
 
-      window.open('https://wa.me/573223752541?text=' + encodeURIComponent(msg), '_blank');
+      window.open('https://wa.me/573223752547?text=' + encodeURIComponent(msg), '_blank');
       showToast('✓ Pedido enviado por WhatsApp');
       closeOrderModal();
     });
