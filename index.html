@@ -14,10 +14,10 @@
   im1.png  → Foto principal (hero / centro de distribución)
   im2.png  → Accesorios para celulares
   im3.png  → Tecnología y accesorios
-  im4.png  → Ropa / Moda
+  im4.png  → Ropa
   im5.png  → Calzado
   im6.png  → Belleza y cuidado personal
-  im7.png  → Fitness / Deportes
+  im7.png  → Fitness
   im8.png  → Hogar
   im9.png  → Iluminación
   im10.png → Accesorios para vehículos
@@ -34,6 +34,7 @@
   im21.png → Papelería
   im22.png → Logística / muelles de despacho
   im23.png → Herramientas agrícolas y del campo
+  im24.png → Salud y bienestar
   ============================================================
 -->
 
@@ -55,20 +56,17 @@
   --muted:#f0e9dd;
   --muted-fg:#6a6257;
 
-  /* Verde esmeralda profundo — confianza y solidez */
   --brand:#0f4d38;
   --brand-2:#1a7355;
   --brand-3:#2f9e7a;
   --brand-soft:#e4f2eb;
 
-  /* Naranja coral + ámbar — energía y calidez */
   --accent:#ff6a3d;
   --accent-2:#ff8a5c;
   --accent-soft:#fff1eb;
   --amber:#f5b301;
   --amber-soft:#fff7e0;
 
-  /* Acentos por categoría */
   --berry:#c72a68;
   --violet:#6b3fd4;
   --sky:#1a72c4;
@@ -124,19 +122,14 @@ button{font:inherit;cursor:pointer}
 @media(min-width:768px){.wrap{padding:0 32px}}
 .photo{outline:1px solid rgba(20,19,16,.06);outline-offset:-1px;object-fit:cover;width:100%}
 
-/* Placeholder de imágenes faltantes */
 .ph{
   width:100%;aspect-ratio:4/3;display:grid;place-items:center;
-  background:
-    repeating-linear-gradient(45deg,#f0e6d8 0 14px,#e7dccb 14px 28px);
+  background:repeating-linear-gradient(45deg,#f0e6d8 0 14px,#e7dccb 14px 28px);
   color:#8a7f70;font-size:12px;font-weight:600;letter-spacing:.08em;
   outline:1px dashed #d8ccb9;outline-offset:-1px;text-align:center;padding:8px;
 }
 .ph.wide{aspect-ratio:16/10}
 
-/* ============================================================
-   UTILIDADES
-   ============================================================ */
 .eyebrow{
   display:inline-flex;align-items:center;gap:9px;
   font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;
@@ -146,20 +139,14 @@ button{font:inherit;cursor:pointer}
 .h2{margin-top:12px;font-size:30px}
 @media(min-width:768px){.h2{font-size:40px}}
 .lead{margin-top:16px;max-width:46rem;color:var(--muted-fg);font-size:16.5px;line-height:1.65}
-.grad-text{
-  background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent;
-}
+.grad-text{background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent;}
 section{scroll-margin-top:104px}
 .sec{padding:68px 0}
 @media(min-width:768px){.sec{padding:92px 0}}
 
-/* Reveal */
 .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
 
-/* ============================================================
-   BOTONES
-   ============================================================ */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;
@@ -182,9 +169,6 @@ section{scroll-margin-top:104px}
 .btn-sm{height:40px;padding:0 16px;font-size:14px}
 .btn-block{width:100%}
 
-/* ============================================================
-   BARRA SUPERIOR — Trust strip
-   ============================================================ */
 .strip{
   background:var(--grad-brand-deep);color:#fff;
   padding:10px 16px;font-size:13px;font-weight:500;letter-spacing:.01em;
@@ -195,10 +179,7 @@ section{scroll-margin-top:104px}
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
   animation:shimmer 4s infinite;
 }
-@keyframes shimmer{
-  0%{transform:translateX(-100%)}
-  100%{transform:translateX(100%)}
-}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 .strip .strip-in{
   max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:center;
   gap:20px;flex-wrap:wrap;text-align:center;
@@ -215,9 +196,6 @@ section{scroll-margin-top:104px}
   100%{box-shadow:0 0 0 0 rgba(124,231,182,0)}
 }
 
-/* ============================================================
-   HEADER
-   ============================================================ */
 header.site{
   position:sticky;top:0;z-index:40;
   background:rgba(251,248,242,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
@@ -233,19 +211,13 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
   box-shadow:0 10px 22px -12px rgba(15,77,56,.95);
   position:relative;overflow:hidden;
 }
-.brand .logo::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 50%);
-}
+.brand .logo::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 50%)}
 .brand .logo svg{width:26px;height:26px;position:relative;z-index:1}
 .brand .n1{font-family:var(--display);font-size:20px;display:block;line-height:1.05;font-weight:700}
 .brand .n2{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted-fg);display:block;font-weight:600;margin-top:1px}
 .nav-links{display:none;gap:4px}
 @media(min-width:1024px){.nav-links{display:flex}}
-.nav-links a{
-  font-size:14.5px;font-weight:600;color:var(--muted-fg);
-  padding:10px 15px;border-radius:999px;transition:.2s;
-}
+.nav-links a{font-size:14.5px;font-weight:600;color:var(--muted-fg);padding:10px 15px;border-radius:999px;transition:.2s}
 .nav-links a:hover{color:var(--brand);background:var(--brand-soft)}
 .nav-links a.hot{color:var(--accent)}
 .nav-links a.hot:hover{background:var(--accent-soft)}
@@ -260,8 +232,7 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
   position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;padding:0 6px;
   border-radius:999px;background:var(--grad-warm);color:#fff;
   font-size:11.5px;font-weight:700;display:grid;place-items:center;
-  box-shadow:0 4px 10px -3px rgba(255,106,61,.9);
-  animation:pop .3s var(--ease);
+  box-shadow:0 4px 10px -3px rgba(255,106,61,.9);animation:pop .3s var(--ease);
 }
 @keyframes pop{from{transform:scale(.4)}to{transform:scale(1)}}
 #btnMenu{display:grid}
@@ -274,9 +245,6 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
 .mobile-menu a{display:block;padding:14px;border-radius:14px;font-weight:600}
 .mobile-menu a:hover{background:var(--brand-soft);color:var(--brand)}
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero{position:relative;display:grid;gap:40px;padding:48px 0 56px}
 @media(min-width:1024px){.hero{grid-template-columns:1.02fr .98fr;align-items:center;gap:60px;padding:76px 0 88px}}
 .hero h1{font-size:clamp(34px,6.4vw,62px);line-height:1.02;letter-spacing:-.035em}
@@ -284,11 +252,7 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
 .hero .cta{margin-top:34px;display:flex;flex-direction:column;gap:12px}
 @media(min-width:560px){.hero .cta{flex-direction:row;flex-wrap:wrap}}
 .hero .mini{margin-top:20px;font-size:14px;color:var(--muted-fg)}
-
-/* Trust badges hero */
-.trust-badges{
-  display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;
-}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;}
 .trust-badge{
   display:inline-flex;align-items:center;gap:8px;
   background:#fff;border:1px solid var(--border);border-radius:999px;
@@ -296,39 +260,21 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
   box-shadow:var(--shadow-sm);transition:.2s var(--ease);
 }
 .trust-badge:hover{border-color:var(--brand-2);color:var(--brand);transform:translateY(-1px)}
-.trust-badge .ic{
-  width:22px;height:22px;border-radius:8px;display:grid;place-items:center;
-  font-size:12px;color:#fff;flex:none;
-}
-
+.trust-badge .ic{width:22px;height:22px;border-radius:8px;display:grid;place-items:center;font-size:12px;color:#fff;flex:none;}
 .hero-media{position:relative}
-.hero-media .frame{
-  border-radius:36px;overflow:hidden;box-shadow:var(--shadow-lg);
-  border:6px solid #fff;position:relative;
-  background:var(--muted);
-}
-.hero-media .frame::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 60%,rgba(15,77,56,.15));
-}
+.hero-media .frame{border-radius:36px;overflow:hidden;box-shadow:var(--shadow-lg);border:6px solid #fff;position:relative;background:var(--muted);}
+.hero-media .frame::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 60%,rgba(15,77,56,.15));}
 .hero-media img{aspect-ratio:4/3}
 @media(min-width:1024px){.hero-media img{aspect-ratio:5/4}}
-
-/* Sello de confianza flotante */
 .trust-seal{
   position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);
   background:#fff;border-radius:18px;padding:12px 22px;
   box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;
   border:1px solid var(--border);white-space:nowrap;
 }
-.trust-seal .ic{
-  width:38px;height:38px;border-radius:12px;
-  background:var(--grad-gold);display:grid;place-items:center;
-  color:#3a2400;font-size:18px;flex:none;
-}
+.trust-seal .ic{width:38px;height:38px;border-radius:12px;background:var(--grad-gold);display:grid;place-items:center;color:#3a2400;font-size:18px;flex:none;}
 .trust-seal .tx{font-size:12px;color:var(--muted-fg);font-weight:600;line-height:1.3}
 .trust-seal .tx b{color:var(--fg);font-size:14px;font-family:var(--display);display:block;font-weight:700}
-
 .float-card{
   position:absolute;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   border-radius:16px;padding:12px 16px;box-shadow:var(--shadow-md);
@@ -340,55 +286,26 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
 .float-card .v{font-family:var(--display);font-size:16px;font-weight:700;line-height:1.15}
 .fc-1{left:-12px;top:22px}
 .fc-2{right:-10px;top:44%}
-@media(max-width:640px){
-  .fc-1{left:6px;top:12px}
-  .fc-2{right:6px;top:auto;bottom:76px}
-}
+@media(max-width:640px){.fc-1{left:6px;top:12px}.fc-2{right:6px;top:auto;bottom:76px}}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
-/* ============================================================
-   TRUST BAR — Franja de confianza bajo el hero
-   ============================================================ */
-.trust-bar{
-  background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:22px 0;
-}
-.trust-bar-in{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
-}
+.trust-bar{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0;}
+.trust-bar-in{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
 @media(min-width:768px){.trust-bar-in{grid-template-columns:repeat(4,1fr);gap:24px}}
-.trust-item{
-  display:flex;align-items:center;gap:13px;
-  padding:6px 0;
-}
-.trust-item .ti-ic{
-  width:44px;height:44px;border-radius:14px;flex:none;
-  display:grid;place-items:center;font-size:20px;
-  background:var(--brand-soft);
-}
+.trust-item{display:flex;align-items:center;gap:13px;padding:6px 0;}
+.trust-item .ti-ic{width:44px;height:44px;border-radius:14px;flex:none;display:grid;place-items:center;font-size:20px;background:var(--brand-soft);}
 .trust-item .ti-tx b{display:block;font-size:14.5px;font-weight:700;line-height:1.25}
 .trust-item .ti-tx span{display:block;font-size:12.5px;color:var(--muted-fg);margin-top:2px}
 
-/* ============================================================
-   STATS
-   ============================================================ */
 .stats{padding:0 0 8px}
 .stats-grid{
   display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
   background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);
-  padding:12px;box-shadow:var(--shadow-md);
-  position:relative;overflow:hidden;
+  padding:12px;box-shadow:var(--shadow-md);position:relative;overflow:hidden;
 }
-.stats-grid::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:3px;
-  background:var(--grad-gold);
-}
+.stats-grid::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-gold);}
 @media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
-.stat{
-  padding:24px 18px;border-radius:22px;text-align:center;
-  background:linear-gradient(180deg,#fff, #fdf8f1);
-  transition:.3s var(--ease);
-}
+.stat{padding:24px 18px;border-radius:22px;text-align:center;background:linear-gradient(180deg,#fff, #fdf8f1);transition:.3s var(--ease);}
 .stat:hover{transform:translateY(-2px)}
 .stat:nth-child(1){background:linear-gradient(180deg,#fff, #eefaf4)}
 .stat:nth-child(2){background:linear-gradient(180deg,#fff, #fff3e8)}
@@ -397,32 +314,14 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
 .stat .v{font-family:var(--display);font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1}
 .stat .l{margin-top:6px;font-size:13.5px;color:var(--muted-fg);font-weight:500}
 
-/* ============================================================
-   OFERTAS
-   ============================================================ */
-.ofertas{
-  border-top:1px solid var(--border);
-  background:linear-gradient(180deg,#fff6ec,#fbf8f2 70%);
-  position:relative;overflow:hidden;
-}
-.ofertas::after{
-  content:"";position:absolute;width:520px;height:520px;border-radius:50%;
-  background:radial-gradient(circle,rgba(245,179,1,.20),transparent 68%);
-  top:-260px;right:-160px;pointer-events:none;
-}
+.ofertas{border-top:1px solid var(--border);background:linear-gradient(180deg,#fff6ec,#fbf8f2 70%);position:relative;overflow:hidden;}
+.ofertas::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(245,179,1,.20),transparent 68%);top:-260px;right:-160px;pointer-events:none;}
 .ofertas-head{display:flex;flex-direction:column;gap:20px;position:relative;z-index:1}
 @media(min-width:768px){.ofertas-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
-.countdown{
-  display:inline-flex;align-items:center;gap:10px;margin-top:18px;
-  background:#fff;border:1px solid #ffd9a8;border-radius:999px;padding:9px 18px;
-  font-size:13.5px;font-weight:700;color:#a35a00;box-shadow:var(--shadow-sm);
-}
+.countdown{display:inline-flex;align-items:center;gap:10px;margin-top:18px;background:#fff;border:1px solid #ffd9a8;border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:700;color:#a35a00;box-shadow:var(--shadow-sm);}
 .countdown .lbl{font-weight:600;color:var(--muted-fg)}
 .countdown b{font-variant-numeric:tabular-nums;font-size:15px}
 
-/* ============================================================
-   GRID DE PRODUCTOS
-   ============================================================ */
 .grid-prod{margin-top:36px;display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:600px){.grid-prod{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.grid-prod{grid-template-columns:repeat(3,1fr);gap:24px}}
@@ -433,8 +332,7 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
 .prod{
   --cat:var(--brand);
   display:flex;flex-direction:column;background:#fff;border-radius:var(--r-lg);
-  padding:11px;border:1px solid var(--border);
-  box-shadow:var(--shadow-sm);
+  padding:11px;border:1px solid var(--border);box-shadow:var(--shadow-sm);
   transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;
   position:relative;
 }
@@ -451,108 +349,48 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
   text-transform:uppercase;letter-spacing:.08em;
   box-shadow:0 4px 10px -4px rgba(0,0,0,.35);
 }
-.prod h3{
-  margin-top:10px;font-family:var(--sans);font-size:16.5px;font-weight:600;
-  letter-spacing:-.01em;line-height:1.3;
-}
+.prod h3{margin-top:10px;font-family:var(--sans);font-size:16.5px;font-weight:600;letter-spacing:-.01em;line-height:1.3;}
 .prod .meta{margin-top:6px;font-size:12.5px;color:var(--muted-fg);font-weight:500}
 
-.flag{
-  position:absolute;top:14px;left:14px;z-index:2;
-  background:rgba(255,255,255,.97);backdrop-filter:blur(6px);
-  border-radius:999px;padding:6px 13px;
-  font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
-  color:var(--brand);box-shadow:var(--shadow-sm);
-}
-.ribbon{
-  position:absolute;top:14px;left:14px;z-index:2;
-  background:var(--grad-berry);color:#fff;border-radius:999px;padding:7px 13px;
-  font-size:11.5px;font-weight:800;letter-spacing:.03em;
-  box-shadow:0 8px 18px -8px rgba(199,42,104,.95);
-}
-.timer{
-  position:absolute;top:14px;right:14px;z-index:2;
-  background:rgba(20,19,16,.78);color:#fff;border-radius:999px;padding:6px 12px;
-  font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
-  backdrop-filter:blur(6px);
-}
+.flag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-radius:999px;padding:6px 13px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);box-shadow:var(--shadow-sm);}
+.ribbon{position:absolute;top:14px;left:14px;z-index:2;background:var(--grad-berry);color:#fff;border-radius:999px;padding:7px 13px;font-size:11.5px;font-weight:800;letter-spacing:.03em;box-shadow:0 8px 18px -8px rgba(199,42,104,.95);}
+.timer{position:absolute;top:14px;right:14px;z-index:2;background:rgba(20,19,16,.78);color:#fff;border-radius:999px;padding:6px 12px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;backdrop-filter:blur(6px);}
 
-/* Precios */
 .price{margin-top:16px;font-family:var(--display);font-size:27px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .price-note{margin-top:7px;font-size:11.5px;color:var(--muted-fg);line-height:1.5}
 .prices{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-top:16px}
-.price-old{
-  font-size:13.5px;color:var(--muted-fg);text-decoration:line-through;
-  text-decoration-thickness:1.5px;text-decoration-color:var(--danger);font-weight:500;
-}
-.price-now{
-  font-family:var(--display);font-size:28px;font-weight:800;line-height:1;
-  font-variant-numeric:tabular-nums;letter-spacing:-.02em;
-  background:var(--grad-berry);-webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.save-tag{
-  align-self:center;background:#ffe8ef;color:var(--berry);border-radius:999px;
-  padding:5px 11px;font-size:11.5px;font-weight:800;
-}
+.price-old{font-size:13.5px;color:var(--muted-fg);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:var(--danger);font-weight:500;}
+.price-now{font-family:var(--display);font-size:28px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;background:var(--grad-berry);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.save-tag{align-self:center;background:#ffe8ef;color:var(--berry);border-radius:999px;padding:5px 11px;font-size:11.5px;font-weight:800;}
 
-/* Selector de cantidad */
 .actions{margin-top:auto;padding-top:18px;display:flex;gap:10px;align-items:center}
-.qty{
-  display:flex;align-items:center;gap:2px;
-  background:var(--muted);border-radius:999px;padding:4px;flex:none;
-}
-.qty button{
-  width:36px;height:36px;border-radius:999px;border:none;background:#fff;
-  box-shadow:var(--shadow-sm);font-size:17px;font-weight:700;color:var(--brand);
-  display:grid;place-items:center;line-height:1;transition:.16s var(--ease);
-}
+.qty{display:flex;align-items:center;gap:2px;background:var(--muted);border-radius:999px;padding:4px;flex:none;}
+.qty button{width:36px;height:36px;border-radius:999px;border:none;background:#fff;box-shadow:var(--shadow-sm);font-size:17px;font-weight:700;color:var(--brand);display:grid;place-items:center;line-height:1;transition:.16s var(--ease);}
 .qty button:hover{background:var(--brand);color:#fff}
 .qty button:active{transform:scale(.9)}
-.qty .n{
-  min-width:36px;text-align:center;font-size:15px;font-weight:700;
-  font-variant-numeric:tabular-nums;
-}
+.qty .n{min-width:36px;text-align:center;font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;}
 .add{flex:1;height:44px;border-radius:999px;border:none;background:var(--brand);color:#fff;font-weight:700;font-size:14.5px;transition:.2s var(--ease);display:inline-flex;align-items:center;justify-content:center;gap:7px}
 .add:hover{background:#0a3826}
 .add:active{transform:scale(.97)}
 .add.done{background:var(--ok)}
 .deal .add{background:var(--grad-warm);box-shadow:0 8px 18px -10px rgba(255,106,61,.9)}
 .deal .add:hover{filter:brightness(1.05)}
-.wa-mini{
-  margin-top:10px;display:inline-flex;align-items:center;gap:6px;justify-content:center;
-  font-size:12.5px;font-weight:600;color:var(--muted-fg);width:100%;
-  padding:8px;border-radius:999px;transition:.2s;
-}
+.wa-mini{margin-top:10px;display:inline-flex;align-items:center;gap:6px;justify-content:center;font-size:12.5px;font-weight:600;color:var(--muted-fg);width:100%;padding:8px;border-radius:999px;transition:.2s;}
 .wa-mini:hover{color:var(--brand);background:var(--brand-soft)}
 
-/* ============================================================
-   CATEGORÍAS
-   ============================================================ */
 .cats{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 @media(min-width:640px){.cats{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:1024px){.cats{grid-template-columns:repeat(4,1fr);gap:18px}}
-.cat{
-  --cat:var(--brand);
-  position:relative;background:#fff;border-radius:var(--r);overflow:hidden;
-  border:1px solid var(--border);box-shadow:var(--shadow-sm);
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;
-}
+.cat{--cat:var(--brand);position:relative;background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;}
 .cat:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--cat)}
 .cat .media{position:relative;overflow:hidden}
 .cat img{aspect-ratio:4/3;transition:transform .55s var(--ease)}
 .cat:hover img{transform:scale(1.07)}
-.cat .emoji{
-  position:absolute;left:12px;top:12px;width:36px;height:36px;border-radius:12px;
-  background:var(--cat);display:grid;place-items:center;font-size:18px;
-  box-shadow:0 8px 16px -8px rgba(0,0,0,.55);
-}
+.cat .emoji{position:absolute;left:12px;top:12px;width:36px;height:36px;border-radius:12px;background:var(--cat);display:grid;place-items:center;font-size:18px;box-shadow:0 8px 16px -8px rgba(0,0,0,.55);}
 .cat .txt{padding:14px 15px 17px}
 .cat .txt b{font-weight:700;font-size:14.5px;display:block;line-height:1.3}
 .cat .txt span{display:block;font-size:12.5px;color:var(--muted-fg);margin-top:4px;line-height:1.45}
 
-/* ============================================================
-   CATÁLOGO
-   ============================================================ */
 .catalog{border-top:1px solid var(--border);background:rgba(255,255,255,.6)}
 .catalog-head{margin-top:12px;display:flex;flex-direction:column;gap:20px}
 @media(min-width:900px){.catalog-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
@@ -560,17 +398,10 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgb
 @media(min-width:600px){.tools{flex-direction:row;align-items:center}}
 .search{position:relative;width:100%}
 @media(min-width:900px){.search{max-width:24rem}}
-.search input{
-  width:100%;height:50px;border-radius:999px;border:1px solid var(--border);
-  background:#fff;padding:0 18px 0 46px;font:inherit;font-size:15px;color:inherit;
-  box-shadow:var(--shadow-sm);transition:.2s;
-}
+.search input{width:100%;height:50px;border-radius:999px;border:1px solid var(--border);background:#fff;padding:0 18px 0 46px;font:inherit;font-size:15px;color:inherit;box-shadow:var(--shadow-sm);transition:.2s;}
 .search input:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px var(--brand-soft)}
 .search svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted-fg);pointer-events:none}
-select.sort{
-  height:50px;border-radius:999px;border:1px solid var(--border);background:#fff;
-  padding:0 42px 0 20px;font:inherit;font-size:14.5px;font-weight:600;color:var(--fg);
-  box-shadow:var(--shadow-sm);cursor:pointer;appearance:none;
+select.sort{height:50px;border-radius:999px;border:1px solid var(--border);background:#fff;padding:0 42px 0 20px;font:inherit;font-size:14.5px;font-weight:600;color:var(--fg);box-shadow:var(--shadow-sm);cursor:pointer;appearance:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236a6257' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 17px center;
 }
@@ -578,44 +409,21 @@ select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px 
 
 .chips{margin-top:26px;display:flex;gap:9px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
-.chip{
-  flex:none;height:44px;padding:0 20px;border-radius:999px;
-  border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-sm);
-  font-size:14px;font-weight:600;white-space:nowrap;color:var(--muted-fg);
-  transition:.2s var(--ease);
-}
+.chip{flex:none;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-sm);font-size:14px;font-weight:600;white-space:nowrap;color:var(--muted-fg);transition:.2s var(--ease);}
 .chip:hover{border-color:var(--brand-2);color:var(--brand);transform:translateY(-1px)}
 .chip.active{background:var(--grad-brand);color:#fff;border-color:transparent;box-shadow:0 12px 24px -16px rgba(15,77,56,.95)}
 .chip.hot.active{background:var(--grad-berry)}
 
 .result-line{margin-top:6px;font-size:13.5px;color:var(--muted-fg);font-weight:500}
 .result-line b{color:var(--fg)}
-.empty{
-  margin-top:56px;text-align:center;color:var(--muted-fg);
-  background:#fff;border:1px dashed var(--border);border-radius:var(--r-lg);padding:48px 22px;
-}
+.empty{margin-top:56px;text-align:center;color:var(--muted-fg);background:#fff;border:1px dashed var(--border);border-radius:var(--r-lg);padding:48px 22px;}
 .empty b{display:block;font-family:var(--display);font-size:20px;color:var(--fg);margin-bottom:8px}
 
-/* ============================================================
-   CUPONES
-   ============================================================ */
 .cupones-sec{padding:0 0 20px}
-.coupon-band{
-  position:relative;overflow:hidden;border-radius:38px;
-  background:var(--grad-brand-deep);color:#fff;
-  padding:48px 26px;box-shadow:var(--shadow-lg);
-}
+.coupon-band{position:relative;overflow:hidden;border-radius:38px;background:var(--grad-brand-deep);color:#fff;padding:48px 26px;box-shadow:var(--shadow-lg);}
 @media(min-width:768px){.coupon-band{padding:64px 56px}}
-.coupon-band::before{
-  content:"";position:absolute;width:460px;height:460px;border-radius:50%;
-  background:radial-gradient(circle,rgba(245,179,1,.32),transparent 65%);
-  right:-140px;top:-180px;
-}
-.coupon-band::after{
-  content:"";position:absolute;width:380px;height:380px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,106,61,.30),transparent 65%);
-  left:-120px;bottom:-180px;
-}
+.coupon-band::before{content:"";position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(245,179,1,.32),transparent 65%);right:-140px;top:-180px;}
+.coupon-band::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,61,.30),transparent 65%);left:-120px;bottom:-180px;}
 .coupon-inner{position:relative;z-index:1;display:grid;gap:40px}
 @media(min-width:1024px){.coupon-inner{grid-template-columns:.95fr 1.05fr;align-items:center;gap:52px}}
 .coupon-band .eyebrow{color:rgba(255,255,255,.75)}
@@ -623,17 +431,9 @@ select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px 
 .coupon-band .h2{color:#fff}
 .coupon-band p.lead{color:rgba(255,255,255,.85)}
 
-.coupon-form{
-  display:flex;gap:10px;flex-direction:column;margin-top:26px;
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
-  border-radius:22px;padding:14px;backdrop-filter:blur(10px);
-}
+.coupon-form{display:flex;gap:10px;flex-direction:column;margin-top:26px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:14px;backdrop-filter:blur(10px);}
 @media(min-width:560px){.coupon-form{flex-direction:row;align-items:center}}
-.coupon-form input{
-  flex:1;height:52px;border-radius:999px;border:none;padding:0 22px;
-  font:inherit;font-size:15.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  background:#fff;color:var(--fg);
-}
+.coupon-form input{flex:1;height:52px;border-radius:999px;border:none;padding:0 22px;font:inherit;font-size:15.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#fff;color:var(--fg);}
 .coupon-form input::placeholder{text-transform:none;letter-spacing:0;font-weight:500;color:#a49a8c}
 .coupon-form input:focus{outline:3px solid var(--amber);outline-offset:2px}
 .coupon-form .btn{height:52px;flex:none}
@@ -645,67 +445,26 @@ select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px 
 
 .coupon-cards{display:grid;gap:12px}
 @media(min-width:600px){.coupon-cards{grid-template-columns:repeat(2,1fr)}}
-.coupon-card{
-  text-align:left;background:rgba(255,255,255,.96);border:none;border-radius:20px;
-  padding:20px;cursor:pointer;position:relative;overflow:hidden;
-  transition:transform .3s var(--ease),box-shadow .3s;
-  box-shadow:0 12px 30px -20px rgba(0,0,0,.7);
-}
+.coupon-card{text-align:left;background:rgba(255,255,255,.96);border:none;border-radius:20px;padding:20px;cursor:pointer;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s;box-shadow:0 12px 30px -20px rgba(0,0,0,.7);}
 .coupon-card:hover{transform:translateY(-5px);box-shadow:0 22px 42px -22px rgba(0,0,0,.8)}
-.coupon-card::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--grad-gold);
-}
+.coupon-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--grad-gold);}
 .coupon-card .cc-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.coupon-card .cc-code{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:15px;font-weight:800;letter-spacing:.08em;color:var(--fg);
-  background:var(--muted);border:1px dashed var(--border);border-radius:10px;padding:6px 12px;
-}
-.coupon-card .cc-off{
-  font-family:var(--display);font-size:26px;font-weight:800;
-  background:var(--grad-berry);-webkit-background-clip:text;background-clip:text;color:transparent;
-  line-height:1;
-}
+.coupon-card .cc-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;font-weight:800;letter-spacing:.08em;color:var(--fg);background:var(--muted);border:1px dashed var(--border);border-radius:10px;padding:6px 12px;}
+.coupon-card .cc-off{font-family:var(--display);font-size:26px;font-weight:800;background:var(--grad-berry);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;}
 .coupon-card .cc-desc{margin-top:12px;font-size:13px;color:var(--muted-fg);font-weight:500;line-height:1.5}
-.coupon-card .cc-use{
-  margin-top:14px;font-size:12px;font-weight:700;color:var(--brand);
-  display:inline-flex;align-items:center;gap:6px;
-}
+.coupon-card .cc-use{margin-top:14px;font-size:12px;font-weight:700;color:var(--brand);display:inline-flex;align-items:center;gap:6px;}
 
-/* ============================================================
-   PROCESO
-   ============================================================ */
 .steps{margin-top:44px;display:grid;gap:18px}
 @media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
-.step{
-  background:#fff;border-radius:var(--r-lg);padding:32px;
-  border:1px solid var(--border);box-shadow:var(--shadow-sm);
-  position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s;
-}
+.step{background:#fff;border-radius:var(--r-lg);padding:32px;border:1px solid var(--border);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s;}
 .step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
-.step .n{
-  font-family:var(--display);font-size:38px;font-weight:800;line-height:1;
-  background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent;
-}
+.step .n{font-family:var(--display);font-size:38px;font-weight:800;line-height:1;background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .step h3{margin-top:16px;font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.01em}
 .step p{margin-top:10px;font-size:14.5px;color:var(--muted-fg);line-height:1.6}
-.step::after{
-  content:"";position:absolute;right:-40px;bottom:-40px;width:130px;height:130px;border-radius:50%;
-  background:radial-gradient(circle,rgba(245,179,1,.16),transparent 70%);
-}
+.step::after{content:"";position:absolute;right:-40px;bottom:-40px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(245,179,1,.16),transparent 70%);}
 
-/* ============================================================
-   POR QUÉ / GARANTÍAS
-   ============================================================ */
-.why{
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  background:var(--grad-brand-deep);color:#fff;position:relative;overflow:hidden;
-}
-.why::before{
-  content:"";position:absolute;width:640px;height:640px;border-radius:50%;
-  background:radial-gradient(circle,rgba(245,179,1,.18),transparent 66%);
-  right:-220px;top:-260px;
-}
+.why{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--grad-brand-deep);color:#fff;position:relative;overflow:hidden;}
+.why::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(245,179,1,.18),transparent 66%);right:-220px;top:-260px;}
 .why-grid{position:relative;z-index:1;display:grid;gap:44px;padding:68px 0}
 @media(min-width:768px){.why-grid{grid-template-columns:repeat(2,1fr);align-items:center;padding:92px 0}}
 .why .eyebrow{color:rgba(255,255,255,.78)}
@@ -714,72 +473,31 @@ select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px 
 .why p.lead{color:rgba(255,255,255,.85)}
 .why-cards{display:grid;gap:14px}
 @media(min-width:640px){.why-cards{grid-template-columns:repeat(2,1fr)}}
-.why-card{
-  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);
-  border-radius:20px;padding:24px;backdrop-filter:blur(8px);
-  transition:.3s var(--ease);
-}
+.why-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:24px;backdrop-filter:blur(8px);transition:.3s var(--ease);}
 .why-card:hover{background:rgba(255,255,255,.17);transform:translateY(-4px)}
 .why-card h3{font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:-.01em;margin-top:14px}
 .why-card p{margin-top:6px;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.55}
-.why-card .ico{
-  font-size:20px;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
-  background:rgba(255,255,255,.16);
-}
+.why-card .ico{font-size:20px;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.16);}
 
-/* ============================================================
-   GARANTÍAS
-   ============================================================ */
-.guarantees{
-  display:grid;gap:16px;margin-top:44px;
-}
+.guarantees{display:grid;gap:16px;margin-top:44px;}
 @media(min-width:640px){.guarantees{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.guarantees{grid-template-columns:repeat(4,1fr)}}
-.guarantee{
-  background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:26px 24px;box-shadow:var(--shadow-sm);
-  transition:.3s var(--ease);position:relative;overflow:hidden;
-}
+.guarantee{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:26px 24px;box-shadow:var(--shadow-sm);transition:.3s var(--ease);position:relative;overflow:hidden;}
 .guarantee:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--brand-2)}
-.guarantee .g-ic{
-  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
-  font-size:24px;margin-bottom:16px;
-}
+.guarantee .g-ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:24px;margin-bottom:16px;}
 .guarantee h3{font-family:var(--sans);font-size:15.5px;font-weight:700;letter-spacing:-.01em}
 .guarantee p{margin-top:8px;font-size:13.5px;color:var(--muted-fg);line-height:1.6}
 
-/* ============================================================
-   MÉTODOS DE PAGO
-   ============================================================ */
-.payments{
-  background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:44px 0;
-}
-.pay-in{
-  display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;
-}
+.payments{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:44px 0;}
+.pay-in{display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;}
 .pay-in .eyebrow{align-self:center}
 .pay-in h3{font-size:22px;margin-top:8px;font-weight:600;font-family:var(--display)}
 .pay-in h3 b{color:var(--brand)}
-.pay-methods{
-  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
-}
-.pay-chip{
-  display:inline-flex;align-items:center;gap:9px;
-  background:linear-gradient(180deg,#fff,#fbf8f2);
-  border:1px solid var(--border);border-radius:16px;
-  padding:12px 20px;font-size:14px;font-weight:700;
-  box-shadow:var(--shadow-sm);transition:.25s var(--ease);color:var(--fg);
-}
+.pay-methods{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.pay-chip{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(180deg,#fff,#fbf8f2);border:1px solid var(--border);border-radius:16px;padding:12px 20px;font-size:14px;font-weight:700;box-shadow:var(--shadow-sm);transition:.25s var(--ease);color:var(--fg);}
 .pay-chip:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--brand-2)}
-.pay-chip .pic{
-  width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
-  font-size:13px;font-weight:800;color:#fff;flex:none;
-}
+.pay-chip .pic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff;flex:none;}
 
-/* ============================================================
-   COBERTURA
-   ============================================================ */
 .cov{display:grid;gap:44px}
 @media(min-width:900px){.cov{grid-template-columns:.92fr 1.08fr;align-items:start;gap:52px}}
 .cov .frame{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);border:5px solid #fff;margin-top:36px}
@@ -789,95 +507,47 @@ select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px 
 .pill.on{background:var(--grad-brand);color:#fff;border-color:transparent}
 .deps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 @media(min-width:600px){.deps{grid-template-columns:repeat(2,1fr)}}
-.deps li{
-  display:flex;justify-content:space-between;gap:10px;align-items:center;
-  background:#fff;border:1px solid var(--border);border-radius:14px;
-  padding:12px 16px;font-size:13.5px;font-weight:500;
-  transition:.2s var(--ease);
-}
+.deps li{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:14px;padding:12px 16px;font-size:13.5px;font-weight:500;transition:.2s var(--ease);}
 .deps li:hover{border-color:var(--brand-2);transform:translateX(3px)}
 .deps .fast{color:var(--ok);font-weight:700;font-size:12.5px}
 .deps .slow{color:var(--muted-fg);font-weight:600;font-size:12.5px}
 
-/* ============================================================
-   TESTIMONIOS
-   ============================================================ */
 .testi{border-top:1px solid var(--border);background:rgba(255,255,255,.55)}
 .quotes{margin-top:44px;display:grid;gap:18px}
 @media(min-width:768px){.quotes{grid-template-columns:repeat(3,1fr)}}
-.quote{
-  background:#fff;border-radius:var(--r-lg);padding:30px;margin:0;
-  border:1px solid var(--border);box-shadow:var(--shadow-sm);
-  display:flex;flex-direction:column;
-  transition:transform .3s var(--ease),box-shadow .3s;
-  position:relative;overflow:hidden;
-}
-.quote::before{
-  content:"”";position:absolute;top:-30px;right:14px;
-  font-family:var(--display);font-size:120px;line-height:1;
-  color:var(--brand-soft);opacity:.7;pointer-events:none;
-}
+.quote{background:#fff;border-radius:var(--r-lg);padding:30px;margin:0;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s;position:relative;overflow:hidden;}
+.quote::before{content:"”";position:absolute;top:-30px;right:14px;font-family:var(--display);font-size:120px;line-height:1;color:var(--brand-soft);opacity:.7;pointer-events:none;}
 .quote:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
 .quote .q-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
 .quote .stars{color:var(--amber);font-size:15px;letter-spacing:2px}
-.verified{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--brand-soft);color:var(--brand);
-  border-radius:999px;padding:4px 10px;font-size:10.5px;
-  font-weight:700;letter-spacing:.03em;text-transform:uppercase;
-}
+.verified{display:inline-flex;align-items:center;gap:5px;background:var(--brand-soft);color:var(--brand);border-radius:999px;padding:4px 10px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;}
 .verified::before{content:"✓";font-weight:900}
 .quote p{font-size:14.5px;line-height:1.75;color:#3d382f;flex:1;position:relative;z-index:1}
 .quote footer{margin-top:26px;display:flex;align-items:center;gap:13px;padding-top:18px;border-top:1px dashed var(--border)}
-.avatar{
-  width:44px;height:44px;border-radius:999px;color:#fff;display:grid;place-items:center;
-  font-family:var(--display);font-size:15px;font-weight:700;flex:none;
-  box-shadow:0 6px 14px -6px rgba(0,0,0,.4);
-}
+.avatar{width:44px;height:44px;border-radius:999px;color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:15px;font-weight:700;flex:none;box-shadow:0 6px 14px -6px rgba(0,0,0,.4);}
 .quote:nth-child(1) .avatar{background:var(--grad-brand)}
 .quote:nth-child(2) .avatar{background:var(--grad-warm)}
 .quote:nth-child(3) .avatar{background:var(--grad-berry)}
 .quote .nm{font-weight:700;display:block;font-size:14.5px}
 .quote .rl{font-size:13px;color:var(--muted-fg);display:block;margin-top:1px}
 
-/* ============================================================
-   FAQ
-   ============================================================ */
 .faq-wrap{max-width:820px;margin:0 auto}
 .faq-list{margin-top:36px;display:grid;gap:12px}
-details.f{
-  background:#fff;border:1px solid var(--border);border-radius:18px;
-  overflow:hidden;box-shadow:var(--shadow-sm);transition:.25s var(--ease);
-}
+details.f{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.25s var(--ease);}
 details.f[open]{border-color:var(--brand-2);box-shadow:var(--shadow-md)}
-details.f summary{
-  list-style:none;display:flex;justify-content:space-between;gap:16px;
-  padding:20px 24px;font-weight:600;font-size:15.5px;cursor:pointer;
-}
+details.f summary{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 24px;font-weight:600;font-size:15.5px;cursor:pointer;}
 details.f summary::-webkit-details-marker{display:none}
-details.f summary::after{
-  content:"+";color:var(--brand);font-size:22px;font-weight:700;line-height:1;flex:none;
-  transition:transform .3s var(--ease);
-}
+details.f summary::after{content:"+";color:var(--brand);font-size:22px;font-weight:700;line-height:1;flex:none;transition:transform .3s var(--ease);}
 details.f[open] summary::after{transform:rotate(45deg)}
 details.f p{padding:0 24px 22px;font-size:14.5px;color:var(--muted-fg);line-height:1.7}
 
-/* ============================================================
-   PEDIDO
-   ============================================================ */
 .order{border-top:1px solid var(--border);background:rgba(255,255,255,.55);padding-bottom:140px}
 .order-grid{display:grid;gap:44px}
 @media(min-width:900px){.order-grid{grid-template-columns:.9fr 1.1fr;gap:52px}}
 
-.summary-card{
-  margin-top:36px;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:26px;box-shadow:var(--shadow-sm);
-}
+.summary-card{margin-top:36px;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:26px;box-shadow:var(--shadow-sm);}
 .summary-card h3{font-size:20px;margin-bottom:18px}
-.srow{
-  display:flex;justify-content:space-between;gap:16px;align-items:center;
-  padding:12px 0;border-bottom:1px dashed var(--border);font-size:14.5px;
-}
+.srow{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--border);font-size:14.5px;}
 .srow:last-of-type{border-bottom:none}
 .srow span{color:var(--muted-fg);font-weight:500}
 .srow b{font-weight:700;font-variant-numeric:tabular-nums}
@@ -888,32 +558,18 @@ details.f p{padding:0 24px 22px;font-size:14.5px;color:var(--muted-fg);line-heig
 .srow.total span{color:var(--fg);font-weight:700;font-size:15.5px}
 .srow.total b{font-family:var(--display);font-size:28px;letter-spacing:-.03em}
 
-form.card{
-  background:#fff;border-radius:var(--r-lg);padding:24px;
-  border:1px solid var(--border);box-shadow:var(--shadow-md);
-}
+form.card{background:#fff;border-radius:var(--r-lg);padding:24px;border:1px solid var(--border);box-shadow:var(--shadow-md);}
 @media(min-width:768px){form.card{padding:34px}}
 .fields{display:grid;gap:18px}
 @media(min-width:640px){.fields{grid-template-columns:repeat(2,1fr)}.col2{grid-column:span 2}}
 label{display:block;font-size:13.5px;font-weight:600;margin-bottom:8px;color:#3d382f}
-input,select,textarea{
-  width:100%;border:1px solid var(--border);border-radius:14px;background:#fdfbf8;
-  padding:13px 15px;font:inherit;font-size:15px;color:inherit;transition:.2s;
-}
+input,select,textarea{width:100%;border:1px solid var(--border);border-radius:14px;background:#fdfbf8;padding:13px 15px;font:inherit;font-size:15px;color:inherit;transition:.2s;}
 textarea{min-height:96px;resize:vertical}
-input:focus,select:focus,textarea:focus{
-  outline:none;border-color:var(--brand-2);background:#fff;box-shadow:0 0 0 4px var(--brand-soft);
-}
-.err{
-  margin-top:18px;color:var(--danger);font-size:14px;font-weight:600;
-  background:#ffeceb;border:1px solid #ffc9c9;border-radius:12px;padding:12px 16px;
-}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand-2);background:#fff;box-shadow:0 0 0 4px var(--brand-soft);}
+.err{margin-top:18px;color:var(--danger);font-size:14px;font-weight:600;background:#ffeceb;border:1px solid #ffc9c9;border-radius:12px;padding:12px 16px;}
 .hint{margin-top:16px;text-align:center;font-size:12px;color:var(--muted-fg);line-height:1.6}
 #sentBox{margin-top:22px;background:var(--brand-soft);border:1px solid #bfe4d4;border-radius:18px;padding:20px}
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 footer.site{background:#11100d;color:#f5f1ea}
 .foot{display:grid;gap:44px;padding:64px 0}
 @media(min-width:768px){.foot{grid-template-columns:repeat(4,1fr)}.foot .c2{grid-column:span 2}}
@@ -927,33 +583,17 @@ footer .brand .logo{background:var(--grad-warm)}
 .foot a:hover{color:var(--amber)}
 .foot .contact-line{display:flex;align-items:center;gap:9px;font-size:14px;color:rgba(245,241,234,.75)}
 .foot .contact-line b{color:#fff}
-.copy{
-  border-top:1px solid rgba(245,241,234,.1);padding:24px 16px 100px;
-  text-align:center;font-size:12.5px;color:rgba(245,241,234,.5);
-  line-height:1.7;
-}
+.copy{border-top:1px solid rgba(245,241,234,.1);padding:24px 16px 100px;text-align:center;font-size:12.5px;color:rgba(245,241,234,.5);line-height:1.7;}
 @media(min-width:768px){.copy{padding-bottom:28px}}
 .copy .legal{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
 .copy .legal a{color:rgba(245,241,234,.5)}
 .copy .legal a:hover{color:var(--amber)}
 
-/* ============================================================
-   BARRA FLOTANTE DE CUENTA
-   ============================================================ */
-.cartbar{
-  position:fixed;left:0;right:0;bottom:0;z-index:45;
-  background:var(--grad-brand-deep);color:#fff;
-  box-shadow:0 -12px 40px -18px rgba(0,0,0,.6);
-  transform:translateY(110%);transition:transform .4s var(--ease);
-  padding:12px 0 calc(12px + env(safe-area-inset-bottom));
-}
+.cartbar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--grad-brand-deep);color:#fff;box-shadow:0 -12px 40px -18px rgba(0,0,0,.6);transform:translateY(110%);transition:transform .4s var(--ease);padding:12px 0 calc(12px + env(safe-area-inset-bottom));}
 .cartbar.show{transform:translateY(0)}
 .cartbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .cb-left{display:flex;align-items:center;gap:14px;min-width:0}
-.cb-icon{
-  width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.16);
-  display:grid;place-items:center;flex:none;position:relative;
-}
+.cb-icon{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.16);display:grid;place-items:center;flex:none;position:relative;}
 .cb-icon .badge{top:-4px;right:-4px;background:var(--amber);color:#3d2a00;font-weight:800}
 .cb-meta{min-width:0}
 .cb-count{font-size:12px;color:rgba(255,255,255,.72);font-weight:600;display:block;letter-spacing:.02em}
@@ -964,62 +604,28 @@ footer .brand .logo{background:var(--grad-warm)}
 .btn-light{background:#fff;color:var(--brand)}
 .btn-light:hover{background:#f1eae0}
 .btn-amber{background:var(--grad-warm);color:#fff}
-@media(max-width:520px){
-  .cb-actions .btn-light{display:none}
-  .cb-total{font-size:19px}
-}
+@media(max-width:520px){.cb-actions .btn-light{display:none}.cb-total{font-size:19px}}
 
-/* WhatsApp flotante */
-.wa-float{
-  position:fixed;right:16px;bottom:92px;z-index:44;
-  display:flex;align-items:center;gap:10px;height:54px;padding:0 22px;
-  border-radius:999px;background:#25D366;color:#fff;font-size:15px;font-weight:700;
-  box-shadow:0 18px 36px -14px rgba(37,211,102,.95);
-  transition:transform .25s var(--ease),bottom .4s var(--ease);
-}
+.wa-float{position:fixed;right:16px;bottom:92px;z-index:44;display:flex;align-items:center;gap:10px;height:54px;padding:0 22px;border-radius:999px;background:#25D366;color:#fff;font-size:15px;font-weight:700;box-shadow:0 18px 36px -14px rgba(37,211,102,.95);transition:transform .25s var(--ease),bottom .4s var(--ease);}
 .wa-float:hover{transform:translateY(-3px)}
 .wa-float:active{transform:scale(.96)}
 @media(min-width:768px){.wa-float{right:28px;bottom:100px}}
-@media(max-width:520px){
-  .wa-float{padding:0;width:54px;justify-content:center}
-  .wa-float span{display:none}
-}
+@media(max-width:520px){.wa-float{padding:0;width:54px;justify-content:center}.wa-float span{display:none}}
 
-/* ============================================================
-   DRAWER CARRITO
-   ============================================================ */
 .overlay{position:fixed;inset:0;background:rgba(20,19,16,.55);z-index:60;display:none;backdrop-filter:blur(4px)}
 .overlay.open{display:block;animation:fade .25s var(--ease)}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-.drawer{
-  position:fixed;top:0;right:0;bottom:0;width:100%;max-width:460px;z-index:61;
-  background:var(--bg);display:flex;flex-direction:column;
-  transform:translateX(100%);transition:transform .4s var(--ease);
-  box-shadow:-30px 0 70px -30px rgba(0,0,0,.5);
-}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:100%;max-width:460px;z-index:61;background:var(--bg);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:-30px 0 70px -30px rgba(0,0,0,.5);}
 .drawer.open{transform:translateX(0)}
-.drawer header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:20px 22px;border-bottom:1px solid var(--border);background:#fff;
-}
+.drawer header{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--border);background:#fff;}
 .drawer h3{font-size:21px;display:flex;align-items:center;gap:10px}
-.drawer h3 .cnt{
-  font-family:var(--sans);font-size:12px;font-weight:700;background:var(--brand-soft);
-  color:var(--brand);border-radius:999px;padding:4px 11px;
-}
+.drawer h3 .cnt{font-family:var(--sans);font-size:12px;font-weight:700;background:var(--brand-soft);color:var(--brand);border-radius:999px;padding:4px 11px;}
 .drawer .items{flex:1;overflow:auto;padding:20px;display:grid;gap:12px;align-content:start}
-.ci{
-  display:flex;gap:14px;background:#fff;border-radius:18px;padding:14px;
-  border:1px solid var(--border);box-shadow:var(--shadow-sm);
-  animation:fadeDown .3s var(--ease);
-}
-.ci .thumb{
-  width:56px;height:56px;border-radius:14px;flex:none;display:grid;place-items:center;
-  font-size:22px;background:var(--muted);
-}
+.ci{display:flex;gap:14px;background:#fff;border-radius:18px;padding:14px;border:1px solid var(--border);box-shadow:var(--shadow-sm);animation:fadeDown .3s var(--ease);}
+.ci .thumb{width:56px;height:56px;border-radius:14px;flex:none;display:grid;place-items:center;font-size:22px;background:var(--muted);}
 .ci .info{flex:1;min-width:0}
 .ci .nm{font-size:14.5px;font-weight:700;line-height:1.3}
-.ci .sub{font-size:12.5px;color:var(--muted-fg);margin-top:5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.ci .sub{font-size:12.5px;color:var(--muted-fg);margin-top:5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
 .ci .sub .price-old{font-size:12px}
 .ci .sub .now{color:var(--berry);font-weight:700}
 .ci .line-total{margin-top:8px;font-family:var(--display);font-size:17px;font-weight:800}
@@ -1027,33 +633,21 @@ footer .brand .logo{background:var(--grad-warm)}
 .ci .qty{padding:3px;background:var(--muted)}
 .ci .qty button{width:30px;height:30px;font-size:15px}
 .ci .qty .n{min-width:30px;font-size:13.5px}
-.ci .rm{
-  background:none;border:none;color:var(--danger);font-size:12.5px;font-weight:600;
-  padding:5px 9px;border-radius:8px;transition:.2s;
-}
+.ci .rm{background:none;border:none;color:var(--danger);font-size:12.5px;font-weight:600;padding:5px 9px;border-radius:8px;transition:.2s;}
 .ci .rm:hover{background:#ffeceb}
 .drawer footer{border-top:1px solid var(--border);padding:20px;display:grid;gap:14px;background:#fff}
 
-/* Cupón dentro del drawer */
 .coupon-box{background:var(--bg-2);border:1px dashed var(--border);border-radius:16px;padding:16px}
 .coupon-box .cb-label{font-size:12.5px;font-weight:700;color:var(--muted-fg);display:flex;align-items:center;gap:7px;margin-bottom:10px}
 .coupon-row{display:flex;gap:8px}
-.coupon-row input{
-  flex:1;height:46px;border-radius:999px;border:1px solid var(--border);background:#fff;
-  padding:0 18px;font:inherit;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-}
+.coupon-row input{flex:1;height:46px;border-radius:999px;border:1px solid var(--border);background:#fff;padding:0 18px;font:inherit;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
 .coupon-row input:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px var(--brand-soft)}
-.coupon-row button{
-  height:46px;padding:0 22px;border-radius:999px;border:none;
-  background:var(--brand);color:#fff;font-weight:700;font-size:14px;transition:.2s;
-}
+.coupon-row button{height:46px;padding:0 22px;border-radius:999px;border:none;background:var(--brand);color:#fff;font-weight:700;font-size:14px;transition:.2s;}
 .coupon-row button:hover{background:#0a3826}
 .coupon-row button.remove{background:#fff;border:1px solid var(--border);color:var(--danger)}
 .coupon-hint{margin-top:10px;font-size:12px;color:var(--muted-fg)}
 .coupon-hint b{color:var(--brand);cursor:pointer;text-decoration:underline dotted}
-.coupon-state{
-  margin-top:12px;font-size:13px;font-weight:700;border-radius:12px;padding:10px 14px;display:none;
-}
+.coupon-state{margin-top:12px;font-size:13px;font-weight:700;border-radius:12px;padding:10px 14px;display:none;}
 .coupon-state.show{display:block}
 .coupon-state.ok{background:var(--brand-soft);color:var(--brand);border:1px solid #bfe4d4}
 .coupon-state.err{background:#ffeceb;color:var(--danger);border:1px solid #ffc9c9}
@@ -1064,22 +658,11 @@ footer .brand .logo{background:var(--grad-warm)}
 .drawer .mini-tot.save{color:var(--ok);font-weight:700}
 .drawer .mini-tot.coupon{color:var(--berry);font-weight:700}
 
-/* ============================================================
-   TOAST
-   ============================================================ */
-.toast{
-  position:fixed;left:50%;bottom:160px;transform:translate(-50%,26px);
-  background:#11100d;color:#fff;border-radius:999px;padding:14px 26px;
-  font-size:14.5px;font-weight:600;z-index:80;opacity:0;pointer-events:none;
-  box-shadow:0 22px 44px -18px rgba(0,0,0,.75);
-  transition:opacity .3s var(--ease),transform .3s var(--ease);
-  max-width:calc(100vw - 32px);text-align:center;
-}
+.toast{position:fixed;left:50%;bottom:160px;transform:translate(-50%,26px);background:#11100d;color:#fff;border-radius:999px;padding:14px 26px;font-size:14.5px;font-weight:600;z-index:80;opacity:0;pointer-events:none;box-shadow:0 22px 44px -18px rgba(0,0,0,.75);transition:opacity .3s var(--ease),transform .3s var(--ease);max-width:calc(100vw - 32px);text-align:center;}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast.ok{background:linear-gradient(135deg,#0f4d38,#1a7355)}
 .toast.warn{background:linear-gradient(135deg,#b91c1c,#e8590c)}
 
-/* Foco accesible */
 :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:8px}
 </style>
 </head>
@@ -1170,7 +753,7 @@ footer .brand .logo{background:var(--grad-warm)}
         </div>
         <div class="float-card fc-1">
           <span class="ic" style="background:var(--grad-warm)">📦</span>
-          <span><span class="k">Secciones</span><span class="v">21 líneas de venta</span></span>
+          <span><span class="k">Secciones</span><span class="v">22 líneas de venta</span></span>
         </div>
         <div class="float-card fc-2">
           <span class="ic" style="background:var(--grad-brand)">🏪</span>
@@ -1206,7 +789,7 @@ footer .brand .logo{background:var(--grad-warm)}
   <section class="stats" style="padding-top:44px">
     <div class="wrap">
       <div class="stats-grid reveal">
-        <div class="stat"><p class="v">21</p><p class="l">Secciones de venta</p></div>
+        <div class="stat"><p class="v">22</p><p class="l">Secciones de venta</p></div>
         <div class="stat"><p class="v">32</p><p class="l">Departamentos</p></div>
         <div class="stat"><p class="v">24h</p><p class="l">Confirmación por WhatsApp</p></div>
         <div class="stat"><p class="v">100%</p><p class="l">Factura electrónica</p></div>
@@ -1240,7 +823,7 @@ footer .brand .logo{background:var(--grad-warm)}
       <div class="reveal">
         <p class="eyebrow">02 · Secciones</p>
         <h2 class="h2">Todo el surtido que mueve el comercio en Colombia</h2>
-        <p class="lead">Veintiuna líneas listas para tienda de barrio, minimercado, droguería, papelería, agrotienda o institucional. Toque una sección para filtrar el catálogo.</p>
+        <p class="lead">Veintidós líneas listas para tienda de barrio, minimercado, droguería, papelería, agrotienda o institucional. Toque una sección para filtrar el catálogo.</p>
       </div>
       <div class="cats" id="catsGrid"></div>
     </div>
@@ -1641,176 +1224,273 @@ const COUPONS = {
 };
 
 /* ============================================================
-   CATEGORÍAS (Actualizadas según las capturas)
+   CATEGORÍAS (con color e ícono)
    ============================================================ */
 const CATEGORIES = [
-  {id:"hogar",       name:"Hogar",                       blurb:"Organizadores, cocina y decoración",       image:"im8.png",  emoji:"🏠", color:"#0ca678"},
-  {id:"belleza",     name:"Belleza y cuidado personal",  blurb:"Perfumes, skincare y maquillaje",          image:"im6.png",  emoji:"💄", color:"#d6336c"},
-  {id:"moda",        name:"Moda y Ropa",                 blurb:"Camisetas, jeans, deportiva y urbana",     image:"im4.png",  emoji:"👕", color:"#c72a68"},
+  {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png",  emoji:"📱", color:"#1a72c4"},
   {id:"tecnologia",  name:"Tecnología y accesorios",     blurb:"Audio, smartwatch, teclados y mouse",      image:"im3.png",  emoji:"🎧", color:"#6b3fd4"},
-  {id:"salud",       name:"Salud y Bienestar",           blurb:"Vitaminas, suplementos y cuidado",         image:"im7.png",  emoji:"💪", color:"#166534"},
-  {id:"juguetes",    name:"Juguetes y Juegos",           blurb:"Didácticos, peluches y exteriores",        image:"im14.png", emoji:"🧸", color:"#f59f00"},
-  {id:"herramientas",name:"Herramientas y Ferretería",   blurb:"Tester, cintas, metro y más",              image:"im23.png", emoji:"🛠️", color:"#2f7d32"},
+  {id:"ropa",        name:"Ropa",                        blurb:"Camisetas, jeans, deportiva y urbana",     image:"im4.png",  emoji:"👕", color:"#c72a68"},
   {id:"calzado",     name:"Calzado",                     blurb:"Tenis, sandalias y deportivos",            image:"im5.png",  emoji:"👟", color:"#e8590c"},
+  {id:"belleza",     name:"Belleza y cuidado personal",  blurb:"Perfumes, skincare y maquillaje",          image:"im6.png",  emoji:"💄", color:"#d6336c"},
+  {id:"fitness",     name:"Fitness",                     blurb:"Bandas, pesas, guantes y fajas",           image:"im7.png",  emoji:"💪", color:"#166534"},
+  {id:"hogar",       name:"Hogar",                       blurb:"Organizadores, cocina y decoración",       image:"im8.png",  emoji:"🏠", color:"#0ca678"},
+  {id:"iluminacion", name:"Iluminación",                 blurb:"LED, lámparas, solares y tiras",           image:"im9.png",  emoji:"💡", color:"#f59f00"},
   {id:"vehiculos",   name:"Accesorios para vehículos",   blurb:"Soportes, luces y cargadores",             image:"im10.png", emoji:"🚗", color:"#495057"},
   {id:"mascotas",    name:"Mascotas",                    blurb:"Juguetes, camas, correas y bebederos",     image:"im11.png", emoji:"🐾", color:"#e8590c"},
-  {id:"cocina",      name:"Cocina",                      blurb:"Freidoras, utensilios y recipientes",      image:"im17.png", emoji:"🍳", color:"#e8590c"},
-  {id:"bebes",       name:"Productos para bebés",        blurb:"Juguetes, ropa y cuidado infantil",        image:"im15.png", emoji:"🍼", color:"#22b8cf"},
-  {id:"papeleria",   name:"Papelería",                   blurb:"Resmas, bolígrafos y cuadernos",           image:"im21.png", emoji:"✏️", color:"#fab005"},
-  {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png",  emoji:"📱", color:"#1a72c4"},
-  {id:"fitness",     name:"Fitness",                     blurb:"Bandas, pesas, guantes y fajas",           image:"im7.png",  emoji:"💪", color:"#166534"},
-  {id:"iluminacion", name:"Iluminación",                 blurb:"LED, lámparas, solares y tiras",           image:"im9.png",  emoji:"💡", color:"#f59f00"},
   {id:"gaming",      name:"Gaming",                      blurb:"Mouse, teclados, audífonos y controles",   image:"im12.png", emoji:"🎮", color:"#5f3dc4"},
   {id:"accesorios",  name:"Accesorios personales",       blurb:"Gorras, morrales, bolsos y gafas",         image:"im13.png", emoji:"🎒", color:"#1971c2"},
   {id:"joyeria",     name:"Joyería y accesorios",        blurb:"Cadenas, pulseras, anillos y aretes",      image:"im14.png", emoji:"💎", color:"#c2255c"},
+  {id:"bebes",       name:"Productos para bebés",        blurb:"Juguetes, ropa y cuidado infantil",        image:"im15.png", emoji:"🍼", color:"#22b8cf"},
   {id:"electricos",  name:"Productos eléctricos",        blurb:"Multitomas, adaptadores y enchufes",       image:"im16.png", emoji:"🔌", color:"#f08c00"},
+  {id:"cocina",      name:"Cocina",                      blurb:"Freidoras, utensilios y recipientes",      image:"im17.png", emoji:"🍳", color:"#e8590c"},
   {id:"dormitorio",  name:"Dormitorio",                  blurb:"Almohadas, cobijas y organizadores",       image:"im18.png", emoji:"🛏️", color:"#4c6ef5"},
   {id:"limpieza",    name:"Limpieza",                    blurb:"Cepillos, dispensadores y especializados", image:"im19.png", emoji:"🧽", color:"#12b886"},
   {id:"regalos",     name:"Regalos personalizados",      blurb:"Tazas, camisetas, llaveros y cuadros",     image:"im20.png", emoji:"🎁", color:"#f06595"},
-  {id:"agricolas",   name:"Herramientas agrícolas y del campo", blurb:"Palas, machetes, fumigadoras y más", image:"im23.png", emoji:"🌾", color:"#2f7d32"}
+  {id:"papeleria",   name:"Papelería",                   blurb:"Resmas, bolígrafos y cuadernos",           image:"im21.png", emoji:"✏️", color:"#fab005"},
+  {id:"agricolas",   name:"Herramientas agrícolas y del campo", blurb:"Palas, machetes, fumigadoras y más", image:"im23.png", emoji:"🌾", color:"#2f7d32"},
+  {id:"salud",       name:"Salud y bienestar",           blurb:"Masajeadores, termómetros y cuidado",      image:"im24.png", emoji:"🩺", color:"#0d9488"}
 ];
 
 /* ============================================================
-   PRODUCTOS (Extraídos de las capturas y organizados)
+   PRODUCTOS
    ============================================================ */
 const PRODUCTS = [
-  // --- HOGAR ---
-  {id:"hog-01",sku:"AXT-HOG-01",name:"Pistola Burbujas Automatica",category:"hogar",unit:"und",price:17500,minQty:2,featured:true},
-  {id:"hog-02",sku:"AXT-HOG-02",name:"Botillo Tr250814",category:"hogar",unit:"und",price:15500,minQty:4},
-  {id:"hog-03",sku:"AXT-HOG-03",name:"Lampara Solar Con Sensor Ip67",category:"hogar",unit:"und",price:20000,minQty:2,featured:true},
-  {id:"hog-04",sku:"AXT-HOG-04",name:"Sanduchera 7 En 1",category:"hogar",unit:"und",price:112500,minQty:1},
-  {id:"hog-05",sku:"AXT-HOG-05",name:"Tapte Electrico Para Calentar Alimentos",category:"hogar",unit:"und",price:55000,minQty:1},
-  {id:"hog-06",sku:"AXT-HOG-06",name:"Mini Waflera Mickey Mouse",category:"hogar",unit:"und",price:27000,minQty:2},
-  {id:"hog-07",sku:"AXT-HOG-07",name:"Silla Plegable Para Camping",category:"hogar",unit:"und",price:30000,minQty:2},
-  {id:"hog-08",sku:"AXT-HOG-08",name:"Zapatero Organizador De 6 Niveles",category:"hogar",unit:"und",price:50000,minQty:1},
-  {id:"hog-09",sku:"AXT-HOG-09",name:"Set De Cocina Con Filtro",category:"hogar",unit:"und",price:85000,minQty:1},
-  {id:"hog-10",sku:"AXT-HOG-10",name:"Protector De Colchon Splendor",category:"hogar",unit:"und",price:96000,minQty:1},
-  {id:"hog-11",sku:"AXT-HOG-11",name:"Suministro De Agua",category:"hogar",unit:"und",price:3000,minQty:10},
-  {id:"hog-12",sku:"AXT-HOG-12",name:"Tapete Mediano Absorbente Y Antideslizante",category:"hogar",unit:"und",price:15000,minQty:4},
-  {id:"hog-13",sku:"AXT-HOG-13",name:"Lampara Luz Led Cristal Decorativa",category:"hogar",unit:"und",price:36000,minQty:2},
-
-  // --- BELLEZA ---
-  {id:"bel-01",sku:"AXT-BEL-01",name:"Musaman Perfumero",category:"belleza",unit:"und",price:70000,minQty:2,featured:true},
-  {id:"bel-02",sku:"AXT-BEL-02",name:"Combo Premium 1.1 Savouries",category:"belleza",unit:"und",price:150000,minQty:1},
-  {id:"bel-03",sku:"AXT-BEL-03",name:"Cepillo Secador Voluminizador One Step",category:"belleza",unit:"und",price:64900,minQty:2,featured:true},
-  {id:"bel-04",sku:"AXT-BEL-04",name:"Splash Victoria's Secret Tadora",category:"belleza",unit:"und",price:56900,minQty:2},
-  {id:"bel-05",sku:"AXT-BEL-05",name:"La Colores Base Truly Matte 12 Warm Caria",category:"belleza",unit:"und",price:32000,minQty:4},
-  {id:"bel-06",sku:"AXT-BEL-06",name:"Secadora Electrica Portatil",category:"belleza",unit:"und",price:119800,minQty:1},
-  {id:"bel-07",sku:"AXT-BEL-07",name:"Reloj Pulso Acero Tpw",category:"belleza",unit:"und",price:49900,minQty:2},
-  {id:"bel-08",sku:"AXT-BEL-08",name:"Alcohol En Tarro Con Papel",category:"belleza",unit:"und",price:11000,minQty:6},
-  {id:"bel-09",sku:"AXT-BEL-09",name:"Di Cepillo Secador Mascotas",category:"belleza",unit:"und",price:31000,minQty:4},
-  {id:"bel-10",sku:"AXT-BEL-10",name:"Promo 353 Caballero X3",category:"belleza",unit:"pack",price:115000,minQty:1},
-
-  // --- MODA Y ROPA ---
-  {id:"mod-01",sku:"AXT-MOD-01",name:"Bermuda Burda Hombre",category:"moda",unit:"und",price:56000,minQty:3},
-  {id:"mod-02",sku:"AXT-MOD-02",name:"Chaqueta Hombre Cuero Sintetico Clasica",category:"moda",unit:"und",price:160000,minQty:1},
-  {id:"mod-03",sku:"AXT-MOD-03",name:"Camiseta Basica Trio Bosque",category:"moda",unit:"pack",price:80000,minQty:2,featured:true},
-  {id:"mod-04",sku:"AXT-MOD-04",name:"Jogger Dama X3",category:"moda",unit:"pack",price:90000,minQty:2},
-  {id:"mod-05",sku:"AXT-MOD-05",name:"Batola Camiseta Nirvana Rojo",category:"moda",unit:"und",price:45000,minQty:3},
-  {id:"mod-06",sku:"AXT-MOD-06",name:"Uniforme Real Madrid",category:"moda",unit:"und",price:65000,minQty:2},
-  {id:"mod-07",sku:"AXT-MOD-07",name:"Camiseta Cuello Redondo En Burda",category:"moda",unit:"und",price:65000,minQty:2},
-  {id:"mod-08",sku:"AXT-MOD-08",name:"Ref. 1000 Vestido De Bano 3 Plazas",category:"moda",unit:"und",price:85900,minQty:1},
-  {id:"mod-09",sku:"AXT-MOD-09",name:"Conjunto Body",category:"moda",unit:"und",price:100000,minQty:1},
-  {id:"mod-10",sku:"AXT-MOD-10",name:"Gafas Led",category:"moda",unit:"und",price:22000,minQty:4},
-
-  // --- TECNOLOGÍA ---
-  {id:"tec-01",sku:"AXT-TEC-01",name:"Organeta Mk2115",category:"tecnologia",unit:"und",price:622000,minQty:1},
-  {id:"tec-02",sku:"AXT-TEC-02",name:"Audifonos Pro 2da Gen Pantalla Tactil",category:"tecnologia",unit:"und",price:80000,minQty:2,featured:true},
-  {id:"tec-03",sku:"AXT-TEC-03",name:"Ventilador Recargable Portatil Escritorio",category:"tecnologia",unit:"und",price:35000,minQty:2},
-  {id:"tec-04",sku:"AXT-TEC-04",name:"Camara Tres Antenas V380",category:"tecnologia",unit:"und",price:74900,minQty:2},
-  {id:"tec-05",sku:"AXT-TEC-05",name:"Smartwatch Kw10 Dr",category:"tecnologia",unit:"und",price:140000,minQty:1},
-  {id:"tec-06",sku:"AXT-TEC-06",name:"Control Mini Teclado Inalambrico",category:"tecnologia",unit:"und",price:30000,minQty:4},
-  {id:"tec-07",sku:"AXT-TEC-07",name:"Cargador 4 En 1 Para Vehiculo",category:"tecnologia",unit:"und",price:50000,minQty:3},
-  {id:"tec-08",sku:"AXT-TEC-08",name:"Auriculares Inalambricos Bluetooth 5.4",category:"tecnologia",unit:"und",price:99900,minQty:2},
-  {id:"tec-09",sku:"AXT-TEC-09",name:"Reloj Multifuncional En Acero Para Hombre",category:"tecnologia",unit:"und",price:50000,minQty:2},
-
-  // --- SALUD ---
-  {id:"sal-01",sku:"AXT-SAL-01",name:"Autoprueba De Vin 12 Prima",category:"salud",unit:"und",price:70000,minQty:2},
-  {id:"sal-02",sku:"AXT-SAL-02",name:"Restaurador De Lucos Simoniz",category:"salud",unit:"und",price:69000,minQty:2},
-  {id:"sal-03",sku:"AXT-SAL-03",name:"Kit Anticaida E Hidratacion",category:"salud",unit:"kit",price:114173,minQty:1},
-  {id:"sal-04",sku:"AXT-SAL-04",name:"Kit De Proteccion Ninofluido Fucsia",category:"salud",unit:"kit",price:65000,minQty:1},
-  {id:"sal-05",sku:"AXT-SAL-05",name:"Acutrax Vstron Sx",category:"salud",unit:"und",price:27500,minQty:4},
-  {id:"sal-06",sku:"AXT-SAL-06",name:"Colageno Con Citrato De Magnesio",category:"salud",unit:"und",price:194500,minQty:1},
-  {id:"sal-07",sku:"AXT-SAL-07",name:"Naturator Estimulador De Imperfecciones",category:"salud",unit:"und",price:20900,minQty:4},
-  {id:"sal-08",sku:"AXT-SAL-08",name:"Medias De Compresion Anti Venas Unisex",category:"salud",unit:"und",price:28000,minQty:4},
-
-  // --- JUGUETES ---
-  {id:"jug-01",sku:"AXT-JUG-01",name:"Par Exploradora Px5i Bi Color",category:"juguetes",unit:"und",price:100000,minQty:1},
-  {id:"jug-02",sku:"AXT-JUG-02",name:"Juego De Mesa Matadero Patrones Colores Fi",category:"juguetes",unit:"und",price:53000,minQty:2},
-  {id:"jug-03",sku:"AXT-JUG-03",name:"Juguete Esposas De Peluche Somo02",category:"juguetes",unit:"und",price:1155,minQty:10},
-  {id:"jug-04",sku:"AXT-JUG-04",name:"Piscina Inflable Marca Bestway 51009",category:"juguetes",unit:"und",price:109800,minQty:1},
-  {id:"jug-05",sku:"AXT-JUG-05",name:"Excavadora Control Remoto Construccion",category:"juguetes",unit:"und",price:19900,minQty:2},
-  {id:"jug-06",sku:"AXT-JUG-06",name:"Peluche Stitch",category:"juguetes",unit:"und",price:25000,minQty:4},
-
-  // --- HERRAMIENTAS ---
-  {id:"her-01",sku:"AXT-HER-01",name:"Tester Digital Castools",category:"herramientas",unit:"und",price:35000,minQty:2},
-  {id:"her-02",sku:"AXT-HER-02",name:"Metro Encauchetado 7.5 Mts",category:"herramientas",unit:"und",price:10000,minQty:6},
-  {id:"her-03",sku:"AXT-HER-03",name:"Cinta Teflon X 15 Mts X 10 Unidades",category:"herramientas",unit:"pack",price:30000,minQty:2},
-  {id:"her-04",sku:"AXT-HER-04",name:"Cinta Enmascarar 1 24mm",category:"herramientas",unit:"und",price:6900,minQty:10},
-  {id:"her-05",sku:"AXT-HER-05",name:"Cinta Adhesiva Doble Faz Transparente 5m",category:"herramientas",unit:"und",price:19000,minQty:4},
-
-  // --- CALZADO ---
-  {id:"cal-01",sku:"AXT-CAL-01",name:"Adidas Para Dama Op Blanco Rosado",category:"calzado",unit:"par",price:125000,minQty:1,featured:true},
-  {id:"cal-02",sku:"AXT-CAL-02",name:"On Cloud",category:"calzado",unit:"par",price:160000,minQty:1},
-  {id:"cal-03",sku:"AXT-CAL-03",name:"Bota Nike Pro",category:"calzado",unit:"par",price:140000,minQty:1},
-
-  // --- VEHICULOS ---
-  {id:"veh-01",sku:"AXT-VEH-01",name:"Kit Arrastre Completo Oem Moto Nkd Bomba",category:"vehiculos",unit:"kit",price:140000,minQty:1},
-  {id:"veh-02",sku:"AXT-VEH-02",name:"Protector Bomba Trasera Vstron Sx",category:"vehiculos",unit:"und",price:16500,minQty:4},
-  {id:"veh-03",sku:"AXT-VEH-03",name:"Candado Para Manillar Motocicleta",category:"vehiculos",unit:"und",price:20800,minQty:3},
-
-  // --- MASCOTAS ---
-  {id:"mas-01",sku:"AXT-MAS-01",name:"Protector De Pata Silla Silicona Fieltro",category:"mascotas",unit:"und",price:8000,minQty:6},
-
-  // --- COCINA ---
-  {id:"coc-01",sku:"AXT-COC-01",name:"Exprimidor De Jugos Manual",category:"cocina",unit:"und",price:21000,minQty:3},
-  {id:"coc-02",sku:"AXT-COC-02",name:"Afilador De Cuchillo Triple",category:"cocina",unit:"und",price:18000,minQty:4},
-
-  // --- BEBES ---
-  {id:"beb-01",sku:"AXT-BEB-01",name:"Kit De Aseo Bebe 13 Piezas",category:"bebes",unit:"kit",price:65000,minQty:1},
-
-  // --- PAPELERIA ---
-  {id:"pap-01",sku:"AXT-PAP-01",name:"Pluma Estilografica Lapicero Amarillo",category:"papeleria",unit:"und",price:12000,minQty:6},
-
-  // --- CELULARES ---
-  {id:"cel-01",sku:"AXT-CEL-01",name:"Funda Silicona Universal x10",category:"celulares",unit:"pack",price:28000,minQty:2,featured:true},
-  {id:"cel-02",sku:"AXT-CEL-02",name:"Vidrio Templado x10",category:"celulares",unit:"pack",price:32000,minQty:2,featured:true},
+  /* ===== Accesorios para celulares ===== */
+  {id:"cel-01",sku:"AXT-CEL-01",name:"Funda silicona universal x10",category:"celulares",unit:"pack",price:28000,minQty:2,featured:true},
+  {id:"cel-02",sku:"AXT-CEL-02",name:"Vidrio templado x10",category:"celulares",unit:"pack",price:32000,minQty:2,featured:true},
   {id:"cel-03",sku:"AXT-CEL-03",name:"Cargador 20W USB-C",category:"celulares",unit:"und",price:18900,minQty:6},
+  {id:"cel-04",sku:"AXT-CEL-04",name:"Cable USB-C 1 m x5",category:"celulares",unit:"pack",price:28500,minQty:3},
+  {id:"cel-05",sku:"AXT-CEL-05",name:"Soporte celular para carro",category:"celulares",unit:"und",price:15900,minQty:6},
+  {id:"cel-06",sku:"AXT-CEL-06",name:"Aro de luz para selfie",category:"celulares",unit:"und",price:22900,minQty:4},
+  {id:"cel-07",sku:"AXT-CEL-07",name:"Adaptador de carga USB 25W con cable Tipo C",category:"celulares",unit:"und",price:24900,minQty:6,featured:true},
+  {id:"cel-08",sku:"AXT-CEL-08",name:"Cargador plegable con mini cable",category:"celulares",unit:"und",price:22900,minQty:6},
+  {id:"cel-09",sku:"AXT-CEL-09",name:"Cable de datos Tipo C 1m",category:"celulares",unit:"und",price:23900,minQty:8},
+  {id:"cel-10",sku:"AXT-CEL-10",name:"Cargador portátil 10.000 mAh",category:"celulares",unit:"und",price:52900,minQty:4},
 
-  // --- ILUMINACION ---
+  /* ===== Tecnología y accesorios ===== */
+  {id:"tec-01",sku:"AXT-TEC-01",name:"Audífonos Bluetooth TWS",category:"tecnologia",unit:"und",price:45900,minQty:4,featured:true},
+  {id:"tec-02",sku:"AXT-TEC-02",name:"Parlante Bluetooth portátil",category:"tecnologia",unit:"und",price:68900,minQty:2},
+  {id:"tec-03",sku:"AXT-TEC-03",name:"Smartwatch deportivo",category:"tecnologia",unit:"und",price:85900,minQty:2,featured:true},
+  {id:"tec-04",sku:"AXT-TEC-04",name:"Teclado inalámbrico",category:"tecnologia",unit:"und",price:39900,minQty:4},
+  {id:"tec-05",sku:"AXT-TEC-05",name:"Mouse inalámbrico",category:"tecnologia",unit:"und",price:22900,minQty:6},
+  {id:"tec-06",sku:"AXT-TEC-06",name:"Power bank 10.000 mAh",category:"tecnologia",unit:"und",price:54900,minQty:3},
+  {id:"tec-07",sku:"AXT-TEC-07",name:"Blower 20 A profesional",category:"tecnologia",unit:"und",price:25900,minQty:4},
+  {id:"tec-08",sku:"AXT-TEC-08",name:"Aspiradora portátil recargable",category:"tecnologia",unit:"und",price:35900,minQty:4,featured:true},
+  {id:"tec-09",sku:"AXT-TEC-09",name:"Proyector LED portátil",category:"tecnologia",unit:"und",price:129900,minQty:2,featured:true},
+  {id:"tec-10",sku:"AXT-TEC-10",name:"Mini proyector LED WiFi",category:"tecnologia",unit:"und",price:189900,minQty:1},
+
+  /* ===== Ropa ===== */
+  {id:"rop-01",sku:"AXT-ROP-01",name:"Camiseta básica unisex x5",category:"ropa",unit:"pack",price:65000,minQty:2},
+  {id:"rop-02",sku:"AXT-ROP-02",name:"Conjunto deportivo dama",category:"ropa",unit:"und",price:48900,minQty:3},
+  {id:"rop-03",sku:"AXT-ROP-03",name:"Jean clásico caballero",category:"ropa",unit:"und",price:52900,minQty:3},
+  {id:"rop-04",sku:"AXT-ROP-04",name:"Sudadera urbana",category:"ropa",unit:"und",price:42900,minQty:4},
+  {id:"rop-05",sku:"AXT-ROP-05",name:"Camiseta estampada x5",category:"ropa",unit:"pack",price:72000,minQty:2,featured:true},
+  {id:"rop-06",sku:"AXT-ROP-06",name:"Camiseta deportiva cuello redondo",category:"ropa",unit:"und",price:25900,minQty:6},
+  {id:"rop-07",sku:"AXT-ROP-07",name:"Pantalón deportivo jogger",category:"ropa",unit:"und",price:49900,minQty:4},
+  {id:"rop-08",sku:"AXT-ROP-08",name:"Conjunto deportivo unisex",category:"ropa",unit:"set",price:69900,minQty:3},
+
+  /* ===== Calzado ===== */
+  {id:"cal-01",sku:"AXT-CAL-01",name:"Tenis deportivos unisex",category:"calzado",unit:"par",price:65900,minQty:3,featured:true},
+  {id:"cal-02",sku:"AXT-CAL-02",name:"Sandalias playeras",category:"calzado",unit:"par",price:28900,minQty:6},
+  {id:"cal-03",sku:"AXT-CAL-03",name:"Zapatos running",category:"calzado",unit:"par",price:78900,minQty:2},
+  {id:"cal-04",sku:"AXT-CAL-04",name:"Chanclas x12",category:"calzado",unit:"docena",price:48000,minQty:2},
+  {id:"cal-05",sku:"AXT-CAL-05",name:"Botas de agua caña alta",category:"calzado",unit:"par",price:49900,minQty:3,featured:true},
+  {id:"cal-06",sku:"AXT-CAL-06",name:"Zapatillas deportivas",category:"calzado",unit:"par",price:89900,minQty:2},
+
+  /* ===== Belleza ===== */
+  {id:"bel-01",sku:"AXT-BEL-01",name:"Perfume femenino 100 ml",category:"belleza",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"bel-02",sku:"AXT-BEL-02",name:"Set skincare facial x3",category:"belleza",unit:"set",price:38900,minQty:3},
+  {id:"bel-03",sku:"AXT-BEL-03",name:"Labial mate x6",category:"belleza",unit:"pack",price:24000,minQty:4},
+  {id:"bel-04",sku:"AXT-BEL-04",name:"Shampoo profesional 500 ml",category:"belleza",unit:"und",price:22900,minQty:6},
+  {id:"bel-05",sku:"AXT-BEL-05",name:"Crema corporal 400 ml",category:"belleza",unit:"und",price:16900,minQty:6},
+  {id:"bel-06",sku:"AXT-BEL-06",name:"Plancha de cabello cerámico LED",category:"belleza",unit:"und",price:32900,minQty:4,featured:true},
+  {id:"bel-07",sku:"AXT-BEL-07",name:"Perfume La Vie Est Belle 100 ml",category:"belleza",unit:"und",price:21900,minQty:4},
+  {id:"bel-08",sku:"AXT-BEL-08",name:"Perfume 212 VIP Black",category:"belleza",unit:"und",price:27900,minQty:4,featured:true},
+  {id:"bel-09",sku:"AXT-BEL-09",name:"Reparador de labios aumentador",category:"belleza",unit:"und",price:22900,minQty:6},
+  {id:"bel-10",sku:"AXT-BEL-10",name:"Extensiones de pestañas",category:"belleza",unit:"und",price:22900,minQty:6},
+  {id:"bel-11",sku:"AXT-BEL-11",name:"Crema facial hidratante",category:"belleza",unit:"und",price:29900,minQty:4},
+  {id:"bel-12",sku:"AXT-BEL-12",name:"Máquina de afeitar 3 en 1 Lady",category:"belleza",unit:"und",price:33900,minQty:4},
+  {id:"bel-13",sku:"AXT-BEL-13",name:"Perfume 25.0 para hombre",category:"belleza",unit:"und",price:39900,minQty:4},
+  {id:"bel-14",sku:"AXT-BEL-14",name:"Espejo de maquillaje LED",category:"belleza",unit:"und",price:22900,minQty:6},
+  {id:"bel-15",sku:"AXT-BEL-15",name:"Cepillo redondo profesional",category:"belleza",unit:"und",price:22900,minQty:6},
+  {id:"bel-16",sku:"AXT-BEL-16",name:"Combo set 2 perfumes hombre",category:"belleza",unit:"set",price:42900,minQty:3,featured:true},
+  {id:"bel-17",sku:"AXT-BEL-17",name:"Máscara para pestañas",category:"belleza",unit:"und",price:19900,minQty:8},
+
+  /* ===== Fitness ===== */
+  {id:"fit-01",sku:"AXT-FIT-01",name:"Bandas elásticas x5",category:"fitness",unit:"set",price:22900,minQty:4},
+  {id:"fit-02",sku:"AXT-FIT-02",name:"Mancuernas 5 kg (par)",category:"fitness",unit:"par",price:68900,minQty:2},
+  {id:"fit-03",sku:"AXT-FIT-03",name:"Guantes entrenamiento",category:"fitness",unit:"par",price:18900,minQty:6},
+  {id:"fit-04",sku:"AXT-FIT-04",name:"Faja reductora",category:"fitness",unit:"und",price:34900,minQty:4,featured:true},
+  {id:"fit-05",sku:"AXT-FIT-05",name:"Cuerda para saltar",category:"fitness",unit:"und",price:12900,minQty:8},
+  {id:"fit-06",sku:"AXT-FIT-06",name:"Olimpia sauna 2L",category:"fitness",unit:"und",price:22900,minQty:4},
+  {id:"fit-07",sku:"AXT-FIT-07",name:"Comando deportivo fitness",category:"fitness",unit:"und",price:29900,minQty:4},
+
+  /* ===== Hogar ===== */
+  {id:"hog-01",sku:"AXT-HOG-01",name:"Organizador multiusos x3",category:"hogar",unit:"pack",price:32900,minQty:3},
+  {id:"hog-02",sku:"AXT-HOG-02",name:"Set utensilios cocina x6",category:"hogar",unit:"set",price:38900,minQty:3},
+  {id:"hog-03",sku:"AXT-HOG-03",name:"Lámpara decorativa LED",category:"hogar",unit:"und",price:24900,minQty:4},
+  {id:"hog-04",sku:"AXT-HOG-04",name:"Cuadro decorativo",category:"hogar",unit:"und",price:19900,minQty:6},
+  {id:"hog-05",sku:"AXT-HOG-05",name:"Tendedero de barro 16m",category:"hogar",unit:"und",price:23900,minQty:4},
+  {id:"hog-06",sku:"AXT-HOG-06",name:"Organizador de cocina múltiple",category:"hogar",unit:"und",price:7900,minQty:8},
+  {id:"hog-07",sku:"AXT-HOG-07",name:"Control de seguridad para ventana",category:"hogar",unit:"und",price:21900,minQty:6},
+  {id:"hog-08",sku:"AXT-HOG-08",name:"Mini deshumidificador portátil",category:"hogar",unit:"und",price:22900,minQty:6},
+  {id:"hog-09",sku:"AXT-HOG-09",name:"Atomizador sencillo 35 ml",category:"hogar",unit:"und",price:21900,minQty:6},
+  {id:"hog-10",sku:"AXT-HOG-10",name:"Set herramientas perforación tela",category:"hogar",unit:"set",price:37900,minQty:3},
+  {id:"hog-11",sku:"AXT-HOG-11",name:"Organizador perforador",category:"hogar",unit:"und",price:22900,minQty:6},
+  {id:"hog-12",sku:"AXT-HOG-12",name:"Mini plancha portátil",category:"hogar",unit:"und",price:21900,minQty:6},
+  {id:"hog-13",sku:"AXT-HOG-13",name:"Cortina de baño",category:"hogar",unit:"und",price:15900,minQty:6},
+  {id:"hog-14",sku:"AXT-HOG-14",name:"Base metálica para cortina",category:"hogar",unit:"und",price:38900,minQty:4},
+  {id:"hog-15",sku:"AXT-HOG-15",name:"Mini cortina de baño",category:"hogar",unit:"und",price:21900,minQty:6},
+  {id:"hog-16",sku:"AXT-HOG-16",name:"Colgador eléctrico",category:"hogar",unit:"und",price:12900,minQty:8},
+  {id:"hog-17",sku:"AXT-HOG-17",name:"Ventilador recargable",category:"hogar",unit:"und",price:19900,minQty:6},
+  {id:"hog-18",sku:"AXT-HOG-18",name:"Ventilador recargable de cuello",category:"hogar",unit:"und",price:23900,minQty:6},
+  {id:"hog-19",sku:"AXT-HOG-19",name:"Set de hogar",category:"hogar",unit:"set",price:38900,minQty:3},
+  {id:"hog-20",sku:"AXT-HOG-20",name:"Kit de herramientas básico",category:"hogar",unit:"kit",price:21900,minQty:4},
+  {id:"hog-21",sku:"AXT-HOG-21",name:"Pistola de pintura",category:"hogar",unit:"und",price:28900,minQty:4},
+  {id:"hog-22",sku:"AXT-HOG-22",name:"Perforadora",category:"hogar",unit:"und",price:39900,minQty:3},
+  {id:"hog-23",sku:"AXT-HOG-23",name:"Taladro",category:"hogar",unit:"und",price:29900,minQty:4},
+  {id:"hog-24",sku:"AXT-HOG-24",name:"Organizador",category:"hogar",unit:"und",price:21900,minQty:6},
+  {id:"hog-25",sku:"AXT-HOG-25",name:"Cuadro decorativo grande",category:"hogar",unit:"und",price:49900,minQty:3},
+  {id:"hog-26",sku:"AXT-HOG-26",name:"Pistola de silicona",category:"hogar",unit:"und",price:32900,minQty:4},
+  {id:"hog-27",sku:"AXT-HOG-27",name:"Ganchos de acero x6",category:"hogar",unit:"pack",price:25900,minQty:4},
+  {id:"hog-28",sku:"AXT-HOG-28",name:"Ventilador de torre",category:"hogar",unit:"und",price:189900,minQty:1},
+  {id:"hog-29",sku:"AXT-HOG-29",name:"Ventilador de mesa",category:"hogar",unit:"und",price:69900,minQty:2},
+  {id:"hog-30",sku:"AXT-HOG-30",name:"Ventilador de pared",category:"hogar",unit:"und",price:119900,minQty:2},
+  {id:"hog-31",sku:"AXT-HOG-31",name:"Plancha de ropa",category:"hogar",unit:"und",price:89900,minQty:2},
+
+  /* ===== Iluminación ===== */
   {id:"ilu-01",sku:"AXT-ILU-01",name:"Tira LED RGB 5 m",category:"iluminacion",unit:"und",price:26900,minQty:4,featured:true},
-  {id:"ilu-02",sku:"AXT-ILU-02",name:"Lampara Solar Exterior",category:"iluminacion",unit:"und",price:22900,minQty:4},
+  {id:"ilu-02",sku:"AXT-ILU-02",name:"Lámpara solar exterior",category:"iluminacion",unit:"und",price:22900,minQty:4},
+  {id:"ilu-03",sku:"AXT-ILU-03",name:"Bombillo LED x10",category:"iluminacion",unit:"pack",price:28900,minQty:3},
+  {id:"ilu-04",sku:"AXT-ILU-04",name:"Luz nocturna con sensor",category:"iluminacion",unit:"und",price:14900,minQty:6},
+  {id:"ilu-05",sku:"AXT-ILU-05",name:"Proyector LED",category:"iluminacion",unit:"und",price:12900,minQty:8},
+  {id:"ilu-06",sku:"AXT-ILU-06",name:"Lámpara táctil de escritorio",category:"iluminacion",unit:"und",price:49900,minQty:3,featured:true},
+  {id:"ilu-07",sku:"AXT-ILU-07",name:"Lámpara de hogar LED",category:"iluminacion",unit:"und",price:29900,minQty:4},
 
-  // --- GAMING ---
-  {id:"gam-01",sku:"AXT-GAM-01",name:"Mouse Gamer RGB",category:"gaming",unit:"und",price:45900,minQty:3,featured:true},
-  {id:"gam-02",sku:"AXT-GAM-02",name:"Teclado Mecanico Gamer",category:"gaming",unit:"und",price:129000,minQty:1},
+  /* ===== Vehículos ===== */
+  {id:"veh-01",sku:"AXT-VEH-01",name:"Soporte celular para carro",category:"vehiculos",unit:"und",price:15900,minQty:6},
+  {id:"veh-02",sku:"AXT-VEH-02",name:"Luces LED para carro x2",category:"vehiculos",unit:"par",price:24900,minQty:4},
+  {id:"veh-03",sku:"AXT-VEH-03",name:"Cargador doble USB carro",category:"vehiculos",unit:"und",price:13900,minQty:8},
+  {id:"veh-04",sku:"AXT-VEH-04",name:"Organizador maletero",category:"vehiculos",unit:"und",price:19900,minQty:4},
+  {id:"veh-05",sku:"AXT-VEH-05",name:"Candado antirrobo para moto",category:"vehiculos",unit:"und",price:29900,minQty:4},
+  {id:"veh-06",sku:"AXT-VEH-06",name:"Anti empañante para vidrios",category:"vehiculos",unit:"und",price:12900,minQty:8},
+  {id:"veh-07",sku:"AXT-VEH-07",name:"Organizador de autos",category:"vehiculos",unit:"und",price:29900,minQty:4},
 
-  // --- ACCESORIOS ---
-  {id:"acc-01",sku:"AXT-ACC-01",name:"Gorra Ajustable x6",category:"accesorios",unit:"pack",price:42000,minQty:2},
-  {id:"acc-02",sku:"AXT-ACC-02",name:"Morral Antirrobo",category:"accesorios",unit:"und",price:48900,minQty:3},
+  /* ===== Mascotas ===== */
+  {id:"mas-01",sku:"AXT-MAS-01",name:"Juguete mordedor perro",category:"mascotas",unit:"und",price:8900,minQty:8},
+  {id:"mas-02",sku:"AXT-MAS-02",name:"Cama para mascota M",category:"mascotas",unit:"und",price:42900,minQty:3},
+  {id:"mas-03",sku:"AXT-MAS-03",name:"Correa ajustable",category:"mascotas",unit:"und",price:15900,minQty:6},
+  {id:"mas-04",sku:"AXT-MAS-04",name:"Bebedero automático",category:"mascotas",unit:"und",price:28900,minQty:4},
 
-  // --- JOYERIA ---
-  {id:"joy-01",sku:"AXT-JOY-01",name:"Cadena Acero Inoxidable",category:"joyeria",unit:"und",price:18900,minQty:6},
+  /* ===== Gaming ===== */
+  {id:"gam-01",sku:"AXT-GAM-01",name:"Mouse gamer RGB",category:"gaming",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"gam-02",sku:"AXT-GAM-02",name:"Teclado mecánico gamer",category:"gaming",unit:"und",price:129000,minQty:1},
+  {id:"gam-03",sku:"AXT-GAM-03",name:"Audífonos gamer 7.1",category:"gaming",unit:"und",price:89900,minQty:2},
+  {id:"gam-04",sku:"AXT-GAM-04",name:"Mousepad XL",category:"gaming",unit:"und",price:22900,minQty:4},
+  {id:"gam-05",sku:"AXT-GAM-05",name:"Control inalámbrico",category:"gaming",unit:"und",price:78900,minQty:2},
 
-  // --- ELECTRICOS ---
-  {id:"ele-01",sku:"AXT-ELE-01",name:"Multitoma 6 Salidas",category:"electricos",unit:"und",price:18900,minQty:6},
+  /* ===== Accesorios personales ===== */
+  {id:"acc-01",sku:"AXT-ACC-01",name:"Gorra ajustable x6",category:"accesorios",unit:"pack",price:42000,minQty:2},
+  {id:"acc-02",sku:"AXT-ACC-02",name:"Morral antirrobo",category:"accesorios",unit:"und",price:48900,minQty:3},
+  {id:"acc-03",sku:"AXT-ACC-03",name:"Bolso crossbody",category:"accesorios",unit:"und",price:38900,minQty:3},
+  {id:"acc-04",sku:"AXT-ACC-04",name:"Billetera cuero sintético",category:"accesorios",unit:"und",price:18900,minQty:6},
+  {id:"acc-05",sku:"AXT-ACC-05",name:"Gafas de sol UV400",category:"accesorios",unit:"und",price:15900,minQty:6},
+  {id:"acc-06",sku:"AXT-ACC-06",name:"Bolso bandolera para mujer PU Leather",category:"accesorios",unit:"und",price:43900,minQty:3,featured:true},
+  {id:"acc-07",sku:"AXT-ACC-07",name:"A01 Bolso antirrobo fashion versátil",category:"accesorios",unit:"und",price:76900,minQty:2,featured:true},
+  {id:"acc-08",sku:"AXT-ACC-08",name:"Bolsillo confortable bolsa de aire",category:"accesorios",unit:"und",price:30900,minQty:4},
+  {id:"acc-09",sku:"AXT-ACC-09",name:"Bolso grande corduroy para mujer",category:"accesorios",unit:"und",price:52900,minQty:3},
 
-  // --- DORMITORIO ---
-  {id:"dor-01",sku:"AXT-DOR-01",name:"Almohada Viscoelastica",category:"dormitorio",unit:"und",price:42900,minQty:3},
-  {id:"dor-02",sku:"AXT-DOR-02",name:"Cobija Termica 2 Plazas",category:"dormitorio",unit:"und",price:58900,minQty:2},
+  /* ===== Joyería ===== */
+  {id:"joy-01",sku:"AXT-JOY-01",name:"Cadena acero inoxidable",category:"joyeria",unit:"und",price:18900,minQty:6},
+  {id:"joy-02",sku:"AXT-JOY-02",name:"Pulsera cuero",category:"joyeria",unit:"und",price:14900,minQty:6},
+  {id:"joy-03",sku:"AXT-JOY-03",name:"Anillo ajustable",category:"joyeria",unit:"und",price:9900,minQty:12},
+  {id:"joy-04",sku:"AXT-JOY-04",name:"Aretes x6 pares",category:"joyeria",unit:"pack",price:16900,minQty:6},
+  {id:"joy-05",sku:"AXT-JOY-05",name:"Pulsera para hombre",category:"joyeria",unit:"und",price:18900,minQty:6},
 
-  // --- LIMPIEZA ---
-  {id:"lim-01",sku:"AXT-LIM-01",name:"Organizador Multiusos Limpieza",category:"limpieza",unit:"und",price:19900,minQty:4},
-  {id:"lim-02",sku:"AXT-LIM-02",name:"Cepillo Limpieza x3",category:"limpieza",unit:"pack",price:14900,minQty:6},
+  /* ===== Bebés ===== */
+  {id:"inf-01",sku:"AXT-INF-01",name:"Juguete didáctico bebé",category:"bebes",unit:"und",price:19900,minQty:4},
+  {id:"inf-02",sku:"AXT-INF-02",name:"Set ropa bebé x3",category:"bebes",unit:"set",price:34900,minQty:3},
+  {id:"inf-03",sku:"AXT-INF-03",name:"Pañalera portátil",category:"bebes",unit:"und",price:24900,minQty:4},
+  {id:"inf-04",sku:"AXT-INF-04",name:"Kit cuidado bebé",category:"bebes",unit:"kit",price:32900,minQty:3,featured:true},
+  {id:"inf-05",sku:"AXT-INF-05",name:"Babero impermeable x5",category:"bebes",unit:"pack",price:15900,minQty:6},
+  {id:"inf-06",sku:"AXT-INF-06",name:"Rodillera de bebés con mini corazones",category:"bebes",unit:"und",price:22900,minQty:6},
+  {id:"inf-07",sku:"AXT-INF-07",name:"Toallitas húmedas para bebé",category:"bebes",unit:"und",price:16900,minQty:8},
 
-  // --- REGALOS ---
-  {id:"reg-01",sku:"AXT-REG-01",name:"Taza Personalizada",category:"regalos",unit:"und",price:12900,minQty:12},
+  /* ===== Productos eléctricos ===== */
+  {id:"ele-01",sku:"AXT-ELE-01",name:"Multitoma 6 salidas",category:"electricos",unit:"und",price:18900,minQty:6},
+  {id:"ele-02",sku:"AXT-ELE-02",name:"Adaptador universal",category:"electricos",unit:"und",price:9900,minQty:12},
+  {id:"ele-03",sku:"AXT-ELE-03",name:"Cargador rápido USB-C",category:"electricos",unit:"und",price:18900,minQty:6},
+  {id:"ele-04",sku:"AXT-ELE-04",name:"Enchufe inteligente WiFi",category:"electricos",unit:"und",price:22900,minQty:4,featured:true},
 
-  // --- AGRICOLAS ---
-  {id:"agr-01",sku:"AXT-AGR-01",name:"Machete 18\" Con Funda",category:"agricolas",unit:"und",price:28900,minQty:4,featured:true},
-  {id:"agr-02",sku:"AXT-AGR-02",name:"Pala Cuadrada Con Cabo",category:"agricolas",unit:"und",price:34900,minQty:3},
-  {id:"agr-04",sku:"AXT-AGR-04",name:"Fumigadora Manual 5 L",category:"agricolas",unit:"und",price:45900,minQty:3,featured:true},
-  {id:"agr-07",sku:"AXT-AGR-07",name:"Botas De Caucho Caña Alta",category:"agricolas",unit:"par",price:41900,minQty:3,featured:true}
+  /* ===== Cocina ===== */
+  {id:"coc-01",sku:"AXT-COC-01",name:"Freidora de aire 5 L",category:"cocina",unit:"und",price:219000,minQty:1,featured:true},
+  {id:"coc-02",sku:"AXT-COC-02",name:"Set recipientes herméticos x5",category:"cocina",unit:"set",price:28900,minQty:3},
+  {id:"coc-03",sku:"AXT-COC-03",name:"Utensilios silicona x8",category:"cocina",unit:"set",price:24900,minQty:4},
+  {id:"coc-04",sku:"AXT-COC-04",name:"Organizador cocina",category:"cocina",unit:"und",price:19900,minQty:4},
+  {id:"coc-05",sku:"AXT-COC-05",name:"Licuadora inalámbrica portátil",category:"cocina",unit:"und",price:42900,minQty:3,featured:true},
+  {id:"coc-06",sku:"AXT-COC-06",name:"Tijeras de cocina",category:"cocina",unit:"und",price:12900,minQty:8},
+  {id:"coc-07",sku:"AXT-COC-07",name:"Escurridor de platos",category:"cocina",unit:"und",price:32900,minQty:4},
+  {id:"coc-08",sku:"AXT-COC-08",name:"Tabla de picar",category:"cocina",unit:"und",price:22900,minQty:6},
+  {id:"coc-09",sku:"AXT-COC-09",name:"Organizador de especias",category:"cocina",unit:"und",price:18900,minQty:6},
+  {id:"coc-10",sku:"AXT-COC-10",name:"Licuadora 1.5 L",category:"cocina",unit:"und",price:119900,minQty:2},
+  {id:"coc-11",sku:"AXT-COC-11",name:"Olla arrocera",category:"cocina",unit:"und",price:89900,minQty:2},
+  {id:"coc-12",sku:"AXT-COC-12",name:"Sanduchera",category:"cocina",unit:"und",price:49900,minQty:3},
+  {id:"coc-13",sku:"AXT-COC-13",name:"Cafetera",category:"cocina",unit:"und",price:89900,minQty:2},
+
+  /* ===== Dormitorio ===== */
+  {id:"dor-01",sku:"AXT-DOR-01",name:"Almohada viscoelástica",category:"dormitorio",unit:"und",price:42900,minQty:3},
+  {id:"dor-02",sku:"AXT-DOR-02",name:"Cobija térmica 2 plazas",category:"dormitorio",unit:"und",price:58900,minQty:2},
+  {id:"dor-03",sku:"AXT-DOR-03",name:"Organizador bajo cama",category:"dormitorio",unit:"und",price:22900,minQty:4},
+  {id:"dor-04",sku:"AXT-DOR-04",name:"Cojín decorativo",category:"dormitorio",unit:"und",price:14900,minQty:6},
+
+  /* ===== Limpieza ===== */
+  {id:"lim-01",sku:"AXT-LIM-01",name:"Organizador multiusos limpieza",category:"limpieza",unit:"und",price:19900,minQty:4},
+  {id:"lim-02",sku:"AXT-LIM-02",name:"Cepillo limpieza x3",category:"limpieza",unit:"pack",price:14900,minQty:6},
+  {id:"lim-03",sku:"AXT-LIM-03",name:"Dispensador jabón automático",category:"limpieza",unit:"und",price:27900,minQty:4},
+  {id:"lim-04",sku:"AXT-LIM-04",name:"Set limpieza profesional",category:"limpieza",unit:"kit",price:42900,minQty:2},
+  {id:"lim-05",sku:"AXT-LIM-05",name:"Limpiador de manchas portátil",category:"limpieza",unit:"und",price:22900,minQty:6},
+  {id:"lim-06",sku:"AXT-LIM-06",name:"Papel higiénico x4",category:"limpieza",unit:"pack",price:22900,minQty:6},
+  {id:"lim-07",sku:"AXT-LIM-07",name:"Cepillo de limpieza",category:"limpieza",unit:"und",price:19900,minQty:6},
+  {id:"lim-08",sku:"AXT-LIM-08",name:"Bolsas de basura x20",category:"limpieza",unit:"pack",price:19900,minQty:6},
+  {id:"lim-09",sku:"AXT-LIM-09",name:"Paños de limpieza x5",category:"limpieza",unit:"pack",price:19900,minQty:6},
+  {id:"lim-10",sku:"AXT-LIM-10",name:"Escoba",category:"limpieza",unit:"und",price:19900,minQty:6},
+  {id:"lim-11",sku:"AXT-LIM-11",name:"Recogedor",category:"limpieza",unit:"und",price:12900,minQty:8},
+  {id:"lim-12",sku:"AXT-LIM-12",name:"Trapero",category:"limpieza",unit:"und",price:32900,minQty:4},
+
+  /* ===== Regalos ===== */
+  {id:"reg-01",sku:"AXT-REG-01",name:"Taza personalizada",category:"regalos",unit:"und",price:12900,minQty:12},
+  {id:"reg-02",sku:"AXT-REG-02",name:"Camiseta personalizada",category:"regalos",unit:"und",price:24900,minQty:6},
+  {id:"reg-03",sku:"AXT-REG-03",name:"Gorra bordada",category:"regalos",unit:"und",price:18900,minQty:6},
+  {id:"reg-04",sku:"AXT-REG-04",name:"Llavero personalizado x10",category:"regalos",unit:"pack",price:14900,minQty:6},
+  {id:"reg-05",sku:"AXT-REG-05",name:"Cuadro decorativo personalizado",category:"regalos",unit:"und",price:32900,minQty:4,featured:true},
+
+  /* ===== Papelería ===== */
+  {id:"pap-01",sku:"AXT-PAP-01",name:"Resma carta 500 hojas",category:"papeleria",unit:"resma",price:18900,minQty:5},
+  {id:"pap-02",sku:"AXT-PAP-02",name:"Bolígrafos x12",category:"papeleria",unit:"caja",price:9500,minQty:4},
+  {id:"pap-03",sku:"AXT-PAP-03",name:"Cuaderno 100 hojas x5",category:"papeleria",unit:"pack",price:14200,minQty:4},
+  {id:"pap-04",sku:"AXT-PAP-04",name:"Kit escolar básico",category:"papeleria",unit:"kit",price:28900,minQty:4},
+
+  /* ===== Herramientas agrícolas y del campo ===== */
+  {id:"agr-01",sku:"AXT-AGR-01",name:"Machete 18\" con funda",category:"agricolas",unit:"und",price:28900,minQty:4,featured:true},
+  {id:"agr-02",sku:"AXT-AGR-02",name:"Pala cuadrada con cabo",category:"agricolas",unit:"und",price:34900,minQty:3},
+  {id:"agr-03",sku:"AXT-AGR-03",name:"Azadón con cabo de madera",category:"agricolas",unit:"und",price:38900,minQty:3},
+  {id:"agr-04",sku:"AXT-AGR-04",name:"Fumigadora manual 5 L",category:"agricolas",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"agr-05",sku:"AXT-AGR-05",name:"Manguera de riego 15 m",category:"agricolas",unit:"und",price:32900,minQty:3},
+  {id:"agr-06",sku:"AXT-AGR-06",name:"Guantes de trabajo x12",category:"agricolas",unit:"docena",price:24000,minQty:3},
+  {id:"agr-07",sku:"AXT-AGR-07",name:"Botas de caucho caña alta",category:"agricolas",unit:"par",price:41900,minQty:3,featured:true},
+  {id:"agr-08",sku:"AXT-AGR-08",name:"Tijeras de podar profesional",category:"agricolas",unit:"und",price:22900,minQty:4},
+  {id:"agr-09",sku:"AXT-AGR-09",name:"Rastrillo de jardín",category:"agricolas",unit:"und",price:18900,minQty:4},
+  {id:"agr-10",sku:"AXT-AGR-10",name:"Aspersor de riego x5",category:"agricolas",unit:"pack",price:19900,minQty:4},
+  {id:"agr-11",sku:"AXT-AGR-11",name:"Bebedero para animales 20 L",category:"agricolas",unit:"und",price:27900,minQty:3},
+  {id:"agr-12",sku:"AXT-AGR-12",name:"Carretilla reforzada",category:"agricolas",unit:"und",price:189000,minQty:1,featured:true},
+
+  /* ===== Salud y bienestar ===== */
+  {id:"sal-01",sku:"AXT-SAL-01",name:"Multi-function acupuntura",category:"salud",unit:"und",price:42900,minQty:3},
+  {id:"sal-02",sku:"AXT-SAL-02",name:"Laboratorio dental",category:"salud",unit:"und",price:12900,minQty:6},
+  {id:"sal-03",sku:"AXT-SAL-03",name:"Mini masajeador de mano",category:"salud",unit:"und",price:29900,minQty:4},
+  {id:"sal-04",sku:"AXT-SAL-04",name:"Termómetro digital",category:"salud",unit:"und",price:22900,minQty:6},
+  {id:"sal-05",sku:"AXT-SAL-05",name:"Licuadora de frutas portátil",category:"salud",unit:"und",price:46900,minQty:3},
+  {id:"sal-06",sku:"AXT-SAL-06",name:"Báscula corporal digital",category:"salud",unit:"und",price:42900,minQty:4}
 ];
 
 const DEPARTMENTS = ["Amazonas","Antioquia","Arauca","Atlántico","Bogotá D.C.","Bolívar","Boyacá","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Córdoba","Cundinamarca","Guainía","Guaviare","Huila","La Guajira","Magdalena","Meta","Nariño","Norte de Santander","Putumayo","Quindío","Risaralda","San Andrés y Providencia","Santander","Sucre","Tolima","Valle del Cauca","Vaupés","Vichada"];
@@ -1818,13 +1498,43 @@ const FAST = new Set(["Bogotá D.C.","Cundinamarca","Antioquia","Valle del Cauca
 const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Boutique / ropa","Tecnología y accesorios","Agrotienda / insumos agrícolas","Institución / empresa","Independiente","Otro"];
 
 /* ============================================================
-   PRECIOS ANTES (OFERTAS) - Configuramos algunas ofertas
+   PRECIOS ANTES (OFERTAS)
    ============================================================ */
 const BEFORE_PRICE = {
-  "hog-01":22000,"hog-03":25000,"bel-01":85000,"bel-03":79900,
-  "mod-03":95000,"tec-02":95000,"sal-07":25000,"jug-05":25000,
-  "cal-01":140000,"cel-01":35000,"cel-02":40000,"ilu-01":35000,
-  "gam-01":55000,"agr-01":35000,"agr-04":55000
+  /* celulares */
+  "cel-01":42000,"cel-02":45000,
+  /* tecnologia */
+  "tec-01":69900,"tec-03":139000,"tec-08":49900,"tec-09":169900,
+  /* ropa */
+  "rop-05":95000,"rop-07":69900,
+  /* calzado */
+  "cal-01":109900,"cal-05":69900,
+  /* belleza */
+  "bel-01":59900,"bel-06":45900,"bel-08":39900,"bel-16":59900,
+  /* fitness */
+  "fit-04":49900,
+  /* hogar */
+  "hog-05":32900,"hog-12":29900,"hog-28":249900,"hog-30":159900,
+  /* iluminacion */
+  "ilu-01":39900,"ilu-06":69900,
+  /* gaming */
+  "gam-01":74900,
+  /* accesorios */
+  "acc-06":59900,"acc-07":99900,
+  /* bebes */
+  "inf-04":45900,
+  /* electricos */
+  "ele-04":34900,
+  /* cocina */
+  "coc-01":329000,"coc-05":59900,"coc-10":159900,
+  /* regalos */
+  "reg-05":49900,
+  /* papeleria */
+  "pap-04":39900,
+  /* agricolas */
+  "agr-01":39900,"agr-04":59900,"agr-07":54900,"agr-12":249000,
+  /* salud */
+  "sal-01":59900,"sal-06":59900
 };
 
 PRODUCTS.forEach(p => {
