@@ -4,28 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Axtoon Distribuidora S.A.S — Mayorista en Colombia</title>
-<meta name="description" content="Axtoon Distribuidora S.A.S abastece droguerías, minimercados y comercio independiente en toda Colombia. Arme su pedido y confírmelo por WhatsApp.">
+<meta name="description" content="Axtoon Distribuidora S.A.S abastece tiendas, minimercados y comercio independiente en toda Colombia. Arme su pedido y confírmelo por WhatsApp.">
 
 <!--
   ============================================================
   IMÁGENES — súbelas a GitHub en la MISMA carpeta de este archivo
   ============================================================
   im1.png  → Foto principal (hero / centro de distribución)
-  im2.png  → Aseo del hogar
-  im3.png  → Cuidado personal
-  im4.png  → Alimentos y despensa
-  im5.png  → Bebidas
-  im6.png  → Snacks y confitería
-  im7.png  → Papelería y oficina
-  im8.png  → Hogar y cocina
-  im9.png  → Bebés
-  im10.png → Mascotas
-  im11.png → Salud y farmacia
-  im12.png → Belleza
-  im13.png → Tecnología
-  im14.png → Escolar
-  im15.png → Limpieza institucional
-  im16.png → Logística / muelles de despacho
+  im2.png  → Accesorios para celulares
+  im3.png  → Tecnología y accesorios
+  im4.png  → Ropa
+  im5.png  → Calzado
+  im6.png  → Belleza y cuidado personal
+  im7.png  → Fitness
+  im8.png  → Hogar
+  im9.png  → Iluminación
+  im10.png → Accesorios para vehículos
+  im11.png → Mascotas
+  im12.png → Gaming
+  im13.png → Accesorios personales
+  im14.png → Joyería y accesorios
+  im15.png → Productos para bebés
+  im16.png → Productos eléctricos
+  im17.png → Cocina
+  im18.png → Dormitorio
+  im19.png → Limpieza
+  im20.png → Regalos personalizados
+  im21.png → Papelería
+  im22.png → Logística / muelles de despacho
   Mientras no existan, se muestra un recuadro con el nombre del archivo.
   ============================================================
 -->
@@ -195,6 +201,34 @@ section{scroll-margin-top:96px}
 .prod .actions{margin-top:16px;display:flex;gap:8px}
 .empty{margin-top:48px;text-align:center;color:var(--muted-fg)}
 
+/* ===================== OFERTAS ===================== */
+.ofertas{border-top:1px solid var(--border);background:linear-gradient(180deg,#fbf3e6,#f3eee6 65%)}
+.ofertas-head{display:flex;flex-direction:column;gap:16px}
+@media(min-width:768px){.ofertas-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+.ofertas-grid{margin-top:40px;display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:640px){.ofertas-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.ofertas-grid{grid-template-columns:repeat(3,1fr)}}
+.deal{display:flex;flex-direction:column;background:var(--card);border-radius:1.5rem;padding:8px;box-shadow:var(--shadow-border);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.deal:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.deal .media{position:relative;border-radius:1rem;overflow:hidden}
+.deal .media img{aspect-ratio:4/3}
+.deal .body{display:flex;flex-direction:column;flex:1;padding:14px 12px 10px}
+.deal .cat-name{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg)}
+.deal h3{margin-top:4px;font-family:var(--sans);font-size:16px;font-weight:500;letter-spacing:0}
+.deal .meta{margin-top:4px;font-size:13px;color:var(--muted-fg)}
+.deal .actions{margin-top:16px;display:flex;gap:8px}
+
+.ribbon{position:absolute;top:10px;left:10px;z-index:2;background:var(--danger);color:#fff;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;letter-spacing:.04em}
+.timer{position:absolute;top:10px;right:10px;z-index:2;background:rgb(250 248 244 / .95);border-radius:999px;padding:5px 10px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--danger)}
+
+.prices{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-top:12px}
+.price-old{font-size:14px;color:var(--muted-fg);text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:var(--danger)}
+.price-now{font-family:var(--display);font-size:26px;line-height:1;font-variant-numeric:tabular-nums;color:var(--danger)}
+.save-tag{align-self:center;background:rgb(143 61 43 / .12);color:var(--danger);border-radius:999px;padding:3px 9px;font-size:12px;font-weight:600}
+.deal .price-note{margin-top:6px;font-size:12px;color:var(--muted-fg)}
+.prod .prices{margin-top:12px}
+.prod .save-tag{align-self:center}
+
 /* Proceso */
 .steps{margin-top:40px;display:grid;gap:16px}
 @media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
@@ -310,7 +344,8 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
 .ci{display:flex;gap:12px;background:var(--card);border-radius:.75rem;padding:12px;box-shadow:var(--shadow-border)}
 .ci .info{flex:1;min-width:0}
 .ci .nm{font-size:14px;font-weight:500}
-.ci .sub{font-size:12px;color:var(--muted-fg)}
+.ci .sub{font-size:12px;color:var(--muted-fg);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.ci .sub .price-old{font-size:12px}
 .ci .rm{background:none;border:none;color:var(--danger);font-size:13px;padding:0;margin-top:6px}
 .drawer footer{border-top:1px solid var(--border);padding:16px;display:grid;gap:12px}
 .drawer .tot{display:flex;justify-content:space-between;font-size:15px}
@@ -334,6 +369,7 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
     </a>
 
     <nav class="nav-links">
+      <a href="#ofertas">Ofertas</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#proceso">Cómo pedir</a>
       <a href="#cobertura">Cobertura</a>
@@ -352,6 +388,7 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
     </div>
   </div>
   <div class="mobile-menu wrap" id="mobileMenu">
+    <a href="#ofertas">Ofertas</a>
     <a href="#catalogo">Catálogo</a>
     <a href="#proceso">Cómo pedir</a>
     <a href="#cobertura">Cobertura</a>
@@ -367,10 +404,10 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
       <div>
         <p class="eyebrow">Distribución mayorista · Colombia</p>
         <h1 style="margin-top:16px">El surtido de su tienda, en un solo pedido.</h1>
-        <p class="sub">Axtoon Distribuidora S.A.S abastece droguerías, minimercados y comercio independiente en todo el país. Arme el pedido aquí y un asesor lo confirma por WhatsApp.</p>
+        <p class="sub">Axtoon Distribuidora S.A.S abastece tiendas, minimercados, droguerías y comercio independiente en todo el país. Arme el pedido aquí y un asesor lo confirma por WhatsApp.</p>
         <div class="cta">
-          <a class="btn btn-primary btn-lg" href="#catalogo">Ver catálogo →</a>
-          <a class="btn btn-outline btn-lg wa-link" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+          <a class="btn btn-primary btn-lg" href="#ofertas">Ver ofertas 🔥</a>
+          <a class="btn btn-outline btn-lg" href="#catalogo">Ver catálogo →</a>
         </div>
         <p style="margin-top:16px;font-size:14px;color:var(--muted-fg)">Línea comercial +57 322 375 2541 · Respuesta en horario de oficina</p>
       </div>
@@ -384,19 +421,35 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <!-- STATS -->
   <section class="stats">
     <div class="stats-grid">
-      <div class="stat"><p class="v">14</p><p class="l">Secciones de venta</p></div>
+      <div class="stat"><p class="v">20</p><p class="l">Secciones de venta</p></div>
       <div class="stat"><p class="v">32</p><p class="l">Departamentos</p></div>
       <div class="stat"><p class="v">24h</p><p class="l">Confirmación por WhatsApp</p></div>
       <div class="stat"><p class="v">NIT</p><p class="l">Factura electrónica</p></div>
     </div>
   </section>
 
+  <!-- OFERTAS -->
+  <section id="ofertas" class="sec ofertas">
+    <div class="wrap">
+      <div class="ofertas-head">
+        <div>
+          <p class="eyebrow">01 · Ofertas de la semana</p>
+          <h2 class="h2" style="margin-top:8px">Precio antes / precio ahora</h2>
+          <p class="lead">Descuentos de referencia sobre el precio de lista mayorista. Stock limitado: el asesor confirma disponibilidad, flete e IVA antes de facturar.</p>
+        </div>
+        <a class="btn btn-outline" href="#catalogo">Ver todo el catálogo</a>
+      </div>
+      <div class="ofertas-grid" id="offersGrid"></div>
+      <p class="empty" id="offersEmpty" hidden>Estamos cargando nuevas ofertas. Escríbanos por WhatsApp y le cotizamos de inmediato.</p>
+    </div>
+  </section>
+
   <!-- CATEGORÍAS -->
   <section id="secciones" class="sec">
     <div class="wrap">
-      <p class="eyebrow">01 · Secciones</p>
+      <p class="eyebrow">02 · Secciones</p>
       <h2 class="h2">Todo el surtido que mueve el comercio en Colombia</h2>
-      <p class="lead">Catorce líneas listas para tienda de barrio, droguería, papelería o institucional.</p>
+      <p class="lead">Veinte líneas listas para tienda de barrio, minimercado, droguería, papelería o institucional.</p>
       <div class="cats" id="catsGrid"></div>
     </div>
   </section>
@@ -404,7 +457,7 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <!-- CATÁLOGO -->
   <section id="catalogo" class="sec catalog">
     <div class="wrap">
-      <p class="eyebrow">02 · Catálogo</p>
+      <p class="eyebrow">03 · Catálogo</p>
       <div class="catalog-head">
         <h2 class="h2" style="margin:0">Arme el pedido y lo enviamos a WhatsApp</h2>
         <div class="search">
@@ -421,7 +474,7 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <!-- PROCESO -->
   <section id="proceso" class="sec">
     <div class="wrap">
-      <p class="eyebrow">03 · Proceso</p>
+      <p class="eyebrow">04 · Proceso</p>
       <h2 class="h2">Tres pasos para concretar la venta</h2>
       <div class="steps">
         <article class="step"><p class="n">01</p><h3>Elija el surtido</h3><p>Filtre por sección, agregue cantidades y arme el carrito con precios de referencia.</p></article>
@@ -435,14 +488,14 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <section class="why">
     <div class="wrap why-grid">
       <div>
-        <p class="eyebrow">04 · Por qué Axtoon</p>
+        <p class="eyebrow">05 · Por qué Axtoon</p>
         <h2 class="h2">Una casa de distribución hecha para el comercio colombiano</h2>
         <p class="lead">Precios mayoristas de referencia, confirmación inmediata y un canal único para cerrar. Sin formularios eternos ni llamadas perdidas.</p>
       </div>
       <div class="why-cards">
         <article class="why-card"><div class="ico">🚚</div><h3>Despacho nacional</h3><p>Cobertura en los 32 departamentos. 24 a 48 horas en las principales ciudades.</p></article>
-        <article class="why-card"><div class="ico">🧾</div><h3>Factura electrónica</h3><p>Pedido a nombre de su NIT o cédula. Ideal para droguería, tienda o institución.</p></article>
-        <article class="why-card"><div class="ico">🛡️</div><h3>Surtido de rotación</h3><p>Líneas que se venden todos los días: aseo, despensa, cuidado personal y papelería.</p></article>
+        <article class="why-card"><div class="ico">🧾</div><h3>Factura electrónica</h3><p>Pedido a nombre de su NIT o cédula. Ideal para tienda, minimercado o institución.</p></article>
+        <article class="why-card"><div class="ico">🛡️</div><h3>Surtido de rotación</h3><p>Líneas que se venden todos los días: tecnología, hogar, belleza, ropa y accesorios.</p></article>
         <article class="why-card"><div class="ico">📍</div><h3>Asesor en WhatsApp</h3><p>Un solo número para cotizar, ajustar el pedido y coordinar el flete.</p></article>
       </div>
     </div>
@@ -452,10 +505,10 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <section id="cobertura" class="sec">
     <div class="wrap cov">
       <div>
-        <p class="eyebrow">05 · Cobertura</p>
+        <p class="eyebrow">06 · Cobertura</p>
         <h2 class="h2">Envíos a todo el territorio colombiano</h2>
         <p class="lead">Despacho 24 a 48 horas hábiles en corredores principales. Resto del país, 3 a 5 días hábiles según transportadora. El flete se cotiza al confirmar el pedido.</p>
-        <img class="photo" src="im16.png" alt="Muelles de despacho Axtoon" data-ph="im16.png" data-wide="1">
+        <img class="photo" src="im22.png" alt="Muelles de despacho Axtoon" data-ph="im22.png" data-wide="1">
       </div>
       <div>
         <div class="pill-row"><span class="pill on">24–48 h</span><span class="pill">3–5 días</span></div>
@@ -467,12 +520,12 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <!-- TESTIMONIOS -->
   <section class="sec testi">
     <div class="wrap">
-      <p class="eyebrow">06 · Clientes</p>
+      <p class="eyebrow">07 · Clientes</p>
       <h2 class="h2">Comercio que ya pide por este canal</h2>
       <div class="quotes">
-        <blockquote class="quote"><p>Pedimos aseo y cuidado personal cada semana. El WhatsApp nos ahorra llamadas y la factura llega con el NIT.</p><footer><span class="avatar">LR</span><span><span class="nm">Laura Restrepo</span><span class="rl">Droguería · Medellín</span></span></footer></blockquote>
-        <blockquote class="quote"><p>El surtido de despensa y bebidas nos cuadró. Confirmamos disponibilidad el mismo día y el flete queda claro.</p><footer><span class="avatar">CP</span><span><span class="nm">Carlos Peña</span><span class="rl">Minimercado · Cali</span></span></footer></blockquote>
-        <blockquote class="quote"><p>Útiles y resmas sin mínimo absurdo. Armo el carrito, lo mando y listo. Así debería funcionar un mayorista.</p><footer><span class="avatar">DR</span><span><span class="nm">Diana Rojas</span><span class="rl">Papelería · Bucaramanga</span></span></footer></blockquote>
+        <blockquote class="quote"><p>Pedimos accesorios de celular y tecnología cada semana. El WhatsApp nos ahorra llamadas y la factura llega con el NIT.</p><footer><span class="avatar">LR</span><span><span class="nm">Laura Restrepo</span><span class="rl">Tienda de tecnología · Medellín</span></span></footer></blockquote>
+        <blockquote class="quote"><p>El surtido de hogar y cocina nos cuadró. Confirmamos disponibilidad el mismo día y el flete queda claro.</p><footer><span class="avatar">CP</span><span><span class="nm">Carlos Peña</span><span class="rl">Minimercado · Cali</span></span></footer></blockquote>
+        <blockquote class="quote"><p>Ropa, calzado y belleza sin mínimo absurdo. Armo el carrito, lo mando y listo. Así debería funcionar un mayorista.</p><footer><span class="avatar">DR</span><span><span class="nm">Diana Rojas</span><span class="rl">Boutique · Bucaramanga</span></span></footer></blockquote>
       </div>
     </div>
   </section>
@@ -480,7 +533,7 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <!-- FAQ -->
   <section id="preguntas" class="sec">
     <div class="wrap faq-wrap">
-      <p class="eyebrow">07 · Preguntas</p>
+      <p class="eyebrow">08 · Preguntas</p>
       <h2 class="h2">Antes de escribirle al asesor</h2>
       <div class="faq-list">
         <details class="f"><summary>¿Cómo se hace un pedido?</summary><p>Agregue productos al carrito, complete el formulario y pulse Enviar por WhatsApp. El pedido se abre con el asesor para confirmar disponibilidad, flete e IVA.</p></details>
@@ -499,12 +552,13 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   <section id="pedido" class="sec order">
     <div class="wrap order-grid">
       <div>
-        <p class="eyebrow">08 · Pedido</p>
+        <p class="eyebrow">09 · Pedido</p>
         <h2 class="h2">Suba la orden y cierre por WhatsApp</h2>
         <p class="lead">Al enviar se abre una conversación con +57 322 375 2541. El mensaje lleva sus datos y el detalle del carrito para concretar la venta.</p>
         <dl class="resume">
           <div><dt>Ítems en carrito</dt><dd id="resCount" style="margin:0;font-weight:500">0</dd></div>
           <div><dt>Total referencia</dt><dd id="resTotal" class="big" style="margin:0">$ 0</dd></div>
+          <div id="resSaveRow" hidden><dt style="color:var(--danger)">Ahorro en ofertas</dt><dd id="resSave" style="margin:0;color:var(--danger);font-weight:600">$ 0</dd></div>
           <div><dt>Pedido mínimo sugerido</dt><dd style="margin:0">$ 80.000</dd></div>
         </dl>
         <p style="margin-top:16px;font-size:14px;color:var(--muted-fg)">Puede enviar el formulario sin productos: el asesor cotiza a partir de su ciudad y tipo de negocio.</p>
@@ -546,11 +600,12 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
         </svg>
         <span><span class="n1">Axtoon</span><span class="n2">Distribuidora S.A.S</span></span>
       </a>
-      <p class="desc">Axtoon Distribuidora S.A.S. Mayorista de aseo, despensa, cuidado personal, papelería y más para el comercio colombiano.</p>
+      <p class="desc">Axtoon Distribuidora S.A.S. Mayorista de tecnología, accesorios, ropa, calzado, hogar, belleza y más para el comercio colombiano.</p>
     </div>
     <div>
       <p class="eyebrow">Navegación</p>
       <ul>
+        <li><a href="#ofertas">Ofertas</a></li>
         <li><a href="#catalogo">Catálogo</a></li>
         <li><a href="#cobertura">Cobertura</a></li>
         <li><a href="#pedido">Hacer pedido</a></li>
@@ -584,6 +639,7 @@ footer .brand .n2{color:rgb(243 238 230 / .55)}
   </header>
   <div class="items" id="cartItems"></div>
   <footer>
+    <p id="cartSave" hidden style="font-size:13px;color:var(--danger);font-weight:600;margin:0"></p>
     <div class="tot"><span>Total de referencia</span><b id="cartTotal">$ 0</b></div>
     <a class="btn btn-primary btn-block" href="#pedido" id="goOrder">Completar datos del pedido</a>
     <button class="btn btn-outline btn-block" id="clearCart">Vaciar carrito</button>
@@ -597,103 +653,204 @@ const WA_SHOW = "+57 322 375 2541";
 const waUrl = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
 
 const CATEGORIES = [
-  {id:"aseo",        name:"Aseo del hogar",         blurb:"Limpieza diaria y recarga de tienda", image:"im2.png"},
-  {id:"personal",    name:"Cuidado personal",       blurb:"Higiene para toda la familia",        image:"im3.png"},
-  {id:"alimentos",   name:"Alimentos y despensa",   blurb:"Arroz, aceite, café y más",           image:"im4.png"},
-  {id:"bebidas",     name:"Bebidas",                blurb:"Agua, gaseosa y jugos",               image:"im5.png"},
-  {id:"snacks",      name:"Snacks y confitería",    blurb:"Mecato de alta rotación",             image:"im6.png"},
-  {id:"papeleria",   name:"Papelería y oficina",    blurb:"Resmas, bolígrafos y cajas",          image:"im7.png"},
-  {id:"hogar",       name:"Hogar y cocina",         blurb:"Utensilios y menaje",                 image:"im8.png"},
-  {id:"bebes",       name:"Bebés",                  blurb:"Pañales y cuidado infantil",          image:"im9.png"},
-  {id:"mascotas",    name:"Mascotas",               blurb:"Alimento y arena",                    image:"im10.png"},
-  {id:"salud",       name:"Salud y farmacia",       blurb:"Botiquín y droguería",                image:"im11.png"},
-  {id:"belleza",     name:"Belleza",                blurb:"Cuidado facial y maquillaje",         image:"im12.png"},
-  {id:"tecnologia",  name:"Tecnología",             blurb:"Cables, audio y carga",               image:"im13.png"},
-  {id:"escolar",     name:"Escolar",                blurb:"Útiles y morrales",                   image:"im14.png"},
-  {id:"industrial",  name:"Limpieza institucional", blurb:"Volumen para empresas",               image:"im15.png"}
+  {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png"},
+  {id:"tecnologia",  name:"Tecnología y accesorios",     blurb:"Audio, smartwatch, teclados y mouse",      image:"im3.png"},
+  {id:"ropa",        name:"Ropa",                        blurb:"Camisetas, jeans, deportiva y urbana",     image:"im4.png"},
+  {id:"calzado",     name:"Calzado",                     blurb:"Tenis, sandalias y deportivos",            image:"im5.png"},
+  {id:"belleza",     name:"Belleza y cuidado personal",  blurb:"Perfumes, skincare y maquillaje",          image:"im6.png"},
+  {id:"fitness",     name:"Fitness",                     blurb:"Bandas, pesas, guantes y fajas",           image:"im7.png"},
+  {id:"hogar",       name:"Hogar",                       blurb:"Organizadores, cocina y decoración",       image:"im8.png"},
+  {id:"iluminacion", name:"Iluminación",                 blurb:"LED, lámparas, solares y tiras",           image:"im9.png"},
+  {id:"vehiculos",   name:"Accesorios para vehículos",   blurb:"Soportes, luces y cargadores",             image:"im10.png"},
+  {id:"mascotas",    name:"Mascotas",                    blurb:"Juguetes, camas, correas y bebederos",     image:"im11.png"},
+  {id:"gaming",      name:"Gaming",                      blurb:"Mouse, teclados, audífonos y controles",   image:"im12.png"},
+  {id:"accesorios",  name:"Accesorios personales",       blurb:"Gorras, morrales, bolsos y gafas",         image:"im13.png"},
+  {id:"joyeria",     name:"Joyería y accesorios",        blurb:"Cadenas, pulseras, anillos y aretes",      image:"im14.png"},
+  {id:"bebes",       name:"Productos para bebés",        blurb:"Juguetes, ropa y cuidado infantil",        image:"im15.png"},
+  {id:"electricos",  name:"Productos eléctricos",        blurb:"Multitomas, adaptadores y enchufes",       image:"im16.png"},
+  {id:"cocina",      name:"Cocina",                      blurb:"Freidoras, utensilios y recipientes",      image:"im17.png"},
+  {id:"dormitorio",  name:"Dormitorio",                  blurb:"Almohadas, cobijas y organizadores",       image:"im18.png"},
+  {id:"limpieza",    name:"Limpieza",                    blurb:"Cepillos, dispensadores y especializados", image:"im19.png"},
+  {id:"regalos",     name:"Regalos personalizados",      blurb:"Tazas, camisetas, llaveros y cuadros",     image:"im20.png"},
+  {id:"papeleria",   name:"Papelería",                   blurb:"Resmas, bolígrafos y cuadernos",           image:"im21.png"}
 ];
 
 const PRODUCTS = [
-  {id:"ase-01",sku:"AXT-ASE-01",name:"Detergente en polvo 2 kg",category:"aseo",unit:"und",price:18900,minQty:4,featured:true},
-  {id:"ase-02",sku:"AXT-ASE-02",name:"Jabón líquido 5 L",category:"aseo",unit:"garrafa",price:24500,minQty:2},
-  {id:"ase-03",sku:"AXT-ASE-03",name:"Papel higiénico x12 rollos",category:"aseo",unit:"pack",price:16800,minQty:3},
-  {id:"ase-04",sku:"AXT-ASE-04",name:"Blanqueador 3.8 L",category:"aseo",unit:"garrafa",price:8900,minQty:4},
-  {id:"ase-05",sku:"AXT-ASE-05",name:"Lavaloza 500 ml x6",category:"aseo",unit:"pack",price:19200,minQty:2},
-  {id:"ase-06",sku:"AXT-ASE-06",name:"Ambientador aerosol 400 ml",category:"aseo",unit:"und",price:7800,minQty:6},
+  /* 1 · Accesorios para celulares */
+  {id:"cel-01",sku:"AXT-CEL-01",name:"Funda silicona universal x10",category:"celulares",unit:"pack",price:28000,minQty:2,featured:true},
+  {id:"cel-02",sku:"AXT-CEL-02",name:"Vidrio templado x10",category:"celulares",unit:"pack",price:32000,minQty:2,featured:true},
+  {id:"cel-03",sku:"AXT-CEL-03",name:"Cargador 20W USB-C",category:"celulares",unit:"und",price:18900,minQty:6},
+  {id:"cel-04",sku:"AXT-CEL-04",name:"Cable USB-C 1 m x5",category:"celulares",unit:"pack",price:28500,minQty:3},
+  {id:"cel-05",sku:"AXT-CEL-05",name:"Soporte celular para carro",category:"celulares",unit:"und",price:15900,minQty:6},
+  {id:"cel-06",sku:"AXT-CEL-06",name:"Aro de luz para selfie",category:"celulares",unit:"und",price:22900,minQty:4},
 
-  {id:"per-01",sku:"AXT-PER-01",name:"Crema dental 90 g x12",category:"personal",unit:"caja",price:42000,minQty:1,featured:true},
-  {id:"per-02",sku:"AXT-PER-02",name:"Champú 400 ml",category:"personal",unit:"und",price:12500,minQty:6},
-  {id:"per-03",sku:"AXT-PER-03",name:"Jabón de tocador x3",category:"personal",unit:"pack",price:6900,minQty:8},
-  {id:"per-04",sku:"AXT-PER-04",name:"Desodorante roll-on 50 ml",category:"personal",unit:"und",price:8200,minQty:6},
-  {id:"per-05",sku:"AXT-PER-05",name:"Toallas higiénicas x8",category:"personal",unit:"pack",price:9800,minQty:6},
+  /* 2 · Tecnología y accesorios */
+  {id:"tec-01",sku:"AXT-TEC-01",name:"Audífonos Bluetooth TWS",category:"tecnologia",unit:"und",price:45900,minQty:4,featured:true},
+  {id:"tec-02",sku:"AXT-TEC-02",name:"Parlante Bluetooth portátil",category:"tecnologia",unit:"und",price:68900,minQty:2},
+  {id:"tec-03",sku:"AXT-TEC-03",name:"Smartwatch deportivo",category:"tecnologia",unit:"und",price:85900,minQty:2,featured:true},
+  {id:"tec-04",sku:"AXT-TEC-04",name:"Teclado inalámbrico",category:"tecnologia",unit:"und",price:39900,minQty:4},
+  {id:"tec-05",sku:"AXT-TEC-05",name:"Mouse inalámbrico",category:"tecnologia",unit:"und",price:22900,minQty:6},
+  {id:"tec-06",sku:"AXT-TEC-06",name:"Power bank 10.000 mAh",category:"tecnologia",unit:"und",price:54900,minQty:3},
 
-  {id:"ali-01",sku:"AXT-ALI-01",name:"Arroz blanco 5 kg",category:"alimentos",unit:"bulto",price:18500,minQty:4,featured:true},
-  {id:"ali-02",sku:"AXT-ALI-02",name:"Aceite vegetal 3 L",category:"alimentos",unit:"und",price:22900,minQty:3},
-  {id:"ali-03",sku:"AXT-ALI-03",name:"Azúcar 2.5 kg",category:"alimentos",unit:"und",price:7800,minQty:6},
-  {id:"ali-04",sku:"AXT-ALI-04",name:"Café molido 500 g",category:"alimentos",unit:"und",price:16400,minQty:4,featured:true},
-  {id:"ali-05",sku:"AXT-ALI-05",name:"Leche en polvo 800 g",category:"alimentos",unit:"und",price:28900,minQty:3},
-  {id:"ali-06",sku:"AXT-ALI-06",name:"Atún en agua x3",category:"alimentos",unit:"pack",price:14200,minQty:4},
-  {id:"ali-07",sku:"AXT-ALI-07",name:"Pasta spaghetti 1 kg x5",category:"alimentos",unit:"pack",price:19800,minQty:2},
-  {id:"ali-08",sku:"AXT-ALI-08",name:"Sal refinada 1 kg x10",category:"alimentos",unit:"pack",price:12500,minQty:2},
+  /* 3 · Ropa */
+  {id:"rop-01",sku:"AXT-ROP-01",name:"Camiseta básica unisex x5",category:"ropa",unit:"pack",price:65000,minQty:2},
+  {id:"rop-02",sku:"AXT-ROP-02",name:"Conjunto deportivo dama",category:"ropa",unit:"und",price:48900,minQty:3},
+  {id:"rop-03",sku:"AXT-ROP-03",name:"Jean clásico caballero",category:"ropa",unit:"und",price:52900,minQty:3},
+  {id:"rop-04",sku:"AXT-ROP-04",name:"Sudadera urbana",category:"ropa",unit:"und",price:42900,minQty:4},
+  {id:"rop-05",sku:"AXT-ROP-05",name:"Camiseta estampada x5",category:"ropa",unit:"pack",price:72000,minQty:2,featured:true},
 
-  {id:"beb-01",sku:"AXT-BEB-01",name:"Agua 600 ml x24",category:"bebidas",unit:"caja",price:18000,minQty:2,featured:true},
-  {id:"beb-02",sku:"AXT-BEB-02",name:"Gaseosa 1.5 L x6",category:"bebidas",unit:"pack",price:22500,minQty:2},
-  {id:"beb-03",sku:"AXT-BEB-03",name:"Jugo 1 L x6",category:"bebidas",unit:"pack",price:19800,minQty:2},
-  {id:"beb-04",sku:"AXT-BEB-04",name:"Café instantáneo 50 g x6",category:"bebidas",unit:"pack",price:24600,minQty:2},
+  /* 4 · Calzado */
+  {id:"cal-01",sku:"AXT-CAL-01",name:"Tenis deportivos unisex",category:"calzado",unit:"par",price:65900,minQty:3,featured:true},
+  {id:"cal-02",sku:"AXT-CAL-02",name:"Sandalias playeras",category:"calzado",unit:"par",price:28900,minQty:6},
+  {id:"cal-03",sku:"AXT-CAL-03",name:"Zapatos running",category:"calzado",unit:"par",price:78900,minQty:2},
+  {id:"cal-04",sku:"AXT-CAL-04",name:"Chanclas x12",category:"calzado",unit:"docena",price:48000,minQty:2},
 
-  {id:"sna-01",sku:"AXT-SNA-01",name:"Galletas soda 400 g",category:"snacks",unit:"und",price:8400,minQty:8},
-  {id:"sna-02",sku:"AXT-SNA-02",name:"Chocolatina x24",category:"snacks",unit:"display",price:21000,minQty:2},
-  {id:"sna-03",sku:"AXT-SNA-03",name:"Papas 150 g x6",category:"snacks",unit:"pack",price:16500,minQty:3},
-  {id:"sna-04",sku:"AXT-SNA-04",name:"Mecato surtido caja",category:"snacks",unit:"caja",price:38900,minQty:1},
+  /* 5 · Belleza y cuidado personal */
+  {id:"bel-01",sku:"AXT-BEL-01",name:"Perfume femenino 100 ml",category:"belleza",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"bel-02",sku:"AXT-BEL-02",name:"Set skincare facial x3",category:"belleza",unit:"set",price:38900,minQty:3},
+  {id:"bel-03",sku:"AXT-BEL-03",name:"Labial mate x6",category:"belleza",unit:"pack",price:24000,minQty:4},
+  {id:"bel-04",sku:"AXT-BEL-04",name:"Shampoo profesional 500 ml",category:"belleza",unit:"und",price:22900,minQty:6},
+  {id:"bel-05",sku:"AXT-BEL-05",name:"Crema corporal 400 ml",category:"belleza",unit:"und",price:16900,minQty:6},
 
+  /* 6 · Fitness */
+  {id:"fit-01",sku:"AXT-FIT-01",name:"Bandas elásticas x5",category:"fitness",unit:"set",price:22900,minQty:4},
+  {id:"fit-02",sku:"AXT-FIT-02",name:"Mancuernas 5 kg (par)",category:"fitness",unit:"par",price:68900,minQty:2},
+  {id:"fit-03",sku:"AXT-FIT-03",name:"Guantes entrenamiento",category:"fitness",unit:"par",price:18900,minQty:6},
+  {id:"fit-04",sku:"AXT-FIT-04",name:"Faja reductora",category:"fitness",unit:"und",price:34900,minQty:4,featured:true},
+  {id:"fit-05",sku:"AXT-FIT-05",name:"Cuerda para saltar",category:"fitness",unit:"und",price:12900,minQty:8},
+
+  /* 7 · Hogar */
+  {id:"hog-01",sku:"AXT-HOG-01",name:"Organizador multiusos x3",category:"hogar",unit:"pack",price:32900,minQty:3},
+  {id:"hog-02",sku:"AXT-HOG-02",name:"Set utensilios cocina x6",category:"hogar",unit:"set",price:38900,minQty:3},
+  {id:"hog-03",sku:"AXT-HOG-03",name:"Lámpara decorativa LED",category:"hogar",unit:"und",price:24900,minQty:4},
+  {id:"hog-04",sku:"AXT-HOG-04",name:"Cuadro decorativo",category:"hogar",unit:"und",price:19900,minQty:6},
+
+  /* 8 · Iluminación */
+  {id:"ilu-01",sku:"AXT-ILU-01",name:"Tira LED RGB 5 m",category:"iluminacion",unit:"und",price:26900,minQty:4,featured:true},
+  {id:"ilu-02",sku:"AXT-ILU-02",name:"Lámpara solar exterior",category:"iluminacion",unit:"und",price:22900,minQty:4},
+  {id:"ilu-03",sku:"AXT-ILU-03",name:"Bombillo LED x10",category:"iluminacion",unit:"pack",price:28900,minQty:3},
+  {id:"ilu-04",sku:"AXT-ILU-04",name:"Luz nocturna con sensor",category:"iluminacion",unit:"und",price:14900,minQty:6},
+
+  /* 9 · Accesorios para vehículos */
+  {id:"veh-01",sku:"AXT-VEH-01",name:"Soporte celular para carro",category:"vehiculos",unit:"und",price:15900,minQty:6},
+  {id:"veh-02",sku:"AXT-VEH-02",name:"Luces LED para carro x2",category:"vehiculos",unit:"par",price:24900,minQty:4},
+  {id:"veh-03",sku:"AXT-VEH-03",name:"Cargador doble USB carro",category:"vehiculos",unit:"und",price:13900,minQty:8},
+  {id:"veh-04",sku:"AXT-VEH-04",name:"Organizador maletero",category:"vehiculos",unit:"und",price:19900,minQty:4},
+
+  /* 10 · Mascotas */
+  {id:"mas-01",sku:"AXT-MAS-01",name:"Juguete mordedor perro",category:"mascotas",unit:"und",price:8900,minQty:8},
+  {id:"mas-02",sku:"AXT-MAS-02",name:"Cama para mascota M",category:"mascotas",unit:"und",price:42900,minQty:3},
+  {id:"mas-03",sku:"AXT-MAS-03",name:"Correa ajustable",category:"mascotas",unit:"und",price:15900,minQty:6},
+  {id:"mas-04",sku:"AXT-MAS-04",name:"Bebedero automático",category:"mascotas",unit:"und",price:28900,minQty:4},
+
+  /* 11 · Gaming */
+  {id:"gam-01",sku:"AXT-GAM-01",name:"Mouse gamer RGB",category:"gaming",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"gam-02",sku:"AXT-GAM-02",name:"Teclado mecánico gamer",category:"gaming",unit:"und",price:129000,minQty:1},
+  {id:"gam-03",sku:"AXT-GAM-03",name:"Audífonos gamer 7.1",category:"gaming",unit:"und",price:89900,minQty:2},
+  {id:"gam-04",sku:"AXT-GAM-04",name:"Mousepad XL",category:"gaming",unit:"und",price:22900,minQty:4},
+  {id:"gam-05",sku:"AXT-GAM-05",name:"Control inalámbrico",category:"gaming",unit:"und",price:78900,minQty:2},
+
+  /* 12 · Accesorios personales */
+  {id:"acc-01",sku:"AXT-ACC-01",name:"Gorra ajustable x6",category:"accesorios",unit:"pack",price:42000,minQty:2},
+  {id:"acc-02",sku:"AXT-ACC-02",name:"Morral antirrobo",category:"accesorios",unit:"und",price:48900,minQty:3},
+  {id:"acc-03",sku:"AXT-ACC-03",name:"Bolso crossbody",category:"accesorios",unit:"und",price:38900,minQty:3},
+  {id:"acc-04",sku:"AXT-ACC-04",name:"Billetera cuero sintético",category:"accesorios",unit:"und",price:18900,minQty:6},
+  {id:"acc-05",sku:"AXT-ACC-05",name:"Gafas de sol UV400",category:"accesorios",unit:"und",price:15900,minQty:6},
+
+  /* 13 · Joyería y accesorios */
+  {id:"joy-01",sku:"AXT-JOY-01",name:"Cadena acero inoxidable",category:"joyeria",unit:"und",price:18900,minQty:6},
+  {id:"joy-02",sku:"AXT-JOY-02",name:"Pulsera cuero",category:"joyeria",unit:"und",price:14900,minQty:6},
+  {id:"joy-03",sku:"AXT-JOY-03",name:"Anillo ajustable",category:"joyeria",unit:"und",price:9900,minQty:12},
+  {id:"joy-04",sku:"AXT-JOY-04",name:"Aretes x6 pares",category:"joyeria",unit:"pack",price:16900,minQty:6},
+
+  /* 14 · Productos para bebés */
+  {id:"inf-01",sku:"AXT-INF-01",name:"Juguete didáctico bebé",category:"bebes",unit:"und",price:19900,minQty:4},
+  {id:"inf-02",sku:"AXT-INF-02",name:"Set ropa bebé x3",category:"bebes",unit:"set",price:34900,minQty:3},
+  {id:"inf-03",sku:"AXT-INF-03",name:"Pañalera portátil",category:"bebes",unit:"und",price:24900,minQty:4},
+  {id:"inf-04",sku:"AXT-INF-04",name:"Kit cuidado bebé",category:"bebes",unit:"kit",price:32900,minQty:3,featured:true},
+  {id:"inf-05",sku:"AXT-INF-05",name:"Babero impermeable x5",category:"bebes",unit:"pack",price:15900,minQty:6},
+
+  /* 15 · Productos eléctricos */
+  {id:"ele-01",sku:"AXT-ELE-01",name:"Multitoma 6 salidas",category:"electricos",unit:"und",price:18900,minQty:6},
+  {id:"ele-02",sku:"AXT-ELE-02",name:"Adaptador universal",category:"electricos",unit:"und",price:9900,minQty:12},
+  {id:"ele-03",sku:"AXT-ELE-03",name:"Cargador rápido USB-C",category:"electricos",unit:"und",price:18900,minQty:6},
+  {id:"ele-04",sku:"AXT-ELE-04",name:"Enchufe inteligente WiFi",category:"electricos",unit:"und",price:22900,minQty:4,featured:true},
+
+  /* 16 · Cocina */
+  {id:"coc-01",sku:"AXT-COC-01",name:"Freidora de aire 5 L",category:"cocina",unit:"und",price:219000,minQty:1,featured:true},
+  {id:"coc-02",sku:"AXT-COC-02",name:"Set recipientes herméticos x5",category:"cocina",unit:"set",price:28900,minQty:3},
+  {id:"coc-03",sku:"AXT-COC-03",name:"Utensilios silicona x8",category:"cocina",unit:"set",price:24900,minQty:4},
+  {id:"coc-04",sku:"AXT-COC-04",name:"Organizador cocina",category:"cocina",unit:"und",price:19900,minQty:4},
+
+  /* 17 · Dormitorio */
+  {id:"dor-01",sku:"AXT-DOR-01",name:"Almohada viscoelástica",category:"dormitorio",unit:"und",price:42900,minQty:3},
+  {id:"dor-02",sku:"AXT-DOR-02",name:"Cobija térmica 2 plazas",category:"dormitorio",unit:"und",price:58900,minQty:2},
+  {id:"dor-03",sku:"AXT-DOR-03",name:"Organizador bajo cama",category:"dormitorio",unit:"und",price:22900,minQty:4},
+  {id:"dor-04",sku:"AXT-DOR-04",name:"Cojín decorativo",category:"dormitorio",unit:"und",price:14900,minQty:6},
+
+  /* 18 · Limpieza */
+  {id:"lim-01",sku:"AXT-LIM-01",name:"Organizador multiusos limpieza",category:"limpieza",unit:"und",price:19900,minQty:4},
+  {id:"lim-02",sku:"AXT-LIM-02",name:"Cepillo limpieza x3",category:"limpieza",unit:"pack",price:14900,minQty:6},
+  {id:"lim-03",sku:"AXT-LIM-03",name:"Dispensador jabón automático",category:"limpieza",unit:"und",price:27900,minQty:4},
+  {id:"lim-04",sku:"AXT-LIM-04",name:"Set limpieza profesional",category:"limpieza",unit:"kit",price:42900,minQty:2},
+
+  /* 19 · Regalos personalizados */
+  {id:"reg-01",sku:"AXT-REG-01",name:"Taza personalizada",category:"regalos",unit:"und",price:12900,minQty:12},
+  {id:"reg-02",sku:"AXT-REG-02",name:"Camiseta personalizada",category:"regalos",unit:"und",price:24900,minQty:6},
+  {id:"reg-03",sku:"AXT-REG-03",name:"Gorra bordada",category:"regalos",unit:"und",price:18900,minQty:6},
+  {id:"reg-04",sku:"AXT-REG-04",name:"Llavero personalizado x10",category:"regalos",unit:"pack",price:14900,minQty:6},
+  {id:"reg-05",sku:"AXT-REG-05",name:"Cuadro decorativo personalizado",category:"regalos",unit:"und",price:32900,minQty:4,featured:true},
+
+  /* 20 · Papelería */
   {id:"pap-01",sku:"AXT-PAP-01",name:"Resma carta 500 hojas",category:"papeleria",unit:"resma",price:18900,minQty:5},
   {id:"pap-02",sku:"AXT-PAP-02",name:"Bolígrafos x12",category:"papeleria",unit:"caja",price:9500,minQty:4},
   {id:"pap-03",sku:"AXT-PAP-03",name:"Cuaderno 100 hojas x5",category:"papeleria",unit:"pack",price:14200,minQty:4},
-  {id:"pap-04",sku:"AXT-PAP-04",name:"Cinta de embalaje x6",category:"papeleria",unit:"pack",price:16800,minQty:2},
-
-  {id:"hog-01",sku:"AXT-HOG-01",name:"Juego de ollas 5 piezas",category:"hogar",unit:"set",price:89900,minQty:1},
-  {id:"hog-02",sku:"AXT-HOG-02",name:"Set vasos x6",category:"hogar",unit:"set",price:24500,minQty:2},
-  {id:"hog-03",sku:"AXT-HOG-03",name:"Trapero industrial",category:"hogar",unit:"und",price:18900,minQty:4},
-
-  {id:"inf-01",sku:"AXT-INF-01",name:"Pañales talla M x30",category:"bebes",unit:"paquete",price:42900,minQty:2,featured:true},
-  {id:"inf-02",sku:"AXT-INF-02",name:"Toallitas húmedas x80 x3",category:"bebes",unit:"pack",price:22800,minQty:3},
-  {id:"inf-03",sku:"AXT-INF-03",name:"Fórmula infantil 400 g",category:"bebes",unit:"und",price:38900,minQty:3},
-
-  {id:"mas-01",sku:"AXT-MAS-01",name:"Alimento perro adulto 2 kg",category:"mascotas",unit:"bulto",price:28500,minQty:3},
-  {id:"mas-02",sku:"AXT-MAS-02",name:"Arena para gato 4 kg",category:"mascotas",unit:"bulto",price:19900,minQty:3},
-  {id:"mas-03",sku:"AXT-MAS-03",name:"Snack dental x20",category:"mascotas",unit:"bolsa",price:12400,minQty:4},
-
-  {id:"sal-01",sku:"AXT-SAL-01",name:"Alcohol antiséptico 700 ml",category:"salud",unit:"und",price:6500,minQty:6},
-  {id:"sal-02",sku:"AXT-SAL-02",name:"Vitamina C x100",category:"salud",unit:"frasco",price:18900,minQty:4},
-  {id:"sal-03",sku:"AXT-SAL-03",name:"Alcohol gel 1 L",category:"salud",unit:"und",price:11200,minQty:4},
-  {id:"sal-04",sku:"AXT-SAL-04",name:"Tapabocas x50",category:"salud",unit:"caja",price:14900,minQty:4},
-  {id:"sal-05",sku:"AXT-SAL-05",name:"Suero oral x4",category:"salud",unit:"pack",price:9800,minQty:6},
-
-  {id:"bel-01",sku:"AXT-BEL-01",name:"Crema facial 50 ml",category:"belleza",unit:"und",price:22400,minQty:4},
-  {id:"bel-02",sku:"AXT-BEL-02",name:"Kit de maquillaje básico",category:"belleza",unit:"kit",price:45000,minQty:2},
-  {id:"bel-03",sku:"AXT-BEL-03",name:"Esmalte x6",category:"belleza",unit:"pack",price:18900,minQty:3},
-
-  {id:"tec-01",sku:"AXT-TEC-01",name:"Audífonos inalámbricos",category:"tecnologia",unit:"und",price:89900,minQty:1,featured:true},
-  {id:"tec-02",sku:"AXT-TEC-02",name:"Cargador USB-C 20W",category:"tecnologia",unit:"und",price:24900,minQty:4},
-  {id:"tec-03",sku:"AXT-TEC-03",name:"Power bank 10.000 mAh",category:"tecnologia",unit:"und",price:59900,minQty:2},
-  {id:"tec-04",sku:"AXT-TEC-04",name:"Cable USB-C 1 m x5",category:"tecnologia",unit:"pack",price:32500,minQty:2},
-
-  {id:"esc-01",sku:"AXT-ESC-01",name:"Kit escolar básico",category:"escolar",unit:"kit",price:28900,minQty:4},
-  {id:"esc-02",sku:"AXT-ESC-02",name:"Colores x12",category:"escolar",unit:"caja",price:8900,minQty:8},
-  {id:"esc-03",sku:"AXT-ESC-03",name:"Morral clásico",category:"escolar",unit:"und",price:45900,minQty:2},
-
-  {id:"ind-01",sku:"AXT-IND-01",name:"Detergente institucional 20 L",category:"industrial",unit:"cuñete",price:78900,minQty:1},
-  {id:"ind-02",sku:"AXT-IND-02",name:"Kit piso húmedo institucional",category:"industrial",unit:"kit",price:34900,minQty:2}
+  {id:"pap-04",sku:"AXT-PAP-04",name:"Kit escolar básico",category:"papeleria",unit:"kit",price:28900,minQty:4}
 ];
 
 const DEPARTMENTS = ["Amazonas","Antioquia","Arauca","Atlántico","Bogotá D.C.","Bolívar","Boyacá","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Córdoba","Cundinamarca","Guainía","Guaviare","Huila","La Guajira","Magdalena","Meta","Nariño","Norte de Santander","Putumayo","Quindío","Risaralda","San Andrés y Providencia","Santander","Sucre","Tolima","Valle del Cauca","Vaupés","Vichada"];
 const FAST = new Set(["Bogotá D.C.","Cundinamarca","Antioquia","Valle del Cauca","Atlántico","Santander","Risaralda","Caldas","Quindío"]);
-const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Institución / empresa","Independiente","Otro"];
+const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Boutique / ropa","Tecnología y accesorios","Institución / empresa","Independiente","Otro"];
 const MIN_ORDER = 80000;
 
 const CAT_BY_ID = Object.fromEntries(CATEGORIES.map(c => [c.id, c]));
 const PROD_BY_ID = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
 const cop = n => "$ " + Number(n).toLocaleString("es-CO", {maximumFractionDigits:0});
+
+/* ===================== OFERTAS: precio antes / ahora ===================== */
+/* Precio "antes" (lista) por SKU. El "ahora" es PRODUCTS.price. */
+const BEFORE_PRICE = {
+  "cel-01":  42000, "cel-02":  45000, "tec-01":  69900, "tec-03": 139000,
+  "rop-05":  95000, "cal-01": 109900, "bel-01":  59900, "fit-04":  49900,
+  "ilu-01":  39900, "gam-01":  74900, "inf-04":  45900, "ele-04":  34900,
+  "coc-01": 329000, "reg-05":  49900, "pap-04":  39900
+};
+
+PRODUCTS.forEach(p => {
+  const before = BEFORE_PRICE[p.id];
+  if (before && before > p.price){
+    p.beforePrice = before;
+    p.discount = Math.round((1 - p.price / before) * 100);
+    p.saving = before - p.price;
+  }
+});
+
+const OFFER_PRODUCTS = PRODUCTS.filter(p => p.beforePrice)
+  .sort((a,b) => b.discount - a.discount);
+
+/* Bloque de precio reutilizable: antes tachado + ahora + % */
+function priceHTML(p){
+  if (!p.beforePrice){
+    return '<p class="price">'+cop(p.price)+'</p>'+
+           '<p class="price-note">Precio de referencia · se confirma en WhatsApp</p>';
+  }
+  return '<div class="prices">'+
+           '<span class="price-old">'+cop(p.beforePrice)+'</span>'+
+           '<span class="price-now">'+cop(p.price)+'</span>'+
+           '<span class="save-tag">-'+p.discount+'%</span>'+
+         '</div>'+
+         '<p class="price-note">Antes '+cop(p.beforePrice)+' · ahora '+cop(p.price)+' · ahorra '+cop(p.saving)+'</p>';
+}
 
 /* ===== Placeholder para imágenes que aún no existen ===== */
 function fixImages(scope){
@@ -713,32 +870,55 @@ function fixImages(scope){
 let cart = {};
 const cartCount = () => Object.values(cart).reduce((a,b) => a+b, 0);
 const cartTotal = () => Object.entries(cart).reduce((t,[id,q]) => t + (PROD_BY_ID[id] ? PROD_BY_ID[id].price*q : 0), 0);
+const cartBefore = () => Object.entries(cart).reduce((t,[id,q]) => {
+  const p = PROD_BY_ID[id];
+  return p ? t + (p.beforePrice || p.price) * q : t;
+}, 0);
+const cartSaving = () => cartBefore() - cartTotal();
 
 function addToCart(id, qty){
   cart[id] = (cart[id] || 0) + qty;
   renderCart();
 }
+
 function renderCart(){
   const n = cartCount();
   const badge = document.getElementById("cartBadge");
   badge.textContent = n; badge.hidden = n === 0;
-  document.getElementById("cartTotal").textContent = cop(cartTotal());
+
+  const total = cartTotal(), saving = cartSaving();
+  document.getElementById("cartTotal").textContent = cop(total);
   document.getElementById("resCount").textContent = n;
-  document.getElementById("resTotal").textContent = cop(cartTotal());
+  document.getElementById("resTotal").textContent = cop(total);
+
+  const saveEl = document.getElementById("cartSave");
+  if (saveEl){
+    saveEl.hidden = saving <= 0;
+    saveEl.textContent = "🎉 Ahorro en ofertas: " + cop(saving);
+  }
+  const resSaveRow = document.getElementById("resSaveRow");
+  if (resSaveRow){
+    resSaveRow.hidden = saving <= 0;
+    document.getElementById("resSave").textContent = cop(saving);
+  }
 
   const box = document.getElementById("cartItems");
   box.innerHTML = "";
   if (n === 0){
-    box.innerHTML = '<p style="color:var(--muted-fg);font-size:14px">Su carrito está vacío. Agregue productos desde el catálogo.</p>';
+    box.innerHTML = '<p style="color:var(--muted-fg);font-size:14px">Su carrito está vacío. Agregue productos desde el catálogo o aproveche las ofertas.</p>';
     return;
   }
   Object.entries(cart).forEach(([id,q]) => {
     const p = PROD_BY_ID[id]; if (!p) return;
     const el = document.createElement("div");
     el.className = "ci";
+    const priceLine = p.beforePrice
+      ? '<span class="price-old">'+cop(p.beforePrice*q)+'</span> <span style="color:var(--danger);font-weight:500">'+cop(p.price*q)+'</span>'
+      : cop(p.price*q);
     el.innerHTML =
       '<div class="info"><p class="nm">'+p.name+'</p>'+
-      '<p class="sub">'+q+' '+p.unit+' · '+cop(p.price*q)+'</p>'+
+      '<p class="sub">'+q+' '+p.unit+' · '+priceLine+'</p>'+
+      (p.beforePrice ? '<p class="sub" style="color:var(--danger);font-weight:500">Oferta -'+p.discount+'% · ahorra '+cop(p.saving*q)+'</p>' : '')+
       '<button class="rm" type="button">Quitar</button></div>';
     el.querySelector(".rm").addEventListener("click", () => { delete cart[id]; renderCart(); });
     box.appendChild(el);
@@ -760,10 +940,12 @@ const chipsBox = document.getElementById("chips");
 let current = "todas";
 function buildChips(){
   chipsBox.innerHTML = "";
-  const all = [{id:"todas",name:"Todas"}].concat(CATEGORIES);
+  const all = [{id:"todas",name:"Todas"},{id:"ofertas",name:"🔥 Ofertas"}].concat(CATEGORIES);
   all.forEach(c => {
     const b = document.createElement("button");
-    b.type = "button"; b.className = "chip" + (current===c.id ? " active" : ""); b.textContent = c.name;
+    b.type = "button";
+    b.className = "chip" + (current===c.id ? " active" : "");
+    b.textContent = c.name;
     b.addEventListener("click", () => setCategory(c.id));
     chipsBox.appendChild(b);
   });
@@ -771,53 +953,81 @@ function buildChips(){
 function setCategory(id){ current = id; buildChips(); renderGrid(); }
 
 const grid = document.getElementById("grid");
+const offersGrid = document.getElementById("offersGrid");
+const offersEmpty = document.getElementById("offersEmpty");
 const emptyMsg = document.getElementById("empty");
 const searchInput = document.getElementById("search");
+
+/* Tarjeta reutilizable (catálogo y ofertas) */
+function productCard(p, variant){
+  const cat = CAT_BY_ID[p.category];
+  const isDeal = !!p.beforePrice;
+  const art = document.createElement("article");
+  art.className = variant === "deal" ? "deal" : "prod";
+
+  art.innerHTML =
+    '<div class="media">'+
+      '<img class="photo" src="'+cat.image+'" alt="" data-ph="'+cat.image+'">'+
+      (isDeal
+        ? '<span class="ribbon">-'+p.discount+'% OFF</span>'
+        : (p.featured ? '<span class="flag">Alta rotación</span>' : ''))+
+      (variant === "deal" ? '<span class="timer">Oferta</span>' : '')+
+    '</div>'+
+    '<div class="body">'+
+      '<p class="cat-name">'+cat.name+'</p>'+
+      '<h3>'+p.name+'</h3>'+
+      '<p class="meta">'+p.sku+' · Mín. '+p.minQty+' '+p.unit+'</p>'+
+      priceHTML(p)+
+      '<div class="actions">'+
+        '<div class="qty"><button type="button" class="minus" aria-label="Disminuir">−</button><span class="n">'+p.minQty+'</span><button type="button" class="plus" aria-label="Aumentar">+</button></div>'+
+        '<button type="button" class="btn '+(variant==="deal"?'btn-primary':'btn-outline')+' add" style="flex:1">Agregar</button>'+
+      '</div>'+
+      '<a class="btn '+(variant==="deal"?'btn-outline':'btn-primary')+' btn-block now" style="margin-top:8px" target="_blank" rel="noopener" href="#">'+
+        (variant==="deal" ? 'Pedir esta oferta' : 'Pedir ahora')+
+      '</a>'+
+    '</div>';
+
+  const nEl = art.querySelector(".n");
+  const link = art.querySelector(".now");
+  const msg = () => {
+    const oferta = p.beforePrice
+      ? "\nOferta: precio antes "+cop(p.beforePrice)+" → ahora "+cop(p.price)+" (-"+p.discount+"%)."
+      : "";
+    return "Hola, quiero pedir *"+p.name+"* (ref "+p.sku+")."+oferta+
+           "\nCantidad: "+nEl.textContent+" "+p.unit+
+           ".\n¿Me confirman disponibilidad, flete y valor?";
+  };
+  const sync = () => link.href = waUrl(msg());
+  sync();
+
+  art.querySelector(".minus").addEventListener("click", () => { nEl.textContent = Math.max(p.minQty, +nEl.textContent - 1); sync(); });
+  art.querySelector(".plus").addEventListener("click", () => { nEl.textContent = +nEl.textContent + 1; sync(); });
+  art.querySelector(".add").addEventListener("click", () => { addToCart(p.id, +nEl.textContent); openCart(); });
+  link.addEventListener("click", () => addToCart(p.id, +nEl.textContent));
+
+  return art;
+}
 
 function renderGrid(){
   const q = searchInput.value.trim().toLowerCase();
   const list = PRODUCTS.filter(p => {
-    const mc = current === "todas" || p.category === current;
-    const mq = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || CAT_BY_ID[p.category].name.toLowerCase().includes(q);
+    const mc = current === "todas"
+      || (current === "ofertas" ? !!p.beforePrice : p.category === current);
+    const mq = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q)
+      || CAT_BY_ID[p.category].name.toLowerCase().includes(q);
     return mc && mq;
   });
   grid.innerHTML = "";
   emptyMsg.hidden = list.length > 0;
-
-  list.forEach(p => {
-    const cat = CAT_BY_ID[p.category];
-    const art = document.createElement("article");
-    art.className = "prod";
-    art.innerHTML =
-      '<div class="media"><img class="photo" src="'+cat.image+'" alt="" data-ph="'+cat.image+'">'+
-      (p.featured ? '<span class="flag">Alta rotación</span>' : '')+'</div>'+
-      '<div class="body">'+
-        '<p class="cat-name">'+cat.name+'</p>'+
-        '<h3>'+p.name+'</h3>'+
-        '<p class="meta">'+p.sku+' · Mín. '+p.minQty+' '+p.unit+'</p>'+
-        '<p class="price">'+cop(p.price)+'</p>'+
-        '<p class="price-note">Precio de referencia · se confirma en WhatsApp</p>'+
-        '<div class="actions">'+
-          '<div class="qty"><button type="button" class="minus" aria-label="Disminuir">−</button><span class="n">'+p.minQty+'</span><button type="button" class="plus" aria-label="Aumentar">+</button></div>'+
-          '<button type="button" class="btn btn-outline add" style="flex:1">Agregar</button>'+
-        '</div>'+
-        '<a class="btn btn-primary btn-block now" style="margin-top:8px" target="_blank" rel="noopener" href="#">Pedir ahora</a>'+
-      '</div>';
-
-    const nEl = art.querySelector(".n");
-    const link = art.querySelector(".now");
-    const msg = () => "Hola, quiero pedir *"+p.name+"* (ref "+p.sku+").\nCantidad: "+nEl.textContent+" "+p.unit+".\n¿Me confirman disponibilidad, flete y valor?";
-    const sync = () => link.href = waUrl(msg());
-    sync();
-
-    art.querySelector(".minus").addEventListener("click", () => { nEl.textContent = Math.max(p.minQty, +nEl.textContent - 1); sync(); });
-    art.querySelector(".plus").addEventListener("click", () => { nEl.textContent = +nEl.textContent + 1; sync(); });
-    art.querySelector(".add").addEventListener("click", () => { addToCart(p.id, +nEl.textContent); openCart(); });
-    link.addEventListener("click", () => addToCart(p.id, +nEl.textContent));
-
-    grid.appendChild(art);
-  });
+  list.forEach(p => grid.appendChild(productCard(p, "grid")));
   fixImages(grid);
+}
+
+function renderOffers(){
+  offersGrid.innerHTML = "";
+  offersEmpty.hidden = OFFER_PRODUCTS.length > 0;
+  OFFER_PRODUCTS.forEach(p => offersGrid.appendChild(productCard(p, "deal")));
+  fixImages(offersGrid);
 }
 
 const depsUl = document.getElementById("deps");
@@ -851,8 +1061,10 @@ document.getElementById("orderForm").addEventListener("submit", e => {
 
   const lines = Object.entries(cart).map(([id,q]) => {
     const p = PROD_BY_ID[id]; if (!p) return null;
-    return "• "+q+" "+p.unit+" × "+p.name+" ("+p.sku+") — "+cop(p.price*q);
+    return "• "+q+" "+p.unit+" × "+p.name+" ("+p.sku+") — "+cop(p.price*q)+
+           (p.beforePrice ? "  (antes "+cop(p.beforePrice*q)+" · -"+p.discount+"%)" : "");
   }).filter(Boolean);
+  const saving = cartSaving();
 
   const msg = [
     "*AXTOON DISTRIBUIDORA S.A.S*","Pedido mayorista","",
@@ -865,7 +1077,9 @@ document.getElementById("orderForm").addEventListener("submit", e => {
     "","*Productos:*",
     lines.length ? lines.join("\n") : "• (sin productos en carrito — cotización general)",
     "","*Ítems:* "+cartCount(),
-    "*Total referencia:* "+cop(cartTotal()),"",
+    "*Total referencia:* "+cop(cartTotal()),
+    saving > 0 ? "*Ahorro en ofertas:* "+cop(saving) : null,
+    "",
     v("f_notes") ? "*Notas:* "+v("f_notes") : null,
     "Quedo atento para confirmar disponibilidad, flete e IVA."
   ].filter(l => l !== null).join("\n");
@@ -904,6 +1118,7 @@ searchInput.addEventListener("input", renderGrid);
 
 buildChips();
 renderGrid();
+renderOffers();
 renderCart();
 fixImages(document);
 </script>
