@@ -1,852 +1,911 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AXTOON — tienda online creada por JUNIOR ESTIBEN PORTILLA. Productos seleccionados, ofertas y compra fácil.">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>AXTOON — Compra diferente. Vive diferente.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axtoon Distribuidora S.A.S — Mayorista en Colombia</title>
+<meta name="description" content="Axtoon Distribuidora S.A.S abastece droguerías, minimercados y comercio independiente en toda Colombia. Arme su pedido y confírmelo por WhatsApp.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  IMÁGENES — súbelas a GitHub en la MISMA carpeta de este archivo
+  ============================================================
+  im1.png  → Foto principal (hero / centro de distribución)
+  im2.png  → Aseo del hogar
+  im3.png  → Cuidado personal
+  im4.png  → Alimentos y despensa
+  im5.png  → Bebidas
+  im6.png  → Snacks y confitería
+  im7.png  → Papelería y oficina
+  im8.png  → Hogar y cocina
+  im9.png  → Bebés
+  im10.png → Mascotas
+  im11.png → Salud y farmacia
+  im12.png → Belleza
+  im13.png → Tecnología
+  im14.png → Escolar
+  im15.png → Limpieza institucional
+  im16.png → Logística / muelles de despacho
+  Mientras no existan, se muestra un recuadro con el nombre del archivo.
+  ============================================================
+-->
 
-  <style>
-    :root{
-      --bg:#070707;
-      --panel:#101010;
-      --panel2:#151515;
-      --text:#f5f5f5;
-      --muted:#9d9d9d;
-      --line:rgba(255,255,255,.09);
-      --accent:#c8ff00;
-      --accent2:#8cff00;
-      --danger:#ff4d4d;
-      --max:1240px;
-      --radius:22px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,Arial,sans-serif;
-      background:
-        radial-gradient(circle at 80% 0%,rgba(200,255,0,.10),transparent 30%),
-        radial-gradient(circle at 0% 40%,rgba(255,255,255,.04),transparent 28%),
-        var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    button,input,select{font:inherit}
-    button{cursor:pointer}
-    img{display:block;width:100%}
+<style>
+:root{
+  --background:#f3eee6;
+  --foreground:#1a1916;
+  --card:#faf8f4;
+  --muted:#e7e0d4;
+  --muted-fg:#5f5a53;
+  --primary:#1f4a3c;
+  --primary-fg:#f3eee6;
+  --secondary:#2a2a26;
+  --secondary-fg:#f3eee6;
+  --border:#d4cdc0;
+  --danger:#8f3d2b;
+  --sans:"Outfit",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --display:"Fraunces",ui-serif,Georgia,"Times New Roman",serif;
+  --shadow-border:0 0 0 1px rgb(26 25 22 / .06),0 1px 2px -1px rgb(26 25 22 / .06),0 2px 4px 0 rgb(26 25 22 / .04);
+  --shadow-hover:0 0 0 1px rgb(26 25 22 / .08),0 1px 2px -1px rgb(26 25 22 / .08),0 2px 8px 0 rgb(26 25 22 / .08);
+  --shadow-lift:0 18px 40px -24px rgb(26 25 22 / .28);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  margin:0;background:var(--background);color:var(--foreground);
+  font-family:var(--sans);font-size:16px;line-height:1.5;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{letter-spacing:-.03em;line-height:1.15;margin:0;font-family:var(--display);font-weight:500}
+p{margin:0;text-wrap:pretty}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1152px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 24px}}
+.eyebrow{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.22em;color:var(--muted-fg)}
+.photo{outline:1px solid rgb(26 25 22 / .1);outline-offset:-1px;object-fit:cover;width:100%}
+.ph{
+  width:100%;aspect-ratio:4/3;display:grid;place-items:center;
+  background:repeating-linear-gradient(45deg,#e7e0d4 0 12px,#ddd5c7 12px 24px);
+  color:var(--muted-fg);font-size:13px;font-weight:500;letter-spacing:.06em;
+  outline:1px dashed var(--border);outline-offset:-1px;
+}
+.ph.wide{aspect-ratio:16/10}
 
-    .announcement{
-      text-align:center;
-      padding:10px 15px;
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.08em;
-      background:var(--accent);
-      color:#080808;
-    }
+/* Botones */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:44px;padding:0 18px;border-radius:.75rem;border:1px solid transparent;
+  font-size:15px;font-weight:500;transition:transform .15s var(--ease),background-color .15s,box-shadow .15s;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-primary:hover{background:#18392f}
+.btn-outline{background:transparent;border-color:var(--border);color:var(--foreground)}
+.btn-outline:hover{background:var(--muted)}
+.btn-ghost{background:transparent;color:var(--foreground);padding:0 10px}
+.btn-ghost:hover{background:var(--muted)}
+.btn-lg{height:52px;padding:0 24px;font-size:16px}
+.btn-block{width:100%}
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      border-bottom:1px solid var(--line);
-      background:rgba(7,7,7,.82);
-      backdrop-filter:blur(18px);
-    }
-    .nav{
-      width:min(var(--max),92%);
-      margin:auto;
-      min-height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-    .logo{
-      font-family:"Space Grotesk",sans-serif;
-      font-weight:900;
-      font-size:27px;
-      letter-spacing:-.06em;
-    }
-    .logo span{color:var(--accent)}
-    .nav-links{display:flex;gap:25px;color:#d7d7d7;font-size:14px;font-weight:600}
-    .nav-links a{transition:.2s}
-    .nav-links a:hover{color:var(--accent)}
-    .nav-actions{display:flex;gap:9px}
-    .icon-btn{
-      width:43px;height:43px;border:1px solid var(--line);border-radius:50%;
-      background:#111;color:#fff;display:grid;place-items:center;font-size:18px;
-      transition:.2s;
-    }
-    .icon-btn:hover{border-color:var(--accent);transform:translateY(-2px)}
-    .cart-count{
-      position:absolute;margin:-31px 0 0 29px;background:var(--accent);color:#000;
-      min-width:18px;height:18px;border-radius:20px;font-size:10px;font-weight:900;
-      display:grid;place-items:center;
-    }
+/* Barra superior */
+.strip{background:var(--primary);color:var(--primary-fg);text-align:center;padding:8px 16px;font-size:13px;font-weight:500;letter-spacing:.02em}
+header.site{position:sticky;top:0;z-index:40;background:var(--background);border-bottom:1px solid transparent;transition:.25s var(--ease)}
+header.site.scrolled{border-color:var(--border);background:rgb(243 238 230 / .93);backdrop-filter:blur(10px);box-shadow:var(--shadow-border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+@media(min-width:768px){.nav{height:72px}}
+.brand{display:flex;align-items:center;gap:10px}
+.brand svg{width:36px;height:36px;flex:none}
+.brand .n1{font-family:var(--display);font-size:18px;display:block;line-height:1.1}
+.brand .n2{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);display:block}
+.nav-links{display:none;gap:28px}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{font-size:15px;font-weight:500;color:var(--muted-fg)}
+.nav-links a:hover{color:var(--foreground)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:.75rem;background:transparent;border:none;position:relative}
+.icon-btn:hover{background:var(--muted)}
+.badge{position:absolute;top:6px;right:6px;min-width:18px;height:18px;padding:0 4px;border-radius:999px;background:var(--primary);color:var(--primary-fg);font-size:11px;font-weight:600;display:grid;place-items:center}
+#btnMenu{display:grid}
+@media(min-width:1024px){#btnMenu{display:none}}
+#waTop{display:none}
+@media(min-width:640px){#waTop{display:inline-flex}}
+.mobile-menu{display:none;border-top:1px solid var(--border);background:var(--background);padding:12px 0}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px;border-radius:.5rem;font-weight:500}
+.mobile-menu a:hover{background:var(--muted)}
 
-    .hero{
-      width:min(var(--max),92%);
-      margin:auto;
-      min-height:610px;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      align-items:center;
-      gap:50px;
-      padding:70px 0 55px;
-    }
-    .eyebrow{
-      color:var(--accent);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      margin-bottom:20px;
-    }
-    h1{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:clamp(52px,8vw,102px);
-      line-height:.87;
-      letter-spacing:-.075em;
-      max-width:780px;
-    }
-    h1 span{color:var(--accent)}
-    .hero-copy{
-      max-width:610px;
-      color:#aaa;
-      line-height:1.7;
-      font-size:16px;
-      margin:27px 0;
-    }
-    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:14px 21px;
-      font-weight:800;
-      transition:.25s;
-    }
-    .btn-primary{background:var(--accent);color:#000;border-color:var(--accent)}
-    .btn-primary:hover{background:#fff;border-color:#fff;transform:translateY(-3px)}
-    .btn-dark{background:#111;color:#fff}
-    .btn-dark:hover{border-color:#777;transform:translateY(-3px)}
+/* Hero */
+.hero{display:grid;gap:32px;padding:40px 0}
+@media(min-width:1024px){.hero{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:64px 0}}
+.hero h1{font-size:40px}
+@media(min-width:640px){.hero h1{font-size:50px}}
+@media(min-width:1024px){.hero h1{font-size:60px}}
+.hero .sub{margin-top:20px;max-width:36rem;color:var(--muted-fg);font-size:17px}
+.hero .cta{margin-top:32px;display:flex;flex-direction:column;gap:12px}
+@media(min-width:640px){.hero .cta{flex-direction:row}}
+.hero-media{position:relative;border-radius:1.5rem;overflow:hidden;box-shadow:var(--shadow-lift)}
+.hero-media img{aspect-ratio:4/3}
+@media(min-width:1024px){.hero-media img{aspect-ratio:16/10}}
+.hero-tag{position:absolute;left:16px;bottom:16px;background:rgb(250 248 244 / .95);border-radius:.75rem;padding:12px 16px;box-shadow:var(--shadow-border)}
+.hero-tag .k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg)}
+.hero-tag .v{font-family:var(--display);font-size:18px}
 
-    .hero-card{
-      position:relative;
-      min-height:470px;
-      border:1px solid var(--line);
-      border-radius:32px;
-      overflow:hidden;
-      background:linear-gradient(145deg,#1a1a1a,#090909);
-      box-shadow:0 30px 90px rgba(0,0,0,.5);
-    }
-    .hero-card:before{
-      content:"";
-      position:absolute;inset:15%;
-      border-radius:50%;
-      background:var(--accent);
-      filter:blur(80px);
-      opacity:.18;
-    }
-    .hero-card-content{
-      position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
-      padding:34px;background:linear-gradient(transparent 35%,rgba(0,0,0,.9));
-    }
-    .hero-product{
-      position:absolute;
-      width:74%;
-      height:74%;
-      left:13%;
-      top:9%;
-      object-fit:cover;
-      border-radius:28px;
-      filter:saturate(.9);
-    }
-    .hero-card h2{font-size:30px;letter-spacing:-.04em}
-    .hero-card p{color:#aaa;margin-top:7px;font-size:13px}
+/* Stats */
+.stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card)}
+.stats-grid{max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border)}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--card);padding:28px 20px}
+.stat .v{font-family:var(--display);font-size:30px}
+.stat .l{margin-top:4px;font-size:14px;color:var(--muted-fg)}
 
-    .trust{
-      border-block:1px solid var(--line);
-      background:#0b0b0b;
-    }
-    .trust-grid{
-      width:min(var(--max),92%);margin:auto;padding:22px 0;
-      display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-    }
-    .trust-item{display:flex;align-items:center;gap:12px;color:#c7c7c7;font-size:13px}
-    .trust-icon{font-size:22px}
+section{scroll-margin-top:96px}
+.sec{padding:64px 0}
+@media(min-width:768px){.sec{padding:80px 0}}
+.h2{margin-top:8px;font-size:30px;max-width:40rem}
+@media(min-width:768px){.h2{font-size:36px}}
+.lead{margin-top:12px;max-width:42rem;color:var(--muted-fg)}
 
-    .section{width:min(var(--max),92%);margin:0 auto;padding:90px 0}
-    .section-head{
-      display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:32px;
-    }
-    .section-title{
-      font-family:"Space Grotesk",sans-serif;font-size:clamp(32px,5vw,55px);
-      letter-spacing:-.06em;line-height:1;
-    }
-    .section-sub{color:#8e8e8e;max-width:510px;line-height:1.6;font-size:14px}
+/* Categorías */
+.cats{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:640px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1024px){.cats{grid-template-columns:repeat(4,1fr);gap:16px}}
+.cat{background:var(--card);border-radius:.75rem;overflow:hidden;box-shadow:var(--shadow-border);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.cat:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.cat img{aspect-ratio:4/3;transition:transform .4s var(--ease)}
+.cat:hover img{transform:scale(1.03)}
+.cat .txt{padding:12px 14px}
+.cat .txt b{font-weight:500}
+.cat .txt span{display:block;font-size:14px;color:var(--muted-fg)}
 
-    .categories{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
-    .filter{
-      border:1px solid var(--line);background:#0f0f0f;color:#ccc;border-radius:999px;
-      padding:10px 15px;font-size:12px;font-weight:700;
-    }
-    .filter.active,.filter:hover{background:var(--accent);border-color:var(--accent);color:#000}
+/* Catálogo */
+.catalog{border-top:1px solid var(--border);background:rgb(250 248 244 / .55)}
+.catalog-head{margin-top:8px;display:flex;flex-direction:column;gap:16px}
+@media(min-width:768px){.catalog-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+.search{position:relative;width:100%}
+@media(min-width:768px){.search{max-width:20rem}}
+.search input{width:100%;height:44px;border-radius:.75rem;border:1px solid var(--border);background:var(--card);padding:0 14px 0 38px;font:inherit;font-size:15px;color:inherit}
+.search input:focus{outline:2px solid var(--primary);outline-offset:1px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted-fg);pointer-events:none}
+.chips{margin-top:24px;display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;height:40px;padding:0 16px;border-radius:999px;border:none;background:var(--card);box-shadow:var(--shadow-border);font-size:14px;font-weight:500;white-space:nowrap}
+.chip.active{background:var(--primary);color:var(--primary-fg);box-shadow:none}
+.grid-prod{margin-top:32px;display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.grid-prod{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.grid-prod{grid-template-columns:repeat(3,1fr)}}
+.prod{display:flex;flex-direction:column;background:var(--card);border-radius:1.5rem;padding:8px;box-shadow:var(--shadow-border)}
+.prod .media{position:relative;border-radius:1rem;overflow:hidden}
+.prod .media img{aspect-ratio:4/3}
+.flag{position:absolute;top:10px;left:10px;background:rgb(250 248 244 / .95);border-radius:999px;padding:4px 10px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+.prod .body{display:flex;flex-direction:column;flex:1;padding:12px 12px 8px}
+.prod .cat-name{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg)}
+.prod h3{margin-top:4px;font-family:var(--sans);font-size:16px;font-weight:500;letter-spacing:0}
+.prod .meta{margin-top:4px;font-size:14px;color:var(--muted-fg)}
+.prod .price{margin-top:12px;font-family:var(--display);font-size:24px;font-variant-numeric:tabular-nums}
+.prod .price-note{font-size:12px;color:var(--muted-fg)}
+.qty{display:flex;align-items:center;height:44px;border-radius:.75rem;background:var(--muted)}
+.qty button{width:44px;height:44px;display:grid;place-items:center;background:none;border:none;font-size:18px}
+.qty span{min-width:34px;text-align:center;font-size:15px;font-weight:500;font-variant-numeric:tabular-nums}
+.prod .actions{margin-top:16px;display:flex;gap:8px}
+.empty{margin-top:48px;text-align:center;color:var(--muted-fg)}
 
-    .products{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-    }
-    .product{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:linear-gradient(180deg,#121212,#0d0d0d);
-      overflow:hidden;
-      transition:.25s;
-      position:relative;
-    }
-    .product:hover{transform:translateY(-6px);border-color:rgba(200,255,0,.4)}
-    .product-img-wrap{aspect-ratio:1/1;overflow:hidden;background:#181818;position:relative}
-    .product img{height:100%;object-fit:cover;transition:.45s}
-    .product:hover img{transform:scale(1.05)}
-    .badge{
-      position:absolute;left:12px;top:12px;background:var(--accent);color:#000;
-      padding:6px 9px;border-radius:999px;font-size:10px;font-weight:900;z-index:2
-    }
-    .product-body{padding:18px}
-    .product-category{font-size:10px;color:#777;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
-    .product h3{font-size:16px;margin:8px 0 12px;line-height:1.25}
-    .price{font-size:19px;font-weight:900}
-    .old-price{color:#666;text-decoration:line-through;font-size:12px;margin-left:6px}
-    .product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:15px}
-    .add{
-      border:0;background:#fff;color:#000;border-radius:999px;padding:9px 13px;font-size:11px;font-weight:900;
-    }
-    .add:hover{background:var(--accent)}
+/* Proceso */
+.steps{margin-top:40px;display:grid;gap:16px}
+@media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--card);border-radius:1.5rem;padding:24px;box-shadow:var(--shadow-border)}
+.step .n{font-family:var(--display);font-size:30px;color:var(--primary)}
+.step h3{margin-top:16px;font-family:var(--sans);font-size:18px;font-weight:500;letter-spacing:0}
+.step p{margin-top:8px;font-size:14px;color:var(--muted-fg)}
 
-    .benefits{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:18px
-    }
-    .benefit{
-      padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:#0d0d0d
-    }
-    .benefit-icon{font-size:30px;margin-bottom:20px}
-    .benefit h3{margin-bottom:9px}
-    .benefit p{font-size:13px;line-height:1.65;color:#888}
+/* Why */
+.why{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--primary);color:var(--primary-fg)}
+.why-grid{display:grid;gap:40px;padding:64px 0}
+@media(min-width:768px){.why-grid{grid-template-columns:repeat(2,1fr);align-items:center;padding:80px 0}}
+.why .eyebrow{color:rgb(243 238 230 / .7)}
+.why p.lead{color:rgb(243 238 230 / .8)}
+.why-cards{display:grid;gap:12px}
+@media(min-width:640px){.why-cards{grid-template-columns:repeat(2,1fr)}}
+.why-card{background:rgb(243 238 230 / .09);border-radius:.75rem;padding:20px}
+.why-card h3{font-family:var(--sans);font-size:16px;font-weight:500;letter-spacing:0;margin-top:12px}
+.why-card p{margin-top:4px;font-size:14px;color:rgb(243 238 230 / .75)}
+.why-card .ico{font-size:20px}
 
-    .brand{
-      display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch
-    }
-    .brand-card{
-      padding:45px;border:1px solid var(--line);border-radius:30px;background:
-      linear-gradient(135deg,rgba(200,255,0,.10),transparent 50%),#0d0d0d;
-    }
-    .brand-card h2{font-family:"Space Grotesk";font-size:45px;letter-spacing:-.06em}
-    .brand-card h2 span{color:var(--accent)}
-    .brand-card p{color:#999;line-height:1.8;margin-top:18px;font-size:14px}
-    .founder{
-      margin-top:28px;padding-top:20px;border-top:1px solid var(--line);
-      font-size:12px;color:#777;text-transform:uppercase;letter-spacing:.12em
-    }
-    .founder strong{display:block;color:#fff;font-size:15px;letter-spacing:0;margin-top:6px}
+/* Cobertura */
+.cov{display:grid;gap:40px}
+@media(min-width:768px){.cov{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.cov img,.cov .ph{margin-top:32px;border-radius:1.5rem;aspect-ratio:16/10}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;font-size:14px}
+.pill{border-radius:999px;padding:4px 14px;background:var(--muted)}
+.pill.on{background:var(--primary);color:var(--primary-fg)}
+.deps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+@media(min-width:640px){.deps{grid-template-columns:repeat(2,1fr)}}
+.deps li{display:flex;justify-content:space-between;background:var(--card);border-radius:.5rem;padding:10px 12px;font-size:14px;box-shadow:var(--shadow-border)}
+.deps .fast{color:var(--primary);font-weight:500}
+.deps .slow{color:var(--muted-fg)}
 
-    .cta{
-      text-align:center;padding:85px 25px;border:1px solid var(--line);border-radius:32px;
-      background:radial-gradient(circle at center,rgba(200,255,0,.12),transparent 55%),#0d0d0d;
-    }
-    .cta h2{font-family:"Space Grotesk";font-size:clamp(35px,5vw,65px);letter-spacing:-.07em}
-    .cta p{color:#888;max-width:550px;margin:17px auto 25px;line-height:1.6;font-size:14px}
+/* Testimonios */
+.testi{border-top:1px solid var(--border);background:rgb(250 248 244 / .5)}
+.quotes{margin-top:40px;display:grid;gap:16px}
+@media(min-width:768px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{background:var(--card);border-radius:1.5rem;padding:24px;box-shadow:var(--shadow-border);margin:0}
+.quote p{font-size:14px;line-height:1.7}
+.quote footer{margin-top:24px;display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;border-radius:999px;background:var(--primary);color:var(--primary-fg);display:grid;place-items:center;font-family:var(--display);font-size:14px}
+.quote .nm{font-weight:500;display:block}
+.quote .rl{font-size:14px;color:var(--muted-fg);display:block}
 
-    footer{border-top:1px solid var(--line);padding:45px 0 30px;background:#050505}
-    .footer-grid{
-      width:min(var(--max),92%);margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px
-    }
-    footer h3{margin-bottom:15px;font-size:13px}
-    footer p,footer a{color:#777;font-size:12px;line-height:2}
-    footer a:hover{color:var(--accent)}
-    .copyright{
-      width:min(var(--max),92%);margin:35px auto 0;padding-top:20px;border-top:1px solid var(--line);
-      color:#555;font-size:11px;display:flex;justify-content:space-between;gap:15px
-    }
+/* FAQ */
+.faq-wrap{max-width:768px;margin:0 auto}
+.faq-list{margin-top:32px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+details.f{border-bottom:1px solid var(--border)}
+details.f:last-child{border-bottom:none}
+details.f summary{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 0;font-weight:500}
+details.f summary::-webkit-details-marker{display:none}
+details.f summary::after{content:"⌄";color:var(--muted-fg);transition:transform .25s var(--ease)}
+details.f[open] summary::after{transform:rotate(180deg)}
+details.f p{padding-bottom:16px;font-size:14px;color:var(--muted-fg)}
 
-    .overlay{
-      position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(7px);
-      z-index:90;opacity:0;pointer-events:none;transition:.25s
-    }
-    .overlay.show{opacity:1;pointer-events:auto}
-    .cart{
-      position:fixed;right:0;top:0;height:100%;width:min(450px,94vw);z-index:100;
-      background:#0c0c0c;border-left:1px solid var(--line);
-      transform:translateX(100%);transition:.3s;display:flex;flex-direction:column
-    }
-    .cart.open{transform:translateX(0)}
-    .cart-head{padding:22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-    .cart-head h2{font-family:"Space Grotesk";font-size:23px}
-    .close{border:0;background:none;color:#fff;font-size:25px}
-    .cart-items{padding:18px;overflow:auto;flex:1}
-    .cart-empty{text-align:center;color:#666;padding:70px 20px}
-    .cart-item{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
-    .cart-item img{height:70px;border-radius:13px;object-fit:cover}
-    .cart-item h4{font-size:12px;margin-bottom:6px}
-    .cart-item p{font-size:11px;color:#888}
-    .qty{display:flex;align-items:center;gap:7px;margin-top:8px}
-    .qty button{width:23px;height:23px;border:1px solid var(--line);background:#151515;color:#fff;border-radius:50%}
-    .remove{background:none;border:0;color:#777;font-size:11px}
-    .cart-foot{border-top:1px solid var(--line);padding:20px}
-    .total{display:flex;justify-content:space-between;font-size:18px;font-weight:900;margin-bottom:15px}
-    .checkout{width:100%;border:0;background:var(--accent);padding:15px;border-radius:13px;font-weight:900}
-    .checkout:hover{background:#fff}
-    .small-note{color:#666;font-size:10px;text-align:center;margin-top:9px}
+/* Pedido */
+.order{border-top:1px solid var(--border);background:rgb(250 248 244 / .5);padding-bottom:96px}
+.order-grid{display:grid;gap:40px}
+@media(min-width:768px){.order-grid{grid-template-columns:.9fr 1.1fr}}
+.resume{margin-top:32px;font-size:14px}
+.resume div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border);padding:8px 0}
+.resume div:last-child{border-bottom:none}
+.resume dt{color:var(--muted-fg)}
+.resume .big{font-family:var(--display);font-size:20px;font-variant-numeric:tabular-nums}
+form.card{background:var(--card);border-radius:1.5rem;padding:20px;box-shadow:var(--shadow-border)}
+@media(min-width:768px){form.card{padding:24px}}
+.fields{display:grid;gap:16px}
+@media(min-width:640px){.fields{grid-template-columns:repeat(2,1fr)}.col2{grid-column:span 2}}
+label{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
+input,select,textarea{
+  width:100%;border:1px solid var(--border);border-radius:.75rem;background:var(--background);
+  padding:11px 12px;font:inherit;font-size:15px;color:inherit;
+}
+textarea{min-height:88px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--primary);outline-offset:1px}
+.err{margin-top:12px;color:var(--danger);font-size:14px}
+.hint{margin-top:12px;text-align:center;font-size:12px;color:var(--muted-fg)}
 
-    .toast{
-      position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);
-      background:#fff;color:#000;padding:12px 18px;border-radius:999px;font-size:12px;font-weight:800;
-      z-index:200;opacity:0;pointer-events:none;transition:.3s
-    }
-    .toast.show{opacity:1;transform:translate(-50%,0)}
+/* Footer */
+footer.site{border-top:1px solid var(--border);background:var(--secondary);color:var(--secondary-fg)}
+.foot{display:grid;gap:40px;padding:56px 0}
+@media(min-width:768px){.foot{grid-template-columns:repeat(4,1fr)}.foot .c2{grid-column:span 2}}
+footer .brand .n2{color:rgb(243 238 230 / .55)}
+.foot p.desc{margin-top:16px;max-width:24rem;font-size:14px;color:rgb(243 238 230 / .7)}
+.foot .eyebrow{color:rgb(243 238 230 / .5)}
+.foot ul{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px;font-size:14px}
+.foot a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgb(243 238 230 / .1);padding:20px 16px 80px;text-align:center;font-size:12px;color:rgb(243 238 230 / .5)}
+@media(min-width:768px){.copy{padding-bottom:20px}}
 
-    .search-box{
-      position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.92);backdrop-filter:blur(15px);
-      display:none;align-items:flex-start;justify-content:center;padding-top:120px
-    }
-    .search-box.show{display:flex}
-    .search-inner{width:min(700px,90%)}
-    .search-inner input{
-      width:100%;background:#111;border:1px solid #333;color:#fff;border-radius:18px;
-      padding:20px;font-size:22px;outline:none
-    }
-    .search-inner input:focus{border-color:var(--accent)}
-    .search-close{display:block;margin:15px auto;background:none;color:#777;border:0}
+/* Flotante WhatsApp */
+.wa-float{
+  position:fixed;right:16px;bottom:16px;z-index:40;display:flex;align-items:center;gap:8px;
+  height:48px;padding:0 18px;border-radius:999px;background:var(--primary);color:var(--primary-fg);
+  font-size:15px;font-weight:500;box-shadow:var(--shadow-lift);
+}
+.wa-float:active{transform:scale(.96)}
+@media(min-width:768px){.wa-float{right:24px;bottom:24px}}
 
-    @media(max-width:950px){
-      .nav-links{display:none}
-      .hero{grid-template-columns:1fr;padding-top:55px}
-      .hero-card{min-height:400px}
-      .products{grid-template-columns:repeat(2,1fr)}
-      .trust-grid{grid-template-columns:repeat(2,1fr)}
-      .brand{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr 1fr}
-    }
-    @media(max-width:560px){
-      .nav{min-height:66px}
-      .logo{font-size:23px}
-      .hero{min-height:auto;padding:50px 0}
-      h1{font-size:56px}
-      .hero-card{min-height:360px}
-      .trust-grid{grid-template-columns:1fr}
-      .section{padding:65px 0}
-      .section-head{display:block}
-      .section-sub{margin-top:12px}
-      .products{grid-template-columns:1fr 1fr;gap:10px}
-      .product-body{padding:13px}
-      .product h3{font-size:13px}
-      .price{font-size:16px}
-      .add{padding:8px 10px}
-      .benefits{grid-template-columns:1fr}
-      .brand-card{padding:28px}
-      .brand-card h2{font-size:37px}
-      .footer-grid{grid-template-columns:1fr}
-      .copyright{display:block;line-height:1.8}
-    }
-  </style>
+/* Carrito */
+.overlay{position:fixed;inset:0;background:rgb(26 25 22 / .5);z-index:50;display:none}
+.overlay.open{display:block}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:100%;max-width:420px;z-index:51;
+  background:var(--background);display:flex;flex-direction:column;transform:translateX(100%);
+  transition:transform .3s var(--ease);box-shadow:var(--shadow-lift);
+}
+.drawer.open{transform:translateX(0)}
+.drawer header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--border)}
+.drawer h3{font-size:20px}
+.drawer .items{flex:1;overflow:auto;padding:16px;display:grid;gap:12px;align-content:start}
+.ci{display:flex;gap:12px;background:var(--card);border-radius:.75rem;padding:12px;box-shadow:var(--shadow-border)}
+.ci .info{flex:1;min-width:0}
+.ci .nm{font-size:14px;font-weight:500}
+.ci .sub{font-size:12px;color:var(--muted-fg)}
+.ci .rm{background:none;border:none;color:var(--danger);font-size:13px;padding:0;margin-top:6px}
+.drawer footer{border-top:1px solid var(--border);padding:16px;display:grid;gap:12px}
+.drawer .tot{display:flex;justify-content:space-between;font-size:15px}
+.drawer .tot b{font-family:var(--display);font-size:20px}
+</style>
 </head>
-
 <body>
-  <div class="announcement">⚡ ENVÍOS A COLOMBIA · COMPRA ONLINE · AXTOON</div>
 
-  <header>
-    <nav class="nav">
-      <a href="#" class="logo">AXT<span>OO</span>N</a>
+<div class="strip">Pedidos mayoristas a todo Colombia · Confirmación por WhatsApp +57 322 375 2541</div>
 
-      <div class="nav-links">
-        <a href="#productos">Productos</a>
-        <a href="#ofertas">Ofertas</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-      </div>
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a href="#inicio" class="brand">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#1f4a3c"/>
+        <path d="M12 27.5 20 10.5 28 27.5" stroke="#f3eee6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.2 21.2h9.6" stroke="#f3eee6" stroke-width="2.2" stroke-linecap="round"/>
+        <rect x="17.4" y="23.6" width="5.2" height="4.2" rx=".8" stroke="#f3eee6" stroke-width="1.6"/>
+      </svg>
+      <span><span class="n1">Axtoon</span><span class="n2">Distribuidora S.A.S</span></span>
+    </a>
 
-      <div class="nav-actions">
-        <button class="icon-btn" id="searchBtn" aria-label="Buscar">⌕</button>
-        <button class="icon-btn" id="cartBtn" aria-label="Carrito">🛒
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-      </div>
+    <nav class="nav-links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#proceso">Cómo pedir</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#pedido">Pedido</a>
     </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Bienvenido a AXTOON</div>
-        <h1>COMPRA<br><span>DIFERENTE.</span><br>VIVE DIFERENTE.</h1>
-        <p class="hero-copy">
-          Productos seleccionados para personas que buscan soluciones prácticas,
-          accesorios modernos y novedades que realmente vale la pena conocer.
-        </p>
-        <div class="hero-buttons">
-          <a href="#productos" class="btn btn-primary">Explorar productos →</a>
-          <a href="#nosotros" class="btn btn-dark">Conocer AXTOON</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <img class="hero-product"
-             src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=1000&q=85"
-             alt="Producto destacado AXTOON">
-        <div class="hero-card-content">
-          <div class="eyebrow">Producto destacado</div>
-          <h2>Descubre algo nuevo.</h2>
-          <p>Actualizamos nuestro catálogo con productos seleccionados.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust">
-      <div class="trust-grid">
-        <div class="trust-item"><span class="trust-icon">🚚</span><span>Opciones de envío disponibles</span></div>
-        <div class="trust-item"><span class="trust-icon">🔒</span><span>Compra protegida</span></div>
-        <div class="trust-item"><span class="trust-icon">💬</span><span>Atención personalizada</span></div>
-        <div class="trust-item"><span class="trust-icon">✨</span><span>Productos seleccionados</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="productos">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Catálogo AXTOON</div>
-          <h2 class="section-title">ELIGE TU<br>PRÓXIMO PRODUCTO.</h2>
-        </div>
-        <p class="section-sub">
-          Esta demo incluye productos de muestra. Reemplázalos por los productos
-          reales de tu catálogo de Dropi cuando tengas definidos tus productos ganadores.
-        </p>
-      </div>
-
-      <div class="categories">
-        <button class="filter active" data-category="Todos">Todos</button>
-        <button class="filter" data-category="Tecnología">Tecnología</button>
-        <button class="filter" data-category="Hogar">Hogar</button>
-        <button class="filter" data-category="Accesorios">Accesorios</button>
-        <button class="filter" data-category="Bienestar">Bienestar</button>
-      </div>
-
-      <div class="products" id="productGrid"></div>
-    </section>
-
-    <section class="section" id="ofertas">
-      <div class="cta">
-        <div class="eyebrow">AXTOON / OFERTAS</div>
-        <h2>ENCUENTRA TU<br>PRÓXIMO FAVORITO.</h2>
-        <p>
-          Las promociones y productos pueden cambiar. Consulta disponibilidad,
-          precio final y condiciones antes de confirmar tu pedido.
-        </p>
-        <a class="btn btn-primary" href="#productos">Ver catálogo</a>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">La experiencia AXTOON</div>
-          <h2 class="section-title">SIMPLE.<br>RÁPIDA.<br>DIRECTA.</h2>
-        </div>
-      </div>
-
-      <div class="benefits">
-        <article class="benefit">
-          <div class="benefit-icon">🔎</div>
-          <h3>Productos seleccionados</h3>
-          <p>Construimos un catálogo enfocado en productos atractivos y útiles para el día a día.</p>
-        </article>
-        <article class="benefit">
-          <div class="benefit-icon">📦</div>
-          <h3>Proceso sencillo</h3>
-          <p>El cliente agrega productos al carrito y puede enviar su pedido directamente para confirmación.</p>
-        </article>
-        <article class="benefit">
-          <div class="benefit-icon">💬</div>
-          <h3>Atención humana</h3>
-          <p>AXTOON puede centralizar las dudas y confirmaciones mediante WhatsApp antes de procesar el pedido.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="nosotros">
-      <div class="brand">
-        <article class="brand-card">
-          <div class="eyebrow">Sobre AXTOON</div>
-          <h2>UNA TIENDA CON<br><span>IDENTIDAD.</span></h2>
-          <p>
-            AXTOON nace con una idea sencilla: crear una experiencia de compra
-            moderna, visual y fácil de entender. La marca está pensada para
-            evolucionar junto con su catálogo y sus clientes.
-          </p>
-          <div class="founder">
-            Fundador
-            <strong>JUNIOR ESTIBEN PORTILLA</strong>
-          </div>
-        </article>
-
-        <article class="brand-card">
-          <div class="eyebrow">Cómo funciona</div>
-          <h2>DE LA TIENDA<br>AL CLIENTE.</h2>
-          <p>
-            AXTOON puede trabajar con un modelo de dropshipping y proveedores
-            externos. Antes de publicar cada producto debes verificar en tu
-            plataforma de proveedor el precio, stock, costos logísticos,
-            tiempos de entrega y condiciones aplicables.
-          </p>
-          <div class="founder">
-            Modelo
-            <strong>DROPSHIPPING / E-COMMERCE</strong>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <div class="cta">
-        <div class="eyebrow">¿Tienes una pregunta?</div>
-        <h2>HABLEMOS.</h2>
-        <p>Usa el botón de WhatsApp para consultar disponibilidad, productos o confirmar tu pedido.</p>
-        <a id="whatsappGeneral" class="btn btn-primary" target="_blank" rel="noopener">Abrir WhatsApp →</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <a href="#" class="logo">AXT<span>OO</span>N</a>
-        <p style="margin-top:12px;max-width:300px">
-          Compra diferente. Vive diferente.
-          Una marca creada para descubrir productos que encajan contigo.
-        </p>
-      </div>
-      <div>
-        <h3>TIENDA</h3>
-        <a href="#productos">Productos</a><br>
-        <a href="#ofertas">Ofertas</a><br>
-        <a href="#nosotros">Nosotros</a>
-      </div>
-      <div>
-        <h3>AYUDA</h3>
-        <a href="#contacto">Contacto</a><br>
-        <a href="#productos">Catálogo</a><br>
-        <a href="#" onclick="openCart();return false;">Mi carrito</a>
-      </div>
-      <div>
-        <h3>MARCA</h3>
-        <p>Creada por</p>
-        <p style="color:#fff;font-weight:800">JUNIOR ESTIBEN PORTILLA</p>
-      </div>
-    </div>
-    <div class="copyright">
-      <span>© <span id="year"></span> AXTOON. Todos los derechos reservados.</span>
-      <span>Diseño y concepto: JUNIOR ESTIBEN PORTILLA</span>
-    </div>
-  </footer>
-
-  <div class="overlay" id="overlay"></div>
-
-  <aside class="cart" id="cart">
-    <div class="cart-head">
-      <h2>Tu carrito</h2>
-      <button class="close" id="closeCart">×</button>
-    </div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-foot">
-      <div class="total"><span>Total</span><span id="cartTotal">$0</span></div>
-      <button class="checkout" id="checkout">FINALIZAR POR WHATSAPP</button>
-      <div class="small-note">El pedido se enviará para confirmación antes de procesarlo.</div>
-    </div>
-  </aside>
-
-  <div class="search-box" id="searchBox">
-    <div class="search-inner">
-      <input id="searchInput" type="search" placeholder="Busca un producto..." autocomplete="off">
-      <button class="search-close" id="searchClose">Cerrar búsqueda</button>
+    <div class="nav-right">
+      <button class="icon-btn" id="btnCart" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="badge" id="cartBadge" hidden>0</span>
+      </button>
+      <a class="btn btn-primary" id="waTop" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="icon-btn" id="btnMenu" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
+  <div class="mobile-menu wrap" id="mobileMenu">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#proceso">Cómo pedir</a>
+    <a href="#cobertura">Cobertura</a>
+    <a href="#pedido">Pedido</a>
+    <p style="padding:8px 12px;color:var(--muted-fg);font-size:14px">+57 322 375 2541</p>
+  </div>
+</header>
 
-  <div class="toast" id="toast">Producto agregado</div>
+<main>
+  <!-- HERO -->
+  <section id="inicio">
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">Distribución mayorista · Colombia</p>
+        <h1 style="margin-top:16px">El surtido de su tienda, en un solo pedido.</h1>
+        <p class="sub">Axtoon Distribuidora S.A.S abastece droguerías, minimercados y comercio independiente en todo el país. Arme el pedido aquí y un asesor lo confirma por WhatsApp.</p>
+        <div class="cta">
+          <a class="btn btn-primary btn-lg" href="#catalogo">Ver catálogo →</a>
+          <a class="btn btn-outline btn-lg wa-link" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+        <p style="margin-top:16px;font-size:14px;color:var(--muted-fg)">Línea comercial +57 322 375 2541 · Respuesta en horario de oficina</p>
+      </div>
+      <div style="position:relative">
+        <div class="hero-media"><img class="photo" src="im1.png" alt="Centro de distribución Axtoon" data-ph="im1.png" data-wide="1"></div>
+        <div class="hero-tag"><p class="k">Cobertura</p><p class="v">32 departamentos</p></div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    /*
-      AXTOON — catálogo de demostración.
-      IMPORTANTE:
-      - Cambia estos productos por los datos reales de tu catálogo Dropi.
-      - No pongas claves secretas de API dentro de este archivo HTML.
-      - Para sincronización automática de inventario/precios/pedidos se necesita
-        una integración backend/API o una plataforma compatible.
-    */
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat"><p class="v">14</p><p class="l">Secciones de venta</p></div>
+      <div class="stat"><p class="v">32</p><p class="l">Departamentos</p></div>
+      <div class="stat"><p class="v">24h</p><p class="l">Confirmación por WhatsApp</p></div>
+      <div class="stat"><p class="v">NIT</p><p class="l">Factura electrónica</p></div>
+    </div>
+  </section>
 
-    const WHATSAPP = "573223729232";
+  <!-- CATEGORÍAS -->
+  <section id="secciones" class="sec">
+    <div class="wrap">
+      <p class="eyebrow">01 · Secciones</p>
+      <h2 class="h2">Todo el surtido que mueve el comercio en Colombia</h2>
+      <p class="lead">Catorce líneas listas para tienda de barrio, droguería, papelería o institucional.</p>
+      <div class="cats" id="catsGrid"></div>
+    </div>
+  </section>
 
-    const products = [
-      {
-        id: 1,
-        name: "Auriculares inalámbricos Pro",
-        category: "Tecnología",
-        price: 89900,
-        oldPrice: 119900,
-        badge: "OFERTA",
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85"
-      },
-      {
-        id: 2,
-        name: "Lámpara LED inteligente",
-        category: "Hogar",
-        price: 79900,
-        oldPrice: 99900,
-        badge: "NUEVO",
-        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85"
-      },
-      {
-        id: 3,
-        name: "Smartwatch deportivo",
-        category: "Tecnología",
-        price: 129900,
-        oldPrice: 169900,
-        badge: "TOP",
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
-      },
-      {
-        id: 4,
-        name: "Organizador multiuso",
-        category: "Hogar",
-        price: 49900,
-        oldPrice: 69900,
-        badge: "OFERTA",
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
-      },
-      {
-        id: 5,
-        name: "Gafas de sol urbanas",
-        category: "Accesorios",
-        price: 59900,
-        oldPrice: 79900,
-        badge: "NUEVO",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85"
-      },
-      {
-        id: 6,
-        name: "Masajeador portátil",
-        category: "Bienestar",
-        price: 109900,
-        oldPrice: 139900,
-        badge: "TOP",
-        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85"
-      },
-      {
-        id: 7,
-        name: "Mochila urbana",
-        category: "Accesorios",
-        price: 99900,
-        oldPrice: 129900,
-        badge: "OFERTA",
-        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85"
-      },
-      {
-        id: 8,
-        name: "Botella térmica premium",
-        category: "Bienestar",
-        price: 69900,
-        oldPrice: 89900,
-        badge: "NUEVO",
-        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85"
-      }
-    ];
+  <!-- CATÁLOGO -->
+  <section id="catalogo" class="sec catalog">
+    <div class="wrap">
+      <p class="eyebrow">02 · Catálogo</p>
+      <div class="catalog-head">
+        <h2 class="h2" style="margin:0">Arme el pedido y lo enviamos a WhatsApp</h2>
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+          <input id="search" type="search" placeholder="Buscar producto o SKU" aria-label="Buscar productos">
+        </div>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="grid-prod" id="grid"></div>
+      <p class="empty" id="empty" hidden>No hay productos con ese filtro. Pruebe otra categoría o borre la búsqueda.</p>
+    </div>
+  </section>
 
-    let cart = JSON.parse(localStorage.getItem("axtoon_cart") || "[]");
-    let currentCategory = "Todos";
+  <!-- PROCESO -->
+  <section id="proceso" class="sec">
+    <div class="wrap">
+      <p class="eyebrow">03 · Proceso</p>
+      <h2 class="h2">Tres pasos para concretar la venta</h2>
+      <div class="steps">
+        <article class="step"><p class="n">01</p><h3>Elija el surtido</h3><p>Filtre por sección, agregue cantidades y arme el carrito con precios de referencia.</p></article>
+        <article class="step"><p class="n">02</p><h3>Complete el pedido</h3><p>Nombre, celular, ciudad y tipo de negocio. Eso basta para despachar con factura.</p></article>
+        <article class="step"><p class="n">03</p><h3>Confirme por WhatsApp</h3><p>El pedido se abre en WhatsApp con el asesor +57 322 375 2541 para cerrar flete, IVA y pago.</p></article>
+      </div>
+    </div>
+  </section>
 
-    const money = value => new Intl.NumberFormat("es-CO", {
-      style:"currency", currency:"COP", maximumFractionDigits:0
-    }).format(value);
+  <!-- POR QUÉ -->
+  <section class="why">
+    <div class="wrap why-grid">
+      <div>
+        <p class="eyebrow">04 · Por qué Axtoon</p>
+        <h2 class="h2">Una casa de distribución hecha para el comercio colombiano</h2>
+        <p class="lead">Precios mayoristas de referencia, confirmación inmediata y un canal único para cerrar. Sin formularios eternos ni llamadas perdidas.</p>
+      </div>
+      <div class="why-cards">
+        <article class="why-card"><div class="ico">🚚</div><h3>Despacho nacional</h3><p>Cobertura en los 32 departamentos. 24 a 48 horas en las principales ciudades.</p></article>
+        <article class="why-card"><div class="ico">🧾</div><h3>Factura electrónica</h3><p>Pedido a nombre de su NIT o cédula. Ideal para droguería, tienda o institución.</p></article>
+        <article class="why-card"><div class="ico">🛡️</div><h3>Surtido de rotación</h3><p>Líneas que se venden todos los días: aseo, despensa, cuidado personal y papelería.</p></article>
+        <article class="why-card"><div class="ico">📍</div><h3>Asesor en WhatsApp</h3><p>Un solo número para cotizar, ajustar el pedido y coordinar el flete.</p></article>
+      </div>
+    </div>
+  </section>
 
-    function renderProducts(list = products){
-      const grid = document.getElementById("productGrid");
-      const filtered = list.filter(p => currentCategory === "Todos" || p.category === currentCategory);
+  <!-- COBERTURA -->
+  <section id="cobertura" class="sec">
+    <div class="wrap cov">
+      <div>
+        <p class="eyebrow">05 · Cobertura</p>
+        <h2 class="h2">Envíos a todo el territorio colombiano</h2>
+        <p class="lead">Despacho 24 a 48 horas hábiles en corredores principales. Resto del país, 3 a 5 días hábiles según transportadora. El flete se cotiza al confirmar el pedido.</p>
+        <img class="photo" src="im16.png" alt="Muelles de despacho Axtoon" data-ph="im16.png" data-wide="1">
+      </div>
+      <div>
+        <div class="pill-row"><span class="pill on">24–48 h</span><span class="pill">3–5 días</span></div>
+        <ul class="deps" id="deps"></ul>
+      </div>
+    </div>
+  </section>
 
-      if(!filtered.length){
-        grid.innerHTML = '<div style="grid-column:1/-1;padding:50px;text-align:center;color:#777">No encontramos productos con esa búsqueda.</div>';
-        return;
-      }
+  <!-- TESTIMONIOS -->
+  <section class="sec testi">
+    <div class="wrap">
+      <p class="eyebrow">06 · Clientes</p>
+      <h2 class="h2">Comercio que ya pide por este canal</h2>
+      <div class="quotes">
+        <blockquote class="quote"><p>Pedimos aseo y cuidado personal cada semana. El WhatsApp nos ahorra llamadas y la factura llega con el NIT.</p><footer><span class="avatar">LR</span><span><span class="nm">Laura Restrepo</span><span class="rl">Droguería · Medellín</span></span></footer></blockquote>
+        <blockquote class="quote"><p>El surtido de despensa y bebidas nos cuadró. Confirmamos disponibilidad el mismo día y el flete queda claro.</p><footer><span class="avatar">CP</span><span><span class="nm">Carlos Peña</span><span class="rl">Minimercado · Cali</span></span></footer></blockquote>
+        <blockquote class="quote"><p>Útiles y resmas sin mínimo absurdo. Armo el carrito, lo mando y listo. Así debería funcionar un mayorista.</p><footer><span class="avatar">DR</span><span><span class="nm">Diana Rojas</span><span class="rl">Papelería · Bucaramanga</span></span></footer></blockquote>
+      </div>
+    </div>
+  </section>
 
-      grid.innerHTML = filtered.map(p => `
-        <article class="product">
-          <div class="product-img-wrap">
-            <span class="badge">${p.badge}</span>
-            <img src="${p.image}" alt="${p.name}" loading="lazy">
-          </div>
-          <div class="product-body">
-            <div class="product-category">${p.category}</div>
-            <h3>${p.name}</h3>
-            <div>
-              <span class="price">${money(p.price)}</span>
-              <span class="old-price">${money(p.oldPrice)}</span>
-            </div>
-            <div class="product-bottom">
-              <span style="font-size:10px;color:#666">Disponible</span>
-              <button class="add" onclick="addToCart(${p.id})">+ AGREGAR</button>
-            </div>
-          </div>
-        </article>
-      `).join("");
-    }
+  <!-- FAQ -->
+  <section id="preguntas" class="sec">
+    <div class="wrap faq-wrap">
+      <p class="eyebrow">07 · Preguntas</p>
+      <h2 class="h2">Antes de escribirle al asesor</h2>
+      <div class="faq-list">
+        <details class="f"><summary>¿Cómo se hace un pedido?</summary><p>Agregue productos al carrito, complete el formulario y pulse Enviar por WhatsApp. El pedido se abre con el asesor para confirmar disponibilidad, flete e IVA.</p></details>
+        <details class="f"><summary>¿Los precios incluyen IVA?</summary><p>Los precios del catálogo son de referencia mayorista. El asesor confirma IVA (19 % cuando aplica), descuentos por volumen y flete según ciudad.</p></details>
+        <details class="f"><summary>¿Hay pedido mínimo?</summary><p>Sugerimos un pedido desde $80.000 COP para optimizar el flete. Si su recarga es menor, escríbanos: cotizamos igual.</p></details>
+        <details class="f"><summary>¿Facturan a NIT?</summary><p>Sí. Indique NIT o cédula en el formulario. Emitimos factura electrónica a nombre de su negocio.</p></details>
+        <details class="f"><summary>¿Qué medios de pago aceptan?</summary><p>Transferencia, Nequi, Daviplata y, en ciudades principales, contraentrega previo acuerdo con el asesor.</p></details>
+        <details class="f"><summary>¿Puedo pedir como persona natural?</summary><p>Sí. Independientes y hogares también pueden comprar. El canal está pensado para comercio, pero atendemos ambos.</p></details>
+        <details class="f"><summary>¿Cuánto tarda el despacho?</summary><p>24 a 48 horas hábiles en Bogotá, Cundinamarca, Antioquia, Valle, Atlántico, Santander y Eje Cafetero. Resto del país, 3 a 5 días hábiles.</p></details>
+        <details class="f"><summary>¿Qué pasa si un producto no está?</summary><p>El asesor propone un equivalente o retira la línea antes de cobrar. Nunca se despacha a ciegas.</p></details>
+      </div>
+    </div>
+  </section>
 
-    function saveCart(){
-      localStorage.setItem("axtoon_cart", JSON.stringify(cart));
-    }
+  <!-- PEDIDO -->
+  <section id="pedido" class="sec order">
+    <div class="wrap order-grid">
+      <div>
+        <p class="eyebrow">08 · Pedido</p>
+        <h2 class="h2">Suba la orden y cierre por WhatsApp</h2>
+        <p class="lead">Al enviar se abre una conversación con +57 322 375 2541. El mensaje lleva sus datos y el detalle del carrito para concretar la venta.</p>
+        <dl class="resume">
+          <div><dt>Ítems en carrito</dt><dd id="resCount" style="margin:0;font-weight:500">0</dd></div>
+          <div><dt>Total referencia</dt><dd id="resTotal" class="big" style="margin:0">$ 0</dd></div>
+          <div><dt>Pedido mínimo sugerido</dt><dd style="margin:0">$ 80.000</dd></div>
+        </dl>
+        <p style="margin-top:16px;font-size:14px;color:var(--muted-fg)">Puede enviar el formulario sin productos: el asesor cotiza a partir de su ciudad y tipo de negocio.</p>
+      </div>
 
-    function addToCart(id){
-      const existing = cart.find(x => x.id === id);
-      if(existing) existing.qty++;
-      else cart.push({id,qty:1});
-      saveCart();
-      renderCart();
-      showToast("Producto agregado al carrito");
-    }
+      <form class="card" id="orderForm" novalidate>
+        <div class="fields">
+          <div class="col2"><label for="f_name">Nombre completo</label><input id="f_name" autocomplete="name" required></div>
+          <div><label for="f_phone">Celular</label><input id="f_phone" inputmode="tel" placeholder="322 375 2541" required></div>
+          <div><label for="f_business">Tipo de negocio</label><select id="f_business"></select></div>
+          <div><label for="f_city">Ciudad</label><input id="f_city" required></div>
+          <div><label for="f_dep">Departamento</label><select id="f_dep" required></select></div>
+          <div><label for="f_doc">NIT o cédula</label><input id="f_doc"></div>
+          <div><label for="f_addr">Dirección de entrega</label><input id="f_addr"></div>
+          <div class="col2"><label for="f_notes">Notas para el asesor</label><textarea id="f_notes" placeholder="Horario de recepción, marcas preferidas, cupo, etc."></textarea></div>
+        </div>
+        <p class="err" id="formErr" hidden></p>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:20px">Enviar pedido por WhatsApp</button>
+        <p class="hint">Al enviar acepta que un asesor lo contacte para confirmar el pedido. Precios sujetos a stock.</p>
+        <div id="sentBox" hidden style="margin-top:20px;background:var(--muted);border-radius:1rem;padding:16px">
+          <p style="font-weight:500;font-size:14px">Pedido listo para WhatsApp</p>
+          <p style="margin-top:4px;font-size:14px;color:var(--muted-fg)">Si no se abrió la conversación, use el botón siguiente.</p>
+          <a id="waSend" class="btn btn-outline btn-block" style="margin-top:12px" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
 
-    function changeQty(id, amount){
-      const item = cart.find(x => x.id === id);
-      if(!item) return;
-      item.qty += amount;
-      if(item.qty <= 0) cart = cart.filter(x => x.id !== id);
-      saveCart();
-      renderCart();
-    }
+<footer class="site">
+  <div class="wrap foot">
+    <div class="c2">
+      <a href="#inicio" class="brand">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#1f4a3c"/>
+          <path d="M12 27.5 20 10.5 28 27.5" stroke="#f3eee6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.2 21.2h9.6" stroke="#f3eee6" stroke-width="2.2" stroke-linecap="round"/>
+          <rect x="17.4" y="23.6" width="5.2" height="4.2" rx=".8" stroke="#f3eee6" stroke-width="1.6"/>
+        </svg>
+        <span><span class="n1">Axtoon</span><span class="n2">Distribuidora S.A.S</span></span>
+      </a>
+      <p class="desc">Axtoon Distribuidora S.A.S. Mayorista de aseo, despensa, cuidado personal, papelería y más para el comercio colombiano.</p>
+    </div>
+    <div>
+      <p class="eyebrow">Navegación</p>
+      <ul>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#cobertura">Cobertura</a></li>
+        <li><a href="#pedido">Hacer pedido</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Contacto</p>
+      <ul>
+        <li><a class="wa-link" href="#" target="_blank" rel="noopener">+57 322 375 2541</a></li>
+        <li>Colombia · Despacho nacional</li>
+        <li>Factura electrónica</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">Axtoon Distribuidora S.A.S · Precios de referencia, sujetos a disponibilidad</div>
+</footer>
 
-    function renderCart(){
-      const box = document.getElementById("cartItems");
-      const count = cart.reduce((sum,x) => sum + x.qty,0);
-      document.getElementById("cartCount").textContent = count;
+<a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.37 2.15 11.75c0 1.89.5 3.73 1.44 5.35L2 22l5.07-1.54A10.1 10.1 0 0 0 12.04 21.5C17.5 21.5 21.93 17.13 21.93 11.75S17.5 2 12.04 2Zm5.73 14.36c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.93-1.26-4.83-4.18-4.98-4.38-.14-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.24-.27.64-.4 1.02-.4.12 0 .24 0 .34.01.3.01.45.03.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.15-.29.31-.12.6.16.3.73 1.2 1.56 1.94 1.08.96 1.98 1.26 2.3 1.4.3.13.48.11.66-.07.18-.18.77-.9.98-1.2.2-.3.41-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.34.08.13.08.73-.16 1.4Z"/></svg>
+  Pedir ahora
+</a>
 
-      if(!cart.length){
-        box.innerHTML = '<div class="cart-empty">Tu carrito está vacío.<br><br>Agrega algo que te guste.</div>';
-        document.getElementById("cartTotal").textContent = money(0);
-        return;
-      }
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Carrito">
+  <header>
+    <h3>Su pedido</h3>
+    <button class="icon-btn" id="btnCloseCart" aria-label="Cerrar carrito">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </header>
+  <div class="items" id="cartItems"></div>
+  <footer>
+    <div class="tot"><span>Total de referencia</span><b id="cartTotal">$ 0</b></div>
+    <a class="btn btn-primary btn-block" href="#pedido" id="goOrder">Completar datos del pedido</a>
+    <button class="btn btn-outline btn-block" id="clearCart">Vaciar carrito</button>
+  </footer>
+</aside>
 
-      let total = 0;
+<script>
+/* ===================== DATOS ===================== */
+const WA = "573223752541";
+const WA_SHOW = "+57 322 375 2541";
+const waUrl = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
 
-      box.innerHTML = cart.map(item => {
-        const p = products.find(x => x.id === item.id);
-        const subtotal = p.price * item.qty;
-        total += subtotal;
+const CATEGORIES = [
+  {id:"aseo",        name:"Aseo del hogar",         blurb:"Limpieza diaria y recarga de tienda", image:"im2.png"},
+  {id:"personal",    name:"Cuidado personal",       blurb:"Higiene para toda la familia",        image:"im3.png"},
+  {id:"alimentos",   name:"Alimentos y despensa",   blurb:"Arroz, aceite, café y más",           image:"im4.png"},
+  {id:"bebidas",     name:"Bebidas",                blurb:"Agua, gaseosa y jugos",               image:"im5.png"},
+  {id:"snacks",      name:"Snacks y confitería",    blurb:"Mecato de alta rotación",             image:"im6.png"},
+  {id:"papeleria",   name:"Papelería y oficina",    blurb:"Resmas, bolígrafos y cajas",          image:"im7.png"},
+  {id:"hogar",       name:"Hogar y cocina",         blurb:"Utensilios y menaje",                 image:"im8.png"},
+  {id:"bebes",       name:"Bebés",                  blurb:"Pañales y cuidado infantil",          image:"im9.png"},
+  {id:"mascotas",    name:"Mascotas",               blurb:"Alimento y arena",                    image:"im10.png"},
+  {id:"salud",       name:"Salud y farmacia",       blurb:"Botiquín y droguería",                image:"im11.png"},
+  {id:"belleza",     name:"Belleza",                blurb:"Cuidado facial y maquillaje",         image:"im12.png"},
+  {id:"tecnologia",  name:"Tecnología",             blurb:"Cables, audio y carga",               image:"im13.png"},
+  {id:"escolar",     name:"Escolar",                blurb:"Útiles y morrales",                   image:"im14.png"},
+  {id:"industrial",  name:"Limpieza institucional", blurb:"Volumen para empresas",               image:"im15.png"}
+];
 
-        return `
-          <div class="cart-item">
-            <img src="${p.image}" alt="${p.name}">
-            <div>
-              <h4>${p.name}</h4>
-              <p>${money(p.price)} · ${p.category}</p>
-              <div class="qty">
-                <button onclick="changeQty(${p.id},-1)">−</button>
-                <strong style="font-size:11px">${item.qty}</strong>
-                <button onclick="changeQty(${p.id},1)">+</button>
-              </div>
-            </div>
-            <button class="remove" onclick="changeQty(${p.id},-${item.qty})">Eliminar</button>
-          </div>
-        `;
-      }).join("");
+const PRODUCTS = [
+  {id:"ase-01",sku:"AXT-ASE-01",name:"Detergente en polvo 2 kg",category:"aseo",unit:"und",price:18900,minQty:4,featured:true},
+  {id:"ase-02",sku:"AXT-ASE-02",name:"Jabón líquido 5 L",category:"aseo",unit:"garrafa",price:24500,minQty:2},
+  {id:"ase-03",sku:"AXT-ASE-03",name:"Papel higiénico x12 rollos",category:"aseo",unit:"pack",price:16800,minQty:3},
+  {id:"ase-04",sku:"AXT-ASE-04",name:"Blanqueador 3.8 L",category:"aseo",unit:"garrafa",price:8900,minQty:4},
+  {id:"ase-05",sku:"AXT-ASE-05",name:"Lavaloza 500 ml x6",category:"aseo",unit:"pack",price:19200,minQty:2},
+  {id:"ase-06",sku:"AXT-ASE-06",name:"Ambientador aerosol 400 ml",category:"aseo",unit:"und",price:7800,minQty:6},
 
-      document.getElementById("cartTotal").textContent = money(total);
-    }
+  {id:"per-01",sku:"AXT-PER-01",name:"Crema dental 90 g x12",category:"personal",unit:"caja",price:42000,minQty:1,featured:true},
+  {id:"per-02",sku:"AXT-PER-02",name:"Champú 400 ml",category:"personal",unit:"und",price:12500,minQty:6},
+  {id:"per-03",sku:"AXT-PER-03",name:"Jabón de tocador x3",category:"personal",unit:"pack",price:6900,minQty:8},
+  {id:"per-04",sku:"AXT-PER-04",name:"Desodorante roll-on 50 ml",category:"personal",unit:"und",price:8200,minQty:6},
+  {id:"per-05",sku:"AXT-PER-05",name:"Toallas higiénicas x8",category:"personal",unit:"pack",price:9800,minQty:6},
 
-    function openCart(){
-      document.getElementById("cart").classList.add("open");
-      document.getElementById("overlay").classList.add("show");
-    }
+  {id:"ali-01",sku:"AXT-ALI-01",name:"Arroz blanco 5 kg",category:"alimentos",unit:"bulto",price:18500,minQty:4,featured:true},
+  {id:"ali-02",sku:"AXT-ALI-02",name:"Aceite vegetal 3 L",category:"alimentos",unit:"und",price:22900,minQty:3},
+  {id:"ali-03",sku:"AXT-ALI-03",name:"Azúcar 2.5 kg",category:"alimentos",unit:"und",price:7800,minQty:6},
+  {id:"ali-04",sku:"AXT-ALI-04",name:"Café molido 500 g",category:"alimentos",unit:"und",price:16400,minQty:4,featured:true},
+  {id:"ali-05",sku:"AXT-ALI-05",name:"Leche en polvo 800 g",category:"alimentos",unit:"und",price:28900,minQty:3},
+  {id:"ali-06",sku:"AXT-ALI-06",name:"Atún en agua x3",category:"alimentos",unit:"pack",price:14200,minQty:4},
+  {id:"ali-07",sku:"AXT-ALI-07",name:"Pasta spaghetti 1 kg x5",category:"alimentos",unit:"pack",price:19800,minQty:2},
+  {id:"ali-08",sku:"AXT-ALI-08",name:"Sal refinada 1 kg x10",category:"alimentos",unit:"pack",price:12500,minQty:2},
 
-    function closeCart(){
-      document.getElementById("cart").classList.remove("open");
-      document.getElementById("overlay").classList.remove("show");
-    }
+  {id:"beb-01",sku:"AXT-BEB-01",name:"Agua 600 ml x24",category:"bebidas",unit:"caja",price:18000,minQty:2,featured:true},
+  {id:"beb-02",sku:"AXT-BEB-02",name:"Gaseosa 1.5 L x6",category:"bebidas",unit:"pack",price:22500,minQty:2},
+  {id:"beb-03",sku:"AXT-BEB-03",name:"Jugo 1 L x6",category:"bebidas",unit:"pack",price:19800,minQty:2},
+  {id:"beb-04",sku:"AXT-BEB-04",name:"Café instantáneo 50 g x6",category:"bebidas",unit:"pack",price:24600,minQty:2},
 
-    function showToast(text){
-      const toast = document.getElementById("toast");
-      toast.textContent = text;
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 1800);
-    }
+  {id:"sna-01",sku:"AXT-SNA-01",name:"Galletas soda 400 g",category:"snacks",unit:"und",price:8400,minQty:8},
+  {id:"sna-02",sku:"AXT-SNA-02",name:"Chocolatina x24",category:"snacks",unit:"display",price:21000,minQty:2},
+  {id:"sna-03",sku:"AXT-SNA-03",name:"Papas 150 g x6",category:"snacks",unit:"pack",price:16500,minQty:3},
+  {id:"sna-04",sku:"AXT-SNA-04",name:"Mecato surtido caja",category:"snacks",unit:"caja",price:38900,minQty:1},
 
-    function checkoutWhatsApp(){
-      if(!cart.length){
-        showToast("Tu carrito está vacío");
-        return;
-      }
+  {id:"pap-01",sku:"AXT-PAP-01",name:"Resma carta 500 hojas",category:"papeleria",unit:"resma",price:18900,minQty:5},
+  {id:"pap-02",sku:"AXT-PAP-02",name:"Bolígrafos x12",category:"papeleria",unit:"caja",price:9500,minQty:4},
+  {id:"pap-03",sku:"AXT-PAP-03",name:"Cuaderno 100 hojas x5",category:"papeleria",unit:"pack",price:14200,minQty:4},
+  {id:"pap-04",sku:"AXT-PAP-04",name:"Cinta de embalaje x6",category:"papeleria",unit:"pack",price:16800,minQty:2},
 
-      let message = "Hola AXTOON 👋%0A%0AQuiero realizar este pedido:%0A";
-      let total = 0;
+  {id:"hog-01",sku:"AXT-HOG-01",name:"Juego de ollas 5 piezas",category:"hogar",unit:"set",price:89900,minQty:1},
+  {id:"hog-02",sku:"AXT-HOG-02",name:"Set vasos x6",category:"hogar",unit:"set",price:24500,minQty:2},
+  {id:"hog-03",sku:"AXT-HOG-03",name:"Trapero industrial",category:"hogar",unit:"und",price:18900,minQty:4},
 
-      cart.forEach(item => {
-        const p = products.find(x => x.id === item.id);
-        const subtotal = p.price * item.qty;
-        total += subtotal;
-        message += `%0A• ${encodeURIComponent(p.name)} x${item.qty} — ${encodeURIComponent(money(subtotal))}`;
-      });
+  {id:"inf-01",sku:"AXT-INF-01",name:"Pañales talla M x30",category:"bebes",unit:"paquete",price:42900,minQty:2,featured:true},
+  {id:"inf-02",sku:"AXT-INF-02",name:"Toallitas húmedas x80 x3",category:"bebes",unit:"pack",price:22800,minQty:3},
+  {id:"inf-03",sku:"AXT-INF-03",name:"Fórmula infantil 400 g",category:"bebes",unit:"und",price:38900,minQty:3},
 
-      message += `%0A%0A*Total estimado: ${encodeURIComponent(money(total))}*`;
-      message += "%0A%0AQuedo atento/a para confirmar disponibilidad, envío y datos de entrega.";
+  {id:"mas-01",sku:"AXT-MAS-01",name:"Alimento perro adulto 2 kg",category:"mascotas",unit:"bulto",price:28500,minQty:3},
+  {id:"mas-02",sku:"AXT-MAS-02",name:"Arena para gato 4 kg",category:"mascotas",unit:"bulto",price:19900,minQty:3},
+  {id:"mas-03",sku:"AXT-MAS-03",name:"Snack dental x20",category:"mascotas",unit:"bolsa",price:12400,minQty:4},
 
-      window.open(`https://wa.me/${WHATSAPP}?text=${message}`, "_blank");
-    }
+  {id:"sal-01",sku:"AXT-SAL-01",name:"Alcohol antiséptico 700 ml",category:"salud",unit:"und",price:6500,minQty:6},
+  {id:"sal-02",sku:"AXT-SAL-02",name:"Vitamina C x100",category:"salud",unit:"frasco",price:18900,minQty:4},
+  {id:"sal-03",sku:"AXT-SAL-03",name:"Alcohol gel 1 L",category:"salud",unit:"und",price:11200,minQty:4},
+  {id:"sal-04",sku:"AXT-SAL-04",name:"Tapabocas x50",category:"salud",unit:"caja",price:14900,minQty:4},
+  {id:"sal-05",sku:"AXT-SAL-05",name:"Suero oral x4",category:"salud",unit:"pack",price:9800,minQty:6},
 
-    document.querySelectorAll(".filter").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter").forEach(x => x.classList.remove("active"));
-        btn.classList.add("active");
-        currentCategory = btn.dataset.category;
-        renderProducts();
-      });
+  {id:"bel-01",sku:"AXT-BEL-01",name:"Crema facial 50 ml",category:"belleza",unit:"und",price:22400,minQty:4},
+  {id:"bel-02",sku:"AXT-BEL-02",name:"Kit de maquillaje básico",category:"belleza",unit:"kit",price:45000,minQty:2},
+  {id:"bel-03",sku:"AXT-BEL-03",name:"Esmalte x6",category:"belleza",unit:"pack",price:18900,minQty:3},
+
+  {id:"tec-01",sku:"AXT-TEC-01",name:"Audífonos inalámbricos",category:"tecnologia",unit:"und",price:89900,minQty:1,featured:true},
+  {id:"tec-02",sku:"AXT-TEC-02",name:"Cargador USB-C 20W",category:"tecnologia",unit:"und",price:24900,minQty:4},
+  {id:"tec-03",sku:"AXT-TEC-03",name:"Power bank 10.000 mAh",category:"tecnologia",unit:"und",price:59900,minQty:2},
+  {id:"tec-04",sku:"AXT-TEC-04",name:"Cable USB-C 1 m x5",category:"tecnologia",unit:"pack",price:32500,minQty:2},
+
+  {id:"esc-01",sku:"AXT-ESC-01",name:"Kit escolar básico",category:"escolar",unit:"kit",price:28900,minQty:4},
+  {id:"esc-02",sku:"AXT-ESC-02",name:"Colores x12",category:"escolar",unit:"caja",price:8900,minQty:8},
+  {id:"esc-03",sku:"AXT-ESC-03",name:"Morral clásico",category:"escolar",unit:"und",price:45900,minQty:2},
+
+  {id:"ind-01",sku:"AXT-IND-01",name:"Detergente institucional 20 L",category:"industrial",unit:"cuñete",price:78900,minQty:1},
+  {id:"ind-02",sku:"AXT-IND-02",name:"Kit piso húmedo institucional",category:"industrial",unit:"kit",price:34900,minQty:2}
+];
+
+const DEPARTMENTS = ["Amazonas","Antioquia","Arauca","Atlántico","Bogotá D.C.","Bolívar","Boyacá","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Córdoba","Cundinamarca","Guainía","Guaviare","Huila","La Guajira","Magdalena","Meta","Nariño","Norte de Santander","Putumayo","Quindío","Risaralda","San Andrés y Providencia","Santander","Sucre","Tolima","Valle del Cauca","Vaupés","Vichada"];
+const FAST = new Set(["Bogotá D.C.","Cundinamarca","Antioquia","Valle del Cauca","Atlántico","Santander","Risaralda","Caldas","Quindío"]);
+const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Institución / empresa","Independiente","Otro"];
+const MIN_ORDER = 80000;
+
+const CAT_BY_ID = Object.fromEntries(CATEGORIES.map(c => [c.id, c]));
+const PROD_BY_ID = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+const cop = n => "$ " + Number(n).toLocaleString("es-CO", {maximumFractionDigits:0});
+
+/* ===== Placeholder para imágenes que aún no existen ===== */
+function fixImages(scope){
+  (scope || document).querySelectorAll("img[data-ph]").forEach(img => {
+    if (img.dataset.bound) return;
+    img.dataset.bound = "1";
+    img.addEventListener("error", () => {
+      const d = document.createElement("div");
+      d.className = "ph" + (img.dataset.wide ? " wide" : "");
+      d.textContent = img.dataset.ph;
+      img.replaceWith(d);
     });
+  });
+}
 
-    document.getElementById("cartBtn").addEventListener("click", openCart);
-    document.getElementById("closeCart").addEventListener("click", closeCart);
-    document.getElementById("overlay").addEventListener("click", closeCart);
-    document.getElementById("checkout").addEventListener("click", checkoutWhatsApp);
+/* ===================== CARRITO ===================== */
+let cart = {};
+const cartCount = () => Object.values(cart).reduce((a,b) => a+b, 0);
+const cartTotal = () => Object.entries(cart).reduce((t,[id,q]) => t + (PROD_BY_ID[id] ? PROD_BY_ID[id].price*q : 0), 0);
 
-    const searchBox = document.getElementById("searchBox");
-    const searchInput = document.getElementById("searchInput");
+function addToCart(id, qty){
+  cart[id] = (cart[id] || 0) + qty;
+  renderCart();
+}
+function renderCart(){
+  const n = cartCount();
+  const badge = document.getElementById("cartBadge");
+  badge.textContent = n; badge.hidden = n === 0;
+  document.getElementById("cartTotal").textContent = cop(cartTotal());
+  document.getElementById("resCount").textContent = n;
+  document.getElementById("resTotal").textContent = cop(cartTotal());
 
-    document.getElementById("searchBtn").addEventListener("click", () => {
-      searchBox.classList.add("show");
-      searchInput.focus();
-    });
+  const box = document.getElementById("cartItems");
+  box.innerHTML = "";
+  if (n === 0){
+    box.innerHTML = '<p style="color:var(--muted-fg);font-size:14px">Su carrito está vacío. Agregue productos desde el catálogo.</p>';
+    return;
+  }
+  Object.entries(cart).forEach(([id,q]) => {
+    const p = PROD_BY_ID[id]; if (!p) return;
+    const el = document.createElement("div");
+    el.className = "ci";
+    el.innerHTML =
+      '<div class="info"><p class="nm">'+p.name+'</p>'+
+      '<p class="sub">'+q+' '+p.unit+' · '+cop(p.price*q)+'</p>'+
+      '<button class="rm" type="button">Quitar</button></div>';
+    el.querySelector(".rm").addEventListener("click", () => { delete cart[id]; renderCart(); });
+    box.appendChild(el);
+  });
+}
 
-    document.getElementById("searchClose").addEventListener("click", () => {
-      searchBox.classList.remove("show");
-      searchInput.value = "";
-      renderProducts();
-    });
+/* ===================== RENDER ===================== */
+const catsGrid = document.getElementById("catsGrid");
+CATEGORIES.forEach(c => {
+  const a = document.createElement("a");
+  a.href = "#catalogo"; a.className = "cat";
+  a.innerHTML = '<img class="photo" src="'+c.image+'" alt="" data-ph="'+c.image+'">'+
+                '<div class="txt"><b>'+c.name+'</b><span>'+c.blurb+'</span></div>';
+  a.addEventListener("click", () => setCategory(c.id));
+  catsGrid.appendChild(a);
+});
 
-    searchInput.addEventListener("input", () => {
-      const q = searchInput.value.toLowerCase().trim();
-      renderProducts(products.filter(p =>
-        p.name.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q)
-      ));
-    });
+const chipsBox = document.getElementById("chips");
+let current = "todas";
+function buildChips(){
+  chipsBox.innerHTML = "";
+  const all = [{id:"todas",name:"Todas"}].concat(CATEGORIES);
+  all.forEach(c => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip" + (current===c.id ? " active" : ""); b.textContent = c.name;
+    b.addEventListener("click", () => setCategory(c.id));
+    chipsBox.appendChild(b);
+  });
+}
+function setCategory(id){ current = id; buildChips(); renderGrid(); }
 
-    document.getElementById("whatsappGeneral").href =
-      `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hola AXTOON 👋 Quiero información sobre sus productos.")}`;
+const grid = document.getElementById("grid");
+const emptyMsg = document.getElementById("empty");
+const searchInput = document.getElementById("search");
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+function renderGrid(){
+  const q = searchInput.value.trim().toLowerCase();
+  const list = PRODUCTS.filter(p => {
+    const mc = current === "todas" || p.category === current;
+    const mq = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || CAT_BY_ID[p.category].name.toLowerCase().includes(q);
+    return mc && mq;
+  });
+  grid.innerHTML = "";
+  emptyMsg.hidden = list.length > 0;
 
-    renderProducts();
-    renderCart();
-  </script>
+  list.forEach(p => {
+    const cat = CAT_BY_ID[p.category];
+    const art = document.createElement("article");
+    art.className = "prod";
+    art.innerHTML =
+      '<div class="media"><img class="photo" src="'+cat.image+'" alt="" data-ph="'+cat.image+'">'+
+      (p.featured ? '<span class="flag">Alta rotación</span>' : '')+'</div>'+
+      '<div class="body">'+
+        '<p class="cat-name">'+cat.name+'</p>'+
+        '<h3>'+p.name+'</h3>'+
+        '<p class="meta">'+p.sku+' · Mín. '+p.minQty+' '+p.unit+'</p>'+
+        '<p class="price">'+cop(p.price)+'</p>'+
+        '<p class="price-note">Precio de referencia · se confirma en WhatsApp</p>'+
+        '<div class="actions">'+
+          '<div class="qty"><button type="button" class="minus" aria-label="Disminuir">−</button><span class="n">'+p.minQty+'</span><button type="button" class="plus" aria-label="Aumentar">+</button></div>'+
+          '<button type="button" class="btn btn-outline add" style="flex:1">Agregar</button>'+
+        '</div>'+
+        '<a class="btn btn-primary btn-block now" style="margin-top:8px" target="_blank" rel="noopener" href="#">Pedir ahora</a>'+
+      '</div>';
+
+    const nEl = art.querySelector(".n");
+    const link = art.querySelector(".now");
+    const msg = () => "Hola, quiero pedir *"+p.name+"* (ref "+p.sku+").\nCantidad: "+nEl.textContent+" "+p.unit+".\n¿Me confirman disponibilidad, flete y valor?";
+    const sync = () => link.href = waUrl(msg());
+    sync();
+
+    art.querySelector(".minus").addEventListener("click", () => { nEl.textContent = Math.max(p.minQty, +nEl.textContent - 1); sync(); });
+    art.querySelector(".plus").addEventListener("click", () => { nEl.textContent = +nEl.textContent + 1; sync(); });
+    art.querySelector(".add").addEventListener("click", () => { addToCart(p.id, +nEl.textContent); openCart(); });
+    link.addEventListener("click", () => addToCart(p.id, +nEl.textContent));
+
+    grid.appendChild(art);
+  });
+  fixImages(grid);
+}
+
+const depsUl = document.getElementById("deps");
+DEPARTMENTS.forEach(d => {
+  const fast = FAST.has(d);
+  const li = document.createElement("li");
+  li.innerHTML = '<span>'+d+'</span><span class="'+(fast?'fast':'slow')+'">'+(fast?'24–48 h':'3–5 d')+'</span>';
+  depsUl.appendChild(li);
+});
+
+const selDep = document.getElementById("f_dep");
+selDep.innerHTML = '<option value="">Seleccione</option>' + DEPARTMENTS.map(d => '<option>'+d+'</option>').join("");
+const selBus = document.getElementById("f_business");
+selBus.innerHTML = '<option value="">Seleccione</option>' + BUSINESS.map(b => '<option>'+b+'</option>').join("");
+
+/* ===================== FORMULARIO ===================== */
+document.getElementById("orderForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const err = document.getElementById("formErr");
+  err.hidden = true;
+
+  if (!v("f_name") || !v("f_phone") || !v("f_city") || !v("f_dep")){
+    err.textContent = "Complete nombre, celular, ciudad y departamento.";
+    err.hidden = false; return;
+  }
+  if (!/^\+?\d{7,13}$/.test(v("f_phone").replace(/\s/g,""))){
+    err.textContent = "Ingrese un celular válido, con indicativo si escribe desde otro país.";
+    err.hidden = false; return;
+  }
+
+  const lines = Object.entries(cart).map(([id,q]) => {
+    const p = PROD_BY_ID[id]; if (!p) return null;
+    return "• "+q+" "+p.unit+" × "+p.name+" ("+p.sku+") — "+cop(p.price*q);
+  }).filter(Boolean);
+
+  const msg = [
+    "*AXTOON DISTRIBUIDORA S.A.S*","Pedido mayorista","",
+    "*Cliente:* "+v("f_name"),
+    "*Celular:* "+v("f_phone"),
+    "*Ciudad:* "+v("f_city")+", "+v("f_dep"),
+    "*Negocio:* "+(v("f_business") || "No indica"),
+    v("f_doc") ? "*NIT / cédula:* "+v("f_doc") : null,
+    v("f_addr") ? "*Dirección:* "+v("f_addr") : null,
+    "","*Productos:*",
+    lines.length ? lines.join("\n") : "• (sin productos en carrito — cotización general)",
+    "","*Ítems:* "+cartCount(),
+    "*Total referencia:* "+cop(cartTotal()),"",
+    v("f_notes") ? "*Notas:* "+v("f_notes") : null,
+    "Quedo atento para confirmar disponibilidad, flete e IVA."
+  ].filter(l => l !== null).join("\n");
+
+  const url = waUrl(msg);
+  document.getElementById("waSend").href = url;
+  document.getElementById("sentBox").hidden = false;
+  window.open(url, "_blank", "noopener");
+});
+
+/* ===================== UI ===================== */
+document.querySelectorAll(".wa-link, #waTop").forEach(a => {
+  a.href = waUrl("Hola, quiero cotizar con Axtoon Distribuidora S.A.S. ¿Me atienden?");
+});
+
+const header = document.getElementById("siteHeader");
+const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
+onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+const menu = document.getElementById("mobileMenu");
+document.getElementById("btnMenu").addEventListener("click", () => menu.classList.toggle("open"));
+menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
+
+const drawer = document.getElementById("drawer");
+const overlay = document.getElementById("overlay");
+const openCart = () => { drawer.classList.add("open"); overlay.classList.add("open"); };
+const closeCart = () => { drawer.classList.remove("open"); overlay.classList.remove("open"); };
+document.getElementById("btnCart").addEventListener("click", openCart);
+document.getElementById("btnCloseCart").addEventListener("click", closeCart);
+overlay.addEventListener("click", closeCart);
+document.getElementById("goOrder").addEventListener("click", closeCart);
+document.getElementById("clearCart").addEventListener("click", () => { cart = {}; renderCart(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeCart(); });
+
+searchInput.addEventListener("input", renderGrid);
+
+buildChips();
+renderGrid();
+renderCart();
+fixImages(document);
+</script>
 </body>
 </html>
