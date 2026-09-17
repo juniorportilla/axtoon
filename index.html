@@ -14,10 +14,10 @@
   im1.png  → Foto principal (hero / centro de distribución)
   im2.png  → Accesorios para celulares
   im3.png  → Tecnología y accesorios
-  im4.png  → Ropa
+  im4.png  → Ropa / Moda
   im5.png  → Calzado
   im6.png  → Belleza y cuidado personal
-  im7.png  → Fitness
+  im7.png  → Fitness / Deportes
   im8.png  → Hogar
   im9.png  → Iluminación
   im10.png → Accesorios para vehículos
@@ -33,7 +33,7 @@
   im20.png → Regalos personalizados
   im21.png → Papelería
   im22.png → Logística / muelles de despacho
-  im23.png → Herramientas agrícolas y del campo   ← NUEVA
+  im23.png → Herramientas agrícolas y del campo
   ============================================================
 -->
 
@@ -1641,180 +1641,176 @@ const COUPONS = {
 };
 
 /* ============================================================
-   CATEGORÍAS (con color e ícono)
+   CATEGORÍAS (Actualizadas según las capturas)
    ============================================================ */
 const CATEGORIES = [
-  {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png",  emoji:"📱", color:"#1a72c4"},
-  {id:"tecnologia",  name:"Tecnología y accesorios",     blurb:"Audio, smartwatch, teclados y mouse",      image:"im3.png",  emoji:"🎧", color:"#6b3fd4"},
-  {id:"ropa",        name:"Ropa",                        blurb:"Camisetas, jeans, deportiva y urbana",     image:"im4.png",  emoji:"👕", color:"#c72a68"},
-  {id:"calzado",     name:"Calzado",                     blurb:"Tenis, sandalias y deportivos",            image:"im5.png",  emoji:"👟", color:"#e8590c"},
-  {id:"belleza",     name:"Belleza y cuidado personal",  blurb:"Perfumes, skincare y maquillaje",          image:"im6.png",  emoji:"💄", color:"#d6336c"},
-  {id:"fitness",     name:"Fitness",                     blurb:"Bandas, pesas, guantes y fajas",           image:"im7.png",  emoji:"💪", color:"#166534"},
   {id:"hogar",       name:"Hogar",                       blurb:"Organizadores, cocina y decoración",       image:"im8.png",  emoji:"🏠", color:"#0ca678"},
-  {id:"iluminacion", name:"Iluminación",                 blurb:"LED, lámparas, solares y tiras",           image:"im9.png",  emoji:"💡", color:"#f59f00"},
+  {id:"belleza",     name:"Belleza y cuidado personal",  blurb:"Perfumes, skincare y maquillaje",          image:"im6.png",  emoji:"💄", color:"#d6336c"},
+  {id:"moda",        name:"Moda y Ropa",                 blurb:"Camisetas, jeans, deportiva y urbana",     image:"im4.png",  emoji:"👕", color:"#c72a68"},
+  {id:"tecnologia",  name:"Tecnología y accesorios",     blurb:"Audio, smartwatch, teclados y mouse",      image:"im3.png",  emoji:"🎧", color:"#6b3fd4"},
+  {id:"salud",       name:"Salud y Bienestar",           blurb:"Vitaminas, suplementos y cuidado",         image:"im7.png",  emoji:"💪", color:"#166534"},
+  {id:"juguetes",    name:"Juguetes y Juegos",           blurb:"Didácticos, peluches y exteriores",        image:"im14.png", emoji:"🧸", color:"#f59f00"},
+  {id:"herramientas",name:"Herramientas y Ferretería",   blurb:"Tester, cintas, metro y más",              image:"im23.png", emoji:"🛠️", color:"#2f7d32"},
+  {id:"calzado",     name:"Calzado",                     blurb:"Tenis, sandalias y deportivos",            image:"im5.png",  emoji:"👟", color:"#e8590c"},
   {id:"vehiculos",   name:"Accesorios para vehículos",   blurb:"Soportes, luces y cargadores",             image:"im10.png", emoji:"🚗", color:"#495057"},
   {id:"mascotas",    name:"Mascotas",                    blurb:"Juguetes, camas, correas y bebederos",     image:"im11.png", emoji:"🐾", color:"#e8590c"},
+  {id:"cocina",      name:"Cocina",                      blurb:"Freidoras, utensilios y recipientes",      image:"im17.png", emoji:"🍳", color:"#e8590c"},
+  {id:"bebes",       name:"Productos para bebés",        blurb:"Juguetes, ropa y cuidado infantil",        image:"im15.png", emoji:"🍼", color:"#22b8cf"},
+  {id:"papeleria",   name:"Papelería",                   blurb:"Resmas, bolígrafos y cuadernos",           image:"im21.png", emoji:"✏️", color:"#fab005"},
+  {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png",  emoji:"📱", color:"#1a72c4"},
+  {id:"fitness",     name:"Fitness",                     blurb:"Bandas, pesas, guantes y fajas",           image:"im7.png",  emoji:"💪", color:"#166534"},
+  {id:"iluminacion", name:"Iluminación",                 blurb:"LED, lámparas, solares y tiras",           image:"im9.png",  emoji:"💡", color:"#f59f00"},
   {id:"gaming",      name:"Gaming",                      blurb:"Mouse, teclados, audífonos y controles",   image:"im12.png", emoji:"🎮", color:"#5f3dc4"},
   {id:"accesorios",  name:"Accesorios personales",       blurb:"Gorras, morrales, bolsos y gafas",         image:"im13.png", emoji:"🎒", color:"#1971c2"},
   {id:"joyeria",     name:"Joyería y accesorios",        blurb:"Cadenas, pulseras, anillos y aretes",      image:"im14.png", emoji:"💎", color:"#c2255c"},
-  {id:"bebes",       name:"Productos para bebés",        blurb:"Juguetes, ropa y cuidado infantil",        image:"im15.png", emoji:"🍼", color:"#22b8cf"},
   {id:"electricos",  name:"Productos eléctricos",        blurb:"Multitomas, adaptadores y enchufes",       image:"im16.png", emoji:"🔌", color:"#f08c00"},
-  {id:"cocina",      name:"Cocina",                      blurb:"Freidoras, utensilios y recipientes",      image:"im17.png", emoji:"🍳", color:"#e8590c"},
   {id:"dormitorio",  name:"Dormitorio",                  blurb:"Almohadas, cobijas y organizadores",       image:"im18.png", emoji:"🛏️", color:"#4c6ef5"},
   {id:"limpieza",    name:"Limpieza",                    blurb:"Cepillos, dispensadores y especializados", image:"im19.png", emoji:"🧽", color:"#12b886"},
   {id:"regalos",     name:"Regalos personalizados",      blurb:"Tazas, camisetas, llaveros y cuadros",     image:"im20.png", emoji:"🎁", color:"#f06595"},
-  {id:"papeleria",   name:"Papelería",                   blurb:"Resmas, bolígrafos y cuadernos",           image:"im21.png", emoji:"✏️", color:"#fab005"},
   {id:"agricolas",   name:"Herramientas agrícolas y del campo", blurb:"Palas, machetes, fumigadoras y más", image:"im23.png", emoji:"🌾", color:"#2f7d32"}
 ];
 
 /* ============================================================
-   PRODUCTOS
+   PRODUCTOS (Extraídos de las capturas y organizados)
    ============================================================ */
 const PRODUCTS = [
-  /* Accesorios para celulares */
-  {id:"cel-01",sku:"AXT-CEL-01",name:"Funda silicona universal x10",category:"celulares",unit:"pack",price:28000,minQty:2,featured:true},
-  {id:"cel-02",sku:"AXT-CEL-02",name:"Vidrio templado x10",category:"celulares",unit:"pack",price:32000,minQty:2,featured:true},
+  // --- HOGAR ---
+  {id:"hog-01",sku:"AXT-HOG-01",name:"Pistola Burbujas Automatica",category:"hogar",unit:"und",price:17500,minQty:2,featured:true},
+  {id:"hog-02",sku:"AXT-HOG-02",name:"Botillo Tr250814",category:"hogar",unit:"und",price:15500,minQty:4},
+  {id:"hog-03",sku:"AXT-HOG-03",name:"Lampara Solar Con Sensor Ip67",category:"hogar",unit:"und",price:20000,minQty:2,featured:true},
+  {id:"hog-04",sku:"AXT-HOG-04",name:"Sanduchera 7 En 1",category:"hogar",unit:"und",price:112500,minQty:1},
+  {id:"hog-05",sku:"AXT-HOG-05",name:"Tapte Electrico Para Calentar Alimentos",category:"hogar",unit:"und",price:55000,minQty:1},
+  {id:"hog-06",sku:"AXT-HOG-06",name:"Mini Waflera Mickey Mouse",category:"hogar",unit:"und",price:27000,minQty:2},
+  {id:"hog-07",sku:"AXT-HOG-07",name:"Silla Plegable Para Camping",category:"hogar",unit:"und",price:30000,minQty:2},
+  {id:"hog-08",sku:"AXT-HOG-08",name:"Zapatero Organizador De 6 Niveles",category:"hogar",unit:"und",price:50000,minQty:1},
+  {id:"hog-09",sku:"AXT-HOG-09",name:"Set De Cocina Con Filtro",category:"hogar",unit:"und",price:85000,minQty:1},
+  {id:"hog-10",sku:"AXT-HOG-10",name:"Protector De Colchon Splendor",category:"hogar",unit:"und",price:96000,minQty:1},
+  {id:"hog-11",sku:"AXT-HOG-11",name:"Suministro De Agua",category:"hogar",unit:"und",price:3000,minQty:10},
+  {id:"hog-12",sku:"AXT-HOG-12",name:"Tapete Mediano Absorbente Y Antideslizante",category:"hogar",unit:"und",price:15000,minQty:4},
+  {id:"hog-13",sku:"AXT-HOG-13",name:"Lampara Luz Led Cristal Decorativa",category:"hogar",unit:"und",price:36000,minQty:2},
+
+  // --- BELLEZA ---
+  {id:"bel-01",sku:"AXT-BEL-01",name:"Musaman Perfumero",category:"belleza",unit:"und",price:70000,minQty:2,featured:true},
+  {id:"bel-02",sku:"AXT-BEL-02",name:"Combo Premium 1.1 Savouries",category:"belleza",unit:"und",price:150000,minQty:1},
+  {id:"bel-03",sku:"AXT-BEL-03",name:"Cepillo Secador Voluminizador One Step",category:"belleza",unit:"und",price:64900,minQty:2,featured:true},
+  {id:"bel-04",sku:"AXT-BEL-04",name:"Splash Victoria's Secret Tadora",category:"belleza",unit:"und",price:56900,minQty:2},
+  {id:"bel-05",sku:"AXT-BEL-05",name:"La Colores Base Truly Matte 12 Warm Caria",category:"belleza",unit:"und",price:32000,minQty:4},
+  {id:"bel-06",sku:"AXT-BEL-06",name:"Secadora Electrica Portatil",category:"belleza",unit:"und",price:119800,minQty:1},
+  {id:"bel-07",sku:"AXT-BEL-07",name:"Reloj Pulso Acero Tpw",category:"belleza",unit:"und",price:49900,minQty:2},
+  {id:"bel-08",sku:"AXT-BEL-08",name:"Alcohol En Tarro Con Papel",category:"belleza",unit:"und",price:11000,minQty:6},
+  {id:"bel-09",sku:"AXT-BEL-09",name:"Di Cepillo Secador Mascotas",category:"belleza",unit:"und",price:31000,minQty:4},
+  {id:"bel-10",sku:"AXT-BEL-10",name:"Promo 353 Caballero X3",category:"belleza",unit:"pack",price:115000,minQty:1},
+
+  // --- MODA Y ROPA ---
+  {id:"mod-01",sku:"AXT-MOD-01",name:"Bermuda Burda Hombre",category:"moda",unit:"und",price:56000,minQty:3},
+  {id:"mod-02",sku:"AXT-MOD-02",name:"Chaqueta Hombre Cuero Sintetico Clasica",category:"moda",unit:"und",price:160000,minQty:1},
+  {id:"mod-03",sku:"AXT-MOD-03",name:"Camiseta Basica Trio Bosque",category:"moda",unit:"pack",price:80000,minQty:2,featured:true},
+  {id:"mod-04",sku:"AXT-MOD-04",name:"Jogger Dama X3",category:"moda",unit:"pack",price:90000,minQty:2},
+  {id:"mod-05",sku:"AXT-MOD-05",name:"Batola Camiseta Nirvana Rojo",category:"moda",unit:"und",price:45000,minQty:3},
+  {id:"mod-06",sku:"AXT-MOD-06",name:"Uniforme Real Madrid",category:"moda",unit:"und",price:65000,minQty:2},
+  {id:"mod-07",sku:"AXT-MOD-07",name:"Camiseta Cuello Redondo En Burda",category:"moda",unit:"und",price:65000,minQty:2},
+  {id:"mod-08",sku:"AXT-MOD-08",name:"Ref. 1000 Vestido De Bano 3 Plazas",category:"moda",unit:"und",price:85900,minQty:1},
+  {id:"mod-09",sku:"AXT-MOD-09",name:"Conjunto Body",category:"moda",unit:"und",price:100000,minQty:1},
+  {id:"mod-10",sku:"AXT-MOD-10",name:"Gafas Led",category:"moda",unit:"und",price:22000,minQty:4},
+
+  // --- TECNOLOGÍA ---
+  {id:"tec-01",sku:"AXT-TEC-01",name:"Organeta Mk2115",category:"tecnologia",unit:"und",price:622000,minQty:1},
+  {id:"tec-02",sku:"AXT-TEC-02",name:"Audifonos Pro 2da Gen Pantalla Tactil",category:"tecnologia",unit:"und",price:80000,minQty:2,featured:true},
+  {id:"tec-03",sku:"AXT-TEC-03",name:"Ventilador Recargable Portatil Escritorio",category:"tecnologia",unit:"und",price:35000,minQty:2},
+  {id:"tec-04",sku:"AXT-TEC-04",name:"Camara Tres Antenas V380",category:"tecnologia",unit:"und",price:74900,minQty:2},
+  {id:"tec-05",sku:"AXT-TEC-05",name:"Smartwatch Kw10 Dr",category:"tecnologia",unit:"und",price:140000,minQty:1},
+  {id:"tec-06",sku:"AXT-TEC-06",name:"Control Mini Teclado Inalambrico",category:"tecnologia",unit:"und",price:30000,minQty:4},
+  {id:"tec-07",sku:"AXT-TEC-07",name:"Cargador 4 En 1 Para Vehiculo",category:"tecnologia",unit:"und",price:50000,minQty:3},
+  {id:"tec-08",sku:"AXT-TEC-08",name:"Auriculares Inalambricos Bluetooth 5.4",category:"tecnologia",unit:"und",price:99900,minQty:2},
+  {id:"tec-09",sku:"AXT-TEC-09",name:"Reloj Multifuncional En Acero Para Hombre",category:"tecnologia",unit:"und",price:50000,minQty:2},
+
+  // --- SALUD ---
+  {id:"sal-01",sku:"AXT-SAL-01",name:"Autoprueba De Vin 12 Prima",category:"salud",unit:"und",price:70000,minQty:2},
+  {id:"sal-02",sku:"AXT-SAL-02",name:"Restaurador De Lucos Simoniz",category:"salud",unit:"und",price:69000,minQty:2},
+  {id:"sal-03",sku:"AXT-SAL-03",name:"Kit Anticaida E Hidratacion",category:"salud",unit:"kit",price:114173,minQty:1},
+  {id:"sal-04",sku:"AXT-SAL-04",name:"Kit De Proteccion Ninofluido Fucsia",category:"salud",unit:"kit",price:65000,minQty:1},
+  {id:"sal-05",sku:"AXT-SAL-05",name:"Acutrax Vstron Sx",category:"salud",unit:"und",price:27500,minQty:4},
+  {id:"sal-06",sku:"AXT-SAL-06",name:"Colageno Con Citrato De Magnesio",category:"salud",unit:"und",price:194500,minQty:1},
+  {id:"sal-07",sku:"AXT-SAL-07",name:"Naturator Estimulador De Imperfecciones",category:"salud",unit:"und",price:20900,minQty:4},
+  {id:"sal-08",sku:"AXT-SAL-08",name:"Medias De Compresion Anti Venas Unisex",category:"salud",unit:"und",price:28000,minQty:4},
+
+  // --- JUGUETES ---
+  {id:"jug-01",sku:"AXT-JUG-01",name:"Par Exploradora Px5i Bi Color",category:"juguetes",unit:"und",price:100000,minQty:1},
+  {id:"jug-02",sku:"AXT-JUG-02",name:"Juego De Mesa Matadero Patrones Colores Fi",category:"juguetes",unit:"und",price:53000,minQty:2},
+  {id:"jug-03",sku:"AXT-JUG-03",name:"Juguete Esposas De Peluche Somo02",category:"juguetes",unit:"und",price:1155,minQty:10},
+  {id:"jug-04",sku:"AXT-JUG-04",name:"Piscina Inflable Marca Bestway 51009",category:"juguetes",unit:"und",price:109800,minQty:1},
+  {id:"jug-05",sku:"AXT-JUG-05",name:"Excavadora Control Remoto Construccion",category:"juguetes",unit:"und",price:19900,minQty:2},
+  {id:"jug-06",sku:"AXT-JUG-06",name:"Peluche Stitch",category:"juguetes",unit:"und",price:25000,minQty:4},
+
+  // --- HERRAMIENTAS ---
+  {id:"her-01",sku:"AXT-HER-01",name:"Tester Digital Castools",category:"herramientas",unit:"und",price:35000,minQty:2},
+  {id:"her-02",sku:"AXT-HER-02",name:"Metro Encauchetado 7.5 Mts",category:"herramientas",unit:"und",price:10000,minQty:6},
+  {id:"her-03",sku:"AXT-HER-03",name:"Cinta Teflon X 15 Mts X 10 Unidades",category:"herramientas",unit:"pack",price:30000,minQty:2},
+  {id:"her-04",sku:"AXT-HER-04",name:"Cinta Enmascarar 1 24mm",category:"herramientas",unit:"und",price:6900,minQty:10},
+  {id:"her-05",sku:"AXT-HER-05",name:"Cinta Adhesiva Doble Faz Transparente 5m",category:"herramientas",unit:"und",price:19000,minQty:4},
+
+  // --- CALZADO ---
+  {id:"cal-01",sku:"AXT-CAL-01",name:"Adidas Para Dama Op Blanco Rosado",category:"calzado",unit:"par",price:125000,minQty:1,featured:true},
+  {id:"cal-02",sku:"AXT-CAL-02",name:"On Cloud",category:"calzado",unit:"par",price:160000,minQty:1},
+  {id:"cal-03",sku:"AXT-CAL-03",name:"Bota Nike Pro",category:"calzado",unit:"par",price:140000,minQty:1},
+
+  // --- VEHICULOS ---
+  {id:"veh-01",sku:"AXT-VEH-01",name:"Kit Arrastre Completo Oem Moto Nkd Bomba",category:"vehiculos",unit:"kit",price:140000,minQty:1},
+  {id:"veh-02",sku:"AXT-VEH-02",name:"Protector Bomba Trasera Vstron Sx",category:"vehiculos",unit:"und",price:16500,minQty:4},
+  {id:"veh-03",sku:"AXT-VEH-03",name:"Candado Para Manillar Motocicleta",category:"vehiculos",unit:"und",price:20800,minQty:3},
+
+  // --- MASCOTAS ---
+  {id:"mas-01",sku:"AXT-MAS-01",name:"Protector De Pata Silla Silicona Fieltro",category:"mascotas",unit:"und",price:8000,minQty:6},
+
+  // --- COCINA ---
+  {id:"coc-01",sku:"AXT-COC-01",name:"Exprimidor De Jugos Manual",category:"cocina",unit:"und",price:21000,minQty:3},
+  {id:"coc-02",sku:"AXT-COC-02",name:"Afilador De Cuchillo Triple",category:"cocina",unit:"und",price:18000,minQty:4},
+
+  // --- BEBES ---
+  {id:"beb-01",sku:"AXT-BEB-01",name:"Kit De Aseo Bebe 13 Piezas",category:"bebes",unit:"kit",price:65000,minQty:1},
+
+  // --- PAPELERIA ---
+  {id:"pap-01",sku:"AXT-PAP-01",name:"Pluma Estilografica Lapicero Amarillo",category:"papeleria",unit:"und",price:12000,minQty:6},
+
+  // --- CELULARES ---
+  {id:"cel-01",sku:"AXT-CEL-01",name:"Funda Silicona Universal x10",category:"celulares",unit:"pack",price:28000,minQty:2,featured:true},
+  {id:"cel-02",sku:"AXT-CEL-02",name:"Vidrio Templado x10",category:"celulares",unit:"pack",price:32000,minQty:2,featured:true},
   {id:"cel-03",sku:"AXT-CEL-03",name:"Cargador 20W USB-C",category:"celulares",unit:"und",price:18900,minQty:6},
-  {id:"cel-04",sku:"AXT-CEL-04",name:"Cable USB-C 1 m x5",category:"celulares",unit:"pack",price:28500,minQty:3},
-  {id:"cel-05",sku:"AXT-CEL-05",name:"Soporte celular para carro",category:"celulares",unit:"und",price:15900,minQty:6},
-  {id:"cel-06",sku:"AXT-CEL-06",name:"Aro de luz para selfie",category:"celulares",unit:"und",price:22900,minQty:4},
 
-  /* Tecnología */
-  {id:"tec-01",sku:"AXT-TEC-01",name:"Audífonos Bluetooth TWS",category:"tecnologia",unit:"und",price:45900,minQty:4,featured:true},
-  {id:"tec-02",sku:"AXT-TEC-02",name:"Parlante Bluetooth portátil",category:"tecnologia",unit:"und",price:68900,minQty:2},
-  {id:"tec-03",sku:"AXT-TEC-03",name:"Smartwatch deportivo",category:"tecnologia",unit:"und",price:85900,minQty:2,featured:true},
-  {id:"tec-04",sku:"AXT-TEC-04",name:"Teclado inalámbrico",category:"tecnologia",unit:"und",price:39900,minQty:4},
-  {id:"tec-05",sku:"AXT-TEC-05",name:"Mouse inalámbrico",category:"tecnologia",unit:"und",price:22900,minQty:6},
-  {id:"tec-06",sku:"AXT-TEC-06",name:"Power bank 10.000 mAh",category:"tecnologia",unit:"und",price:54900,minQty:3},
-
-  /* Ropa */
-  {id:"rop-01",sku:"AXT-ROP-01",name:"Camiseta básica unisex x5",category:"ropa",unit:"pack",price:65000,minQty:2},
-  {id:"rop-02",sku:"AXT-ROP-02",name:"Conjunto deportivo dama",category:"ropa",unit:"und",price:48900,minQty:3},
-  {id:"rop-03",sku:"AXT-ROP-03",name:"Jean clásico caballero",category:"ropa",unit:"und",price:52900,minQty:3},
-  {id:"rop-04",sku:"AXT-ROP-04",name:"Sudadera urbana",category:"ropa",unit:"und",price:42900,minQty:4},
-  {id:"rop-05",sku:"AXT-ROP-05",name:"Camiseta estampada x5",category:"ropa",unit:"pack",price:72000,minQty:2,featured:true},
-
-  /* Calzado */
-  {id:"cal-01",sku:"AXT-CAL-01",name:"Tenis deportivos unisex",category:"calzado",unit:"par",price:65900,minQty:3,featured:true},
-  {id:"cal-02",sku:"AXT-CAL-02",name:"Sandalias playeras",category:"calzado",unit:"par",price:28900,minQty:6},
-  {id:"cal-03",sku:"AXT-CAL-03",name:"Zapatos running",category:"calzado",unit:"par",price:78900,minQty:2},
-  {id:"cal-04",sku:"AXT-CAL-04",name:"Chanclas x12",category:"calzado",unit:"docena",price:48000,minQty:2},
-
-  /* Belleza */
-  {id:"bel-01",sku:"AXT-BEL-01",name:"Perfume femenino 100 ml",category:"belleza",unit:"und",price:45900,minQty:3,featured:true},
-  {id:"bel-02",sku:"AXT-BEL-02",name:"Set skincare facial x3",category:"belleza",unit:"set",price:38900,minQty:3},
-  {id:"bel-03",sku:"AXT-BEL-03",name:"Labial mate x6",category:"belleza",unit:"pack",price:24000,minQty:4},
-  {id:"bel-04",sku:"AXT-BEL-04",name:"Shampoo profesional 500 ml",category:"belleza",unit:"und",price:22900,minQty:6},
-  {id:"bel-05",sku:"AXT-BEL-05",name:"Crema corporal 400 ml",category:"belleza",unit:"und",price:16900,minQty:6},
-
-  /* Fitness */
-  {id:"fit-01",sku:"AXT-FIT-01",name:"Bandas elásticas x5",category:"fitness",unit:"set",price:22900,minQty:4},
-  {id:"fit-02",sku:"AXT-FIT-02",name:"Mancuernas 5 kg (par)",category:"fitness",unit:"par",price:68900,minQty:2},
-  {id:"fit-03",sku:"AXT-FIT-03",name:"Guantes entrenamiento",category:"fitness",unit:"par",price:18900,minQty:6},
-  {id:"fit-04",sku:"AXT-FIT-04",name:"Faja reductora",category:"fitness",unit:"und",price:34900,minQty:4,featured:true},
-  {id:"fit-05",sku:"AXT-FIT-05",name:"Cuerda para saltar",category:"fitness",unit:"und",price:12900,minQty:8},
-
-  /* Hogar */
-  {id:"hog-01",sku:"AXT-HOG-01",name:"Organizador multiusos x3",category:"hogar",unit:"pack",price:32900,minQty:3},
-  {id:"hog-02",sku:"AXT-HOG-02",name:"Set utensilios cocina x6",category:"hogar",unit:"set",price:38900,minQty:3},
-  {id:"hog-03",sku:"AXT-HOG-03",name:"Lámpara decorativa LED",category:"hogar",unit:"und",price:24900,minQty:4},
-  {id:"hog-04",sku:"AXT-HOG-04",name:"Cuadro decorativo",category:"hogar",unit:"und",price:19900,minQty:6},
-
-  /* Iluminación */
+  // --- ILUMINACION ---
   {id:"ilu-01",sku:"AXT-ILU-01",name:"Tira LED RGB 5 m",category:"iluminacion",unit:"und",price:26900,minQty:4,featured:true},
-  {id:"ilu-02",sku:"AXT-ILU-02",name:"Lámpara solar exterior",category:"iluminacion",unit:"und",price:22900,minQty:4},
-  {id:"ilu-03",sku:"AXT-ILU-03",name:"Bombillo LED x10",category:"iluminacion",unit:"pack",price:28900,minQty:3},
-  {id:"ilu-04",sku:"AXT-ILU-04",name:"Luz nocturna con sensor",category:"iluminacion",unit:"und",price:14900,minQty:6},
+  {id:"ilu-02",sku:"AXT-ILU-02",name:"Lampara Solar Exterior",category:"iluminacion",unit:"und",price:22900,minQty:4},
 
-  /* Vehículos */
-  {id:"veh-01",sku:"AXT-VEH-01",name:"Soporte celular para carro",category:"vehiculos",unit:"und",price:15900,minQty:6},
-  {id:"veh-02",sku:"AXT-VEH-02",name:"Luces LED para carro x2",category:"vehiculos",unit:"par",price:24900,minQty:4},
-  {id:"veh-03",sku:"AXT-VEH-03",name:"Cargador doble USB carro",category:"vehiculos",unit:"und",price:13900,minQty:8},
-  {id:"veh-04",sku:"AXT-VEH-04",name:"Organizador maletero",category:"vehiculos",unit:"und",price:19900,minQty:4},
+  // --- GAMING ---
+  {id:"gam-01",sku:"AXT-GAM-01",name:"Mouse Gamer RGB",category:"gaming",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"gam-02",sku:"AXT-GAM-02",name:"Teclado Mecanico Gamer",category:"gaming",unit:"und",price:129000,minQty:1},
 
-  /* Mascotas */
-  {id:"mas-01",sku:"AXT-MAS-01",name:"Juguete mordedor perro",category:"mascotas",unit:"und",price:8900,minQty:8},
-  {id:"mas-02",sku:"AXT-MAS-02",name:"Cama para mascota M",category:"mascotas",unit:"und",price:42900,minQty:3},
-  {id:"mas-03",sku:"AXT-MAS-03",name:"Correa ajustable",category:"mascotas",unit:"und",price:15900,minQty:6},
-  {id:"mas-04",sku:"AXT-MAS-04",name:"Bebedero automático",category:"mascotas",unit:"und",price:28900,minQty:4},
+  // --- ACCESORIOS ---
+  {id:"acc-01",sku:"AXT-ACC-01",name:"Gorra Ajustable x6",category:"accesorios",unit:"pack",price:42000,minQty:2},
+  {id:"acc-02",sku:"AXT-ACC-02",name:"Morral Antirrobo",category:"accesorios",unit:"und",price:48900,minQty:3},
 
-  /* Gaming */
-  {id:"gam-01",sku:"AXT-GAM-01",name:"Mouse gamer RGB",category:"gaming",unit:"und",price:45900,minQty:3,featured:true},
-  {id:"gam-02",sku:"AXT-GAM-02",name:"Teclado mecánico gamer",category:"gaming",unit:"und",price:129000,minQty:1},
-  {id:"gam-03",sku:"AXT-GAM-03",name:"Audífonos gamer 7.1",category:"gaming",unit:"und",price:89900,minQty:2},
-  {id:"gam-04",sku:"AXT-GAM-04",name:"Mousepad XL",category:"gaming",unit:"und",price:22900,minQty:4},
-  {id:"gam-05",sku:"AXT-GAM-05",name:"Control inalámbrico",category:"gaming",unit:"und",price:78900,minQty:2},
+  // --- JOYERIA ---
+  {id:"joy-01",sku:"AXT-JOY-01",name:"Cadena Acero Inoxidable",category:"joyeria",unit:"und",price:18900,minQty:6},
 
-  /* Accesorios personales */
-  {id:"acc-01",sku:"AXT-ACC-01",name:"Gorra ajustable x6",category:"accesorios",unit:"pack",price:42000,minQty:2},
-  {id:"acc-02",sku:"AXT-ACC-02",name:"Morral antirrobo",category:"accesorios",unit:"und",price:48900,minQty:3},
-  {id:"acc-03",sku:"AXT-ACC-03",name:"Bolso crossbody",category:"accesorios",unit:"und",price:38900,minQty:3},
-  {id:"acc-04",sku:"AXT-ACC-04",name:"Billetera cuero sintético",category:"accesorios",unit:"und",price:18900,minQty:6},
-  {id:"acc-05",sku:"AXT-ACC-05",name:"Gafas de sol UV400",category:"accesorios",unit:"und",price:15900,minQty:6},
+  // --- ELECTRICOS ---
+  {id:"ele-01",sku:"AXT-ELE-01",name:"Multitoma 6 Salidas",category:"electricos",unit:"und",price:18900,minQty:6},
 
-  /* Joyería */
-  {id:"joy-01",sku:"AXT-JOY-01",name:"Cadena acero inoxidable",category:"joyeria",unit:"und",price:18900,minQty:6},
-  {id:"joy-02",sku:"AXT-JOY-02",name:"Pulsera cuero",category:"joyeria",unit:"und",price:14900,minQty:6},
-  {id:"joy-03",sku:"AXT-JOY-03",name:"Anillo ajustable",category:"joyeria",unit:"und",price:9900,minQty:12},
-  {id:"joy-04",sku:"AXT-JOY-04",name:"Aretes x6 pares",category:"joyeria",unit:"pack",price:16900,minQty:6},
+  // --- DORMITORIO ---
+  {id:"dor-01",sku:"AXT-DOR-01",name:"Almohada Viscoelastica",category:"dormitorio",unit:"und",price:42900,minQty:3},
+  {id:"dor-02",sku:"AXT-DOR-02",name:"Cobija Termica 2 Plazas",category:"dormitorio",unit:"und",price:58900,minQty:2},
 
-  /* Bebés */
-  {id:"inf-01",sku:"AXT-INF-01",name:"Juguete didáctico bebé",category:"bebes",unit:"und",price:19900,minQty:4},
-  {id:"inf-02",sku:"AXT-INF-02",name:"Set ropa bebé x3",category:"bebes",unit:"set",price:34900,minQty:3},
-  {id:"inf-03",sku:"AXT-INF-03",name:"Pañalera portátil",category:"bebes",unit:"und",price:24900,minQty:4},
-  {id:"inf-04",sku:"AXT-INF-04",name:"Kit cuidado bebé",category:"bebes",unit:"kit",price:32900,minQty:3,featured:true},
-  {id:"inf-05",sku:"AXT-INF-05",name:"Babero impermeable x5",category:"bebes",unit:"pack",price:15900,minQty:6},
+  // --- LIMPIEZA ---
+  {id:"lim-01",sku:"AXT-LIM-01",name:"Organizador Multiusos Limpieza",category:"limpieza",unit:"und",price:19900,minQty:4},
+  {id:"lim-02",sku:"AXT-LIM-02",name:"Cepillo Limpieza x3",category:"limpieza",unit:"pack",price:14900,minQty:6},
 
-  /* Eléctricos */
-  {id:"ele-01",sku:"AXT-ELE-01",name:"Multitoma 6 salidas",category:"electricos",unit:"und",price:18900,minQty:6},
-  {id:"ele-02",sku:"AXT-ELE-02",name:"Adaptador universal",category:"electricos",unit:"und",price:9900,minQty:12},
-  {id:"ele-03",sku:"AXT-ELE-03",name:"Cargador rápido USB-C",category:"electricos",unit:"und",price:18900,minQty:6},
-  {id:"ele-04",sku:"AXT-ELE-04",name:"Enchufe inteligente WiFi",category:"electricos",unit:"und",price:22900,minQty:4,featured:true},
+  // --- REGALOS ---
+  {id:"reg-01",sku:"AXT-REG-01",name:"Taza Personalizada",category:"regalos",unit:"und",price:12900,minQty:12},
 
-  /* Cocina */
-  {id:"coc-01",sku:"AXT-COC-01",name:"Freidora de aire 5 L",category:"cocina",unit:"und",price:219000,minQty:1,featured:true},
-  {id:"coc-02",sku:"AXT-COC-02",name:"Set recipientes herméticos x5",category:"cocina",unit:"set",price:28900,minQty:3},
-  {id:"coc-03",sku:"AXT-COC-03",name:"Utensilios silicona x8",category:"cocina",unit:"set",price:24900,minQty:4},
-  {id:"coc-04",sku:"AXT-COC-04",name:"Organizador cocina",category:"cocina",unit:"und",price:19900,minQty:4},
-
-  /* Dormitorio */
-  {id:"dor-01",sku:"AXT-DOR-01",name:"Almohada viscoelástica",category:"dormitorio",unit:"und",price:42900,minQty:3},
-  {id:"dor-02",sku:"AXT-DOR-02",name:"Cobija térmica 2 plazas",category:"dormitorio",unit:"und",price:58900,minQty:2},
-  {id:"dor-03",sku:"AXT-DOR-03",name:"Organizador bajo cama",category:"dormitorio",unit:"und",price:22900,minQty:4},
-  {id:"dor-04",sku:"AXT-DOR-04",name:"Cojín decorativo",category:"dormitorio",unit:"und",price:14900,minQty:6},
-
-  /* Limpieza */
-  {id:"lim-01",sku:"AXT-LIM-01",name:"Organizador multiusos limpieza",category:"limpieza",unit:"und",price:19900,minQty:4},
-  {id:"lim-02",sku:"AXT-LIM-02",name:"Cepillo limpieza x3",category:"limpieza",unit:"pack",price:14900,minQty:6},
-  {id:"lim-03",sku:"AXT-LIM-03",name:"Dispensador jabón automático",category:"limpieza",unit:"und",price:27900,minQty:4},
-  {id:"lim-04",sku:"AXT-LIM-04",name:"Set limpieza profesional",category:"limpieza",unit:"kit",price:42900,minQty:2},
-
-  /* Regalos */
-  {id:"reg-01",sku:"AXT-REG-01",name:"Taza personalizada",category:"regalos",unit:"und",price:12900,minQty:12},
-  {id:"reg-02",sku:"AXT-REG-02",name:"Camiseta personalizada",category:"regalos",unit:"und",price:24900,minQty:6},
-  {id:"reg-03",sku:"AXT-REG-03",name:"Gorra bordada",category:"regalos",unit:"und",price:18900,minQty:6},
-  {id:"reg-04",sku:"AXT-REG-04",name:"Llavero personalizado x10",category:"regalos",unit:"pack",price:14900,minQty:6},
-  {id:"reg-05",sku:"AXT-REG-05",name:"Cuadro decorativo personalizado",category:"regalos",unit:"und",price:32900,minQty:4,featured:true},
-
-  /* Papelería */
-  {id:"pap-01",sku:"AXT-PAP-01",name:"Resma carta 500 hojas",category:"papeleria",unit:"resma",price:18900,minQty:5},
-  {id:"pap-02",sku:"AXT-PAP-02",name:"Bolígrafos x12",category:"papeleria",unit:"caja",price:9500,minQty:4},
-  {id:"pap-03",sku:"AXT-PAP-03",name:"Cuaderno 100 hojas x5",category:"papeleria",unit:"pack",price:14200,minQty:4},
-  {id:"pap-04",sku:"AXT-PAP-04",name:"Kit escolar básico",category:"papeleria",unit:"kit",price:28900,minQty:4},
-
-  /* Herramientas agrícolas y del campo (NUEVA SECCIÓN) */
-  {id:"agr-01",sku:"AXT-AGR-01",name:"Machete 18\" con funda",category:"agricolas",unit:"und",price:28900,minQty:4,featured:true},
-  {id:"agr-02",sku:"AXT-AGR-02",name:"Pala cuadrada con cabo",category:"agricolas",unit:"und",price:34900,minQty:3},
-  {id:"agr-03",sku:"AXT-AGR-03",name:"Azadón con cabo de madera",category:"agricolas",unit:"und",price:38900,minQty:3},
-  {id:"agr-04",sku:"AXT-AGR-04",name:"Fumigadora manual 5 L",category:"agricolas",unit:"und",price:45900,minQty:3,featured:true},
-  {id:"agr-05",sku:"AXT-AGR-05",name:"Manguera de riego 15 m",category:"agricolas",unit:"und",price:32900,minQty:3},
-  {id:"agr-06",sku:"AXT-AGR-06",name:"Guantes de trabajo x12",category:"agricolas",unit:"docena",price:24000,minQty:3},
-  {id:"agr-07",sku:"AXT-AGR-07",name:"Botas de caucho caña alta",category:"agricolas",unit:"par",price:41900,minQty:3,featured:true},
-  {id:"agr-08",sku:"AXT-AGR-08",name:"Tijeras de podar profesional",category:"agricolas",unit:"und",price:22900,minQty:4},
-  {id:"agr-09",sku:"AXT-AGR-09",name:"Rastrillo de jardín",category:"agricolas",unit:"und",price:18900,minQty:4},
-  {id:"agr-10",sku:"AXT-AGR-10",name:"Aspersor de riego x5",category:"agricolas",unit:"pack",price:19900,minQty:4},
-  {id:"agr-11",sku:"AXT-AGR-11",name:"Bebedero para animales 20 L",category:"agricolas",unit:"und",price:27900,minQty:3},
-  {id:"agr-12",sku:"AXT-AGR-12",name:"Carretilla reforzada",category:"agricolas",unit:"und",price:189000,minQty:1,featured:true}
+  // --- AGRICOLAS ---
+  {id:"agr-01",sku:"AXT-AGR-01",name:"Machete 18\" Con Funda",category:"agricolas",unit:"und",price:28900,minQty:4,featured:true},
+  {id:"agr-02",sku:"AXT-AGR-02",name:"Pala Cuadrada Con Cabo",category:"agricolas",unit:"und",price:34900,minQty:3},
+  {id:"agr-04",sku:"AXT-AGR-04",name:"Fumigadora Manual 5 L",category:"agricolas",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"agr-07",sku:"AXT-AGR-07",name:"Botas De Caucho Caña Alta",category:"agricolas",unit:"par",price:41900,minQty:3,featured:true}
 ];
 
 const DEPARTMENTS = ["Amazonas","Antioquia","Arauca","Atlántico","Bogotá D.C.","Bolívar","Boyacá","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Córdoba","Cundinamarca","Guainía","Guaviare","Huila","La Guajira","Magdalena","Meta","Nariño","Norte de Santander","Putumayo","Quindío","Risaralda","San Andrés y Providencia","Santander","Sucre","Tolima","Valle del Cauca","Vaupés","Vichada"];
@@ -1822,15 +1818,13 @@ const FAST = new Set(["Bogotá D.C.","Cundinamarca","Antioquia","Valle del Cauca
 const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Boutique / ropa","Tecnología y accesorios","Agrotienda / insumos agrícolas","Institución / empresa","Independiente","Otro"];
 
 /* ============================================================
-   PRECIOS ANTES (OFERTAS)
+   PRECIOS ANTES (OFERTAS) - Configuramos algunas ofertas
    ============================================================ */
 const BEFORE_PRICE = {
-  "cel-01":42000,"cel-02":45000,"tec-01":69900,"tec-03":139000,
-  "rop-05":95000,"cal-01":109900,"bel-01":59900,"fit-04":49900,
-  "ilu-01":39900,"gam-01":74900,"inf-04":45900,"ele-04":34900,
-  "coc-01":329000,"reg-05":49900,"pap-04":39900,
-  /* Nuevas ofertas agrícolas */
-  "agr-01":39900,"agr-04":59900,"agr-07":54900,"agr-12":249000
+  "hog-01":22000,"hog-03":25000,"bel-01":85000,"bel-03":79900,
+  "mod-03":95000,"tec-02":95000,"sal-07":25000,"jug-05":25000,
+  "cal-01":140000,"cel-01":35000,"cel-02":40000,"ilu-01":35000,
+  "gam-01":55000,"agr-01":35000,"agr-04":55000
 };
 
 PRODUCTS.forEach(p => {
@@ -1917,8 +1911,6 @@ function addToCart(id, qty){
 function setQty(id, qty){
   const p = PROD_BY_ID[id];
   if (!p) return;
-  /* CAMBIO: antes era `qty < p.minQty`, ahora se permite bajar hasta 1
-     para que el usuario pueda reducir libremente desde el carrito. */
   if (qty < 1){ delete cart[id]; }
   else { cart[id] = qty; }
   renderCart();
@@ -2240,12 +2232,6 @@ function productCard(p, variant){
   const sync = () => { link.href = waUrl(msg()); };
   sync();
 
-  /* ==========================================================
-     CAMBIO CLAVE: el botón "−" ahora baja hasta 1 (antes se
-     bloqueaba en el mínimo del producto, por eso en ofertas con
-     mínimos altos no se podía reducir). Igual pasa en el carrito
-     gracias al cambio en setQty().
-     ========================================================== */
   art.querySelector(".minus").addEventListener("click", () => {
     nEl.textContent = Math.max(1, +nEl.textContent - 1); sync();
   });
