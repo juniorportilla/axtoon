@@ -664,6 +664,46 @@ footer .brand .logo{background:var(--grad-warm)}
 .toast.warn{background:linear-gradient(135deg,#b91c1c,#e8590c)}
 
 :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:8px}
+
+/* ============================================================
+   PANEL ADMINISTRACIÓN
+   ============================================================ */
+#adminFab{position:fixed;left:16px;bottom:16px;z-index:70;width:46px;height:46px;border-radius:50%;background:var(--grad-brand-deep);color:#fff;border:none;display:grid;place-items:center;box-shadow:0 12px 28px -12px rgba(15,77,56,.9);cursor:pointer;opacity:.35;transition:.25s;font-size:18px}
+#adminFab:hover{opacity:1;transform:scale(1.08)}
+.admin-modal{position:fixed;inset:0;background:rgba(20,19,16,.72);z-index:200;display:none;backdrop-filter:blur(6px);padding:20px;overflow:auto}
+.admin-modal.open{display:block;animation:fade .25s var(--ease)}
+.admin-panel{max-width:1080px;margin:0 auto;background:var(--bg);border-radius:24px;box-shadow:0 40px 100px -30px rgba(0,0,0,.7);overflow:hidden}
+.admin-head{background:var(--grad-brand-deep);color:#fff;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.admin-head h2{font-family:var(--display);font-size:22px;display:flex;align-items:center;gap:10px}
+.admin-head .badge2{background:rgba(255,255,255,.2);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:700;letter-spacing:.06em}
+.admin-head .actions{display:flex;gap:8px;flex-wrap:wrap}
+.admin-head button{border:none;border-radius:999px;padding:9px 16px;font-weight:700;font-size:13px;cursor:pointer;transition:.2s}
+.admin-head .b-ghost{background:rgba(255,255,255,.16);color:#fff}
+.admin-head .b-ghost:hover{background:rgba(255,255,255,.28)}
+.admin-head .b-danger{background:#b91c1c;color:#fff}
+.admin-head .b-ok{background:var(--amber);color:#3a2400}
+.admin-tabs{display:flex;gap:4px;padding:12px 20px 0;background:#fff;border-bottom:1px solid var(--border);overflow-x:auto}
+.admin-tab{padding:11px 18px;border-radius:12px 12px 0 0;border:none;background:transparent;font-weight:600;font-size:13.5px;color:var(--muted-fg);cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s}
+.admin-tab:hover{color:var(--brand);background:var(--brand-soft)}
+.admin-tab.active{color:var(--brand);border-bottom-color:var(--accent);background:var(--brand-soft)}
+.admin-body{padding:24px 28px 32px;max-height:70vh;overflow:auto}
+.admin-body h3{font-family:var(--display);font-size:18px;margin-bottom:6px}
+.admin-body .hint2{font-size:13px;color:var(--muted-fg);margin-bottom:20px;line-height:1.6}
+.admin-row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.admin-field label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-bottom:6px}
+.admin-field input,.admin-field select,.admin-field textarea{width:100%;border:1px solid var(--border);border-radius:10px;padding:10px 12px;font:inherit;font-size:14px;background:#fff}
+.admin-field input:focus,.admin-field select:focus,.admin-field textarea:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 3px var(--brand-soft)}
+.admin-item{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;position:relative}
+.admin-item .del{position:absolute;top:10px;right:10px;background:#ffeceb;color:var(--danger);border:none;border-radius:8px;padding:5px 10px;font-size:12px;font-weight:700;cursor:pointer;z-index:1}
+.admin-item .del:hover{background:#ffd9d7}
+.admin-add{background:var(--brand-soft);border:1px dashed var(--brand-2);color:var(--brand);border-radius:12px;padding:11px;font-weight:700;width:100%;cursor:pointer;font-size:14px;transition:.2s}
+.admin-add:hover{background:#d5ecdf}
+.admin-toolbar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.admin-toolbar input{flex:1;min-width:200px;border:1px solid var(--border);border-radius:10px;padding:10px 14px;font:inherit;font-size:14px;background:#fff}
+.admin-stat{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.admin-stat .s{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px 18px;flex:1;min-width:140px}
+.admin-stat .s b{display:block;font-family:var(--display);font-size:22px;font-weight:800}
+.admin-stat .s span{font-size:12px;color:var(--muted-fg);font-weight:600}
 </style>
 </head>
 <body>
@@ -721,7 +761,6 @@ footer .brand .logo{background:var(--grad-warm)}
 </header>
 
 <main>
-  <!-- ================= HERO ================= -->
   <section id="inicio">
     <div class="wrap hero">
       <div class="reveal">
@@ -763,7 +802,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= TRUST BAR ================= -->
   <section class="trust-bar">
     <div class="wrap trust-bar-in">
       <div class="trust-item">
@@ -785,7 +823,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= STATS ================= -->
   <section class="stats" style="padding-top:44px">
     <div class="wrap">
       <div class="stats-grid reveal">
@@ -797,7 +834,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= OFERTAS ================= -->
   <section id="ofertas" class="sec ofertas">
     <div class="wrap">
       <div class="ofertas-head reveal">
@@ -817,7 +853,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= CATEGORÍAS ================= -->
   <section id="secciones" class="sec">
     <div class="wrap">
       <div class="reveal">
@@ -829,7 +864,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= CATÁLOGO ================= -->
   <section id="catalogo" class="sec catalog">
     <div class="wrap">
       <div class="reveal">
@@ -860,7 +894,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= CUPONES ================= -->
   <section id="cupones" class="sec cupones-sec">
     <div class="wrap">
       <div class="coupon-band reveal">
@@ -883,7 +916,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= PROCESO ================= -->
   <section id="proceso" class="sec">
     <div class="wrap">
       <div class="reveal">
@@ -898,7 +930,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= POR QUÉ ================= -->
   <section class="why">
     <div class="wrap why-grid">
       <div class="reveal">
@@ -915,7 +946,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= GARANTÍAS ================= -->
   <section class="sec" style="background:rgba(255,255,255,.6)">
     <div class="wrap">
       <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
@@ -948,7 +978,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= MÉTODOS DE PAGO ================= -->
   <section class="payments">
     <div class="wrap pay-in reveal">
       <p class="eyebrow" style="justify-content:center">Formas de pago</p>
@@ -964,7 +993,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= COBERTURA ================= -->
   <section id="cobertura" class="sec">
     <div class="wrap cov">
       <div class="reveal">
@@ -980,7 +1008,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= TESTIMONIOS ================= -->
   <section class="sec testi">
     <div class="wrap">
       <div class="reveal">
@@ -1017,7 +1044,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= FAQ ================= -->
   <section id="preguntas" class="sec">
     <div class="wrap faq-wrap">
       <div class="reveal">
@@ -1038,7 +1064,6 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
-  <!-- ================= PEDIDO ================= -->
   <section id="pedido" class="sec order">
     <div class="wrap order-grid">
       <div class="reveal">
@@ -1141,7 +1166,6 @@ footer .brand .logo{background:var(--grad-warm)}
   </div>
 </footer>
 
-<!-- ===== Barra flotante de cuenta ===== -->
 <div class="cartbar" id="cartBar">
   <div class="wrap cartbar-in">
     <div class="cb-left">
@@ -1203,6 +1227,35 @@ footer .brand .logo{background:var(--grad-warm)}
 
 <div class="toast" id="toast"></div>
 
+<!-- ===== BOTÓN Y MODAL ADMIN ===== -->
+<button id="adminFab" title="Panel de administración (Ctrl+Shift+A)" aria-label="Abrir panel admin">⚙️</button>
+
+<div class="admin-modal" id="adminModal">
+  <div class="admin-panel">
+    <div class="admin-head">
+      <h2>⚙️ Panel de Administración <span class="badge2">AXTOON</span></h2>
+      <div class="actions">
+        <button class="b-ghost" id="adminExport">⬇ Exportar</button>
+        <button class="b-ghost" id="adminImportBtn">⬆ Importar</button>
+        <button class="b-ghost" id="adminReset">↺ Restaurar</button>
+        <button class="b-ok" id="adminSave">✓ Guardar y aplicar</button>
+        <button class="b-danger" id="adminClose">✕ Cerrar</button>
+      </div>
+    </div>
+    <div class="admin-tabs" id="adminTabs">
+      <button class="admin-tab active" data-tab="productos">📦 Productos</button>
+      <button class="admin-tab" data-tab="ofertas">🔥 Ofertas</button>
+      <button class="admin-tab" data-tab="cupones">🎟️ Cupones</button>
+      <button class="admin-tab" data-tab="categorias">🗂️ Categorías</button>
+      <button class="admin-tab" data-tab="contenido">✏️ Contenido</button>
+      <button class="admin-tab" data-tab="config">🔧 Configuración</button>
+    </div>
+    <div class="admin-body" id="adminBody"></div>
+  </div>
+</div>
+
+<input type="file" id="adminFileInput" accept=".json" hidden>
+
 <script>
 /* ============================================================
    CONFIG
@@ -1211,6 +1264,7 @@ const WA = "573223752541";
 const WA_SHOW = "+57 322 375 2541";
 const waUrl = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
 const MIN_ORDER = 80000;
+const ADMIN_PASS_DEFAULT = "axtoon2024";
 
 /* ============================================================
    CUPONES
@@ -1224,7 +1278,7 @@ const COUPONS = {
 };
 
 /* ============================================================
-   CATEGORÍAS (con color e ícono)
+   CATEGORÍAS
    ============================================================ */
 const CATEGORIES = [
   {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png",  emoji:"📱", color:"#1a72c4"},
@@ -1255,7 +1309,6 @@ const CATEGORIES = [
    PRODUCTOS
    ============================================================ */
 const PRODUCTS = [
-  /* ===== Accesorios para celulares ===== */
   {id:"cel-01",sku:"AXT-CEL-01",name:"Funda silicona universal x10",category:"celulares",unit:"pack",price:28000,minQty:2,featured:true},
   {id:"cel-02",sku:"AXT-CEL-02",name:"Vidrio templado x10",category:"celulares",unit:"pack",price:32000,minQty:2,featured:true},
   {id:"cel-03",sku:"AXT-CEL-03",name:"Cargador 20W USB-C",category:"celulares",unit:"und",price:18900,minQty:6},
@@ -1266,8 +1319,6 @@ const PRODUCTS = [
   {id:"cel-08",sku:"AXT-CEL-08",name:"Cargador plegable con mini cable",category:"celulares",unit:"und",price:22900,minQty:6},
   {id:"cel-09",sku:"AXT-CEL-09",name:"Cable de datos Tipo C 1m",category:"celulares",unit:"und",price:23900,minQty:8},
   {id:"cel-10",sku:"AXT-CEL-10",name:"Cargador portátil 10.000 mAh",category:"celulares",unit:"und",price:52900,minQty:4},
-
-  /* ===== Tecnología y accesorios ===== */
   {id:"tec-01",sku:"AXT-TEC-01",name:"Audífonos Bluetooth TWS",category:"tecnologia",unit:"und",price:45900,minQty:4,featured:true},
   {id:"tec-02",sku:"AXT-TEC-02",name:"Parlante Bluetooth portátil",category:"tecnologia",unit:"und",price:68900,minQty:2},
   {id:"tec-03",sku:"AXT-TEC-03",name:"Smartwatch deportivo",category:"tecnologia",unit:"und",price:85900,minQty:2,featured:true},
@@ -1278,8 +1329,6 @@ const PRODUCTS = [
   {id:"tec-08",sku:"AXT-TEC-08",name:"Aspiradora portátil recargable",category:"tecnologia",unit:"und",price:35900,minQty:4,featured:true},
   {id:"tec-09",sku:"AXT-TEC-09",name:"Proyector LED portátil",category:"tecnologia",unit:"und",price:129900,minQty:2,featured:true},
   {id:"tec-10",sku:"AXT-TEC-10",name:"Mini proyector LED WiFi",category:"tecnologia",unit:"und",price:189900,minQty:1},
-
-  /* ===== Ropa ===== */
   {id:"rop-01",sku:"AXT-ROP-01",name:"Camiseta básica unisex x5",category:"ropa",unit:"pack",price:65000,minQty:2},
   {id:"rop-02",sku:"AXT-ROP-02",name:"Conjunto deportivo dama",category:"ropa",unit:"und",price:48900,minQty:3},
   {id:"rop-03",sku:"AXT-ROP-03",name:"Jean clásico caballero",category:"ropa",unit:"und",price:52900,minQty:3},
@@ -1288,16 +1337,12 @@ const PRODUCTS = [
   {id:"rop-06",sku:"AXT-ROP-06",name:"Camiseta deportiva cuello redondo",category:"ropa",unit:"und",price:25900,minQty:6},
   {id:"rop-07",sku:"AXT-ROP-07",name:"Pantalón deportivo jogger",category:"ropa",unit:"und",price:49900,minQty:4},
   {id:"rop-08",sku:"AXT-ROP-08",name:"Conjunto deportivo unisex",category:"ropa",unit:"set",price:69900,minQty:3},
-
-  /* ===== Calzado ===== */
   {id:"cal-01",sku:"AXT-CAL-01",name:"Tenis deportivos unisex",category:"calzado",unit:"par",price:65900,minQty:3,featured:true},
   {id:"cal-02",sku:"AXT-CAL-02",name:"Sandalias playeras",category:"calzado",unit:"par",price:28900,minQty:6},
   {id:"cal-03",sku:"AXT-CAL-03",name:"Zapatos running",category:"calzado",unit:"par",price:78900,minQty:2},
   {id:"cal-04",sku:"AXT-CAL-04",name:"Chanclas x12",category:"calzado",unit:"docena",price:48000,minQty:2},
   {id:"cal-05",sku:"AXT-CAL-05",name:"Botas de agua caña alta",category:"calzado",unit:"par",price:49900,minQty:3,featured:true},
   {id:"cal-06",sku:"AXT-CAL-06",name:"Zapatillas deportivas",category:"calzado",unit:"par",price:89900,minQty:2},
-
-  /* ===== Belleza ===== */
   {id:"bel-01",sku:"AXT-BEL-01",name:"Perfume femenino 100 ml",category:"belleza",unit:"und",price:45900,minQty:3,featured:true},
   {id:"bel-02",sku:"AXT-BEL-02",name:"Set skincare facial x3",category:"belleza",unit:"set",price:38900,minQty:3},
   {id:"bel-03",sku:"AXT-BEL-03",name:"Labial mate x6",category:"belleza",unit:"pack",price:24000,minQty:4},
@@ -1315,8 +1360,6 @@ const PRODUCTS = [
   {id:"bel-15",sku:"AXT-BEL-15",name:"Cepillo redondo profesional",category:"belleza",unit:"und",price:22900,minQty:6},
   {id:"bel-16",sku:"AXT-BEL-16",name:"Combo set 2 perfumes hombre",category:"belleza",unit:"set",price:42900,minQty:3,featured:true},
   {id:"bel-17",sku:"AXT-BEL-17",name:"Máscara para pestañas",category:"belleza",unit:"und",price:19900,minQty:8},
-
-  /* ===== Fitness ===== */
   {id:"fit-01",sku:"AXT-FIT-01",name:"Bandas elásticas x5",category:"fitness",unit:"set",price:22900,minQty:4},
   {id:"fit-02",sku:"AXT-FIT-02",name:"Mancuernas 5 kg (par)",category:"fitness",unit:"par",price:68900,minQty:2},
   {id:"fit-03",sku:"AXT-FIT-03",name:"Guantes entrenamiento",category:"fitness",unit:"par",price:18900,minQty:6},
@@ -1324,8 +1367,6 @@ const PRODUCTS = [
   {id:"fit-05",sku:"AXT-FIT-05",name:"Cuerda para saltar",category:"fitness",unit:"und",price:12900,minQty:8},
   {id:"fit-06",sku:"AXT-FIT-06",name:"Olimpia sauna 2L",category:"fitness",unit:"und",price:22900,minQty:4},
   {id:"fit-07",sku:"AXT-FIT-07",name:"Comando deportivo fitness",category:"fitness",unit:"und",price:29900,minQty:4},
-
-  /* ===== Hogar ===== */
   {id:"hog-01",sku:"AXT-HOG-01",name:"Organizador multiusos x3",category:"hogar",unit:"pack",price:32900,minQty:3},
   {id:"hog-02",sku:"AXT-HOG-02",name:"Set utensilios cocina x6",category:"hogar",unit:"set",price:38900,minQty:3},
   {id:"hog-03",sku:"AXT-HOG-03",name:"Lámpara decorativa LED",category:"hogar",unit:"und",price:24900,minQty:4},
@@ -1357,8 +1398,6 @@ const PRODUCTS = [
   {id:"hog-29",sku:"AXT-HOG-29",name:"Ventilador de mesa",category:"hogar",unit:"und",price:69900,minQty:2},
   {id:"hog-30",sku:"AXT-HOG-30",name:"Ventilador de pared",category:"hogar",unit:"und",price:119900,minQty:2},
   {id:"hog-31",sku:"AXT-HOG-31",name:"Plancha de ropa",category:"hogar",unit:"und",price:89900,minQty:2},
-
-  /* ===== Iluminación ===== */
   {id:"ilu-01",sku:"AXT-ILU-01",name:"Tira LED RGB 5 m",category:"iluminacion",unit:"und",price:26900,minQty:4,featured:true},
   {id:"ilu-02",sku:"AXT-ILU-02",name:"Lámpara solar exterior",category:"iluminacion",unit:"und",price:22900,minQty:4},
   {id:"ilu-03",sku:"AXT-ILU-03",name:"Bombillo LED x10",category:"iluminacion",unit:"pack",price:28900,minQty:3},
@@ -1366,8 +1405,6 @@ const PRODUCTS = [
   {id:"ilu-05",sku:"AXT-ILU-05",name:"Proyector LED",category:"iluminacion",unit:"und",price:12900,minQty:8},
   {id:"ilu-06",sku:"AXT-ILU-06",name:"Lámpara táctil de escritorio",category:"iluminacion",unit:"und",price:49900,minQty:3,featured:true},
   {id:"ilu-07",sku:"AXT-ILU-07",name:"Lámpara de hogar LED",category:"iluminacion",unit:"und",price:29900,minQty:4},
-
-  /* ===== Vehículos ===== */
   {id:"veh-01",sku:"AXT-VEH-01",name:"Soporte celular para carro",category:"vehiculos",unit:"und",price:15900,minQty:6},
   {id:"veh-02",sku:"AXT-VEH-02",name:"Luces LED para carro x2",category:"vehiculos",unit:"par",price:24900,minQty:4},
   {id:"veh-03",sku:"AXT-VEH-03",name:"Cargador doble USB carro",category:"vehiculos",unit:"und",price:13900,minQty:8},
@@ -1375,21 +1412,15 @@ const PRODUCTS = [
   {id:"veh-05",sku:"AXT-VEH-05",name:"Candado antirrobo para moto",category:"vehiculos",unit:"und",price:29900,minQty:4},
   {id:"veh-06",sku:"AXT-VEH-06",name:"Anti empañante para vidrios",category:"vehiculos",unit:"und",price:12900,minQty:8},
   {id:"veh-07",sku:"AXT-VEH-07",name:"Organizador de autos",category:"vehiculos",unit:"und",price:29900,minQty:4},
-
-  /* ===== Mascotas ===== */
   {id:"mas-01",sku:"AXT-MAS-01",name:"Juguete mordedor perro",category:"mascotas",unit:"und",price:8900,minQty:8},
   {id:"mas-02",sku:"AXT-MAS-02",name:"Cama para mascota M",category:"mascotas",unit:"und",price:42900,minQty:3},
   {id:"mas-03",sku:"AXT-MAS-03",name:"Correa ajustable",category:"mascotas",unit:"und",price:15900,minQty:6},
   {id:"mas-04",sku:"AXT-MAS-04",name:"Bebedero automático",category:"mascotas",unit:"und",price:28900,minQty:4},
-
-  /* ===== Gaming ===== */
   {id:"gam-01",sku:"AXT-GAM-01",name:"Mouse gamer RGB",category:"gaming",unit:"und",price:45900,minQty:3,featured:true},
   {id:"gam-02",sku:"AXT-GAM-02",name:"Teclado mecánico gamer",category:"gaming",unit:"und",price:129000,minQty:1},
   {id:"gam-03",sku:"AXT-GAM-03",name:"Audífonos gamer 7.1",category:"gaming",unit:"und",price:89900,minQty:2},
   {id:"gam-04",sku:"AXT-GAM-04",name:"Mousepad XL",category:"gaming",unit:"und",price:22900,minQty:4},
   {id:"gam-05",sku:"AXT-GAM-05",name:"Control inalámbrico",category:"gaming",unit:"und",price:78900,minQty:2},
-
-  /* ===== Accesorios personales ===== */
   {id:"acc-01",sku:"AXT-ACC-01",name:"Gorra ajustable x6",category:"accesorios",unit:"pack",price:42000,minQty:2},
   {id:"acc-02",sku:"AXT-ACC-02",name:"Morral antirrobo",category:"accesorios",unit:"und",price:48900,minQty:3},
   {id:"acc-03",sku:"AXT-ACC-03",name:"Bolso crossbody",category:"accesorios",unit:"und",price:38900,minQty:3},
@@ -1399,15 +1430,11 @@ const PRODUCTS = [
   {id:"acc-07",sku:"AXT-ACC-07",name:"A01 Bolso antirrobo fashion versátil",category:"accesorios",unit:"und",price:76900,minQty:2,featured:true},
   {id:"acc-08",sku:"AXT-ACC-08",name:"Bolsillo confortable bolsa de aire",category:"accesorios",unit:"und",price:30900,minQty:4},
   {id:"acc-09",sku:"AXT-ACC-09",name:"Bolso grande corduroy para mujer",category:"accesorios",unit:"und",price:52900,minQty:3},
-
-  /* ===== Joyería ===== */
   {id:"joy-01",sku:"AXT-JOY-01",name:"Cadena acero inoxidable",category:"joyeria",unit:"und",price:18900,minQty:6},
   {id:"joy-02",sku:"AXT-JOY-02",name:"Pulsera cuero",category:"joyeria",unit:"und",price:14900,minQty:6},
   {id:"joy-03",sku:"AXT-JOY-03",name:"Anillo ajustable",category:"joyeria",unit:"und",price:9900,minQty:12},
   {id:"joy-04",sku:"AXT-JOY-04",name:"Aretes x6 pares",category:"joyeria",unit:"pack",price:16900,minQty:6},
   {id:"joy-05",sku:"AXT-JOY-05",name:"Pulsera para hombre",category:"joyeria",unit:"und",price:18900,minQty:6},
-
-  /* ===== Bebés ===== */
   {id:"inf-01",sku:"AXT-INF-01",name:"Juguete didáctico bebé",category:"bebes",unit:"und",price:19900,minQty:4},
   {id:"inf-02",sku:"AXT-INF-02",name:"Set ropa bebé x3",category:"bebes",unit:"set",price:34900,minQty:3},
   {id:"inf-03",sku:"AXT-INF-03",name:"Pañalera portátil",category:"bebes",unit:"und",price:24900,minQty:4},
@@ -1415,14 +1442,10 @@ const PRODUCTS = [
   {id:"inf-05",sku:"AXT-INF-05",name:"Babero impermeable x5",category:"bebes",unit:"pack",price:15900,minQty:6},
   {id:"inf-06",sku:"AXT-INF-06",name:"Rodillera de bebés con mini corazones",category:"bebes",unit:"und",price:22900,minQty:6},
   {id:"inf-07",sku:"AXT-INF-07",name:"Toallitas húmedas para bebé",category:"bebes",unit:"und",price:16900,minQty:8},
-
-  /* ===== Productos eléctricos ===== */
   {id:"ele-01",sku:"AXT-ELE-01",name:"Multitoma 6 salidas",category:"electricos",unit:"und",price:18900,minQty:6},
   {id:"ele-02",sku:"AXT-ELE-02",name:"Adaptador universal",category:"electricos",unit:"und",price:9900,minQty:12},
   {id:"ele-03",sku:"AXT-ELE-03",name:"Cargador rápido USB-C",category:"electricos",unit:"und",price:18900,minQty:6},
   {id:"ele-04",sku:"AXT-ELE-04",name:"Enchufe inteligente WiFi",category:"electricos",unit:"und",price:22900,minQty:4,featured:true},
-
-  /* ===== Cocina ===== */
   {id:"coc-01",sku:"AXT-COC-01",name:"Freidora de aire 5 L",category:"cocina",unit:"und",price:219000,minQty:1,featured:true},
   {id:"coc-02",sku:"AXT-COC-02",name:"Set recipientes herméticos x5",category:"cocina",unit:"set",price:28900,minQty:3},
   {id:"coc-03",sku:"AXT-COC-03",name:"Utensilios silicona x8",category:"cocina",unit:"set",price:24900,minQty:4},
@@ -1436,14 +1459,10 @@ const PRODUCTS = [
   {id:"coc-11",sku:"AXT-COC-11",name:"Olla arrocera",category:"cocina",unit:"und",price:89900,minQty:2},
   {id:"coc-12",sku:"AXT-COC-12",name:"Sanduchera",category:"cocina",unit:"und",price:49900,minQty:3},
   {id:"coc-13",sku:"AXT-COC-13",name:"Cafetera",category:"cocina",unit:"und",price:89900,minQty:2},
-
-  /* ===== Dormitorio ===== */
   {id:"dor-01",sku:"AXT-DOR-01",name:"Almohada viscoelástica",category:"dormitorio",unit:"und",price:42900,minQty:3},
   {id:"dor-02",sku:"AXT-DOR-02",name:"Cobija térmica 2 plazas",category:"dormitorio",unit:"und",price:58900,minQty:2},
   {id:"dor-03",sku:"AXT-DOR-03",name:"Organizador bajo cama",category:"dormitorio",unit:"und",price:22900,minQty:4},
   {id:"dor-04",sku:"AXT-DOR-04",name:"Cojín decorativo",category:"dormitorio",unit:"und",price:14900,minQty:6},
-
-  /* ===== Limpieza ===== */
   {id:"lim-01",sku:"AXT-LIM-01",name:"Organizador multiusos limpieza",category:"limpieza",unit:"und",price:19900,minQty:4},
   {id:"lim-02",sku:"AXT-LIM-02",name:"Cepillo limpieza x3",category:"limpieza",unit:"pack",price:14900,minQty:6},
   {id:"lim-03",sku:"AXT-LIM-03",name:"Dispensador jabón automático",category:"limpieza",unit:"und",price:27900,minQty:4},
@@ -1456,21 +1475,15 @@ const PRODUCTS = [
   {id:"lim-10",sku:"AXT-LIM-10",name:"Escoba",category:"limpieza",unit:"und",price:19900,minQty:6},
   {id:"lim-11",sku:"AXT-LIM-11",name:"Recogedor",category:"limpieza",unit:"und",price:12900,minQty:8},
   {id:"lim-12",sku:"AXT-LIM-12",name:"Trapero",category:"limpieza",unit:"und",price:32900,minQty:4},
-
-  /* ===== Regalos ===== */
   {id:"reg-01",sku:"AXT-REG-01",name:"Taza personalizada",category:"regalos",unit:"und",price:12900,minQty:12},
   {id:"reg-02",sku:"AXT-REG-02",name:"Camiseta personalizada",category:"regalos",unit:"und",price:24900,minQty:6},
   {id:"reg-03",sku:"AXT-REG-03",name:"Gorra bordada",category:"regalos",unit:"und",price:18900,minQty:6},
   {id:"reg-04",sku:"AXT-REG-04",name:"Llavero personalizado x10",category:"regalos",unit:"pack",price:14900,minQty:6},
   {id:"reg-05",sku:"AXT-REG-05",name:"Cuadro decorativo personalizado",category:"regalos",unit:"und",price:32900,minQty:4,featured:true},
-
-  /* ===== Papelería ===== */
   {id:"pap-01",sku:"AXT-PAP-01",name:"Resma carta 500 hojas",category:"papeleria",unit:"resma",price:18900,minQty:5},
   {id:"pap-02",sku:"AXT-PAP-02",name:"Bolígrafos x12",category:"papeleria",unit:"caja",price:9500,minQty:4},
   {id:"pap-03",sku:"AXT-PAP-03",name:"Cuaderno 100 hojas x5",category:"papeleria",unit:"pack",price:14200,minQty:4},
   {id:"pap-04",sku:"AXT-PAP-04",name:"Kit escolar básico",category:"papeleria",unit:"kit",price:28900,minQty:4},
-
-  /* ===== Herramientas agrícolas y del campo ===== */
   {id:"agr-01",sku:"AXT-AGR-01",name:"Machete 18\" con funda",category:"agricolas",unit:"und",price:28900,minQty:4,featured:true},
   {id:"agr-02",sku:"AXT-AGR-02",name:"Pala cuadrada con cabo",category:"agricolas",unit:"und",price:34900,minQty:3},
   {id:"agr-03",sku:"AXT-AGR-03",name:"Azadón con cabo de madera",category:"agricolas",unit:"und",price:38900,minQty:3},
@@ -1483,8 +1496,6 @@ const PRODUCTS = [
   {id:"agr-10",sku:"AXT-AGR-10",name:"Aspersor de riego x5",category:"agricolas",unit:"pack",price:19900,minQty:4},
   {id:"agr-11",sku:"AXT-AGR-11",name:"Bebedero para animales 20 L",category:"agricolas",unit:"und",price:27900,minQty:3},
   {id:"agr-12",sku:"AXT-AGR-12",name:"Carretilla reforzada",category:"agricolas",unit:"und",price:189000,minQty:1,featured:true},
-
-  /* ===== Salud y bienestar ===== */
   {id:"sal-01",sku:"AXT-SAL-01",name:"Multi-function acupuntura",category:"salud",unit:"und",price:42900,minQty:3},
   {id:"sal-02",sku:"AXT-SAL-02",name:"Laboratorio dental",category:"salud",unit:"und",price:12900,minQty:6},
   {id:"sal-03",sku:"AXT-SAL-03",name:"Mini masajeador de mano",category:"salud",unit:"und",price:29900,minQty:4},
@@ -1501,64 +1512,114 @@ const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Bo
    PRECIOS ANTES (OFERTAS)
    ============================================================ */
 const BEFORE_PRICE = {
-  /* celulares */
   "cel-01":42000,"cel-02":45000,
-  /* tecnologia */
   "tec-01":69900,"tec-03":139000,"tec-08":49900,"tec-09":169900,
-  /* ropa */
   "rop-05":95000,"rop-07":69900,
-  /* calzado */
   "cal-01":109900,"cal-05":69900,
-  /* belleza */
   "bel-01":59900,"bel-06":45900,"bel-08":39900,"bel-16":59900,
-  /* fitness */
   "fit-04":49900,
-  /* hogar */
   "hog-05":32900,"hog-12":29900,"hog-28":249900,"hog-30":159900,
-  /* iluminacion */
   "ilu-01":39900,"ilu-06":69900,
-  /* gaming */
   "gam-01":74900,
-  /* accesorios */
   "acc-06":59900,"acc-07":99900,
-  /* bebes */
   "inf-04":45900,
-  /* electricos */
   "ele-04":34900,
-  /* cocina */
   "coc-01":329000,"coc-05":59900,"coc-10":159900,
-  /* regalos */
   "reg-05":49900,
-  /* papeleria */
   "pap-04":39900,
-  /* agricolas */
   "agr-01":39900,"agr-04":59900,"agr-07":54900,"agr-12":249000,
-  /* salud */
   "sal-01":59900,"sal-06":59900
 };
 
-PRODUCTS.forEach(p => {
-  const before = BEFORE_PRICE[p.id];
-  if (before && before > p.price){
-    p.beforePrice = before;
-    p.discount = Math.round((1 - p.price / before) * 100);
-    p.saving = before - p.price;
-  }
-});
+/* ============================================================
+   CONTENIDO EDITABLE Y CONFIGURACIÓN
+   ============================================================ */
+const SITE_CONTENT = {
+  heroTitle: 'El surtido de su tienda,<br><span class="grad-text">en un solo pedido.</span>',
+  heroSub: "Somos la casa mayorista que abastece tiendas, minimercados, droguerías y comercio independiente en todo el país. Arme el pedido, aplique su cupón y un asesor lo confirma por WhatsApp.",
+  offerTitle: 'Precio antes / <span class="grad-text">precio ahora</span>',
+  offerSub: "Descuentos de referencia sobre el precio de lista mayorista. Stock limitado: el asesor confirma disponibilidad, flete e IVA antes de facturar.",
+  catTitle: "Todo el surtido que mueve el comercio en Colombia",
+  catSub: "Veintidós líneas listas para tienda de barrio, minimercado, droguería, papelería, agrotienda o institucional. Toque una sección para filtrar el catálogo.",
+  catalogTitle: "Arme el pedido y lo enviamos a WhatsApp",
+  couponTitle: "Tiene un cupón? <br>Aplíquelo aquí.",
+  couponSub: "Escriba el código y el descuento se suma automáticamente a su cuenta. Puede cambiarlo o quitarlo cuando quiera.",
+  coverageTitle: "Envíos a todo el territorio colombiano",
+  coverageSub: "Despacho 24 a 48 horas hábiles en corredores principales. Resto del país, 3 a 5 días hábiles según transportadora. El flete se cotiza al confirmar el pedido.",
+  footerDesc: "Axtoon Distribuidora S.A.S. Mayorista de tecnología, accesorios, ropa, calzado, hogar, belleza, herramientas agrícolas y más para el comercio colombiano. Cobertura nacional con factura electrónica."
+};
 
-const OFFER_PRODUCTS = PRODUCTS.filter(p => p.beforePrice).sort((a,b) => b.discount - a.discount);
-
-const CAT_BY_ID  = Object.fromEntries(CATEGORIES.map(c => [c.id, c]));
-const PROD_BY_ID = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
-const cop = n => "$ " + Math.round(Number(n)).toLocaleString("es-CO", {maximumFractionDigits:0});
+const SITE_CONFIG = {
+  whatsapp: "573223752541",
+  whatsappShow: "+57 322 375 2541",
+  adminPass: "axtoon2024"
+};
 
 /* ============================================================
-   ESTADO
+   PERSISTENCIA
    ============================================================ */
-let cart = {};
-let appliedCoupon = null;
-let current = "todas";
-let sortBy = "rel";
+const STORAGE_KEY = "axtoon_data_v1";
+const STORAGE_PASS = "axtoon_pass_v1";
+
+function buildSnapshot(){
+  return {
+    products: PRODUCTS.map(p => ({...p})),
+    categories: CATEGORIES.map(c => ({...c})),
+    coupons: JSON.parse(JSON.stringify(COUPONS)),
+    beforePrice: {...BEFORE_PRICE},
+    content: JSON.parse(JSON.stringify(SITE_CONTENT)),
+    config: {...SITE_CONFIG}
+  };
+}
+
+function loadFromStorage(){
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return false;
+    const d = JSON.parse(raw);
+    if (Array.isArray(d.products) && d.products.length){
+      PRODUCTS.length = 0;
+      d.products.forEach(p => PRODUCTS.push(p));
+    }
+    if (Array.isArray(d.categories) && d.categories.length){
+      CATEGORIES.length = 0;
+      d.categories.forEach(c => CATEGORIES.push(c));
+    }
+    if (d.coupons){
+      Object.keys(COUPONS).forEach(k => delete COUPONS[k]);
+      Object.assign(COUPONS, d.coupons);
+    }
+    if (d.beforePrice){
+      Object.keys(BEFORE_PRICE).forEach(k => delete BEFORE_PRICE[k]);
+      Object.assign(BEFORE_PRICE, d.beforePrice);
+    }
+    if (d.content) Object.assign(SITE_CONTENT, d.content);
+    if (d.config) Object.assign(SITE_CONFIG, d.config);
+    if (SITE_CONFIG.whatsapp){
+      window.__WA = SITE_CONFIG.whatsapp;
+    }
+    return true;
+  } catch(e){ console.warn("Error cargando datos:", e); return false; }
+}
+
+function saveToStorage(){
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(buildSnapshot()));
+    return true;
+  } catch(e){ console.warn(e); return false; }
+}
+
+function applyBeforePrices(){
+  PRODUCTS.forEach(p => {
+    delete p.beforePrice; delete p.discount; delete p.saving;
+    const b = BEFORE_PRICE[p.id];
+    if (b && b > p.price){
+      p.beforePrice = b;
+      p.discount = Math.round((1 - p.price/b) * 100);
+      p.saving = b - p.price;
+    }
+  });
+}
 
 /* ============================================================
    HELPERS
@@ -1579,6 +1640,7 @@ function fixImages(scope){
 let toastTimer;
 function toast(msg, kind){
   const t = document.getElementById("toast");
+  if (!t) return;
   t.textContent = msg;
   t.className = "toast show " + (kind || "ok");
   clearTimeout(toastTimer);
@@ -1586,15 +1648,28 @@ function toast(msg, kind){
 }
 
 /* ============================================================
-   TOTALES
+   ESTADO
    ============================================================ */
+let cart = {};
+let appliedCoupon = null;
+let current = "todas";
+let sortBy = "rel";
+let CAT_BY_ID = {};
+let PROD_BY_ID = {};
+let OFFER_PRODUCTS = [];
+
+function rebuildMaps(){
+  CAT_BY_ID  = Object.fromEntries(CATEGORIES.map(c => [c.id, c]));
+  PROD_BY_ID = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+  applyBeforePrices();
+  OFFER_PRODUCTS = PRODUCTS.filter(p => p.beforePrice).sort((a,b) => b.discount - a.discount);
+}
+
 const cartCount  = () => Object.values(cart).reduce((a,b) => a+b, 0);
 const cartTotal  = () => Object.entries(cart).reduce((t,[id,q]) => t + (PROD_BY_ID[id] ? PROD_BY_ID[id].price*q : 0), 0);
-const cartBefore = () => Object.entries(cart).reduce((t,[id,q]) => {
-  const p = PROD_BY_ID[id];
-  return p ? t + (p.beforePrice || p.price) * q : t;
-}, 0);
+const cartBefore = () => Object.entries(cart).reduce((t,[id,q]) => { const p = PROD_BY_ID[id]; return p ? t + (p.beforePrice || p.price) * q : t; }, 0);
 const cartSaving = () => cartBefore() - cartTotal();
+const cop = n => "$ " + Math.round(Number(n)).toLocaleString("es-CO", {maximumFractionDigits:0});
 
 function couponDiscount(){
   if (!appliedCoupon) return 0;
@@ -1611,21 +1686,16 @@ const finalTotal = () => Math.max(0, cartTotal() - couponDiscount());
    CARRITO
    ============================================================ */
 function addToCart(id, qty){
-  const p = PROD_BY_ID[id];
-  if (!p) return;
+  const p = PROD_BY_ID[id]; if (!p) return;
   cart[id] = (cart[id] || 0) + qty;
   renderCart();
   toast("✓ " + qty + " " + p.unit + " de " + p.name, "ok");
 }
-
 function setQty(id, qty){
-  const p = PROD_BY_ID[id];
-  if (!p) return;
-  if (qty < 1){ delete cart[id]; }
-  else { cart[id] = qty; }
+  const p = PROD_BY_ID[id]; if (!p) return;
+  if (qty < 1){ delete cart[id]; } else { cart[id] = qty; }
   renderCart();
 }
-
 function renderCart(){
   const n = cartCount();
   const sub = cartTotal();
@@ -1682,27 +1752,18 @@ function renderCart(){
 
   const box = document.getElementById("cartItems");
   box.innerHTML = "";
-
   if (n === 0){
-    box.innerHTML =
-      '<div style="text-align:center;padding:44px 16px;color:var(--muted-fg)">' +
-        '<div style="font-size:48px;margin-bottom:12px">🛒</div>' +
-        '<p style="font-weight:700;color:var(--fg);font-family:var(--display);font-size:19px">Su carrito está vacío</p>' +
-        '<p style="font-size:13.5px;margin-top:8px;line-height:1.65">Agregue productos desde el catálogo o aproveche las ofertas de la semana.</p>' +
-      '</div>';
+    box.innerHTML = '<div style="text-align:center;padding:44px 16px;color:var(--muted-fg)"><div style="font-size:48px;margin-bottom:12px">🛒</div><p style="font-weight:700;color:var(--fg);font-family:var(--display);font-size:19px">Su carrito está vacío</p><p style="font-size:13.5px;margin-top:8px;line-height:1.65">Agregue productos desde el catálogo o aproveche las ofertas de la semana.</p></div>';
     return;
   }
-
   Object.entries(cart).forEach(([id,q]) => {
     const p = PROD_BY_ID[id]; if (!p) return;
-    const cat = CAT_BY_ID[p.category];
+    const cat = CAT_BY_ID[p.category] || {color:"#0f4d38", emoji:"📦"};
     const el = document.createElement("div");
     el.className = "ci";
-
     const priceLine = p.beforePrice
       ? '<span class="price-old">'+cop(p.beforePrice*q)+'</span> <span class="now">'+cop(p.price*q)+'</span>'
       : cop(p.price*q);
-
     el.innerHTML =
       '<div class="thumb" style="background:'+cat.color+'22;color:'+cat.color+'">'+cat.emoji+'</div>' +
       '<div class="info">' +
@@ -1710,16 +1771,8 @@ function renderCart(){
         '<p class="sub">'+p.sku+' · '+p.unit+'</p>' +
         '<p class="line-total">'+priceLine+'</p>' +
         (p.beforePrice ? '<p class="sub" style="color:var(--berry);font-weight:700">Oferta −'+p.discount+'% · ahorra '+cop(p.saving*q)+'</p>' : '') +
-        '<div class="row-b">' +
-          '<div class="qty">' +
-            '<button type="button" class="mn" aria-label="Disminuir">−</button>' +
-            '<span class="n">'+q+'</span>' +
-            '<button type="button" class="pl" aria-label="Aumentar">+</button>' +
-          '</div>' +
-          '<button class="rm" type="button">Quitar</button>' +
-        '</div>' +
+        '<div class="row-b"><div class="qty"><button type="button" class="mn" aria-label="Disminuir">−</button><span class="n">'+q+'</span><button type="button" class="pl" aria-label="Aumentar">+</button></div><button class="rm" type="button">Quitar</button></div>' +
       '</div>';
-
     el.querySelector(".mn").addEventListener("click", () => setQty(id, q - 1));
     el.querySelector(".pl").addEventListener("click", () => setQty(id, q + 1));
     el.querySelector(".rm").addEventListener("click", () => { delete cart[id]; renderCart(); toast("Producto eliminado"); });
@@ -1728,20 +1781,13 @@ function renderCart(){
 }
 
 /* ============================================================
-   CUPONES — UI
+   CUPONES UI
    ============================================================ */
 function renderCouponCards(){
   const box = document.getElementById("couponCards");
   if (!box) return;
   box.innerHTML = Object.entries(COUPONS).map(([code,c]) =>
-    '<button type="button" class="coupon-card" data-code="'+code+'">' +
-      '<div class="cc-top">' +
-        '<span class="cc-code">'+code+'</span>' +
-        '<span class="cc-off">'+c.off+'</span>' +
-      '</div>' +
-      '<p class="cc-desc">'+c.desc+'</p>' +
-      '<span class="cc-use">Usar este cupón →</span>' +
-    '</button>'
+    '<button type="button" class="coupon-card" data-code="'+code+'"><div class="cc-top"><span class="cc-code">'+code+'</span><span class="cc-off">'+c.off+'</span></div><p class="cc-desc">'+c.desc+'</p><span class="cc-use">Usar este cupón →</span></button>'
   ).join('');
   box.querySelectorAll(".coupon-card").forEach(b => {
     b.addEventListener("click", () => applyCoupon(b.dataset.code, true));
@@ -1765,74 +1811,52 @@ function renderCouponState(){
       el.className = (s.main ? "coupon-msg show ok" : "coupon-state show ok");
       el.textContent = "Cupón " + appliedCoupon + " listo. Agregue productos para ver el descuento.";
     } else if (appliedCoupon && disc === 0){
+      const cmin = COUPONS[appliedCoupon] ? COUPONS[appliedCoupon].min : 0;
       el.className = (s.main ? "coupon-msg show err" : "coupon-state show err");
-      el.textContent = "El cupón " + appliedCoupon + " aplica desde " + cop(COUPONS[appliedCoupon].min) + ". Su subtotal es " + cop(cartTotal()) + ".";
+      el.textContent = "El cupón " + appliedCoupon + " aplica desde " + cop(cmin) + ". Su subtotal es " + cop(cartTotal()) + ".";
     } else {
       el.className = (s.main ? "coupon-msg" : "coupon-state");
       el.textContent = "";
     }
   });
-
   ["couponInput","couponInputInline","couponInputMain"].forEach(id => {
     const inp = document.getElementById(id);
     if (inp) inp.value = appliedCoupon || "";
   });
-
-  const btns = [
-    {row:"couponRowDrawer", btn:"couponApply"},
-    {row:"couponRowMain",   btn:"couponApplyInline"}
-  ];
-  btns.forEach(b => {
+  [{row:"couponRowDrawer", btn:"couponApply"},{row:"couponRowMain", btn:"couponApplyInline"}].forEach(b => {
     const btn = document.getElementById(b.btn);
     if (!btn) return;
     if (appliedCoupon){
-      btn.textContent = "Quitar";
-      btn.classList.add("remove");
-      btn.dataset.mode = "remove";
+      btn.textContent = "Quitar"; btn.classList.add("remove"); btn.dataset.mode = "remove";
     } else {
-      btn.textContent = "Aplicar";
-      btn.classList.remove("remove");
-      btn.dataset.mode = "apply";
+      btn.textContent = "Aplicar"; btn.classList.remove("remove"); btn.dataset.mode = "apply";
     }
   });
 }
 
 function applyCoupon(codeRaw, scroll){
   const code = String(codeRaw || "").trim().toUpperCase();
-  if (!code){
-    toast("Escriba un código de cupón", "warn");
-    return;
-  }
+  if (!code){ toast("Escriba un código de cupón", "warn"); return; }
   const c = COUPONS[code];
   if (!c){
-    appliedCoupon = null;
-    renderCart();
+    appliedCoupon = null; renderCart();
     const el = document.getElementById("couponState");
-    if (el){ el.className = "coupon-state show err"; el.textContent = "El código " + code + " no existe. Revise la lista de cupones disponibles."; }
+    if (el){ el.className = "coupon-state show err"; el.textContent = "El código " + code + " no existe."; }
     const el2 = document.getElementById("couponMsgMain");
-    if (el2){ el2.className = "coupon-msg show err"; el2.textContent = "El código " + code + " no existe. Pruebe con BIENVENIDO10."; }
+    if (el2){ el2.className = "coupon-msg show err"; el2.textContent = "El código " + code + " no existe."; }
     toast("Cupón no válido", "warn");
     return;
   }
   appliedCoupon = code;
   renderCart();
-
   if (cartTotal() < c.min){
     toast("Cupón " + code + " guardado. Aplica desde " + cop(c.min), "warn");
   } else {
     toast("🎉 Cupón " + code + " aplicado: −" + c.off, "ok");
   }
-  if (scroll){
-    document.getElementById("cupones").scrollIntoView({behavior:"smooth", block:"start"});
-  }
+  if (scroll) document.getElementById("cupones").scrollIntoView({behavior:"smooth", block:"start"});
 }
-
-function removeCoupon(){
-  appliedCoupon = null;
-  renderCart();
-  toast("Cupón removido");
-}
-
+function removeCoupon(){ appliedCoupon = null; renderCart(); toast("Cupón removido"); }
 function handleCouponBtn(btn, inputId){
   if (btn.dataset.mode === "remove"){ removeCoupon(); return; }
   const inp = document.getElementById(inputId);
@@ -1840,34 +1864,25 @@ function handleCouponBtn(btn, inputId){
 }
 
 /* ============================================================
-   RENDER — CATEGORÍAS
+   CATEGORÍAS Y CHIPS
    ============================================================ */
-const catsGrid = document.getElementById("catsGrid");
-CATEGORIES.forEach(c => {
-  const a = document.createElement("a");
-  a.href = "#catalogo"; a.className = "cat";
-  a.style.setProperty("--cat", c.color);
-  a.innerHTML =
-    '<div class="media">' +
-      '<img class="photo" src="'+c.image+'" alt="'+c.name+'" data-ph="'+c.image+'">' +
-      '<span class="emoji">'+c.emoji+'</span>' +
-    '</div>' +
-    '<div class="txt"><b>'+c.name+'</b><span>'+c.blurb+'</span></div>';
-  a.addEventListener("click", () => setCategory(c.id));
-  catsGrid.appendChild(a);
-});
+function renderCats(){
+  const catsGrid = document.getElementById("catsGrid");
+  catsGrid.innerHTML = "";
+  CATEGORIES.forEach(c => {
+    const a = document.createElement("a");
+    a.href = "#catalogo"; a.className = "cat";
+    a.style.setProperty("--cat", c.color);
+    a.innerHTML = '<div class="media"><img class="photo" src="'+c.image+'" alt="'+c.name+'" data-ph="'+c.image+'"><span class="emoji">'+c.emoji+'</span></div><div class="txt"><b>'+c.name+'</b><span>'+c.blurb+'</span></div>';
+    a.addEventListener("click", () => setCategory(c.id));
+    catsGrid.appendChild(a);
+  });
+}
 
-/* ============================================================
-   RENDER — CHIPS
-   ============================================================ */
 const chipsBox = document.getElementById("chips");
 function buildChips(){
   chipsBox.innerHTML = "";
-  const all = [
-    {id:"todas", name:"Todas"},
-    {id:"ofertas", name:"🔥 Ofertas", hot:true}
-  ].concat(CATEGORIES.map(c => ({id:c.id, name:c.emoji+" "+c.name})));
-
+  const all = [{id:"todas", name:"Todas"},{id:"ofertas", name:"🔥 Ofertas", hot:true}].concat(CATEGORIES.map(c => ({id:c.id, name:c.emoji+" "+c.name})));
   all.forEach(c => {
     const b = document.createElement("button");
     b.type = "button";
@@ -1877,38 +1892,24 @@ function buildChips(){
     chipsBox.appendChild(b);
   });
 }
-function setCategory(id){
-  current = id;
-  buildChips();
-  renderGrid();
-}
+function setCategory(id){ current = id; buildChips(); renderGrid(); }
 
 /* ============================================================
-   RENDER — TARJETA DE PRODUCTO
+   TARJETA DE PRODUCTO
    ============================================================ */
 function productCard(p, variant){
-  const cat = CAT_BY_ID[p.category];
+  const cat = CAT_BY_ID[p.category] || {color:"#0f4d38", emoji:"📦", name:"General", image:""};
   const isDeal = !!p.beforePrice;
   const art = document.createElement("article");
   art.className = "prod" + (isDeal ? " deal" : "");
   art.style.setProperty("--cat", cat.color);
-
   const priceBlock = isDeal
-    ? '<div class="prices">' +
-        '<span class="price-old">'+cop(p.beforePrice)+'</span>' +
-        '<span class="price-now">'+cop(p.price)+'</span>' +
-        '<span class="save-tag">−'+p.discount+'%</span>' +
-      '</div>' +
-      '<p class="price-note">Antes '+cop(p.beforePrice)+' · ahora '+cop(p.price)+' · ahorra '+cop(p.saving)+'</p>'
-    : '<p class="price">'+cop(p.price)+'</p>' +
-      '<p class="price-note">Precio de referencia · se confirma en WhatsApp</p>';
-
+    ? '<div class="prices"><span class="price-old">'+cop(p.beforePrice)+'</span><span class="price-now">'+cop(p.price)+'</span><span class="save-tag">−'+p.discount+'%</span></div><p class="price-note">Antes '+cop(p.beforePrice)+' · ahora '+cop(p.price)+' · ahorra '+cop(p.saving)+'</p>'
+    : '<p class="price">'+cop(p.price)+'</p><p class="price-note">Precio de referencia · se confirma en WhatsApp</p>';
   art.innerHTML =
     '<div class="media">' +
       '<img class="photo" src="'+cat.image+'" alt="'+p.name+'" data-ph="'+cat.image+'">' +
-      (isDeal
-        ? '<span class="ribbon">−'+p.discount+'% OFF</span>'
-        : (p.featured ? '<span class="flag">⭐ Alta rotación</span>' : '')) +
+      (isDeal ? '<span class="ribbon">−'+p.discount+'% OFF</span>' : (p.featured ? '<span class="flag">⭐ Alta rotación</span>' : '')) +
       (isDeal && variant === "deal" ? '<span class="timer">Oferta</span>' : '') +
     '</div>' +
     '<div class="body">' +
@@ -1916,53 +1917,31 @@ function productCard(p, variant){
       '<h3>'+p.name+'</h3>' +
       '<p class="meta">'+p.sku+' · Mín. '+p.minQty+' '+p.unit+'</p>' +
       priceBlock +
-      '<div class="actions">' +
-        '<div class="qty">' +
-          '<button type="button" class="minus" aria-label="Disminuir cantidad">−</button>' +
-          '<span class="n">'+p.minQty+'</span>' +
-          '<button type="button" class="plus" aria-label="Aumentar cantidad">+</button>' +
-        '</div>' +
-        '<button type="button" class="add">Agregar</button>' +
-      '</div>' +
+      '<div class="actions"><div class="qty"><button type="button" class="minus" aria-label="Disminuir cantidad">−</button><span class="n">'+p.minQty+'</span><button type="button" class="plus" aria-label="Aumentar cantidad">+</button></div><button type="button" class="add">Agregar</button></div>' +
       '<a class="wa-mini" target="_blank" rel="noopener" href="#">💬 Pedir directo por WhatsApp</a>' +
     '</div>';
-
   const nEl  = art.querySelector(".n");
   const link = art.querySelector(".wa-mini");
   const addBtn = art.querySelector(".add");
-
   const msg = () => {
-    const oferta = isDeal
-      ? "\nOferta: precio antes "+cop(p.beforePrice)+" → ahora "+cop(p.price)+" (−"+p.discount+"%)."
-      : "";
-    return "Hola, quiero pedir *"+p.name+"* (ref "+p.sku+")."+oferta+
-           "\nCantidad: "+nEl.textContent+" "+p.unit+
-           ".\n¿Me confirman disponibilidad, flete y valor?";
+    const oferta = isDeal ? "\nOferta: precio antes "+cop(p.beforePrice)+" → ahora "+cop(p.price)+" (−"+p.discount+"%)." : "";
+    return "Hola, quiero pedir *"+p.name+"* (ref "+p.sku+")."+oferta+"\nCantidad: "+nEl.textContent+" "+p.unit+".\n¿Me confirman disponibilidad, flete y valor?";
   };
   const sync = () => { link.href = waUrl(msg()); };
   sync();
-
-  art.querySelector(".minus").addEventListener("click", () => {
-    nEl.textContent = Math.max(1, +nEl.textContent - 1); sync();
-  });
-  art.querySelector(".plus").addEventListener("click", () => {
-    nEl.textContent = +nEl.textContent + 1; sync();
-  });
-
+  art.querySelector(".minus").addEventListener("click", () => { nEl.textContent = Math.max(1, +nEl.textContent - 1); sync(); });
+  art.querySelector(".plus").addEventListener("click", () => { nEl.textContent = +nEl.textContent + 1; sync(); });
   addBtn.addEventListener("click", () => {
     addToCart(p.id, +nEl.textContent);
-    addBtn.classList.add("done");
-    addBtn.textContent = "✓ Agregado";
+    addBtn.classList.add("done"); addBtn.textContent = "✓ Agregado";
     setTimeout(() => { addBtn.classList.remove("done"); addBtn.textContent = "Agregar"; }, 1300);
   });
-
   link.addEventListener("click", () => addToCart(p.id, +nEl.textContent));
-
   return art;
 }
 
 /* ============================================================
-   RENDER — GRID
+   RENDER GRID
    ============================================================ */
 const grid       = document.getElementById("grid");
 const offersGrid = document.getElementById("offersGrid");
@@ -1981,34 +1960,22 @@ function applySort(list){
     default:            return l.sort((a,b) => (b.featured?1:0) - (a.featured?1:0));
   }
 }
-
 function renderGrid(){
   const q = searchInput.value.trim().toLowerCase();
   const list = PRODUCTS.filter(p => {
-    const mc = current === "todas"
-      || (current === "ofertas" ? !!p.beforePrice : p.category === current);
-    const mq = !q
-      || p.name.toLowerCase().includes(q)
-      || p.sku.toLowerCase().includes(q)
-      || CAT_BY_ID[p.category].name.toLowerCase().includes(q);
+    const cat = CAT_BY_ID[p.category] || {name:""};
+    const mc = current === "todas" || (current === "ofertas" ? !!p.beforePrice : p.category === current);
+    const mq = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || cat.name.toLowerCase().includes(q);
     return mc && mq;
   });
-
   const sorted = applySort(list);
   grid.innerHTML = "";
   emptyMsg.hidden = sorted.length > 0;
-
-  const catName = current === "todas" ? "todo el catálogo"
-                : current === "ofertas" ? "las ofertas"
-                : CAT_BY_ID[current].name;
-  resultLine.innerHTML = sorted.length
-    ? "Mostrando <b>" + sorted.length + "</b> " + (sorted.length === 1 ? "producto" : "productos") + " en " + catName
-    : "";
-
+  const catName = current === "todas" ? "todo el catálogo" : current === "ofertas" ? "las ofertas" : (CAT_BY_ID[current] ? CAT_BY_ID[current].name : "");
+  resultLine.innerHTML = sorted.length ? "Mostrando <b>" + sorted.length + "</b> " + (sorted.length === 1 ? "producto" : "productos") + " en " + catName : "";
   sorted.forEach(p => grid.appendChild(productCard(p, "grid")));
   fixImages(grid);
 }
-
 function renderOffers(){
   offersGrid.innerHTML = "";
   offersEmpty.hidden = OFFER_PRODUCTS.length > 0;
@@ -2019,18 +1986,26 @@ function renderOffers(){
 /* ============================================================
    DEPARTAMENTOS Y SELECTS
    ============================================================ */
-const depsUl = document.getElementById("deps");
-DEPARTMENTS.forEach(d => {
-  const fast = FAST.has(d);
-  const li = document.createElement("li");
-  li.innerHTML = '<span>'+d+'</span><span class="'+(fast?'fast':'slow')+'">'+(fast?'24–48 h':'3–5 días')+'</span>';
-  depsUl.appendChild(li);
-});
-
-const selDep = document.getElementById("f_dep");
-selDep.innerHTML = '<option value="">Seleccione</option>' + DEPARTMENTS.map(d => '<option>'+d+'</option>').join("");
-const selBus = document.getElementById("f_business");
-selBus.innerHTML = '<option value="">Seleccione</option>' + BUSINESS.map(b => '<option>'+b+'</option>').join("");
+function renderDeps(){
+  const depsUl = document.getElementById("deps");
+  depsUl.innerHTML = "";
+  DEPARTMENTS.forEach(d => {
+    const fast = FAST.has(d);
+    const li = document.createElement("li");
+    li.innerHTML = '<span>'+d+'</span><span class="'+(fast?'fast':'slow')+'">'+(fast?'24–48 h':'3–5 días')+'</span>';
+    depsUl.appendChild(li);
+  });
+  const selDep = document.getElementById("f_dep");
+  const cur = selDep.value;
+  selDep.innerHTML = '<option value="">Seleccione</option>' + DEPARTMENTS.map(d => '<option>'+d+'</option>').join("");
+  selDep.value = cur;
+}
+function renderBusiness(){
+  const selBus = document.getElementById("f_business");
+  const cur = selBus.value;
+  selBus.innerHTML = '<option value="">Seleccione</option>' + BUSINESS.map(b => '<option>'+b+'</option>').join("");
+  selBus.value = cur;
+}
 
 /* ============================================================
    FORMULARIO
@@ -2040,28 +2015,19 @@ document.getElementById("orderForm").addEventListener("submit", e => {
   const v = id => document.getElementById(id).value.trim();
   const err = document.getElementById("formErr");
   err.hidden = true;
-
   if (!v("f_name") || !v("f_phone") || !v("f_city") || !v("f_dep")){
     err.textContent = "Complete nombre, celular, ciudad y departamento.";
-    err.hidden = false;
-    err.scrollIntoView({behavior:"smooth", block:"center"});
-    return;
+    err.hidden = false; err.scrollIntoView({behavior:"smooth", block:"center"}); return;
   }
   if (!/^\+?\d{7,13}$/.test(v("f_phone").replace(/[\s\-()]/g,""))){
-    err.textContent = "Ingrese un celular válido, con indicativo si escribe desde otro país.";
-    err.hidden = false;
-    return;
+    err.textContent = "Ingrese un celular válido."; err.hidden = false; return;
   }
-
   const lines = Object.entries(cart).map(([id,q]) => {
     const p = PROD_BY_ID[id]; if (!p) return null;
-    return "• "+q+" "+p.unit+" × "+p.name+" ("+p.sku+") — "+cop(p.price*q) +
-           (p.beforePrice ? "  [antes "+cop(p.beforePrice*q)+" · −"+p.discount+"%]" : "");
+    return "• "+q+" "+p.unit+" × "+p.name+" ("+p.sku+") — "+cop(p.price*q) + (p.beforePrice ? "  [antes "+cop(p.beforePrice*q)+" · −"+p.discount+"%]" : "");
   }).filter(Boolean);
-
   const saving = cartSaving();
   const disc = couponDiscount();
-
   const msg = [
     "*AXTOON DISTRIBUIDORA S.A.S*", "Pedido mayorista", "",
     "*Cliente:* " + v("f_name"),
@@ -2081,7 +2047,6 @@ document.getElementById("orderForm").addEventListener("submit", e => {
     v("f_notes") ? "*Notas:* " + v("f_notes") : null,
     "Quedo atento para confirmar disponibilidad, flete e IVA."
   ].filter(l => l !== null).join("\n");
-
   const url = waUrl(msg);
   document.getElementById("waSend").href = url;
   document.getElementById("sentBox").hidden = false;
@@ -2091,10 +2056,6 @@ document.getElementById("orderForm").addEventListener("submit", e => {
 /* ============================================================
    UI GENERAL
    ============================================================ */
-document.querySelectorAll(".wa-link, #waTop").forEach(a => {
-  a.href = waUrl("Hola, quiero cotizar con Axtoon Distribuidora S.A.S. ¿Me atienden?");
-});
-
 const header = document.getElementById("siteHeader");
 const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
 onScroll();
@@ -2108,51 +2069,31 @@ const drawer  = document.getElementById("drawer");
 const overlay = document.getElementById("overlay");
 const openCart  = () => { drawer.classList.add("open"); overlay.classList.add("open"); document.body.style.overflow = "hidden"; };
 const closeCart = () => { drawer.classList.remove("open"); overlay.classList.remove("open"); document.body.style.overflow = ""; };
-
 document.getElementById("btnCart").addEventListener("click", openCart);
 document.getElementById("barView").addEventListener("click", openCart);
 document.getElementById("btnCloseCart").addEventListener("click", closeCart);
 overlay.addEventListener("click", closeCart);
 document.getElementById("goOrder").addEventListener("click", closeCart);
-document.getElementById("clearCart").addEventListener("click", () => {
-  cart = {}; renderCart(); toast("Carrito vaciado");
-});
+document.getElementById("clearCart").addEventListener("click", () => { cart = {}; renderCart(); toast("Carrito vaciado"); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeCart(); });
 
 searchInput.addEventListener("input", renderGrid);
 document.getElementById("sortBy").addEventListener("change", e => { sortBy = e.target.value; renderGrid(); });
 
-/* Cupones — eventos */
-document.getElementById("couponApply").addEventListener("click", function(){
-  handleCouponBtn(this, "couponInput");
-});
-document.getElementById("couponApplyInline").addEventListener("click", function(){
-  handleCouponBtn(this, "couponInputInline");
-});
-document.getElementById("couponApplyMain").addEventListener("click", () => {
-  applyCoupon(document.getElementById("couponInputMain").value);
-});
+document.getElementById("couponApply").addEventListener("click", function(){ handleCouponBtn(this, "couponInput"); });
+document.getElementById("couponApplyInline").addEventListener("click", function(){ handleCouponBtn(this, "couponInputInline"); });
+document.getElementById("couponApplyMain").addEventListener("click", () => { applyCoupon(document.getElementById("couponInputMain").value); });
 ["couponInput","couponInputInline","couponInputMain"].forEach(id => {
   const el = document.getElementById(id);
   if (!el) return;
-  el.addEventListener("keydown", e => {
-    if (e.key === "Enter"){
-      e.preventDefault();
-      applyCoupon(el.value);
-    }
-  });
+  el.addEventListener("keydown", e => { if (e.key === "Enter"){ e.preventDefault(); applyCoupon(el.value); } });
 });
 document.getElementById("couponQuick").addEventListener("click", () => applyCoupon("BIENVENIDO10"));
-document.getElementById("couponScroll").addEventListener("click", () => {
-  document.getElementById("cupones").scrollIntoView({behavior:"smooth", block:"start"});
-});
+document.getElementById("couponScroll").addEventListener("click", () => { document.getElementById("cupones").scrollIntoView({behavior:"smooth", block:"start"}); });
 
-/* Año dinámico */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ============================================================
-   CUENTA REGRESIVA DE OFERTAS
-   ============================================================ */
+/* Countdown */
 function tickCountdown(){
   const el = document.getElementById("countdown");
   if (!el) return;
@@ -2168,23 +2109,14 @@ function tickCountdown(){
   const h = Math.floor(diff/3600000) % 24;
   const m = Math.floor(diff/60000) % 60;
   const s = Math.floor(diff/1000) % 60;
-  el.textContent = (d > 0 ? d + "d " : "") +
-    String(h).padStart(2,"0") + ":" + String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0");
+  el.textContent = (d > 0 ? d + "d " : "") + String(h).padStart(2,"0") + ":" + String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0");
 }
-tickCountdown();
-setInterval(tickCountdown, 1000);
+tickCountdown(); setInterval(tickCountdown, 1000);
 
-/* ============================================================
-   REVEAL ON SCROLL
-   ============================================================ */
+/* Reveal */
 if ("IntersectionObserver" in window){
   const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (en.isIntersecting){
-        en.target.classList.add("in");
-        io.unobserve(en.target);
-      }
-    });
+    entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
   }, {rootMargin:"0px 0px -8% 0px", threshold:.08});
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 } else {
@@ -2192,14 +2124,444 @@ if ("IntersectionObserver" in window){
 }
 
 /* ============================================================
-   INIT
+   APLICAR CONTENIDO Y CONFIGURACIÓN
    ============================================================ */
-buildChips();
-renderGrid();
-renderOffers();
-renderCouponCards();
-renderCart();
-fixImages(document);
+function applyContent(){
+  const setHTML = (sel, html) => { const el = document.querySelector(sel); if (el) el.innerHTML = html; };
+  const setText = (sel, txt) => { const el = document.querySelector(sel); if (el) el.textContent = txt; };
+  const heroH1 = document.querySelector("#inicio h1"); if (heroH1) heroH1.innerHTML = SITE_CONTENT.heroTitle;
+  setText("#inicio .sub", SITE_CONTENT.heroSub);
+  const offH2 = document.querySelector("#ofertas .h2"); if (offH2) offH2.innerHTML = SITE_CONTENT.offerTitle;
+  setText("#ofertas .lead", SITE_CONTENT.offerSub);
+  const catH2 = document.querySelector("#secciones .h2"); if (catH2) catH2.textContent = SITE_CONTENT.catTitle;
+  setText("#secciones .lead", SITE_CONTENT.catSub);
+  const catH2b = document.querySelector("#catalogo .h2"); if (catH2b) catH2b.textContent = SITE_CONTENT.catalogTitle;
+  const cpH2 = document.querySelector("#cupones .h2"); if (cpH2) cpH2.innerHTML = SITE_CONTENT.couponTitle;
+  setText("#cupones .lead", SITE_CONTENT.couponSub);
+  const covH2 = document.querySelector("#cobertura .h2"); if (covH2) covH2.textContent = SITE_CONTENT.coverageTitle;
+  setText("#cobertura .lead", SITE_CONTENT.coverageSub);
+  setText("footer .desc", SITE_CONTENT.footerDesc);
+}
+
+function applyConfig(){
+  document.querySelectorAll(".wa-link, #waTop, #waSend").forEach(a => {
+    if (a.id === "waSend" && a.href && a.href !== "#") return;
+    a.href = waUrl("Hola, quiero cotizar con Axtoon Distribuidora S.A.S. ¿Me atienden?");
+  });
+  const stripB = document.querySelector(".strip b"); if (stripB) stripB.textContent = SITE_CONFIG.whatsappShow;
+  const mini = document.querySelector(".mini b"); if (mini) mini.textContent = SITE_CONFIG.whatsappShow;
+  const foot = document.querySelector('footer a.wa-link'); if (foot) foot.textContent = "📱 " + SITE_CONFIG.whatsappShow;
+}
+
+/* ============================================================
+   RENDER INICIAL
+   ============================================================ */
+function renderAll(){
+  rebuildMaps();
+  renderCats();
+  buildChips();
+  renderGrid();
+  renderOffers();
+  renderCouponCards();
+  renderCart();
+  renderDeps();
+  renderBusiness();
+  fixImages(document);
+}
+
+/* ============================================================
+   PANEL DE ADMINISTRACIÓN
+   ============================================================ */
+(function initAdmin(){
+  const modal = document.getElementById("adminModal");
+  const fab = document.getElementById("adminFab");
+  const body = document.getElementById("adminBody");
+  const tabs = document.getElementById("adminTabs");
+  let currentTab = "productos";
+
+  // Cargar datos guardados ANTES de renderizar todo
+  loadFromStorage();
+
+  function checkPass(){
+    const stored = localStorage.getItem(STORAGE_PASS) || SITE_CONFIG.adminPass || ADMIN_PASS_DEFAULT;
+    const input = prompt("🔒 Panel de administración Axtoon\n\nIngrese la contraseña:");
+    if (input === null) return false;
+    if (input === stored) return true;
+    alert("❌ Contraseña incorrecta");
+    return false;
+  }
+
+  function openModal(){
+    if (!checkPass()) return;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    renderTab(currentTab);
+  }
+  function closeModal(){
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  fab.addEventListener("click", openModal);
+  document.getElementById("adminClose").addEventListener("click", closeModal);
+  document.addEventListener("keydown", e => {
+    if (e.ctrlKey && e.shiftKey && (e.key === "A" || e.key === "a")){ e.preventDefault(); openModal(); }
+    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+  });
+  if (location.hash === "#admin"){ setTimeout(openModal, 400); }
+
+  tabs.querySelectorAll(".admin-tab").forEach(t => {
+    t.addEventListener("click", () => {
+      tabs.querySelectorAll(".admin-tab").forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+      currentTab = t.dataset.tab;
+      renderTab(currentTab);
+    });
+  });
+
+  function el(tag, cls, html){
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+  function esc(s){
+    return String(s == null ? "" : s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+
+  function renderTab(tab){
+    body.innerHTML = "";
+    if (tab === "productos") renderProductos();
+    else if (tab === "ofertas") renderOfertasAdmin();
+    else if (tab === "cupones") renderCuponesAdmin();
+    else if (tab === "categorias") renderCategoriasAdmin();
+    else if (tab === "contenido") renderContenidoAdmin();
+    else if (tab === "config") renderConfigAdmin();
+  }
+
+  /* ---------- PRODUCTOS ---------- */
+  function renderProductos(){
+    const stats = el("div","admin-stat");
+    stats.innerHTML =
+      '<div class="s"><b>'+PRODUCTS.length+'</b><span>Productos</span></div>' +
+      '<div class="s"><b>'+PRODUCTS.filter(p=>p.featured).length+'</b><span>Destacados</span></div>' +
+      '<div class="s"><b>'+OFFER_PRODUCTS.length+'</b><span>En oferta</span></div>' +
+      '<div class="s"><b>'+CATEGORIES.length+'</b><span>Categorías</span></div>';
+    body.appendChild(stats);
+
+    const bar = el("div","admin-toolbar");
+    const search = el("input","","");
+    search.placeholder = "🔎 Buscar producto por nombre o SKU…";
+    const addBtn = el("button","admin-add","+ Nuevo producto");
+    addBtn.style.flex = "0 0 auto";
+    addBtn.style.padding = "10px 18px";
+    bar.appendChild(search); bar.appendChild(addBtn); body.appendChild(bar);
+    const list = el("div"); body.appendChild(list);
+
+    function draw(){
+      const q = search.value.trim().toLowerCase();
+      const filtered = PRODUCTS.filter(p =>
+        !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q)
+      );
+      list.innerHTML = "";
+      if (!filtered.length){
+        list.innerHTML = '<p style="text-align:center;color:var(--muted-fg);padding:30px">No hay productos que coincidan.</p>';
+        return;
+      }
+      filtered.forEach(p => {
+        const item = el("div","admin-item");
+        item.innerHTML =
+          '<div class="admin-row">' +
+            '<div class="admin-field"><label>Nombre</label><input data-k="name" value="'+esc(p.name)+'"></div>' +
+            '<div class="admin-field"><label>SKU</label><input data-k="sku" value="'+esc(p.sku)+'"></div>' +
+            '<div class="admin-field"><label>Precio (COP)</label><input data-k="price" type="number" value="'+p.price+'"></div>' +
+            '<div class="admin-field"><label>Mínimo</label><input data-k="minQty" type="number" value="'+p.minQty+'"></div>' +
+          '</div>' +
+          '<div class="admin-row" style="margin-top:10px">' +
+            '<div class="admin-field"><label>Categoría</label><select data-k="category">'+CATEGORIES.map(c=>'<option value="'+c.id+'"'+(c.id===p.category?' selected':'')+'>'+c.emoji+' '+c.name+'</option>').join('')+'</select></div>' +
+            '<div class="admin-field"><label>Unidad</label><input data-k="unit" value="'+esc(p.unit)+'"></div>' +
+            '<div class="admin-field"><label>Destacado</label><select data-k="featured"><option value="false"'+(p.featured?'':' selected')+'>No</option><option value="true"'+(p.featured?' selected':'')+'>Sí</option></select></div>' +
+            '<div class="admin-field"><label>Precio antes (oferta, 0 = sin oferta)</label><input data-k="beforePrice" type="number" value="'+(BEFORE_PRICE[p.id]||0)+'"></div>' +
+          '</div>';
+        const del = el("button","del","Eliminar");
+        item.appendChild(del);
+        item.querySelectorAll("[data-k]").forEach(inp => {
+          inp.addEventListener("input", () => {
+            const k = inp.dataset.k;
+            let v = inp.value;
+            if (k === "price" || k === "minQty" || k === "beforePrice") v = parseFloat(v) || 0;
+            if (k === "featured") v = v === "true";
+            const prod = PRODUCTS.find(x => x.id === p.id);
+            if (!prod) return;
+            if (k === "beforePrice"){
+              if (v > prod.price) BEFORE_PRICE[prod.id] = v;
+              else delete BEFORE_PRICE[prod.id];
+            } else {
+              prod[k] = v;
+            }
+          });
+        });
+        del.addEventListener("click", () => {
+          if (!confirm("¿Eliminar el producto \""+p.name+"\"?")) return;
+          const i = PRODUCTS.findIndex(x => x.id === p.id);
+          if (i >= 0) PRODUCTS.splice(i,1);
+          delete BEFORE_PRICE[p.id];
+          draw();
+        });
+        list.appendChild(item);
+      });
+    }
+    search.addEventListener("input", draw);
+    addBtn.addEventListener("click", () => {
+      const newId = "new-" + Date.now();
+      const catId = CATEGORIES[0] ? CATEGORIES[0].id : "hogar";
+      PRODUCTS.push({id:newId, sku:"AXT-NEW-"+PRODUCTS.length, name:"Nuevo producto", category:catId, unit:"und", price:10000, minQty:1, featured:false});
+      draw();
+      toast("Producto creado. Edite sus datos y pulse Guardar.");
+    });
+    draw();
+  }
+
+  /* ---------- OFERTAS ---------- */
+  function renderOfertasAdmin(){
+    body.appendChild(el("h3","","🔥 Productos en oferta"));
+    body.appendChild(el("p","hint2","Modifique el \"precio antes\" para activar/desactivar ofertas. El % de descuento se calcula automáticamente. El precio antes debe ser MAYOR al precio actual para que la oferta se active."));
+    const list = el("div"); body.appendChild(list);
+    PRODUCTS.forEach(p => {
+      const item = el("div","admin-item");
+      const isOffer = !!BEFORE_PRICE[p.id];
+      item.innerHTML =
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px">' +
+          '<b style="font-size:14px;padding-right:80px">'+esc(p.name)+'</b>' +
+          '<span style="font-size:12px;color:var(--muted-fg)">'+esc(p.sku)+'</span>' +
+        '</div>' +
+        '<div class="admin-row">' +
+          '<div class="admin-field"><label>Precio actual</label><input data-k="price" type="number" value="'+p.price+'"></div>' +
+          '<div class="admin-field"><label>Precio antes (oferta)</label><input data-k="before" type="number" value="'+(BEFORE_PRICE[p.id]||0)+'"></div>' +
+          '<div class="admin-field"><label>Descuento</label><input value="'+(isOffer?('−'+Math.round((1-p.price/BEFORE_PRICE[p.id])*100)+'%'):'—')+'" disabled></div>' +
+        '</div>';
+      item.querySelectorAll("[data-k]").forEach(inp => {
+        inp.addEventListener("input", () => {
+          const k = inp.dataset.k;
+          const v = parseFloat(inp.value) || 0;
+          const prod = PRODUCTS.find(x => x.id === p.id);
+          if (!prod) return;
+          if (k === "price"){
+            prod.price = v;
+            if (BEFORE_PRICE[prod.id] && BEFORE_PRICE[prod.id] <= v) delete BEFORE_PRICE[prod.id];
+          } else if (k === "before"){
+            if (v > prod.price) BEFORE_PRICE[prod.id] = v;
+            else delete BEFORE_PRICE[prod.id];
+          }
+          renderOfertasAdmin();
+        });
+      });
+      list.appendChild(item);
+    });
+  }
+
+  /* ---------- CUPONES ---------- */
+  function renderCuponesAdmin(){
+    body.appendChild(el("h3","","🎟️ Cupones de descuento"));
+    body.appendChild(el("p","hint2","Tipo: <b>percent</b> = porcentaje del subtotal · <b>fixed</b> = valor fijo en COP. El campo \"off\" es el texto que se muestra al cliente."));
+    const list = el("div"); body.appendChild(list);
+    function draw(){
+      list.innerHTML = "";
+      Object.entries(COUPONS).forEach(([code,c]) => {
+        const item = el("div","admin-item");
+        item.innerHTML =
+          '<div class="admin-row">' +
+            '<div class="admin-field"><label>Código</label><input data-k="code" value="'+esc(code)+'"></div>' +
+            '<div class="admin-field"><label>Tipo</label><select data-k="type"><option value="percent"'+(c.type==='percent'?' selected':'')+'>percent</option><option value="fixed"'+(c.type==='fixed'?' selected':'')+'>fixed</option></select></div>' +
+            '<div class="admin-field"><label>Valor</label><input data-k="value" type="number" value="'+c.value+'"></div>' +
+            '<div class="admin-field"><label>Mínimo (COP)</label><input data-k="min" type="number" value="'+c.min+'"></div>' +
+            '<div class="admin-field"><label>Etiqueta (off)</label><input data-k="off" value="'+esc(c.off)+'"></div>' +
+          '</div>' +
+          '<div class="admin-row" style="margin-top:10px"><div class="admin-field" style="grid-column:1/-1"><label>Descripción</label><input data-k="desc" value="'+esc(c.desc)+'"></div></div>';
+        const del = el("button","del","Eliminar");
+        del.addEventListener("click", () => {
+          if (!confirm('¿Eliminar cupón "'+code+'"?')) return;
+          delete COUPONS[code];
+          draw();
+        });
+        item.appendChild(del);
+        item.querySelectorAll("[data-k]").forEach(inp => {
+          inp.addEventListener("input", () => {
+            const k = inp.dataset.k;
+            const cup = COUPONS[code];
+            if (!cup) return;
+            if (k === "code"){
+              const newCode = inp.value.trim().toUpperCase();
+              if (newCode && newCode !== code){
+                COUPONS[newCode] = cup;
+                delete COUPONS[code];
+                draw();
+              }
+              return;
+            }
+            if (k === "value" || k === "min") cup[k] = parseFloat(inp.value) || 0;
+            else cup[k] = inp.value;
+          });
+        });
+        list.appendChild(item);
+      });
+    }
+    draw();
+    const add = el("button","admin-add","+ Nuevo cupón");
+    add.addEventListener("click", () => {
+      const code = "NUEVO" + Math.floor(Math.random()*900+100);
+      COUPONS[code] = {type:"percent", value:10, min:0, off:"-10%", desc:"Nuevo cupón de descuento."};
+      draw();
+    });
+    body.appendChild(add);
+  }
+
+  /* ---------- CATEGORÍAS ---------- */
+  function renderCategoriasAdmin(){
+    body.appendChild(el("h3","","🗂️ Categorías / secciones"));
+    body.appendChild(el("p","hint2","La <b>imagen</b> debe ser el nombre del archivo subido a GitHub (ej: im2.png). El <b>color</b> es el tono de la sección. El <b>emoji</b> aparece en la tarjeta."));
+    const list = el("div"); body.appendChild(list);
+    CATEGORIES.forEach(c => {
+      const item = el("div","admin-item");
+      item.innerHTML =
+        '<div class="admin-row">' +
+          '<div class="admin-field"><label>ID (no cambiar)</label><input value="'+esc(c.id)+'" disabled></div>' +
+          '<div class="admin-field"><label>Nombre</label><input data-k="name" value="'+esc(c.name)+'"></div>' +
+          '<div class="admin-field"><label>Emoji</label><input data-k="emoji" value="'+esc(c.emoji)+'"></div>' +
+          '<div class="admin-field"><label>Color</label><input data-k="color" type="color" value="'+esc(c.color)+'"></div>' +
+          '<div class="admin-field"><label>Imagen (archivo)</label><input data-k="image" value="'+esc(c.image)+'"></div>' +
+          '<div class="admin-field" style="grid-column:1/-1"><label>Descripción corta</label><input data-k="blurb" value="'+esc(c.blurb)+'"></div>' +
+        '</div>';
+      item.querySelectorAll("[data-k]").forEach(inp => {
+        inp.addEventListener("input", () => {
+          const cat = CATEGORIES.find(x => x.id === c.id);
+          if (cat) cat[inp.dataset.k] = inp.value;
+        });
+      });
+      list.appendChild(item);
+    });
+  }
+
+  /* ---------- CONTENIDO ---------- */
+  function renderContenidoAdmin(){
+    body.appendChild(el("h3","","✏️ Textos del sitio"));
+    body.appendChild(el("p","hint2","Puede usar HTML básico como <b>&lt;br&gt;</b> para saltos de línea y <b>&lt;span class=\"grad-text\"&gt;texto&lt;/span&gt;</b> para resaltar con degradado."));
+    const fields = [
+      {k:"heroTitle", label:"Título hero", type:"textarea"},
+      {k:"heroSub", label:"Subtítulo hero", type:"textarea"},
+      {k:"offerTitle", label:"Título ofertas", type:"textarea"},
+      {k:"offerSub", label:"Subtítulo ofertas", type:"textarea"},
+      {k:"catTitle", label:"Título categorías", type:"text"},
+      {k:"catSub", label:"Subtítulo categorías", type:"textarea"},
+      {k:"catalogTitle", label:"Título catálogo", type:"text"},
+      {k:"couponTitle", label:"Título cupones", type:"textarea"},
+      {k:"couponSub", label:"Subtítulo cupones", type:"textarea"},
+      {k:"coverageTitle", label:"Título cobertura", type:"text"},
+      {k:"coverageSub", label:"Subtítulo cobertura", type:"textarea"},
+      {k:"footerDesc", label:"Descripción footer", type:"textarea"}
+    ];
+    fields.forEach(f => {
+      const wrap = el("div","admin-item");
+      wrap.innerHTML = '<div class="admin-field"><label>'+f.label+'</label>' +
+        (f.type === "textarea" ? '<textarea data-k="'+f.k+'" rows="3">'+esc(SITE_CONTENT[f.k])+'</textarea>' : '<input data-k="'+f.k+'" value="'+esc(SITE_CONTENT[f.k])+'">') +
+        '</div>';
+      wrap.querySelector("[data-k]").addEventListener("input", e => { SITE_CONTENT[f.k] = e.target.value; });
+      body.appendChild(wrap);
+    });
+  }
+
+  /* ---------- CONFIG ---------- */
+  function renderConfigAdmin(){
+    body.appendChild(el("h3","","🔧 Configuración general"));
+    body.appendChild(el("p","hint2","Estos datos se usan en toda la página."));
+    const wrap = el("div","admin-item");
+    wrap.innerHTML =
+      '<div class="admin-row">' +
+        '<div class="admin-field"><label>WhatsApp (solo números, con código país)</label><input data-k="whatsapp" value="'+esc(SITE_CONFIG.whatsapp)+'"></div>' +
+        '<div class="admin-field"><label>WhatsApp visible</label><input data-k="whatsappShow" value="'+esc(SITE_CONFIG.whatsappShow)+'"></div>' +
+        '<div class="admin-field"><label>Contraseña del panel</label><input data-k="adminPass" type="text" value="'+esc(SITE_CONFIG.adminPass)+'"></div>' +
+      '</div>';
+    wrap.querySelectorAll("[data-k]").forEach(inp => {
+      inp.addEventListener("input", () => { SITE_CONFIG[inp.dataset.k] = inp.value; });
+    });
+    body.appendChild(wrap);
+    body.appendChild(el("h3","","💾 Respaldo de datos"));
+    body.appendChild(el("p","hint2","Exporte su configuración a un archivo JSON para respaldarla, o impórtela en otro navegador/dispositivo. Los botones están en la parte superior del panel."));
+  }
+
+  /* ---------- GUARDAR ---------- */
+  document.getElementById("adminSave").addEventListener("click", () => {
+    if (SITE_CONFIG.adminPass){
+      localStorage.setItem(STORAGE_PASS, SITE_CONFIG.adminPass);
+    }
+    saveToStorage();
+    renderAll();
+    applyContent();
+    applyConfig();
+    toast("✓ Cambios guardados y aplicados", "ok");
+  });
+
+  /* ---------- RESET ---------- */
+  document.getElementById("adminReset").addEventListener("click", () => {
+    if (!confirm("⚠️ ¿Restaurar TODOS los datos originales?\n\nSe perderán sus cambios guardados.")) return;
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_PASS);
+    location.reload();
+  });
+
+  /* ---------- EXPORTAR ---------- */
+  document.getElementById("adminExport").addEventListener("click", () => {
+    const data = JSON.stringify(buildSnapshot(), null, 2);
+    const blob = new Blob([data], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "axtoon-config-" + new Date().toISOString().slice(0,10) + ".json";
+    a.click();
+    URL.revokeObjectURL(url);
+    toast("Respaldo descargado", "ok");
+  });
+
+  /* ---------- IMPORTAR ---------- */
+  const fileInput = document.getElementById("adminFileInput");
+  document.getElementById("adminImportBtn").addEventListener("click", () => fileInput.click());
+  fileInput.addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const d = JSON.parse(ev.target.result);
+        if (d.products) { PRODUCTS.length = 0; d.products.forEach(p => PRODUCTS.push(p)); }
+        if (d.categories) { CATEGORIES.length = 0; d.categories.forEach(c => CATEGORIES.push(c)); }
+        if (d.coupons){ Object.keys(COUPONS).forEach(k => delete COUPONS[k]); Object.assign(COUPONS, d.coupons); }
+        if (d.beforePrice){ Object.keys(BEFORE_PRICE).forEach(k => delete BEFORE_PRICE[k]); Object.assign(BEFORE_PRICE, d.beforePrice); }
+        if (d.content) Object.assign(SITE_CONTENT, d.content);
+        if (d.config) Object.assign(SITE_CONFIG, d.config);
+        saveToStorage();
+        renderAll();
+        applyContent();
+        applyConfig();
+        toast("✓ Configuración importada", "ok");
+        renderTab(currentTab);
+      } catch(err){
+        alert("❌ El archivo no es válido: " + err.message);
+      }
+    };
+    reader.readAsText(file);
+    fileInput.value = "";
+  });
+
+})();
+
+/* ============================================================
+   INIT FINAL
+   ============================================================ */
+renderAll();
+applyContent();
+applyConfig();
 </script>
 </body>
 </html>
