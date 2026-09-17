@@ -16,7 +16,7 @@
 
 <style>
 /* ============================================================
-   TOKENS — Paleta refinada, elegante, premium
+   TOKENS
    ============================================================ */
 :root{
   --bg:#fbf8f2; --bg-2:#f5eee2; --fg:#141310; --card:#ffffff;
@@ -40,7 +40,6 @@
   --shadow-gold:0 12px 30px -14px rgba(184,134,11,.55);
   --r-sm:10px; --r:18px; --r-lg:26px; --r-xl:34px;
   --ease:cubic-bezier(.22,1,.36,1);
-  --ease-soft:cubic-bezier(.4,0,.2,1);
   --sans:"Outfit",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --display:"Fraunces",ui-serif,Georgia,"Times New Roman",serif;
   --ui:"Inter",ui-sans-serif,system-ui,sans-serif;
@@ -56,6 +55,7 @@ body{
     radial-gradient(700px 600px at 50% 120%, #fdeaf2 0%, transparent 60%),
     var(--bg);
   background-attachment:fixed;
+  display:flex;min-height:100vh;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -71,13 +71,10 @@ button{font:inherit;cursor:pointer}
   color:#8a7f70;font-size:12px;font-weight:600;letter-spacing:.08em;
   outline:1px dashed #d8ccb9;outline-offset:-1px;text-align:center;padding:8px;
 }
-.ph.wide{aspect-ratio:16/10}
 
 /* ============================================================
-   LAYOUT CON SIDEBAR (nuevo, tipo Droppi pero con Axtoon)
+   SIDEBAR
    ============================================================ */
-body{display:flex;min-height:100vh}
-
 .ax-sidebar{
   width:230px;flex-shrink:0;background:#fff;
   border-right:1px solid #e9edf2;
@@ -140,7 +137,9 @@ body{display:flex;min-height:100vh}
   letter-spacing:.08em;color:#a0b1c5;padding:8px 13px 3px 13px;
 }
 
-/* ---------- MAIN ---------- */
+/* ============================================================
+   MAIN
+   ============================================================ */
 .ax-main{flex:1;min-width:0;display:flex;flex-direction:column;background:var(--bg)}
 
 .ax-topbar{
@@ -169,7 +168,9 @@ body{display:flex;min-height:100vh}
   letter-spacing:-.025em;color:#0b1f33;margin-bottom:18px;
 }
 
-/* ---------- SEARCH ROW (solo buscador, sin filtros) ---------- */
+/* ============================================================
+   SEARCH ROW
+   ============================================================ */
 .ax-search-row{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
   gap:14px;margin-bottom:14px;
@@ -214,7 +215,88 @@ body{display:flex;min-height:100vh}
 .ax-view-icons i:hover{color:#f97316}
 
 /* ============================================================
-   GRID DE PRODUCTOS estilo Droppi (integrado con tu paleta)
+   BARRA DE SECCIONES
+   ============================================================ */
+.ax-sections-bar{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:6px 2px 14px 2px;margin-bottom:6px;
+  scrollbar-width:thin;scrollbar-color:#ffd9b8 transparent;
+  -webkit-overflow-scrolling:touch;
+}
+.ax-sections-bar::-webkit-scrollbar{height:5px}
+.ax-sections-bar::-webkit-scrollbar-thumb{background:#ffd9b8;border-radius:10px}
+.ax-sections-bar::-webkit-scrollbar-track{background:transparent}
+
+.ax-section-chip{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 15px;border-radius:30px;
+  background:#fff;border:1px solid #e9edf2;
+  font-family:var(--ui);font-size:12.5px;font-weight:600;
+  color:#43566b;white-space:nowrap;cursor:pointer;
+  transition:all .22s var(--ease);
+  box-shadow:var(--shadow-xs);flex-shrink:0;
+}
+.ax-section-chip .emoji{font-size:15px;line-height:1}
+.ax-section-chip .count{
+  background:#f1f5f9;color:#8f9fb2;font-size:9.5px;font-weight:700;
+  padding:2px 7px;border-radius:20px;margin-left:2px;transition:.2s;
+}
+.ax-section-chip:hover{
+  border-color:#ffd9b8;background:#fffaf5;color:#e05e00;
+  transform:translateY(-1px);
+}
+.ax-section-chip:hover .count{background:#ffe8d6;color:#e05e00}
+.ax-section-chip.active{
+  background:var(--grad-warm);color:#fff;border-color:transparent;
+  box-shadow:0 8px 20px -8px rgba(255,106,61,.6);
+}
+.ax-section-chip.active .count{background:rgba(255,255,255,.25);color:#fff}
+.ax-section-chip.all-chip{
+  background:var(--brand);color:#fff;border-color:transparent;
+}
+.ax-section-chip.all-chip .count{background:rgba(255,255,255,.2);color:#fff}
+.ax-section-chip.all-chip.active{
+  background:var(--grad-brand);box-shadow:0 8px 20px -8px rgba(15,77,56,.5);
+}
+.ax-section-chip.all-chip:hover{color:#fff;background:#0a3826}
+
+/* Encabezado de sección */
+.ax-section-header{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;margin-bottom:16px;padding:14px 18px;
+  background:#fff;border:1px solid #eef2f8;border-radius:16px;
+  box-shadow:var(--shadow-xs);
+  animation:axFadeIn .35s var(--ease);
+}
+@keyframes axFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.ax-section-header-left{display:flex;align-items:center;gap:14px;min-width:0}
+.ax-section-header-emoji{
+  width:44px;height:44px;border-radius:13px;
+  background:linear-gradient(135deg,#fff4eb,#ffe8d6);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;border:1px solid #ffe0c7;
+}
+.ax-section-header-title{
+  font-family:var(--display);font-size:18px;font-weight:700;
+  letter-spacing:-.02em;color:#0b1f33;line-height:1.2;
+}
+.ax-section-header-sub{
+  font-size:11.5px;color:#8f9fb2;font-weight:500;margin-top:2px;
+}
+.ax-section-header-count{
+  font-family:var(--ui);font-size:11.5px;font-weight:700;
+  color:#e05e00;background:#fff4eb;padding:6px 13px;border-radius:30px;
+  white-space:nowrap;flex-shrink:0;
+}
+.ax-section-header-clear{
+  background:none;border:none;color:#8f9fb2;font-size:11.5px;
+  font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;
+  padding:5px 10px;border-radius:20px;transition:.2s;font-family:var(--ui);
+}
+.ax-section-header-clear:hover{background:#f1f5f9;color:#e05e00}
+
+/* ============================================================
+   GRID
    ============================================================ */
 .ax-grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
@@ -232,8 +314,7 @@ body{display:flex;min-height:100vh}
   position:relative;border-radius:12px;overflow:hidden;background:var(--muted);
   aspect-ratio:4/3;
 }
-.ax-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
-.ax-card:hover .ax-card-media img{transform:scale(1.06)}
+.ax-card-media .ph{aspect-ratio:4/3;border-radius:12px}
 .ax-card-tag{
   position:absolute;top:9px;left:9px;z-index:2;
   background:var(--grad-warm);color:#fff;border-radius:20px;
@@ -260,9 +341,7 @@ body{display:flex;min-height:100vh}
   line-height:1.3;margin-top:4px;color:#0b1f33;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
 }
-.ax-card-provider{
-  margin-top:5px;font-size:10.5px;color:#8f9fb2;
-}
+.ax-card-provider{margin-top:5px;font-size:10.5px;color:#8f9fb2}
 .ax-card-provider b{color:#5a6b80;font-weight:600}
 .ax-card-prices{margin-top:8px;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
 .ax-card-price-old{
@@ -279,13 +358,9 @@ body{display:flex;min-height:100vh}
 .ax-card-stock{
   margin-top:5px;font-size:10px;color:#8f9fb2;display:flex;align-items:center;gap:5px;
 }
-.ax-card-stock .dot{
-  width:5px;height:5px;border-radius:50%;background:#22c55e;
-}
+.ax-card-stock .dot{width:5px;height:5px;border-radius:50%;background:#22c55e}
 .ax-card-stock .dot.low{background:#f59e0b}
-.ax-card-actions{
-  margin-top:10px;display:flex;gap:7px;align-items:center;
-}
+.ax-card-actions{margin-top:10px;display:flex;gap:7px;align-items:center}
 .ax-card-qty{
   display:flex;align-items:center;gap:1px;background:#f1f5f9;
   border-radius:30px;padding:2px;flex-shrink:0;
@@ -319,7 +394,7 @@ body{display:flex;min-height:100vh}
 .ax-card-send:hover{background:var(--grad-warm);color:#fff;border-color:transparent}
 
 /* ============================================================
-   RESTO DE ESTILOS ORIGINALES (intactos)
+   STRIP
    ============================================================ */
 .strip{background:var(--grad-brand-deep);color:#fff;padding:10px 16px;font-size:13px;font-weight:500;letter-spacing:.01em;position:relative;overflow:hidden;}
 .strip::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);animation:shimmer 4s infinite;}
@@ -329,13 +404,128 @@ body{display:flex;min-height:100vh}
 .strip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7ce7b6;margin-right:8px;vertical-align:middle;box-shadow:0 0 0 0 rgba(124,231,182,.7);animation:pulse 2s infinite;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,231,182,.6)}70%{box-shadow:0 0 0 9px rgba(124,231,182,0)}100%{box-shadow:0 0 0 0 rgba(124,231,182,0)}}
 
-/* [AQUÍ VAN TODOS LOS DEMÁS ESTILOS ORIGINALES: .eyebrow, .h2, .lead, .btn, 
-   header.site, .hero, .trust-bar, .stats, .ofertas, .grid-prod, .prod, 
-   .cats, .catalog, .chips, .cupones, .steps, .why, .guarantees, .payments, 
-   .cov, .testi, .faq, .order, footer.site, .cartbar, .wa-float, .overlay, 
-   .drawer, .toast, #adminFab, .admin-modal, etc. — TODO IGUAL QUE TU CÓDIGO] */
+/* ============================================================
+   FLOTANTES / DRAWER / TOAST / ADMIN
+   ============================================================ */
+.wa-float{
+  position:fixed;right:20px;bottom:88px;z-index:60;
+  display:inline-flex;align-items:center;gap:9px;
+  background:#25D366;color:#fff;font-weight:700;font-size:13px;
+  padding:11px 18px;border-radius:40px;font-family:var(--ui);
+  box-shadow:0 12px 30px -10px rgba(37,211,102,.7);
+  transition:.25s var(--ease);
+}
+.wa-float:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 18px 40px -12px rgba(37,211,102,.8)}
+.wa-float svg{flex-shrink:0}
 
-/* Los omito aquí por espacio pero en el archivo final van completos */
+#adminFab{
+  position:fixed;left:20px;bottom:20px;z-index:60;
+  width:48px;height:48px;border-radius:50%;border:none;
+  background:var(--grad-warm);color:#fff;font-size:20px;
+  box-shadow:var(--shadow-glow);cursor:pointer;
+  transition:.25s var(--ease);
+}
+#adminFab:hover{transform:scale(1.08) rotate(15deg)}
+
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(30px);
+  background:#0b1f33;color:#fff;font-family:var(--ui);font-size:13px;font-weight:500;
+  padding:11px 22px;border-radius:30px;box-shadow:var(--shadow-md);
+  opacity:0;pointer-events:none;transition:.3s var(--ease);z-index:100;max-width:90vw;text-align:center;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.overlay{
+  display:none;position:fixed;inset:0;background:rgba(20,19,16,.5);
+  z-index:70;backdrop-filter:blur(3px);
+}
+.overlay.open{display:block}
+
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);
+  background:#fff;z-index:80;transform:translateX(100%);
+  transition:transform .35s var(--ease);display:flex;flex-direction:column;
+  box-shadow:-20px 0 60px -20px rgba(0,0,0,.3);font-family:var(--ui);
+}
+.drawer.open{transform:translateX(0)}
+.drawer-head{
+  padding:18px 20px;border-bottom:1px solid #edf1f7;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.drawer-head h3{font-family:var(--display);font-size:19px;color:#0b1f33}
+.drawer-close{
+  background:#f1f5f9;border:none;width:34px;height:34px;border-radius:50%;
+  color:#43566b;font-size:15px;cursor:pointer;transition:.2s;
+}
+.drawer-close:hover{background:#ffe8d6;color:#e05e00}
+.drawer-body{flex:1;overflow-y:auto;padding:16px 20px}
+.drawer-body .empty{
+  text-align:center;color:var(--muted-fg);font-size:13px;padding:40px 10px;
+}
+.cart-item{
+  display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f2f6fb;
+  align-items:center;
+}
+.cart-item .ci-info{flex:1;min-width:0}
+.cart-item .ci-name{
+  font-size:13px;font-weight:600;color:#0b1f33;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.cart-item .ci-meta{font-size:11px;color:#8f9fb2;margin-top:2px}
+.cart-item .ci-price{
+  font-family:var(--display);font-size:14px;font-weight:800;color:#0f4d38;
+}
+.cart-item .ci-remove{
+  background:none;border:none;color:#c4d0de;font-size:14px;cursor:pointer;
+  padding:6px;border-radius:8px;transition:.2s;
+}
+.cart-item .ci-remove:hover{color:#ef4444;background:#fef2f2}
+.drawer-foot{
+  padding:16px 20px;border-top:1px solid #edf1f7;background:#fafbfd;
+}
+.drawer-total{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:14px;font-size:13px;color:#5a6b80;
+}
+.drawer-total b{
+  font-family:var(--display);font-size:22px;font-weight:800;color:#0b1f33;
+}
+.btn-wa-confirm{
+  width:100%;height:46px;border-radius:30px;border:none;
+  background:#25D366;color:#fff;font-weight:700;font-size:14px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  cursor:pointer;transition:.2s;font-family:var(--ui);
+}
+.btn-wa-confirm:hover{background:#1eb455;transform:translateY(-1px)}
+
+.admin-modal{
+  position:fixed;inset:0;z-index:90;display:none;
+  align-items:center;justify-content:center;padding:18px;
+  background:rgba(11,31,51,.6);backdrop-filter:blur(5px);
+}
+.admin-modal.open{display:flex}
+.admin-card{
+  background:#fff;border-radius:22px;width:min(560px,100%);
+  max-height:90vh;overflow-y:auto;padding:26px;font-family:var(--ui);
+  box-shadow:0 40px 100px -30px rgba(0,0,0,.5);
+}
+.admin-card h3{font-family:var(--display);font-size:22px;margin-bottom:6px;color:#0b1f33}
+.admin-card p.sub{font-size:12.5px;color:#8f9fb2;margin-bottom:18px}
+.admin-card label{display:block;font-size:11.5px;font-weight:600;color:#5a6b80;margin:12px 0 5px}
+.admin-card input,.admin-card textarea{
+  width:100%;padding:10px 14px;border-radius:12px;border:1px solid #dfe7f0;
+  font-family:var(--ui);font-size:13px;outline:none;transition:.2s;
+}
+.admin-card input:focus,.admin-card textarea:focus{border-color:#f97316;box-shadow:0 0 0 3px #fff1e6}
+.admin-actions{display:flex;gap:10px;margin-top:22px}
+.admin-actions button{
+  flex:1;height:44px;border-radius:30px;border:none;font-weight:700;font-size:13px;
+  cursor:pointer;transition:.2s;font-family:var(--ui);
+}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:#0a3826}
+.btn-ghost{background:#f1f5f9;color:#43566b}
+.btn-ghost:hover{background:#e2e8f0}
 
 /* ============================================================
    RESPONSIVE
@@ -365,6 +555,12 @@ body{display:flex;min-height:100vh}
   .ax-search-row{flex-direction:column;align-items:stretch}
   .ax-search-box{max-width:100%;min-width:auto}
   .ax-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .ax-section-header{flex-direction:column;align-items:flex-start;gap:10px}
+  .ax-section-header-count{align-self:flex-start}
+  .ax-section-chip{font-size:11.5px;padding:7px 12px}
+  .ax-section-chip .count{display:none}
+  .wa-float span{display:none}
+  .wa-float{padding:14px;border-radius:50%}
 }
 .ax-overlay{
   display:none;position:fixed;inset:0;background:rgba(20,19,16,.5);
@@ -375,13 +571,12 @@ body{display:flex;min-height:100vh}
 </head>
 <body>
 
-<!-- ===== OVERLAY MÓVIL ===== -->
+<!-- OVERLAY MÓVIL -->
 <div class="ax-overlay" id="axOverlay"></div>
 
-<!-- ===== SIDEBAR ===== -->
+<!-- SIDEBAR -->
 <aside class="ax-sidebar" id="axSidebar">
   <div class="ax-logo-area">
-    <!-- ESPACIO PARA SUBIR EL LOGO (se adapta al formato de la imagen) -->
     <label class="ax-logo-box" for="logoUpload" title="Subir logo">
       <img id="logoPreview" src="" alt="" style="display:none">
       <i class="fas fa-camera" id="logoIcon"></i>
@@ -421,10 +616,9 @@ body{display:flex;min-height:100vh}
   </nav>
 </aside>
 
-<!-- ===== MAIN ===== -->
+<!-- MAIN -->
 <div class="ax-main">
 
-  <!-- TOP BAR -->
   <div class="ax-topbar">
     <button class="ax-hamburger" id="axHamburger"><i class="fas fa-bars"></i></button>
     <div class="lang"><i class="fas fa-flag-usa"></i> English</div>
@@ -435,7 +629,6 @@ body{display:flex;min-height:100vh}
     </div>
   </div>
 
-  <!-- STRIP ORIGINAL -->
   <div class="strip">
     <div class="strip-in">
       <span><span class="dot"></span>Pedidos mayoristas a todo Colombia</span>
@@ -443,12 +636,10 @@ body{display:flex;min-height:100vh}
     </div>
   </div>
 
-  <!-- CONTENIDO CON EL DISEÑO DE LA IMAGEN -->
   <div class="ax-content">
 
     <h1 class="ax-page-title">Catálogo de productos</h1>
 
-    <!-- SEARCH ROW (SOLO BUSCADOR, SIN FILTROS) -->
     <div class="ax-search-row">
       <div class="ax-toggles">
         <label><i class="fas fa-heart" style="color:#f97316"></i> Favoritos <input type="checkbox" id="axToggleFav"></label>
@@ -458,11 +649,30 @@ body{display:flex;min-height:100vh}
       <div class="ax-search-box">
         <i class="fas fa-search"></i>
         <input type="text" id="axSearchInput" placeholder="Buscar producto, SKU o categoría…">
-        <button class="ax-search-by-img"><i class="fas fa-camera"></i> Buscar por imagen</button>
+        <button class="ax-search-by-img" type="button"><i class="fas fa-camera"></i> Buscar por imagen</button>
       </div>
     </div>
 
-    <!-- ORDER ROW -->
+    <!-- BARRA DE SECCIONES -->
+    <div class="ax-sections-bar" id="axSectionsBar" role="tablist" aria-label="Secciones de productos"></div>
+
+    <!-- ENCABEZADO DE SECCIÓN -->
+    <div class="ax-section-header" id="axSectionHeader" hidden>
+      <div class="ax-section-header-left">
+        <div class="ax-section-header-emoji" id="axSectionEmoji">📦</div>
+        <div>
+          <div class="ax-section-header-title" id="axSectionTitle">Todas las secciones</div>
+          <div class="ax-section-header-sub" id="axSectionSub">Explora todo el catálogo mayorista</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span class="ax-section-header-count" id="axSectionCount">0 productos</span>
+        <button class="ax-section-header-clear" id="axSectionClear" type="button">
+          <i class="fas fa-times-circle"></i> Ver todas
+        </button>
+      </div>
+    </div>
+
     <div class="ax-order-row">
       <span>Ordenar por:</span>
       <select id="axSortSelect">
@@ -479,64 +689,396 @@ body{display:flex;min-height:100vh}
       </div>
     </div>
 
-    <!-- GRID DE PRODUCTOS (se llena con JS) -->
     <div class="ax-grid" id="axProductGrid"></div>
     <p class="empty" id="axEmpty" hidden style="text-align:center;padding:40px;color:var(--muted-fg);background:#fff;border:1px dashed var(--border);border-radius:var(--r-lg)">No hay productos que coincidan.</p>
 
   </div>
 </div>
 
-<!-- ===== AQUÍ VA TODO EL RESTO DE TU HTML ORIGINAL INTACTO ===== -->
-<!-- (hero, trust-bar, stats, ofertas, secciones, catálogo, cupones, proceso,
-     why, garantías, payments, cobertura, testimonios, FAQ, pedido, footer,
-     cartbar, wa-float, overlay, drawer, toast, adminFab, adminModal,
-     adminFileInput) -->
-
-<!-- ... TU HTML ORIGINAL COMPLETO AQUÍ ... -->
-
-<!-- ===== BOTONES FLOTANTES ORIGINALES ===== -->
-<a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+<a class="wa-float" href="https://wa.me/573223752541" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.37 2.15 11.75c0 1.89.5 3.73 1.44 5.35L2 22l5.07-1.54A10.1 10.1 0 0 0 12.04 21.5C17.5 21.5 21.93 17.13 21.93 11.75S17.5 2 12.04 2Zm5.73 14.36c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.93-1.26-4.83-4.18-4.98-4.38-.14-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.24-.27.64-.4 1.02-.4.12 0 .24 0 .34.01.3.01.45.03.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.15-.29.31-.12.6.16.3.73 1.2 1.56 1.94 1.08.96 1.98 1.26 2.3 1.4.3.13.48.11.66-.07.18-.18.77-.9.98-1.2.2-.3.41-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.34.08.13.08.73-.16 1.4Z"/></svg>
   <span>Pedir ahora</span>
 </a>
 
-<button id="adminFab" title="Panel de administración (Ctrl+Shift+A)" aria-label="Abrir panel admin">⚙️</button>
+<button id="adminFab" title="Panel de administración" aria-label="Abrir panel admin">⚙️</button>
+
+<!-- DRAWER CARRITO -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3><i class="fas fa-shopping-bag" style="color:#f97316;margin-right:8px"></i>Mi pedido</h3>
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <p class="empty">Tu carrito está vacío.</p>
+  </div>
+  <div class="drawer-foot">
+    <div class="drawer-total">
+      <span>Total estimado</span>
+      <b id="drawerTotal">$ 0</b>
+    </div>
+    <button class="btn-wa-confirm" id="btnWaConfirm" type="button">
+      <i class="fab fa-whatsapp"></i> Confirmar por WhatsApp
+    </button>
+  </div>
+</aside>
+
+<!-- MODAL ADMIN -->
+<div class="admin-modal" id="adminModal">
+  <div class="admin-card">
+    <h3>Panel de administración</h3>
+    <p class="sub">Ajustes rápidos de la tienda Axtoon.</p>
+
+    <label for="adminWa">Número de WhatsApp (con indicativo)</label>
+    <input type="tel" id="adminWa" placeholder="573223752541">
+
+    <label for="adminMsg">Mensaje inicial para el cliente</label>
+    <textarea id="adminMsg" rows="3" placeholder="Hola, quiero confirmar mi pedido mayorista:"></textarea>
+
+    <label for="adminCoupon">Cupón activo</label>
+    <input type="text" id="adminCoupon" placeholder="AXTOON10">
+
+    <div class="admin-actions">
+      <button class="btn-ghost" id="adminCancel" type="button">Cancelar</button>
+      <button class="btn-primary" id="adminSave" type="button">Guardar</button>
+    </div>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
-<!-- ... RESTO DE TU HTML (drawer, cartbar, adminModal, adminFileInput) ... -->
-
 <script>
 /* ============================================================
-   TU SCRIPT ORIGINAL COMPLETO (WA, COUPONS, CATEGORIES, PRODUCTS,
-   DEPARTMENTS, BEFORE_PRICE, SITE_CONTENT, SITE_CONFIG,
-   persistencia, helpers, cart, cupones UI, render, form, admin)
+   CONFIGURACIÓN GLOBAL
    ============================================================ */
-
-/* ... AQUÍ VA TODO TU JAVASCRIPT ORIGINAL SIN CAMBIOS ... */
+const WA = '573223752541';
+let COUPON = 'AXTOON10';
 
 /* ============================================================
-   NUEVO: SIDEBAR + LOGO UPLOAD + HAMBURGER + GRID ESTILO DROPPI
+   SECCIONES (20 categorías)
+   ============================================================ */
+const AX_SECTIONS = [
+  { id:'accesorios-celular',   name:'Accesorios para celular',    emoji:'📱' },
+  { id:'tecnologia',           name:'Tecnología',                 emoji:'🎧' },
+  { id:'iluminacion',          name:'Iluminación',                emoji:'💡' },
+  { id:'belleza',              name:'Belleza y cuidado personal', emoji:'💄' },
+  { id:'joyeria',              name:'Joyería y accesorios',       emoji:'💍' },
+  { id:'prendas-vestir',       name:'Prendas de vestir',          emoji:'👕' },
+  { id:'bolsos',               name:'Bolsos y accesorios',        emoji:'👜' },
+  { id:'mascotas',             name:'Mascotas',                   emoji:'🐶' },
+  { id:'juguetes',             name:'Juguetes y regalos',         emoji:'🧸' },
+  { id:'gaming',               name:'Gaming',                     emoji:'🎮' },
+  { id:'fitness',              name:'Fitness y deporte',          emoji:'🏋️' },
+  { id:'hogar',                name:'Hogar y organización',       emoji:'🏠' },
+  { id:'cocina',               name:'Cocina',                     emoji:'🍳' },
+  { id:'automovil',            name:'Automóvil',                  emoji:'🚗' },
+  { id:'cabello',              name:'Cabello',                    emoji:'💇' },
+  { id:'fotografia',           name:'Accesorios para fotografía', emoji:'📷' },
+  { id:'herramientas-agro',    name:'Herramientas agro',          emoji:'🌾' },
+  { id:'limpieza',             name:'Limpieza del hogar',         emoji:'🧹' },
+  { id:'perfumes',             name:'Perfumes',                   emoji:'🧴' },
+  { id:'viajes',               name:'Accesorios para viajes',     emoji:'🏕️' },
+];
+
+const AX_SECTION_MAP = {};
+AX_SECTIONS.forEach(s => { AX_SECTION_MAP[s.id] = s; });
+
+/* ============================================================
+   PRODUCTOS DEMO (62 productos, 20 secciones)
+   ============================================================ */
+const AX_PRODUCTS = [
+  // 1. Accesorios para celular
+  { id:'p01', sku:'ACC-001', name:'Cargador rápido 20W USB-C',      category:'accesorios-celular', price:18500, beforePrice:24900, minQty:6,  unit:'und', featured:true  },
+  { id:'p02', sku:'ACC-002', name:'Vidrio templado universal',       category:'accesorios-celular', price:3200,  beforePrice:4500,  minQty:24, unit:'und', featured:false },
+  { id:'p03', sku:'ACC-003', name:'Cable trenzado 1m Lightning',     category:'accesorios-celular', price:7800,  beforePrice:0,     minQty:12, unit:'und', featured:true  },
+  { id:'p04', sku:'ACC-004', name:'Soporte de celular para carro',   category:'accesorios-celular', price:14900, beforePrice:19900, minQty:6,  unit:'und', featured:false },
+
+  // 2. Tecnología
+  { id:'p05', sku:'TEC-001', name:'Audífonos Bluetooth TWS Pro',     category:'tecnologia', price:45900, beforePrice:59900,  minQty:4, unit:'und', featured:true  },
+  { id:'p06', sku:'TEC-002', name:'Parlante portátil 10W',           category:'tecnologia', price:68900, beforePrice:0,      minQty:3, unit:'und', featured:false },
+  { id:'p07', sku:'TEC-003', name:'Reloj inteligente Smart Band',    category:'tecnologia', price:89900, beforePrice:119900, minQty:2, unit:'und', featured:true  },
+  { id:'p08', sku:'TEC-004', name:'Power bank 10.000 mAh',           category:'tecnologia', price:39900, beforePrice:49900,  minQty:5, unit:'und', featured:false },
+
+  // 3. Iluminación
+  { id:'p09', sku:'ILU-001', name:'Bombillo LED 9W luz fría',        category:'iluminacion', price:2800,  beforePrice:0,     minQty:50, unit:'und', featured:false },
+  { id:'p10', sku:'ILU-002', name:'Tira LED RGB 5m con control',     category:'iluminacion', price:22900, beforePrice:32900, minQty:6,  unit:'und', featured:true  },
+  { id:'p11', sku:'ILU-003', name:'Lámpara solar para exterior',     category:'iluminacion', price:18900, beforePrice:0,     minQty:8,  unit:'und', featured:false },
+
+  // 4. Belleza
+  { id:'p12', sku:'BEL-001', name:'Crema hidratante facial 120ml',   category:'belleza', price:12500, beforePrice:16900, minQty:12, unit:'und', featured:true  },
+  { id:'p13', sku:'BEL-002', name:'Kit de brochas profesionales',    category:'belleza', price:28900, beforePrice:39900, minQty:6,  unit:'kit', featured:false },
+  { id:'p14', sku:'BEL-003', name:'Sérum vitamina C 30ml',           category:'belleza', price:19900, beforePrice:0,     minQty:8,  unit:'und', featured:true  },
+
+  // 5. Joyería
+  { id:'p15', sku:'JOY-001', name:'Collar acero dorado cadena',      category:'joyeria', price:15900, beforePrice:22900, minQty:10, unit:'und', featured:true  },
+  { id:'p16', sku:'JOY-002', name:'Aretes circonia premium',         category:'joyeria', price:8900,  beforePrice:0,     minQty:20, unit:'par', featured:false },
+  { id:'p17', sku:'JOY-003', name:'Pulsera ajustable unisex',        category:'joyeria', price:11900, beforePrice:15900, minQty:12, unit:'und', featured:false },
+
+  // 6. Prendas de vestir
+  { id:'p18', sku:'PRE-001', name:'Camiseta algodón unisex',         category:'prendas-vestir', price:18900, beforePrice:24900, minQty:12, unit:'und',  featured:true  },
+  { id:'p19', sku:'PRE-002', name:'Gorra plana bordada',             category:'prendas-vestir', price:14900, beforePrice:0,     minQty:12, unit:'und',  featured:false },
+  { id:'p20', sku:'PRE-003', name:'Medias deportivas pack x3',       category:'prendas-vestir', price:12900, beforePrice:16900, minQty:10, unit:'pack', featured:false },
+
+  // 7. Bolsos
+  { id:'p21', sku:'BOL-001', name:'Bolso mochila antirrobo USB',     category:'bolsos', price:59900, beforePrice:79900, minQty:4, unit:'und', featured:true  },
+  { id:'p22', sku:'BOL-002', name:'Cartera cuero sintético',         category:'bolsos', price:34900, beforePrice:0,     minQty:6, unit:'und', featured:false },
+  { id:'p23', sku:'BOL-003', name:'Neceser organizador viaje',       category:'bolsos', price:22900, beforePrice:29900, minQty:8, unit:'und', featured:false },
+
+  // 8. Mascotas
+  { id:'p24', sku:'MAS-001', name:'Juguete mordedor perro',          category:'mascotas', price:7900,  beforePrice:0,     minQty:24, unit:'und', featured:false },
+  { id:'p25', sku:'MAS-002', name:'Collar antipulgas gato',          category:'mascotas', price:13900, beforePrice:18900, minQty:12, unit:'und', featured:true  },
+  { id:'p26', sku:'MAS-003', name:'Plato comedero doble',            category:'mascotas', price:10900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+
+  // 9. Juguetes
+  { id:'p27', sku:'JUG-001', name:'Pelota antiestrés premium',       category:'juguetes', price:5900,  beforePrice:0,     minQty:30, unit:'und', featured:false },
+  { id:'p28', sku:'JUG-002', name:'Rompecabezas 500 piezas',         category:'juguetes', price:19900, beforePrice:25900, minQty:8,  unit:'und', featured:true  },
+  { id:'p29', sku:'JUG-003', name:'Llavero LED personalizado',       category:'juguetes', price:3500,  beforePrice:4900,  minQty:50, unit:'und', featured:false },
+
+  // 10. Gaming
+  { id:'p30', sku:'GAM-001', name:'Mouse gamer RGB 7200 DPI',        category:'gaming', price:45900,  beforePrice:59900,  minQty:4, unit:'und', featured:true  },
+  { id:'p31', sku:'GAM-002', name:'Teclado mecánico 60%',            category:'gaming', price:129900, beforePrice:159900, minQty:2, unit:'und', featured:true  },
+  { id:'p32', sku:'GAM-003', name:'Diadema gamer con micrófono',     category:'gaming', price:79900,  beforePrice:0,      minQty:3, unit:'und', featured:false },
+
+  // 11. Fitness
+  { id:'p33', sku:'FIT-001', name:'Bandas elásticas set x5',         category:'fitness', price:22900, beforePrice:32900, minQty:8,  unit:'set', featured:true  },
+  { id:'p34', sku:'FIT-002', name:'Botella deportiva 1L',            category:'fitness', price:14900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+  { id:'p35', sku:'FIT-003', name:'Cuerda para saltar profesional',  category:'fitness', price:12900, beforePrice:17900, minQty:10, unit:'und', featured:false },
+
+  // 12. Hogar
+  { id:'p36', sku:'HOG-001', name:'Organizador de closet 6 cajones', category:'hogar', price:39900, beforePrice:49900, minQty:4,  unit:'und',  featured:true  },
+  { id:'p37', sku:'HOG-002', name:'Ganchos adhesivos pack x10',      category:'hogar', price:9900,  beforePrice:0,     minQty:20, unit:'pack', featured:false },
+  { id:'p38', sku:'HOG-003', name:'Canasta apilable multiuso',       category:'hogar', price:15900, beforePrice:19900, minQty:12, unit:'und',  featured:false },
+
+  // 13. Cocina
+  { id:'p39', sku:'COC-001', name:'Juego de cuchillos x5',           category:'cocina', price:34900, beforePrice:45900, minQty:4, unit:'set', featured:true  },
+  { id:'p40', sku:'COC-002', name:'Tabla de cortar bambú',           category:'cocina', price:18900, beforePrice:0,     minQty:8, unit:'und', featured:false },
+  { id:'p41', sku:'COC-003', name:'Organizador de especias',         category:'cocina', price:22900, beforePrice:29900, minQty:6, unit:'und', featured:false },
+
+  // 14. Automóvil
+  { id:'p42', sku:'AUT-001', name:'Aspiradora portátil para carro',  category:'automovil', price:54900, beforePrice:69900, minQty:3,  unit:'und', featured:true  },
+  { id:'p43', sku:'AUT-002', name:'Soporte celular magnético',       category:'automovil', price:12900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+  { id:'p44', sku:'AUT-003', name:'Organizador maletero plegable',   category:'automovil', price:29900, beforePrice:39900, minQty:4,  unit:'und', featured:false },
+
+  // 15. Cabello
+  { id:'p45', sku:'CAB-001', name:'Secador de cabello 2200W',        category:'cabello', price:69900, beforePrice:89900, minQty:3,  unit:'und', featured:true  },
+  { id:'p46', sku:'CAB-002', name:'Plancha alisadora cerámica',      category:'cabello', price:54900, beforePrice:0,     minQty:4,  unit:'und', featured:false },
+  { id:'p47', sku:'CAB-003', name:'Kit pinzas y clips cabello',      category:'cabello', price:9900,  beforePrice:13900, minQty:20, unit:'kit', featured:false },
+
+  // 16. Fotografía
+  { id:'p48', sku:'FOT-001', name:'Trípode flexible universal',      category:'fotografia', price:25900, beforePrice:34900, minQty:6,  unit:'und', featured:true  },
+  { id:'p49', sku:'FOT-002', name:'Anillo de luz LED 10"',           category:'fotografia', price:44900, beforePrice:0,     minQty:4,  unit:'und', featured:false },
+  { id:'p50', sku:'FOT-003', name:'Correa ajustable para cámara',    category:'fotografia', price:15900, beforePrice:19900, minQty:10, unit:'und', featured:false },
+
+  // 17. Herramientas agro
+  { id:'p51', sku:'AGR-001', name:'Machete agrícola profesional',    category:'herramientas-agro', price:28900, beforePrice:0,     minQty:6,  unit:'und', featured:false },
+  { id:'p52', sku:'AGR-002', name:'Tijeras de podar acero',          category:'herramientas-agro', price:19900, beforePrice:25900, minQty:8,  unit:'und', featured:true  },
+  { id:'p53', sku:'AGR-003', name:'Guantes jardinería reforzados',   category:'herramientas-agro', price:8900,  beforePrice:0,     minQty:24, unit:'par', featured:false },
+
+  // 18. Limpieza
+  { id:'p54', sku:'LIM-001', name:'Trapeador giratorio 360°',        category:'limpieza', price:32900, beforePrice:42900, minQty:4,  unit:'und',  featured:true  },
+  { id:'p55', sku:'LIM-002', name:'Paño microfibra pack x5',         category:'limpieza', price:11900, beforePrice:0,     minQty:20, unit:'pack', featured:false },
+  { id:'p56', sku:'LIM-003', name:'Cepillo multiuso baño',           category:'limpieza', price:7900,  beforePrice:10900, minQty:24, unit:'und',  featured:false },
+
+  // 19. Perfumes
+  { id:'p57', sku:'PER-001', name:'Perfume floral mujer 100ml',      category:'perfumes', price:49900, beforePrice:69900, minQty:4, unit:'und', featured:true  },
+  { id:'p58', sku:'PER-002', name:'Perfume amaderado hombre 100ml',  category:'perfumes', price:52900, beforePrice:0,     minQty:4, unit:'und', featured:true  },
+  { id:'p59', sku:'PER-003', name:'Body splash frutal 250ml',        category:'perfumes', price:18900, beforePrice:24900, minQty:8, unit:'und', featured:false },
+
+  // 20. Viajes
+  { id:'p60', sku:'VIA-001', name:'Almohada cervical de viaje',      category:'viajes', price:15900, beforePrice:21900, minQty:8,  unit:'und', featured:false },
+  { id:'p61', sku:'VIA-002', name:'Organizador de maleta set x6',    category:'viajes', price:29900, beforePrice:39900, minQty:4,  unit:'set', featured:true  },
+  { id:'p62', sku:'VIA-003', name:'Botella plegable silicona',       category:'viajes', price:12900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+];
+
+/* Aliases para compatibilidad con posibles variables globales */
+const PRODUCTS = AX_PRODUCTS;
+const CAT_BY_ID = {};
+AX_SECTIONS.forEach(s => { CAT_BY_ID[s.id] = { name:s.name, emoji:s.emoji }; });
+
+/* ============================================================
+   ESTADO DEL CARRITO
+   ============================================================ */
+let CART = JSON.parse(localStorage.getItem('axtoon_cart') || '[]');
+
+function saveCart(){ localStorage.setItem('axtoon_cart', JSON.stringify(CART)); }
+function cartCount(){ return CART.reduce((s,i)=>s+i.qty,0); }
+function cartSubtotal(){ return CART.reduce((s,i)=>s+i.price*i.qty,0); }
+function finalTotal(){ return Math.round(cartSubtotal()*1.0); }
+
+function addToCart(productId, qty){
+  const p = PRODUCTS.find(x => x.id === productId);
+  if(!p) return;
+  const found = CART.find(x => x.id === productId);
+  if(found) found.qty += qty;
+  else CART.push({ id:p.id, name:p.name, sku:p.sku, price:p.price, unit:p.unit, qty:qty });
+  saveCart();
+  renderCart();
+  showToast('✓ ' + p.name + ' agregado al pedido');
+}
+function removeFromCart(productId){
+  CART = CART.filter(x => x.id !== productId);
+  saveCart(); renderCart();
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById('toast');
+  if(!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2400);
+}
+
+/* ============================================================
+   RENDER CARRITO (drawer)
+   ============================================================ */
+function renderCart(){
+  const body = document.getElementById('drawerBody');
+  const totalEl = document.getElementById('drawerTotal');
+  if(!body) return;
+
+  if(!CART.length){
+    body.innerHTML = '<p class="empty">Tu carrito está vacío.</p>';
+  } else {
+    body.innerHTML = CART.map(item =>
+      '<div class="cart-item">' +
+        '<div class="ci-info">' +
+          '<div class="ci-name">' + item.name + '</div>' +
+          '<div class="ci-meta">' + item.qty + ' ' + (item.unit||'und') + ' × $' + item.price.toLocaleString('es-CO') + '</div>' +
+        '</div>' +
+        '<div class="ci-price">$ ' + (item.price*item.qty).toLocaleString('es-CO') + '</div>' +
+        '<button class="ci-remove" data-remove="' + item.id + '" title="Quitar"><i class="fas fa-trash-alt"></i></button>' +
+      '</div>'
+    ).join('');
+    body.querySelectorAll('[data-remove]').forEach(btn => {
+      btn.addEventListener('click', () => removeFromCart(btn.dataset.remove));
+    });
+  }
+
+  if(totalEl) totalEl.textContent = '$ ' + finalTotal().toLocaleString('es-CO');
+
+  const badge = document.getElementById('axCartCount');
+  const n = cartCount();
+  if(badge){ badge.textContent = n; badge.style.display = n>0 ? 'inline-block' : 'none'; }
+  const topTotal = document.getElementById('axTopTotal');
+  if(topTotal) topTotal.textContent = finalTotal().toLocaleString('es-CO');
+}
+
+/* ============================================================
+   DRAWER + OVERLAY + ADMIN MODAL
+   ============================================================ */
+(function initDrawerAndAdmin(){
+  const drawer = document.getElementById('drawer');
+  const overlay = document.getElementById('overlay');
+  const drawerClose = document.getElementById('drawerClose');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if(drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if(overlay) overlay.addEventListener('click', () => {
+    closeDrawer();
+    const sidebar = document.getElementById('axSidebar');
+    const axOv = document.getElementById('axOverlay');
+    if(sidebar) sidebar.classList.remove('open');
+    if(axOv) axOv.classList.remove('open');
+  });
+
+  window.openDrawer = openDrawer;
+
+  // Confirmar por WhatsApp
+  const btnWa = document.getElementById('btnWaConfirm');
+  if(btnWa){
+    btnWa.addEventListener('click', () => {
+      if(!CART.length){ showToast('Tu carrito está vacío'); return; }
+      let msg = 'Hola Axtoon 👋, quiero confirmar este pedido mayorista:\n\n';
+      CART.forEach(i => {
+        msg += '• ' + i.name + ' (' + i.sku + ') — ' + i.qty + ' ' + (i.unit||'und') + ' × $' + i.price.toLocaleString('es-CO') + '\n';
+      });
+      msg += '\n*Total estimado:* $' + finalTotal().toLocaleString('es-CO');
+      msg += '\n\n¿Me confirman disponibilidad, flete y forma de pago?';
+      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+    });
+  }
+
+  // Admin modal
+  const adminModal = document.getElementById('adminModal');
+  const adminFab = document.getElementById('adminFab');
+  const adminCancel = document.getElementById('adminCancel');
+  const adminSave = document.getElementById('adminSave');
+  const adminWa = document.getElementById('adminWa');
+  const adminMsg = document.getElementById('adminMsg');
+  const adminCoupon = document.getElementById('adminCoupon');
+
+  try {
+    adminWa.value = localStorage.getItem('axtoon_wa') || WA;
+    adminMsg.value = localStorage.getItem('axtoon_msg') || 'Hola, quiero confirmar mi pedido mayorista:';
+    adminCoupon.value = localStorage.getItem('axtoon_coupon') || COUPON;
+  } catch(e){}
+
+  function openAdmin(){ adminModal.classList.add('open'); }
+  function closeAdmin(){ adminModal.classList.remove('open'); }
+
+  if(adminFab) adminFab.addEventListener('click', openAdmin);
+  if(adminCancel) adminCancel.addEventListener('click', closeAdmin);
+  if(adminSave) adminSave.addEventListener('click', () => {
+    try {
+      localStorage.setItem('axtoon_wa', adminWa.value.trim() || WA);
+      localStorage.setItem('axtoon_msg', adminMsg.value.trim());
+      localStorage.setItem('axtoon_coupon', adminCoupon.value.trim());
+      window.WA = adminWa.value.trim() || WA;
+      COUPON = adminCoupon.value.trim();
+      showToast('✓ Ajustes guardados');
+    } catch(e){}
+    closeAdmin();
+  });
+  adminModal && adminModal.addEventListener('click', e => {
+    if(e.target === adminModal) closeAdmin();
+  });
+
+  // Atajo Ctrl+Shift+A
+  document.addEventListener('keydown', e => {
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a'){ e.preventDefault(); openAdmin(); }
+  });
+
+  renderCart();
+})();
+
+/* ============================================================
+   UI PRINCIPAL: sidebar + logo + grid + secciones
    ============================================================ */
 (function initAxUI(){
   const sidebar = document.getElementById('axSidebar');
-  const overlay = document.getElementById('axOverlay');
+  const axOverlay = document.getElementById('axOverlay');
   const hamburger = document.getElementById('axHamburger');
 
   if(hamburger){
     hamburger.addEventListener('click', () => {
       sidebar.classList.toggle('open');
-      overlay.classList.toggle('open');
+      axOverlay.classList.toggle('open');
     });
   }
-  if(overlay){
-    overlay.addEventListener('click', () => {
+  if(axOverlay){
+    axOverlay.addEventListener('click', () => {
       sidebar.classList.remove('open');
-      overlay.classList.remove('open');
+      axOverlay.classList.remove('open');
     });
   }
 
-  // --- SUBIR LOGO (se adapta al formato de la imagen que subas) ---
+  /* --- LOGO --- */
   const logoUpload = document.getElementById('logoUpload');
   const logoPreview = document.getElementById('logoPreview');
   const logoIcon = document.getElementById('logoIcon');
@@ -544,7 +1086,7 @@ body{display:flex;min-height:100vh}
 
   try {
     const saved = localStorage.getItem(logoKey);
-    if(saved){
+    if(saved && logoPreview){
       logoPreview.src = saved;
       logoPreview.style.display = 'block';
       logoIcon.style.display = 'none';
@@ -567,17 +1109,13 @@ body{display:flex;min-height:100vh}
     });
   }
 
-  // --- Abrir carrito y admin desde sidebar ---
+  /* --- CARRITO / ADMIN desde sidebar --- */
   const openCartBtn = document.getElementById('axOpenCart');
   if(openCartBtn){
     openCartBtn.addEventListener('click', () => {
-      const drawer = document.getElementById('drawer');
-      const ov = document.getElementById('overlay');
-      if(drawer){ drawer.classList.add('open'); }
-      if(ov){ ov.classList.add('open'); }
-      document.body.style.overflow = 'hidden';
-      if(sidebar) sidebar.classList.remove('open');
-      if(overlay) overlay.classList.remove('open');
+      if(window.openDrawer) window.openDrawer();
+      sidebar.classList.remove('open');
+      axOverlay.classList.remove('open');
     });
   }
   const openAdminBtn = document.getElementById('axOpenAdmin');
@@ -585,34 +1123,81 @@ body{display:flex;min-height:100vh}
     openAdminBtn.addEventListener('click', () => {
       const fab = document.getElementById('adminFab');
       if(fab) fab.click();
-      if(sidebar) sidebar.classList.remove('open');
-      if(overlay) overlay.classList.remove('open');
+      sidebar.classList.remove('open');
+      axOverlay.classList.remove('open');
     });
   }
 
-  /* ============================================================
-     GRID DE PRODUCTOS ESTILO DROPPI
-     Reutiliza PRODUCTS, CATEGORIES, PROD_BY_ID, CAT_BY_ID, cart
-     ============================================================ */
+  /* --- GRID + SECCIONES --- */
   const grid = document.getElementById('axProductGrid');
   const empty = document.getElementById('axEmpty');
   const searchInp = document.getElementById('axSearchInput');
   const sortSel = document.getElementById('axSortSelect');
   const toggleFav = document.getElementById('axToggleFav');
-  let favorites = new Set(JSON.parse(localStorage.getItem('axtoon_favs')||'[]'));
+  const sectionsBar = document.getElementById('axSectionsBar');
+  const sectionHeader = document.getElementById('axSectionHeader');
+  const sectionEmoji = document.getElementById('axSectionEmoji');
+  const sectionTitle = document.getElementById('axSectionTitle');
+  const sectionSub = document.getElementById('axSectionSub');
+  const sectionCount = document.getElementById('axSectionCount');
+  const sectionClear = document.getElementById('axSectionClear');
+
+  let favorites = new Set(JSON.parse(localStorage.getItem('axtoon_favs') || '[]'));
   let axSort = 'rel';
   let axSearch = '';
+  let axActiveSection = 'all';
+
+  function buildSectionsBar(){
+    if(!sectionsBar) return;
+    const counts = {};
+    PRODUCTS.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+    sectionsBar.innerHTML = '';
+
+    const allChip = document.createElement('button');
+    allChip.type = 'button';
+    allChip.className = 'ax-section-chip all-chip' + (axActiveSection === 'all' ? ' active' : '');
+    allChip.dataset.section = 'all';
+    allChip.innerHTML = '<span class="emoji">🗂️</span> Todas <span class="count">' + PRODUCTS.length + '</span>';
+    sectionsBar.appendChild(allChip);
+
+    AX_SECTIONS.forEach(s => {
+      const n = counts[s.id] || 0;
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'ax-section-chip' + (axActiveSection === s.id ? ' active' : '');
+      chip.dataset.section = s.id;
+      chip.setAttribute('role','tab');
+      chip.setAttribute('aria-selected', axActiveSection === s.id ? 'true' : 'false');
+      chip.innerHTML = '<span class="emoji">' + s.emoji + '</span> ' + s.name +
+                       ' <span class="count">' + n + '</span>';
+      sectionsBar.appendChild(chip);
+    });
+  }
+
+  function updateSectionHeader(){
+    if(!sectionHeader) return;
+    const count = PRODUCTS.filter(p => axActiveSection === 'all' || p.category === axActiveSection).length;
+    if(axActiveSection === 'all'){ sectionHeader.hidden = true; return; }
+    const sec = AX_SECTION_MAP[axActiveSection];
+    if(!sec){ sectionHeader.hidden = true; return; }
+    sectionHeader.hidden = false;
+    sectionEmoji.textContent = sec.emoji;
+    sectionTitle.textContent = sec.name;
+    sectionSub.textContent = 'Productos mayoristas de ' + sec.name.toLowerCase();
+    sectionCount.textContent = count + ' producto' + (count !== 1 ? 's' : '');
+  }
 
   function renderAxGrid(){
     if(!grid) return;
-    if(typeof PRODUCTS === 'undefined' || typeof CAT_BY_ID === 'undefined'){
-      setTimeout(renderAxGrid, 200);
-      return;
-    }
     const q = axSearch.trim().toLowerCase();
+
     let list = PRODUCTS.filter(p => {
-      const cat = CAT_BY_ID[p.category] || {name:'', emoji:'📦'};
-      if(q && !p.name.toLowerCase().includes(q) && !p.sku.toLowerCase().includes(q) && !cat.name.toLowerCase().includes(q)) return false;
+      const cat = AX_SECTION_MAP[p.category] || { name:'' };
+      if(axActiveSection !== 'all' && p.category !== axActiveSection) return false;
+      if(q){
+        const hay = (p.name + ' ' + (p.sku||'') + ' ' + cat.name).toLowerCase();
+        if(!hay.includes(q)) return false;
+      }
       if(toggleFav && toggleFav.checked && !favorites.has(p.id)) return false;
       return true;
     });
@@ -621,7 +1206,7 @@ body{display:flex;min-height:100vh}
       case 'precio-asc': list.sort((a,b)=>a.price-b.price); break;
       case 'precio-desc': list.sort((a,b)=>b.price-a.price); break;
       case 'nombre': list.sort((a,b)=>a.name.localeCompare(b.name,'es')); break;
-      case 'descuento': list.sort((a,b)=>(b.discount||0)-(a.discount||0)); break;
+      case 'descuento': list.sort((a,b)=>((b.beforePrice||0)-b.price)-((a.beforePrice||0)-a.price)); break;
       default: list.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0));
     }
 
@@ -629,28 +1214,29 @@ body{display:flex;min-height:100vh}
     if(empty) empty.hidden = list.length > 0;
 
     list.forEach(p => {
-      const cat = CAT_BY_ID[p.category] || {name:'General', emoji:'📦', color:'#0f4d38', image:''};
-      const isDeal = !!p.beforePrice;
+      const cat = AX_SECTION_MAP[p.category] || { name:'General', emoji:'📦' };
+      const isDeal = !!p.beforePrice && p.beforePrice > p.price;
       const card = document.createElement('div');
       card.className = 'ax-card';
       const favActive = favorites.has(p.id);
+
       card.innerHTML =
         '<div class="ax-card-media">' +
-          '<img src="'+cat.image+'" alt="'+p.name+'" onerror="this.style.display=\'none\';this.parentElement.style.background=\'repeating-linear-gradient(45deg,#f0e6d8 0 14px,#e7dccb 14px 28px)\'">' +
-          (isDeal ? '<span class="ax-card-tag">Variable</span>' : (p.featured ? '<span class="ax-card-tag verified">✓ Verificado</span>' : '<span class="ax-card-tag" style="background:#6b7280">Variable</span>')) +
+          '<div class="ph" style="font-size:0"></div>' +
+          (isDeal ? '<span class="ax-card-tag">Oferta</span>' : (p.featured ? '<span class="ax-card-tag verified">✓ Verificado</span>' : '')) +
           '<span class="ax-card-fav'+(favActive?' active':'')+'" data-fav="'+p.id+'"><i class="fas fa-heart"></i></span>' +
         '</div>' +
         '<div class="ax-card-body">' +
           '<span class="ax-card-cat">'+cat.emoji+' '+cat.name+'</span>' +
           '<h3 class="ax-card-title">'+p.name+'</h3>' +
-          '<p class="ax-card-provider">Provider: <b>'+cat.name.toUpperCase()+'</b></p>' +
+          '<p class="ax-card-provider">SKU: <b>'+(p.sku||p.id)+'</b></p>' +
           '<div class="ax-card-prices">' +
             (isDeal ? '<span class="ax-card-price-old">$ '+p.beforePrice.toLocaleString('es-CO')+'</span>' : '') +
             '<span class="ax-card-price-now'+(isDeal?' discount':'')+'">$ '+p.price.toLocaleString('es-CO')+'</span>' +
           '</div>' +
           '<p class="ax-card-stock"><span class="dot'+(p.featured?'':' low')+'"></span> Stock: '+(p.featured ? '540' : '123')+'</p>' +
           '<div class="ax-card-actions">' +
-            '<div class="ax-card-qty"><button type="button" class="mn">−</button><span class="n">'+p.minQty+'</span><button type="button" class="pl">+</button></div>' +
+            '<div class="ax-card-qty"><button type="button" class="mn">−</button><span class="n">'+(p.minQty||1)+'</span><button type="button" class="pl">+</button></div>' +
             '<button type="button" class="ax-card-add"><i class="fas fa-cart-plus"></i> Agregar</button>' +
           '</div>' +
           '<button type="button" class="ax-card-send"><i class="fab fa-whatsapp"></i> Enviar a cliente</button>' +
@@ -661,17 +1247,14 @@ body{display:flex;min-height:100vh}
       card.querySelector('.pl').addEventListener('click', () => { nEl.textContent = +nEl.textContent + 1; });
 
       card.querySelector('.ax-card-add').addEventListener('click', function(){
-        if(typeof addToCart === 'function'){
-          addToCart(p.id, +nEl.textContent);
-          this.classList.add('done'); this.innerHTML = '<i class="fas fa-check"></i> Agregado';
-          setTimeout(()=>{ this.classList.remove('done'); this.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar'; }, 1300);
-        }
+        addToCart(p.id, +nEl.textContent);
+        this.classList.add('done'); this.innerHTML = '<i class="fas fa-check"></i> Agregado';
+        setTimeout(()=>{ this.classList.remove('done'); this.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar'; }, 1300);
       });
 
       card.querySelector('.ax-card-send').addEventListener('click', () => {
-        const wa = (typeof WA !== 'undefined') ? WA : '573223752541';
-        const msg = 'Hola, quiero pedir *'+p.name+'* (ref '+p.sku+').\nCantidad: '+nEl.textContent+' '+p.unit+'.\n¿Me confirman disponibilidad, flete y valor?';
-        window.open('https://wa.me/'+wa+'?text='+encodeURIComponent(msg), '_blank');
+        const msg = 'Hola, quiero pedir *'+p.name+'* (SKU '+ (p.sku||p.id) +').\nCantidad: '+nEl.textContent+' '+(p.unit||'und')+'.\n¿Me confirman disponibilidad, flete y valor?';
+        window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg), '_blank');
       });
 
       card.querySelector('.ax-card-fav').addEventListener('click', function(){
@@ -682,34 +1265,43 @@ body{display:flex;min-height:100vh}
 
       grid.appendChild(card);
     });
+
+    updateSectionHeader();
   }
 
   if(searchInp) searchInp.addEventListener('input', e => { axSearch = e.target.value; renderAxGrid(); });
   if(sortSel) sortSel.addEventListener('change', e => { axSort = e.target.value; renderAxGrid(); });
   if(toggleFav) toggleFav.addEventListener('change', renderAxGrid);
 
-  // Sincronizar contador del carrito en sidebar
-  function syncCartCount(){
-    const n = (typeof cartCount === 'function') ? cartCount() : 0;
-    const el = document.getElementById('axCartCount');
-    if(el){ el.textContent = n; el.style.display = n>0 ? 'inline-block' : 'none'; }
+  if(sectionsBar){
+    sectionsBar.addEventListener('click', e => {
+      const chip = e.target.closest('.ax-section-chip');
+      if(!chip) return;
+      axActiveSection = chip.dataset.section || 'all';
+      buildSectionsBar();
+      renderAxGrid();
+      if(grid) grid.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
   }
-  setInterval(() => {
-    syncCartCount();
-    const topTotal = document.getElementById('axTopTotal');
-    if(topTotal && typeof finalTotal === 'function'){ topTotal.textContent = finalTotal().toLocaleString('es-CO'); }
-  }, 400);
+  if(sectionClear){
+    sectionClear.addEventListener('click', () => {
+      axActiveSection = 'all';
+      buildSectionsBar();
+      renderAxGrid();
+    });
+  }
 
-  // Exponer para re-render tras admin
-  window.renderAxGrid = renderAxGrid;
-
-  // Init
+  /* --- Init --- */
   function initAx(){
+    buildSectionsBar();
     renderAxGrid();
-    syncCartCount();
+    renderCart();
   }
-  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', () => setTimeout(initAx, 300)); }
-  else { setTimeout(initAx, 300); }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', () => setTimeout(initAx, 200));
+  } else {
+    setTimeout(initAx, 200);
+  }
 })();
 </script>
 
