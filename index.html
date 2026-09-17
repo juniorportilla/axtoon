@@ -947,6 +947,89 @@ button{font:inherit;cursor:pointer}
     font-size: 24px;
   }
 }
+
+/* ============================================================
+   MODAL CREAR ORDEN (DATOS DEL CLIENTE + CONFIRMAR PEDIDO)
+   ============================================================ */
+.order-modal{
+  position:fixed;inset:0;z-index:130;display:none;
+  align-items:center;justify-content:center;padding:18px;
+  background:rgba(11,31,51,.6);backdrop-filter:blur(5px);
+}
+.order-modal.open{display:flex}
+.order-card{
+  background:#fff;border-radius:22px;width:min(760px,100%);
+  max-height:92vh;overflow:hidden;display:flex;flex-direction:column;
+  font-family:var(--ui);box-shadow:0 40px 100px -30px rgba(0,0,0,.5);
+}
+.order-head{
+  padding:20px 24px;border-bottom:1px solid #edf1f7;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.order-head h3{font-family:var(--display);font-size:21px;color:#0b1f33}
+.order-close{
+  background:#f1f5f9;border:none;width:34px;height:34px;border-radius:50%;
+  color:#43566b;font-size:15px;cursor:pointer;transition:.2s;
+}
+.order-close:hover{background:#ffe8d6;color:#e05e00}
+.order-body{
+  flex:1;overflow-y:auto;padding:20px 24px;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:26px;
+}
+.order-col h4{
+  font-family:var(--ui);font-size:12.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.06em;color:#0b1f33;margin-bottom:12px;
+}
+.order-col input,.order-col textarea{
+  width:100%;padding:10px 14px;border-radius:12px;border:1px solid #dfe7f0;
+  font-family:var(--ui);font-size:13px;outline:none;transition:.2s;margin-bottom:10px;
+}
+.order-col input:focus,.order-col textarea:focus{border-color:#f97316;box-shadow:0 0 0 3px #fff1e6}
+.order-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.order-row-2 input{margin-bottom:10px}
+.order-toggle-label{
+  display:flex;align-items:center;gap:8px;font-size:12.5px;color:#5a6b80;
+  font-weight:500;margin:2px 0 10px;cursor:pointer;
+}
+.order-toggle-label input{width:16px;height:16px;margin:0;accent-color:#f97316;cursor:pointer}
+.order-products{
+  display:flex;flex-direction:column;gap:10px;margin-bottom:14px;
+  max-height:220px;overflow-y:auto;padding-right:4px;
+}
+.order-product-row{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:10px 12px;background:#fafbfd;border:1px solid #eef2f8;border-radius:12px;
+}
+.order-product-row .opn{font-size:12.5px;font-weight:600;color:#0b1f33}
+.order-product-row .opm{font-size:11px;color:#8f9fb2;margin-top:2px}
+.order-product-row .opp{font-family:var(--display);font-size:14px;font-weight:800;color:#0f4d38;white-space:nowrap}
+.order-summary-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding-top:12px;border-top:1px solid #edf1f7;font-size:13px;color:#5a6b80;font-weight:600;
+}
+.order-summary-row b{font-family:var(--display);font-size:22px;font-weight:800;color:#0b1f33}
+.order-foot{
+  padding:18px 24px;border-top:1px solid #edf1f7;background:#fafbfd;
+  display:flex;gap:12px;
+}
+.btn-order-ghost{
+  flex:1;height:46px;border-radius:30px;border:none;background:#f1f5f9;color:#43566b;
+  font-weight:700;font-size:13.5px;transition:.2s;font-family:var(--ui);
+}
+.btn-order-ghost:hover{background:#e2e8f0}
+.btn-order-confirm{
+  flex:2;height:46px;border-radius:30px;border:none;background:#25D366;color:#fff;
+  font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;transition:.2s;font-family:var(--ui);
+}
+.btn-order-confirm:hover{background:#1eb455;transform:translateY(-1px)}
+.order-field-error{
+  border-color:#ef4444 !important;box-shadow:0 0 0 3px #fee2e2 !important;
+}
+@media(max-width:768px){
+  .order-body{grid-template-columns:1fr;gap:18px}
+  .order-card{max-height:94vh}
+}
 </style>
 </head>
 <body>
@@ -1096,7 +1179,7 @@ button{font:inherit;cursor:pointer}
       <b id="drawerTotal">$ 0</b>
     </div>
     <button class="btn-wa-confirm" id="btnWaConfirm" type="button">
-      <i class="fab fa-whatsapp"></i> Confirmar por WhatsApp
+      <i class="fas fa-shopping-cart"></i> REALIZAR COMPRA
     </button>
   </div>
 </aside>
@@ -1146,7 +1229,7 @@ button{font:inherit;cursor:pointer}
         </div>
         <button type="button" class="quick-view-add" id="quickViewAdd"><i class="fas fa-cart-plus"></i> Agregar</button>
       </div>
-      <button type="button" class="quick-view-wa" id="quickViewWa"><i class="fab fa-whatsapp"></i> Enviar a cliente</button>
+      <button type="button" class="quick-view-wa" id="quickViewWa"><i class="fas fa-shopping-cart"></i> REALIZAR COMPRA</button>
       <div class="quick-view-desc">
         <div class="quick-view-tabs">
           <button class="quick-view-tab active" data-tab="detalles">Detalles</button>
@@ -1163,6 +1246,51 @@ button{font:inherit;cursor:pointer}
           <p>Ficha técnica, medidas y guía de uso disponibles bajo solicitud. Escríbenos por WhatsApp para más información.</p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CREAR ORDEN (DATOS DEL CLIENTE) -->
+<div class="order-modal" id="orderModal">
+  <div class="order-card">
+    <div class="order-head">
+      <h3>Crear Orden</h3>
+      <button class="order-close" id="orderClose" type="button" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="order-body">
+      <div class="order-col">
+        <h4>Información del cliente</h4>
+        <div class="order-row-2">
+          <input type="text" id="ordNombres" placeholder="Nombres">
+          <input type="text" id="ordApellidos" placeholder="Apellidos">
+        </div>
+        <div class="order-row-2">
+          <input type="text" id="ordIndicativo" value="+57" readonly>
+          <input type="tel" id="ordTelefono" placeholder="Número de teléfono">
+        </div>
+        <input type="text" id="ordDepartamento" placeholder="Departamento">
+        <input type="text" id="ordCiudad" placeholder="Ciudad">
+        <input type="text" id="ordDireccion" placeholder="Dirección y complementos">
+        <input type="email" id="ordCorreo" placeholder="Correo electrónico">
+        <label class="order-toggle-label">
+          <input type="checkbox" id="ordNotasToggle"> ¿Desea agregar notas para el proveedor?
+        </label>
+        <textarea id="ordNotas" rows="3" placeholder="Escriba aquí sus notas…" hidden></textarea>
+      </div>
+      <div class="order-col">
+        <h4>Resumen de la orden</h4>
+        <div class="order-products" id="orderProducts"></div>
+        <div class="order-summary-row">
+          <span>Total a pagar</span>
+          <b id="orderTotal">$ 0</b>
+        </div>
+      </div>
+    </div>
+    <div class="order-foot">
+      <button class="btn-order-ghost" id="orderCancel" type="button">Cancelar</button>
+      <button class="btn-order-confirm" id="orderConfirm" type="button">
+        <i class="fab fa-whatsapp"></i> Confirmar pedido
+      </button>
     </div>
   </div>
 </div>
@@ -1394,6 +1522,124 @@ function renderCart(){
 }
 
 /* ============================================================
+   MODAL "CREAR ORDEN" (datos del cliente + confirmar pedido)
+   ============================================================ */
+let ORDER_ITEMS = [];
+
+function openOrderModal(items){
+  if(!items || !items.length){ showToast('No hay productos para esta orden'); return; }
+  ORDER_ITEMS = items;
+  renderOrderProducts();
+
+  const modal = document.getElementById('orderModal');
+  if(modal){
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeOrderModal(){
+  const modal = document.getElementById('orderModal');
+  if(modal){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function orderItemsTotal(){
+  return ORDER_ITEMS.reduce((s,i)=> s + (i.price*i.qty), 0);
+}
+
+function renderOrderProducts(){
+  const wrap = document.getElementById('orderProducts');
+  const totalEl = document.getElementById('orderTotal');
+  if(!wrap) return;
+
+  wrap.innerHTML = ORDER_ITEMS.map(item =>
+    '<div class="order-product-row">' +
+      '<div>' +
+        '<div class="opn">' + item.name + '</div>' +
+        '<div class="opm">SKU: ' + (item.sku||item.id) + ' · ' + item.qty + ' ' + (item.unit||'und') + ' × $' + item.price.toLocaleString('es-CO') + '</div>' +
+      '</div>' +
+      '<div class="opp">$ ' + (item.price*item.qty).toLocaleString('es-CO') + '</div>' +
+    '</div>'
+  ).join('');
+
+  if(totalEl) totalEl.textContent = '$ ' + orderItemsTotal().toLocaleString('es-CO');
+}
+
+(function initOrderModal(){
+  const modal = document.getElementById('orderModal');
+  const closeBtn = document.getElementById('orderClose');
+  const cancelBtn = document.getElementById('orderCancel');
+  const confirmBtn = document.getElementById('orderConfirm');
+  const notasToggle = document.getElementById('ordNotasToggle');
+  const notasBox = document.getElementById('ordNotas');
+
+  if(!modal) return;
+
+  if(closeBtn) closeBtn.addEventListener('click', closeOrderModal);
+  if(cancelBtn) cancelBtn.addEventListener('click', closeOrderModal);
+  modal.addEventListener('click', e => { if(e.target === modal) closeOrderModal(); });
+
+  if(notasToggle && notasBox){
+    notasToggle.addEventListener('change', () => {
+      notasBox.hidden = !notasToggle.checked;
+    });
+  }
+
+  function clearFieldErrors(){
+    ['ordNombres','ordApellidos','ordTelefono','ordDepartamento','ordCiudad','ordDireccion']
+      .forEach(id => { const el = document.getElementById(id); if(el) el.classList.remove('order-field-error'); });
+  }
+
+  if(confirmBtn){
+    confirmBtn.addEventListener('click', () => {
+      if(!ORDER_ITEMS.length){ showToast('No hay productos en la orden'); return; }
+
+      const nombres = document.getElementById('ordNombres').value.trim();
+      const apellidos = document.getElementById('ordApellidos').value.trim();
+      const indicativo = (document.getElementById('ordIndicativo').value || '+57').trim();
+      const telefono = document.getElementById('ordTelefono').value.trim();
+      const departamento = document.getElementById('ordDepartamento').value.trim();
+      const ciudad = document.getElementById('ordCiudad').value.trim();
+      const direccion = document.getElementById('ordDireccion').value.trim();
+      const correo = document.getElementById('ordCorreo').value.trim();
+      const notas = notasToggle && notasToggle.checked ? notasBox.value.trim() : '';
+
+      clearFieldErrors();
+      const required = { ordNombres:nombres, ordApellidos:apellidos, ordTelefono:telefono, ordDepartamento:departamento, ordCiudad:ciudad, ordDireccion:direccion };
+      let missing = false;
+      Object.keys(required).forEach(id => {
+        if(!required[id]){ missing = true; const el = document.getElementById(id); if(el) el.classList.add('order-field-error'); }
+      });
+      if(missing){ showToast('Por favor completa los datos obligatorios'); return; }
+
+      let msg = 'Hola Axtoon 👋, quiero confirmar mi pedido:\n\n';
+      msg += '*Datos del cliente*\n';
+      msg += 'Nombre: ' + nombres + ' ' + apellidos + '\n';
+      msg += 'Teléfono: ' + indicativo + ' ' + telefono + '\n';
+      msg += 'Departamento: ' + departamento + '\n';
+      msg += 'Ciudad: ' + ciudad + '\n';
+      msg += 'Dirección: ' + direccion + '\n';
+      if(correo) msg += 'Correo: ' + correo + '\n';
+      if(notas) msg += 'Notas: ' + notas + '\n';
+
+      msg += '\n*Productos*\n';
+      ORDER_ITEMS.forEach(item => {
+        msg += '• ' + item.name + ' (' + (item.sku||item.id) + ') — ' + item.qty + ' ' + (item.unit||'und') + ' × $' + item.price.toLocaleString('es-CO') + '\n';
+      });
+      msg += '\n*Total a pagar:* $' + orderItemsTotal().toLocaleString('es-CO');
+      msg += '\n\n¿Me confirman disponibilidad, flete y forma de pago?';
+
+      window.open('https://wa.me/573223752541?text=' + encodeURIComponent(msg), '_blank');
+      showToast('✓ Pedido enviado por WhatsApp');
+      closeOrderModal();
+    });
+  }
+})();
+
+/* ============================================================
    DRAWER + OVERLAY + ADMIN MODAL
    ============================================================ */
 (function initDrawerAndAdmin(){
@@ -1423,18 +1669,13 @@ function renderCart(){
 
   window.openDrawer = openDrawer;
 
-  // Confirmar por WhatsApp
+  // REALIZAR COMPRA (carrito completo) → abre el modal de datos del cliente
   const btnWa = document.getElementById('btnWaConfirm');
   if(btnWa){
     btnWa.addEventListener('click', () => {
       if(!CART.length){ showToast('Tu carrito está vacío'); return; }
-      let msg = 'Hola Axtoon 👋, quiero confirmar este pedido :\n\n';
-      CART.forEach(i => {
-        msg += '• ' + i.name + ' (' + i.sku + ') — ' + i.qty + ' ' + (i.unit||'und') + ' × $' + i.price.toLocaleString('es-CO') + '\n';
-      });
-      msg += '\n*Total estimado:* $' + finalTotal().toLocaleString('es-CO');
-      msg += '\n\n¿Me confirman disponibilidad, flete y forma de pago?';
-      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+      closeDrawer();
+      openOrderModal(CART.map(i => ({ id:i.id, name:i.name, sku:i.sku, price:i.price, unit:i.unit, qty:i.qty })));
     });
   }
 
@@ -1587,10 +1828,18 @@ function renderCart(){
     }, 1400);
   });
 
+  // REALIZAR COMPRA (vista rápida) → abre el modal de datos del cliente con este producto
   waBtn.addEventListener('click', () => {
     if (!currentProduct) return;
-    const msg = 'Hola, quiero pedir *' + currentProduct.name + '* (SKU ' + (currentProduct.sku || currentProduct.id) + ').\nCantidad: ' + qtyEl.textContent + ' ' + (currentProduct.unit || 'und') + '.\n¿Me confirman disponibilidad, flete y valor?';
-    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+    closeQuickView();
+    openOrderModal([{
+      id: currentProduct.id,
+      name: currentProduct.name,
+      sku: currentProduct.sku,
+      price: currentProduct.price,
+      unit: currentProduct.unit,
+      qty: +qtyEl.textContent
+    }]);
   });
 
   // Tabs
@@ -1773,7 +2022,7 @@ function renderCart(){
             '<div class="ax-card-qty"><button type="button" class="mn">−</button><span class="n">'+startQty+'</span><button type="button" class="pl">+</button></div>' +
             '<button type="button" class="ax-card-add"><i class="fas fa-cart-plus"></i> Agregar</button>' +
           '</div>' +
-          '<button type="button" class="ax-card-send"><i class="fab fa-whatsapp"></i> Enviar a cliente</button>' +
+          '<button type="button" class="ax-card-send"><i class="fas fa-shopping-cart"></i> REALIZAR COMPRA</button>' +
         '</div>';
 
       // Abrir vista rápida al hacer clic en la imagen
@@ -1811,10 +2060,17 @@ function renderCart(){
         setTimeout(()=>{ this.classList.remove('done'); this.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar'; }, 1300);
       });
 
+      // REALIZAR COMPRA (tarjeta) → abre el modal de datos del cliente con este producto
       card.querySelector('.ax-card-send').addEventListener('click', (e) => {
         e.stopPropagation();
-        const msg = 'Hola, quiero pedir *'+p.name+'* (SKU '+ (p.sku||p.id) +').\nCantidad: '+nEl.textContent+' '+(p.unit||'und')+'.\n¿Me confirman disponibilidad, flete y valor?';
-        window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg), '_blank');
+        openOrderModal([{
+          id: p.id,
+          name: p.name,
+          sku: p.sku,
+          price: p.price,
+          unit: p.unit,
+          qty: +nEl.textContent
+        }]);
       });
 
       card.querySelector('.ax-card-fav').addEventListener('click', function(e){
