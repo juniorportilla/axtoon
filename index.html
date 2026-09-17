@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Axtoon Distribuidora S.A.S — Mayorista en Colombia</title>
+<title>Axtoon Distribuidora S.A.S — Mayorista de confianza en Colombia</title>
 <meta name="description" content="Axtoon Distribuidora S.A.S abastece tiendas, minimercados y comercio independiente en toda Colombia. Arme su pedido, aplique su cupón y confírmelo por WhatsApp.">
+<meta name="theme-color" content="#0f4d38">
 
 <!--
   ============================================================
@@ -32,7 +33,7 @@
   im20.png → Regalos personalizados
   im21.png → Papelería
   im22.png → Logística / muelles de despacho
-  Mientras no existan, se muestra un recuadro con el nombre del archivo.
+  im23.png → Herramientas agrícolas y del campo   ← NUEVA
   ============================================================
 -->
 
@@ -40,71 +41,88 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
-   TOKENS
+   TOKENS — Paleta refinada, elegante, premium
    ============================================================ */
 :root{
-  --bg:#fdf9f3;
-  --bg-2:#f7f0e6;
-  --fg:#171512;
+  --bg:#fbf8f2;
+  --bg-2:#f5eee2;
+  --fg:#141310;
   --card:#ffffff;
-  --muted:#f1eae0;
-  --muted-fg:#6d665b;
+  --muted:#f0e9dd;
+  --muted-fg:#6a6257;
 
-  --brand:#15543d;
-  --brand-2:#1f7a5a;
-  --brand-soft:#e6f4ee;
+  /* Verde esmeralda profundo — confianza y solidez */
+  --brand:#0f4d38;
+  --brand-2:#1a7355;
+  --brand-3:#2f9e7a;
+  --brand-soft:#e4f2eb;
 
+  /* Naranja coral + ámbar — energía y calidez */
   --accent:#ff6a3d;
+  --accent-2:#ff8a5c;
   --accent-soft:#fff1eb;
-  --amber:#ffb703;
-  --berry:#d6336c;
-  --violet:#7048e8;
-  --sky:#1c7ed6;
+  --amber:#f5b301;
+  --amber-soft:#fff7e0;
 
-  --border:#e8dfd2;
-  --danger:#c92a2a;
-  --ok:#2f9e44;
+  /* Acentos por categoría */
+  --berry:#c72a68;
+  --violet:#6b3fd4;
+  --sky:#1a72c4;
+  --gold:#b8860b;
 
-  --grad-warm:linear-gradient(135deg,#ff6a3d,#ffb703);
-  --grad-brand:linear-gradient(135deg,#15543d,#1f7a5a 55%,#2f9e7a);
-  --grad-berry:linear-gradient(135deg,#d6336c,#ff6a3d);
-  --grad-cool:linear-gradient(135deg,#7048e8,#1c7ed6);
+  --border:#e7ddcd;
+  --border-2:#d9cdb8;
+  --danger:#b91c1c;
+  --ok:#166534;
 
-  --shadow-sm:0 1px 2px rgba(23,21,18,.05),0 2px 8px -4px rgba(23,21,18,.10);
-  --shadow-md:0 2px 4px rgba(23,21,18,.04),0 14px 30px -18px rgba(23,21,18,.28);
-  --shadow-lg:0 30px 70px -34px rgba(21,84,61,.55);
+  --grad-warm:linear-gradient(135deg,#ff6a3d 0%,#f5b301 100%);
+  --grad-brand:linear-gradient(135deg,#0f4d38 0%,#1a7355 55%,#2f9e7a 100%);
+  --grad-brand-deep:linear-gradient(160deg,#0a3826 0%,#0f4d38 45%,#1a7355 100%);
+  --grad-gold:linear-gradient(135deg,#b8860b,#f5b301 60%,#ffd75e);
+  --grad-berry:linear-gradient(135deg,#c72a68,#ff6a3d);
+  --grad-cool:linear-gradient(135deg,#6b3fd4,#1a72c4);
 
+  --shadow-xs:0 1px 2px rgba(20,19,16,.05);
+  --shadow-sm:0 1px 3px rgba(20,19,16,.06),0 3px 12px -6px rgba(20,19,16,.10);
+  --shadow-md:0 4px 10px -4px rgba(20,19,16,.08),0 20px 40px -24px rgba(20,19,16,.24);
+  --shadow-lg:0 30px 80px -40px rgba(15,77,56,.55);
+  --shadow-glow:0 12px 30px -12px rgba(255,106,61,.55);
+  --shadow-gold:0 12px 30px -14px rgba(184,134,11,.55);
+
+  --r-sm:10px;
   --r:18px;
   --r-lg:26px;
+  --r-xl:34px;
   --ease:cubic-bezier(.22,1,.36,1);
+  --ease-soft:cubic-bezier(.4,0,.2,1);
 
   --sans:"Outfit",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --display:"Fraunces",ui-serif,Georgia,"Times New Roman",serif;
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 body{
-  margin:0;color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;
+  margin:0;color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;
   background:
     radial-gradient(900px 520px at 6% -8%, #ffe7d4 0%, transparent 58%),
-    radial-gradient(820px 520px at 98% -2%, #dcf2e8 0%, transparent 55%),
+    radial-gradient(820px 520px at 98% -2%, #dff3e8 0%, transparent 55%),
     radial-gradient(700px 600px at 50% 120%, #fdeaf2 0%, transparent 60%),
     var(--bg);
   background-attachment:fixed;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-h1,h2,h3{letter-spacing:-.03em;line-height:1.12;margin:0;font-family:var(--display);font-weight:600}
+h1,h2,h3,h4{letter-spacing:-.03em;line-height:1.12;margin:0;font-family:var(--display);font-weight:600;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
 button{font:inherit;cursor:pointer}
-.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
-@media(min-width:768px){.wrap{padding:0 28px}}
-.photo{outline:1px solid rgba(23,21,18,.08);outline-offset:-1px;object-fit:cover;width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+.photo{outline:1px solid rgba(20,19,16,.06);outline-offset:-1px;object-fit:cover;width:100%}
 
 /* Placeholder de imágenes faltantes */
 .ph{
@@ -120,54 +138,70 @@ button{font:inherit;cursor:pointer}
    UTILIDADES
    ============================================================ */
 .eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;
   color:var(--brand-2);
 }
-.eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--grad-warm)}
-.h2{margin-top:10px;font-size:30px}
-@media(min-width:768px){.h2{font-size:38px}}
-.lead{margin-top:14px;max-width:44rem;color:var(--muted-fg);font-size:16.5px}
+.eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--grad-warm)}
+.h2{margin-top:12px;font-size:30px}
+@media(min-width:768px){.h2{font-size:40px}}
+.lead{margin-top:16px;max-width:46rem;color:var(--muted-fg);font-size:16.5px;line-height:1.65}
 .grad-text{
   background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent;
 }
 section{scroll-margin-top:104px}
-.sec{padding:64px 0}
-@media(min-width:768px){.sec{padding:84px 0}}
+.sec{padding:68px 0}
+@media(min-width:768px){.sec{padding:92px 0}}
 
 /* Reveal */
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
 
 /* ============================================================
    BOTONES
    ============================================================ */
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  height:46px;padding:0 22px;border-radius:999px;border:1px solid transparent;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;
   font-size:15px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;
-  transition:transform .16s var(--ease),box-shadow .2s,background-color .2s,color .2s,border-color .2s;
+  transition:transform .16s var(--ease),box-shadow .25s,background-color .25s,color .25s,border-color .25s;
+  position:relative;overflow:hidden;
 }
 .btn:active{transform:scale(.97)}
-.btn-primary{background:var(--grad-warm);color:#fff;box-shadow:0 10px 24px -12px rgba(255,106,61,.9)}
-.btn-primary:hover{box-shadow:0 14px 30px -12px rgba(255,106,61,1);filter:brightness(1.04)}
+.btn-primary{background:var(--grad-warm);color:#fff;box-shadow:var(--shadow-glow)}
+.btn-primary:hover{filter:brightness(1.05);box-shadow:0 16px 36px -14px rgba(255,106,61,.85)}
 .btn-brand{background:var(--brand);color:#fff}
-.btn-brand:hover{background:#114534}
+.btn-brand:hover{background:#0a3826}
+.btn-gold{background:var(--grad-gold);color:#3a2400;font-weight:700;box-shadow:var(--shadow-gold)}
+.btn-gold:hover{filter:brightness(1.05)}
 .btn-outline{background:#fff;border-color:var(--border);color:var(--fg);box-shadow:var(--shadow-sm)}
 .btn-outline:hover{border-color:var(--brand-2);color:var(--brand);background:var(--brand-soft)}
 .btn-ghost{background:transparent;color:var(--fg);padding:0 12px}
 .btn-ghost:hover{background:var(--muted)}
-.btn-lg{height:54px;padding:0 28px;font-size:16.5px}
+.btn-lg{height:56px;padding:0 30px;font-size:16.5px}
 .btn-sm{height:40px;padding:0 16px;font-size:14px}
 .btn-block{width:100%}
 
 /* ============================================================
-   BARRA SUPERIOR
+   BARRA SUPERIOR — Trust strip
    ============================================================ */
 .strip{
-  background:var(--grad-brand);color:#fff;text-align:center;
-  padding:9px 16px;font-size:13px;font-weight:500;letter-spacing:.01em;
+  background:var(--grad-brand-deep);color:#fff;
+  padding:10px 16px;font-size:13px;font-weight:500;letter-spacing:.01em;
   position:relative;overflow:hidden;
+}
+.strip::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+  animation:shimmer 4s infinite;
+}
+@keyframes shimmer{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+.strip .strip-in{
+  max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:center;
+  gap:20px;flex-wrap:wrap;text-align:center;
 }
 .strip b{font-weight:700}
 .strip .dot{
@@ -186,26 +220,31 @@ section{scroll-margin-top:104px}
    ============================================================ */
 header.site{
   position:sticky;top:0;z-index:40;
-  background:rgba(253,249,243,.72);backdrop-filter:blur(14px);
+  background:rgba(251,248,242,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid transparent;transition:.28s var(--ease);
 }
-header.site.scrolled{border-color:var(--border);box-shadow:0 8px 30px -22px rgba(23,21,18,.4)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
-@media(min-width:768px){.nav{height:74px}}
-.brand{display:flex;align-items:center;gap:11px;flex:none}
+header.site.scrolled{border-color:var(--border);box-shadow:0 10px 34px -26px rgba(20,19,16,.5)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+@media(min-width:768px){.nav{height:76px}}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
 .brand .logo{
-  width:40px;height:40px;border-radius:13px;flex:none;
+  width:42px;height:42px;border-radius:14px;flex:none;
   background:var(--grad-brand);display:grid;place-items:center;
-  box-shadow:0 8px 18px -10px rgba(21,84,61,.9);
+  box-shadow:0 10px 22px -12px rgba(15,77,56,.95);
+  position:relative;overflow:hidden;
 }
-.brand .logo svg{width:26px;height:26px}
-.brand .n1{font-family:var(--display);font-size:19px;display:block;line-height:1.05;font-weight:700}
-.brand .n2{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted-fg);display:block;font-weight:600}
+.brand .logo::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 50%);
+}
+.brand .logo svg{width:26px;height:26px;position:relative;z-index:1}
+.brand .n1{font-family:var(--display);font-size:20px;display:block;line-height:1.05;font-weight:700}
+.brand .n2{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted-fg);display:block;font-weight:600;margin-top:1px}
 .nav-links{display:none;gap:4px}
 @media(min-width:1024px){.nav-links{display:flex}}
 .nav-links a{
   font-size:14.5px;font-weight:600;color:var(--muted-fg);
-  padding:9px 14px;border-radius:999px;transition:.2s;
+  padding:10px 15px;border-radius:999px;transition:.2s;
 }
 .nav-links a:hover{color:var(--brand);background:var(--brand-soft)}
 .nav-links a.hot{color:var(--accent)}
@@ -214,9 +253,9 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 8px 30px -22px rgba
 .icon-btn{
   width:46px;height:46px;display:grid;place-items:center;border-radius:14px;
   background:#fff;border:1px solid var(--border);position:relative;box-shadow:var(--shadow-sm);
-  transition:.2s var(--ease);
+  transition:.2s var(--ease);color:var(--fg);
 }
-.icon-btn:hover{border-color:var(--brand-2);color:var(--brand)}
+.icon-btn:hover{border-color:var(--brand-2);color:var(--brand);transform:translateY(-1px)}
 .badge{
   position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;padding:0 6px;
   border-radius:999px;background:var(--grad-warm);color:#fff;
@@ -232,46 +271,103 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 8px 30px -22px rgba
 .mobile-menu{display:none;border-top:1px solid var(--border);padding:12px 0 18px}
 .mobile-menu.open{display:block;animation:fadeDown .25s var(--ease)}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-.mobile-menu a{display:block;padding:13px 14px;border-radius:14px;font-weight:600}
+.mobile-menu a{display:block;padding:14px;border-radius:14px;font-weight:600}
 .mobile-menu a:hover{background:var(--brand-soft);color:var(--brand)}
 
 /* ============================================================
    HERO
    ============================================================ */
-.hero{position:relative;display:grid;gap:36px;padding:44px 0 52px}
-@media(min-width:1024px){.hero{grid-template-columns:1.02fr .98fr;align-items:center;gap:56px;padding:70px 0 80px}}
-.hero h1{font-size:clamp(34px,6.4vw,60px);line-height:1.03}
-.hero .sub{margin-top:22px;max-width:34rem;color:var(--muted-fg);font-size:17.5px}
-.hero .cta{margin-top:32px;display:flex;flex-direction:column;gap:12px}
+.hero{position:relative;display:grid;gap:40px;padding:48px 0 56px}
+@media(min-width:1024px){.hero{grid-template-columns:1.02fr .98fr;align-items:center;gap:60px;padding:76px 0 88px}}
+.hero h1{font-size:clamp(34px,6.4vw,62px);line-height:1.02;letter-spacing:-.035em}
+.hero .sub{margin-top:24px;max-width:34rem;color:var(--muted-fg);font-size:17.5px;line-height:1.6}
+.hero .cta{margin-top:34px;display:flex;flex-direction:column;gap:12px}
 @media(min-width:560px){.hero .cta{flex-direction:row;flex-wrap:wrap}}
-.hero .mini{margin-top:18px;font-size:14px;color:var(--muted-fg)}
-.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.hero-pill{
-  display:inline-flex;align-items:center;gap:7px;
-  background:#fff;border:1px solid var(--border);border-radius:999px;
-  padding:7px 14px;font-size:13px;font-weight:600;color:var(--muted-fg);
-  box-shadow:var(--shadow-sm);
+.hero .mini{margin-top:20px;font-size:14px;color:var(--muted-fg)}
+
+/* Trust badges hero */
+.trust-badges{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;
 }
+.trust-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--border);border-radius:999px;
+  padding:8px 15px;font-size:13px;font-weight:600;color:var(--muted-fg);
+  box-shadow:var(--shadow-sm);transition:.2s var(--ease);
+}
+.trust-badge:hover{border-color:var(--brand-2);color:var(--brand);transform:translateY(-1px)}
+.trust-badge .ic{
+  width:22px;height:22px;border-radius:8px;display:grid;place-items:center;
+  font-size:12px;color:#fff;flex:none;
+}
+
 .hero-media{position:relative}
 .hero-media .frame{
-  border-radius:32px;overflow:hidden;box-shadow:var(--shadow-lg);
+  border-radius:36px;overflow:hidden;box-shadow:var(--shadow-lg);
   border:6px solid #fff;position:relative;
+  background:var(--muted);
+}
+.hero-media .frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 60%,rgba(15,77,56,.15));
 }
 .hero-media img{aspect-ratio:4/3}
 @media(min-width:1024px){.hero-media img{aspect-ratio:5/4}}
+
+/* Sello de confianza flotante */
+.trust-seal{
+  position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);
+  background:#fff;border-radius:18px;padding:12px 22px;
+  box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;
+  border:1px solid var(--border);white-space:nowrap;
+}
+.trust-seal .ic{
+  width:38px;height:38px;border-radius:12px;
+  background:var(--grad-gold);display:grid;place-items:center;
+  color:#3a2400;font-size:18px;flex:none;
+}
+.trust-seal .tx{font-size:12px;color:var(--muted-fg);font-weight:600;line-height:1.3}
+.trust-seal .tx b{color:var(--fg);font-size:14px;font-family:var(--display);display:block;font-weight:700}
+
 .float-card{
-  position:absolute;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
-  border-radius:16px;padding:11px 15px;box-shadow:var(--shadow-md);
-  display:flex;align-items:center;gap:10px;
+  position:absolute;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-radius:16px;padding:12px 16px;box-shadow:var(--shadow-md);
+  display:flex;align-items:center;gap:11px;border:1px solid rgba(255,255,255,.6);
   animation:floaty 5s ease-in-out infinite;
 }
-.float-card .ic{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:17px;color:#fff}
+.float-card .ic{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-size:17px;color:#fff;flex:none}
 .float-card .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-fg);font-weight:700}
-.float-card .v{font-family:var(--display);font-size:16px;font-weight:700;line-height:1.1}
-.fc-1{left:-10px;top:22px}
-.fc-2{right:-8px;bottom:70px;animation-delay:1.4s}
-@media(max-width:640px){.fc-1{left:6px;top:12px}.fc-2{right:6px;bottom:60px}}
+.float-card .v{font-family:var(--display);font-size:16px;font-weight:700;line-height:1.15}
+.fc-1{left:-12px;top:22px}
+.fc-2{right:-10px;top:44%}
+@media(max-width:640px){
+  .fc-1{left:6px;top:12px}
+  .fc-2{right:6px;top:auto;bottom:76px}
+}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ============================================================
+   TRUST BAR — Franja de confianza bajo el hero
+   ============================================================ */
+.trust-bar{
+  background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:22px 0;
+}
+.trust-bar-in{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+}
+@media(min-width:768px){.trust-bar-in{grid-template-columns:repeat(4,1fr);gap:24px}}
+.trust-item{
+  display:flex;align-items:center;gap:13px;
+  padding:6px 0;
+}
+.trust-item .ti-ic{
+  width:44px;height:44px;border-radius:14px;flex:none;
+  display:grid;place-items:center;font-size:20px;
+  background:var(--brand-soft);
+}
+.trust-item .ti-tx b{display:block;font-size:14.5px;font-weight:700;line-height:1.25}
+.trust-item .ti-tx span{display:block;font-size:12.5px;color:var(--muted-fg);margin-top:2px}
 
 /* ============================================================
    STATS
@@ -279,39 +375,46 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 8px 30px -22px rgba
 .stats{padding:0 0 8px}
 .stats-grid{
   display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
-  background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:10px;box-shadow:var(--shadow-md);
+  background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);
+  padding:12px;box-shadow:var(--shadow-md);
+  position:relative;overflow:hidden;
+}
+.stats-grid::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad-gold);
 }
 @media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
 .stat{
-  padding:22px 18px;border-radius:20px;text-align:center;
+  padding:24px 18px;border-radius:22px;text-align:center;
   background:linear-gradient(180deg,#fff, #fdf8f1);
+  transition:.3s var(--ease);
 }
+.stat:hover{transform:translateY(-2px)}
 .stat:nth-child(1){background:linear-gradient(180deg,#fff, #eefaf4)}
 .stat:nth-child(2){background:linear-gradient(180deg,#fff, #fff3e8)}
-.stat:nth-child(3){background:linear-gradient(180deg,#fff, #f0f0ff)}
+.stat:nth-child(3){background:linear-gradient(180deg,#fff, #f1f0ff)}
 .stat:nth-child(4){background:linear-gradient(180deg,#fff, #fdeef4)}
-.stat .v{font-family:var(--display);font-size:31px;font-weight:700;letter-spacing:-.03em}
-.stat .l{margin-top:2px;font-size:13.5px;color:var(--muted-fg);font-weight:500}
+.stat .v{font-family:var(--display);font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1}
+.stat .l{margin-top:6px;font-size:13.5px;color:var(--muted-fg);font-weight:500}
 
 /* ============================================================
    OFERTAS
    ============================================================ */
 .ofertas{
   border-top:1px solid var(--border);
-  background:linear-gradient(180deg,#fff6ec,#fdf9f3 70%);
+  background:linear-gradient(180deg,#fff6ec,#fbf8f2 70%);
   position:relative;overflow:hidden;
 }
 .ofertas::after{
   content:"";position:absolute;width:520px;height:520px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,183,3,.20),transparent 68%);
+  background:radial-gradient(circle,rgba(245,179,1,.20),transparent 68%);
   top:-260px;right:-160px;pointer-events:none;
 }
 .ofertas-head{display:flex;flex-direction:column;gap:20px;position:relative;z-index:1}
 @media(min-width:768px){.ofertas-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
 .countdown{
-  display:inline-flex;align-items:center;gap:9px;margin-top:16px;
-  background:#fff;border:1px solid #ffd9a8;border-radius:999px;padding:8px 16px;
+  display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+  background:#fff;border:1px solid #ffd9a8;border-radius:999px;padding:9px 18px;
   font-size:13.5px;font-weight:700;color:#a35a00;box-shadow:var(--shadow-sm);
 }
 .countdown .lbl{font-weight:600;color:var(--muted-fg)}
@@ -320,220 +423,222 @@ header.site.scrolled{border-color:var(--border);box-shadow:0 8px 30px -22px rgba
 /* ============================================================
    GRID DE PRODUCTOS
    ============================================================ */
-.grid-prod{margin-top:34px;display:grid;grid-template-columns:1fr;gap:18px}
+.grid-prod{margin-top:36px;display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:600px){.grid-prod{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.grid-prod{grid-template-columns:repeat(3,1fr);gap:22px}}
-.ofertas-grid{margin-top:38px;display:grid;gap:18px;grid-template-columns:1fr;position:relative;z-index:1}
+@media(min-width:1024px){.grid-prod{grid-template-columns:repeat(3,1fr);gap:24px}}
+.ofertas-grid{margin-top:40px;display:grid;gap:20px;grid-template-columns:1fr;position:relative;z-index:1}
 @media(min-width:600px){.ofertas-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.ofertas-grid{grid-template-columns:repeat(3,1fr);gap:22px}}
+@media(min-width:1024px){.ofertas-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
 
 .prod{
   --cat:var(--brand);
   display:flex;flex-direction:column;background:#fff;border-radius:var(--r-lg);
-  padding:10px;border:1px solid var(--border);
+  padding:11px;border:1px solid var(--border);
   box-shadow:var(--shadow-sm);
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;
   position:relative;
 }
-.prod:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--cat)}
-.prod .media{position:relative;border-radius:19px;overflow:hidden;background:var(--muted)}
-.prod .media img{aspect-ratio:4/3;transition:transform .5s var(--ease)}
-.prod:hover .media img{transform:scale(1.045)}
-.prod .body{display:flex;flex-direction:column;flex:1;padding:14px 12px 10px}
+.prod:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--cat)}
+.prod .media{position:relative;border-radius:20px;overflow:hidden;background:var(--muted)}
+.prod .media img{aspect-ratio:4/3;transition:transform .55s var(--ease)}
+.prod:hover .media img{transform:scale(1.05)}
+.prod .body{display:flex;flex-direction:column;flex:1;padding:16px 13px 11px}
 
 .cat-pill{
   display:inline-flex;align-items:center;gap:6px;align-self:flex-start;
   background:var(--cat);color:#fff;border-radius:999px;
-  padding:4px 11px;font-size:10.5px;font-weight:700;
+  padding:5px 12px;font-size:10.5px;font-weight:700;
   text-transform:uppercase;letter-spacing:.08em;
+  box-shadow:0 4px 10px -4px rgba(0,0,0,.35);
 }
 .prod h3{
-  margin-top:9px;font-family:var(--sans);font-size:16.5px;font-weight:600;
+  margin-top:10px;font-family:var(--sans);font-size:16.5px;font-weight:600;
   letter-spacing:-.01em;line-height:1.3;
 }
-.prod .meta{margin-top:5px;font-size:12.5px;color:var(--muted-fg);font-weight:500}
+.prod .meta{margin-top:6px;font-size:12.5px;color:var(--muted-fg);font-weight:500}
 
 .flag{
-  position:absolute;top:12px;left:12px;z-index:2;
-  background:rgba(255,255,255,.96);border-radius:999px;padding:5px 12px;
+  position:absolute;top:14px;left:14px;z-index:2;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(6px);
+  border-radius:999px;padding:6px 13px;
   font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
   color:var(--brand);box-shadow:var(--shadow-sm);
 }
 .ribbon{
-  position:absolute;top:12px;left:12px;z-index:2;
-  background:var(--grad-berry);color:#fff;border-radius:999px;padding:6px 12px;
+  position:absolute;top:14px;left:14px;z-index:2;
+  background:var(--grad-berry);color:#fff;border-radius:999px;padding:7px 13px;
   font-size:11.5px;font-weight:800;letter-spacing:.03em;
-  box-shadow:0 8px 18px -8px rgba(214,51,108,.9);
+  box-shadow:0 8px 18px -8px rgba(199,42,104,.95);
 }
 .timer{
-  position:absolute;top:12px;right:12px;z-index:2;
-  background:rgba(23,21,18,.78);color:#fff;border-radius:999px;padding:5px 11px;
+  position:absolute;top:14px;right:14px;z-index:2;
+  background:rgba(20,19,16,.78);color:#fff;border-radius:999px;padding:6px 12px;
   font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
   backdrop-filter:blur(6px);
 }
 
 /* Precios */
-.price{margin-top:14px;font-family:var(--display);font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
-.price-note{margin-top:6px;font-size:11.5px;color:var(--muted-fg);line-height:1.45}
-.prices{display:flex;align-items:baseline;flex-wrap:wrap;gap:9px;margin-top:14px}
+.price{margin-top:16px;font-family:var(--display);font-size:27px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.price-note{margin-top:7px;font-size:11.5px;color:var(--muted-fg);line-height:1.5}
+.prices{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-top:16px}
 .price-old{
   font-size:13.5px;color:var(--muted-fg);text-decoration:line-through;
   text-decoration-thickness:1.5px;text-decoration-color:var(--danger);font-weight:500;
 }
 .price-now{
-  font-family:var(--display);font-size:27px;font-weight:700;line-height:1;
-  font-variant-numeric:tabular-nums;
+  font-family:var(--display);font-size:28px;font-weight:800;line-height:1;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em;
   background:var(--grad-berry);-webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .save-tag{
   align-self:center;background:#ffe8ef;color:var(--berry);border-radius:999px;
-  padding:4px 10px;font-size:11.5px;font-weight:800;
+  padding:5px 11px;font-size:11.5px;font-weight:800;
 }
 
 /* Selector de cantidad */
-.actions{margin-top:auto;padding-top:16px;display:flex;gap:9px;align-items:center}
+.actions{margin-top:auto;padding-top:18px;display:flex;gap:10px;align-items:center}
 .qty{
   display:flex;align-items:center;gap:2px;
   background:var(--muted);border-radius:999px;padding:4px;flex:none;
 }
 .qty button{
-  width:34px;height:34px;border-radius:999px;border:none;background:#fff;
+  width:36px;height:36px;border-radius:999px;border:none;background:#fff;
   box-shadow:var(--shadow-sm);font-size:17px;font-weight:700;color:var(--brand);
   display:grid;place-items:center;line-height:1;transition:.16s var(--ease);
 }
 .qty button:hover{background:var(--brand);color:#fff}
 .qty button:active{transform:scale(.9)}
 .qty .n{
-  min-width:34px;text-align:center;font-size:15px;font-weight:700;
+  min-width:36px;text-align:center;font-size:15px;font-weight:700;
   font-variant-numeric:tabular-nums;
 }
-.add{flex:1;height:42px;border-radius:999px;border:none;background:var(--brand);color:#fff;font-weight:700;font-size:14.5px;transition:.2s var(--ease);display:inline-flex;align-items:center;justify-content:center;gap:7px}
-.add:hover{background:#114534}
+.add{flex:1;height:44px;border-radius:999px;border:none;background:var(--brand);color:#fff;font-weight:700;font-size:14.5px;transition:.2s var(--ease);display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.add:hover{background:#0a3826}
 .add:active{transform:scale(.97)}
 .add.done{background:var(--ok)}
-.deal .add{background:var(--grad-warm)}
+.deal .add{background:var(--grad-warm);box-shadow:0 8px 18px -10px rgba(255,106,61,.9)}
 .deal .add:hover{filter:brightness(1.05)}
 .wa-mini{
-  margin-top:9px;display:inline-flex;align-items:center;gap:6px;justify-content:center;
+  margin-top:10px;display:inline-flex;align-items:center;gap:6px;justify-content:center;
   font-size:12.5px;font-weight:600;color:var(--muted-fg);width:100%;
-  padding:7px;border-radius:999px;transition:.2s;
+  padding:8px;border-radius:999px;transition:.2s;
 }
 .wa-mini:hover{color:var(--brand);background:var(--brand-soft)}
 
 /* ============================================================
    CATEGORÍAS
    ============================================================ */
-.cats{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cats{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 @media(min-width:640px){.cats{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:1024px){.cats{grid-template-columns:repeat(4,1fr);gap:16px}}
+@media(min-width:1024px){.cats{grid-template-columns:repeat(4,1fr);gap:18px}}
 .cat{
   --cat:var(--brand);
   position:relative;background:#fff;border-radius:var(--r);overflow:hidden;
   border:1px solid var(--border);box-shadow:var(--shadow-sm);
-  transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .28s;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;
 }
-.cat:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--cat)}
+.cat:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--cat)}
 .cat .media{position:relative;overflow:hidden}
-.cat img{aspect-ratio:4/3;transition:transform .5s var(--ease)}
-.cat:hover img{transform:scale(1.06)}
+.cat img{aspect-ratio:4/3;transition:transform .55s var(--ease)}
+.cat:hover img{transform:scale(1.07)}
 .cat .emoji{
-  position:absolute;left:10px;top:10px;width:34px;height:34px;border-radius:12px;
-  background:var(--cat);display:grid;place-items:center;font-size:17px;
-  box-shadow:0 6px 14px -6px rgba(0,0,0,.5);
+  position:absolute;left:12px;top:12px;width:36px;height:36px;border-radius:12px;
+  background:var(--cat);display:grid;place-items:center;font-size:18px;
+  box-shadow:0 8px 16px -8px rgba(0,0,0,.55);
 }
-.cat .txt{padding:12px 14px 15px}
-.cat .txt b{font-weight:700;font-size:14.5px;display:block;line-height:1.25}
-.cat .txt span{display:block;font-size:12.5px;color:var(--muted-fg);margin-top:3px;line-height:1.4}
+.cat .txt{padding:14px 15px 17px}
+.cat .txt b{font-weight:700;font-size:14.5px;display:block;line-height:1.3}
+.cat .txt span{display:block;font-size:12.5px;color:var(--muted-fg);margin-top:4px;line-height:1.45}
 
 /* ============================================================
    CATÁLOGO
    ============================================================ */
 .catalog{border-top:1px solid var(--border);background:rgba(255,255,255,.6)}
-.catalog-head{margin-top:10px;display:flex;flex-direction:column;gap:18px}
+.catalog-head{margin-top:12px;display:flex;flex-direction:column;gap:20px}
 @media(min-width:900px){.catalog-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
 .tools{display:flex;flex-direction:column;gap:10px;width:100%}
 @media(min-width:600px){.tools{flex-direction:row;align-items:center}}
 .search{position:relative;width:100%}
 @media(min-width:900px){.search{max-width:24rem}}
 .search input{
-  width:100%;height:48px;border-radius:999px;border:1px solid var(--border);
-  background:#fff;padding:0 16px 0 44px;font:inherit;font-size:15px;color:inherit;
+  width:100%;height:50px;border-radius:999px;border:1px solid var(--border);
+  background:#fff;padding:0 18px 0 46px;font:inherit;font-size:15px;color:inherit;
   box-shadow:var(--shadow-sm);transition:.2s;
 }
 .search input:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px var(--brand-soft)}
-.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted-fg);pointer-events:none}
+.search svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted-fg);pointer-events:none}
 select.sort{
-  height:48px;border-radius:999px;border:1px solid var(--border);background:#fff;
-  padding:0 40px 0 18px;font:inherit;font-size:14.5px;font-weight:600;color:var(--fg);
+  height:50px;border-radius:999px;border:1px solid var(--border);background:#fff;
+  padding:0 42px 0 20px;font:inherit;font-size:14.5px;font-weight:600;color:var(--fg);
   box-shadow:var(--shadow-sm);cursor:pointer;appearance:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236d665b' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 16px center;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236a6257' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 17px center;
 }
 select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px var(--brand-soft)}
 
-.chips{margin-top:24px;display:flex;gap:9px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:none}
+.chips{margin-top:26px;display:flex;gap:9px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .chip{
-  flex:none;height:42px;padding:0 18px;border-radius:999px;
+  flex:none;height:44px;padding:0 20px;border-radius:999px;
   border:1px solid var(--border);background:#fff;box-shadow:var(--shadow-sm);
   font-size:14px;font-weight:600;white-space:nowrap;color:var(--muted-fg);
   transition:.2s var(--ease);
 }
 .chip:hover{border-color:var(--brand-2);color:var(--brand);transform:translateY(-1px)}
-.chip.active{background:var(--grad-brand);color:#fff;border-color:transparent;box-shadow:0 10px 22px -14px rgba(21,84,61,.9)}
+.chip.active{background:var(--grad-brand);color:#fff;border-color:transparent;box-shadow:0 12px 24px -16px rgba(15,77,56,.95)}
 .chip.hot.active{background:var(--grad-berry)}
 
 .result-line{margin-top:6px;font-size:13.5px;color:var(--muted-fg);font-weight:500}
 .result-line b{color:var(--fg)}
 .empty{
-  margin-top:52px;text-align:center;color:var(--muted-fg);
-  background:#fff;border:1px dashed var(--border);border-radius:var(--r-lg);padding:44px 20px;
+  margin-top:56px;text-align:center;color:var(--muted-fg);
+  background:#fff;border:1px dashed var(--border);border-radius:var(--r-lg);padding:48px 22px;
 }
-.empty b{display:block;font-family:var(--display);font-size:20px;color:var(--fg);margin-bottom:6px}
+.empty b{display:block;font-family:var(--display);font-size:20px;color:var(--fg);margin-bottom:8px}
 
 /* ============================================================
    CUPONES
    ============================================================ */
 .cupones-sec{padding:0 0 20px}
 .coupon-band{
-  position:relative;overflow:hidden;border-radius:36px;
-  background:var(--grad-brand);color:#fff;
-  padding:44px 24px;box-shadow:var(--shadow-lg);
+  position:relative;overflow:hidden;border-radius:38px;
+  background:var(--grad-brand-deep);color:#fff;
+  padding:48px 26px;box-shadow:var(--shadow-lg);
 }
-@media(min-width:768px){.coupon-band{padding:56px 52px}}
+@media(min-width:768px){.coupon-band{padding:64px 56px}}
 .coupon-band::before{
-  content:"";position:absolute;width:420px;height:420px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,183,3,.32),transparent 65%);
+  content:"";position:absolute;width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,179,1,.32),transparent 65%);
   right:-140px;top:-180px;
 }
 .coupon-band::after{
-  content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+  content:"";position:absolute;width:380px;height:380px;border-radius:50%;
   background:radial-gradient(circle,rgba(255,106,61,.30),transparent 65%);
   left:-120px;bottom:-180px;
 }
-.coupon-inner{position:relative;z-index:1;display:grid;gap:36px}
-@media(min-width:1024px){.coupon-inner{grid-template-columns:.95fr 1.05fr;align-items:center;gap:48px}}
-.coupon-band .eyebrow{color:rgba(255,255,255,.72)}
+.coupon-inner{position:relative;z-index:1;display:grid;gap:40px}
+@media(min-width:1024px){.coupon-inner{grid-template-columns:.95fr 1.05fr;align-items:center;gap:52px}}
+.coupon-band .eyebrow{color:rgba(255,255,255,.75)}
 .coupon-band .eyebrow::before{background:var(--amber)}
 .coupon-band .h2{color:#fff}
-.coupon-band p.lead{color:rgba(255,255,255,.82)}
+.coupon-band p.lead{color:rgba(255,255,255,.85)}
 
 .coupon-form{
-  display:flex;gap:10px;flex-direction:column;margin-top:24px;
+  display:flex;gap:10px;flex-direction:column;margin-top:26px;
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
-  border-radius:22px;padding:14px;backdrop-filter:blur(8px);
+  border-radius:22px;padding:14px;backdrop-filter:blur(10px);
 }
 @media(min-width:560px){.coupon-form{flex-direction:row;align-items:center}}
 .coupon-form input{
-  flex:1;height:50px;border-radius:999px;border:none;padding:0 20px;
+  flex:1;height:52px;border-radius:999px;border:none;padding:0 22px;
   font:inherit;font-size:15.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   background:#fff;color:var(--fg);
 }
 .coupon-form input::placeholder{text-transform:none;letter-spacing:0;font-weight:500;color:#a49a8c}
 .coupon-form input:focus{outline:3px solid var(--amber);outline-offset:2px}
-.coupon-form .btn{height:50px;flex:none}
+.coupon-form .btn{height:52px;flex:none}
 
-.coupon-msg{margin-top:14px;font-size:14px;font-weight:600;display:none;border-radius:14px;padding:11px 16px}
+.coupon-msg{margin-top:14px;font-size:14px;font-weight:600;display:none;border-radius:14px;padding:12px 18px}
 .coupon-msg.show{display:block;animation:fadeDown .25s var(--ease)}
 .coupon-msg.ok{background:rgba(124,231,182,.18);color:#c4f5dd;border:1px solid rgba(124,231,182,.4)}
 .coupon-msg.err{background:rgba(255,120,120,.16);color:#ffd0d0;border:1px solid rgba(255,120,120,.4)}
@@ -541,100 +646,156 @@ select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px 
 .coupon-cards{display:grid;gap:12px}
 @media(min-width:600px){.coupon-cards{grid-template-columns:repeat(2,1fr)}}
 .coupon-card{
-  text-align:left;background:rgba(255,255,255,.95);border:none;border-radius:20px;
-  padding:18px;cursor:pointer;position:relative;overflow:hidden;
-  transition:transform .25s var(--ease),box-shadow .25s;
+  text-align:left;background:rgba(255,255,255,.96);border:none;border-radius:20px;
+  padding:20px;cursor:pointer;position:relative;overflow:hidden;
+  transition:transform .3s var(--ease),box-shadow .3s;
   box-shadow:0 12px 30px -20px rgba(0,0,0,.7);
 }
-.coupon-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -22px rgba(0,0,0,.8)}
+.coupon-card:hover{transform:translateY(-5px);box-shadow:0 22px 42px -22px rgba(0,0,0,.8)}
 .coupon-card::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--grad-warm);
+  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--grad-gold);
 }
 .coupon-card .cc-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .coupon-card .cc-code{
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
   font-size:15px;font-weight:800;letter-spacing:.08em;color:var(--fg);
-  background:var(--muted);border:1px dashed var(--border);border-radius:10px;padding:5px 11px;
+  background:var(--muted);border:1px dashed var(--border);border-radius:10px;padding:6px 12px;
 }
 .coupon-card .cc-off{
-  font-family:var(--display);font-size:24px;font-weight:800;
+  font-family:var(--display);font-size:26px;font-weight:800;
   background:var(--grad-berry);-webkit-background-clip:text;background-clip:text;color:transparent;
   line-height:1;
 }
-.coupon-card .cc-desc{margin-top:11px;font-size:13px;color:var(--muted-fg);font-weight:500;line-height:1.45}
+.coupon-card .cc-desc{margin-top:12px;font-size:13px;color:var(--muted-fg);font-weight:500;line-height:1.5}
 .coupon-card .cc-use{
-  margin-top:12px;font-size:12px;font-weight:700;color:var(--brand);
+  margin-top:14px;font-size:12px;font-weight:700;color:var(--brand);
   display:inline-flex;align-items:center;gap:6px;
 }
 
 /* ============================================================
-   PROCESO / POR QUÉ / COBERTURA
+   PROCESO
    ============================================================ */
-.steps{margin-top:40px;display:grid;gap:16px}
+.steps{margin-top:44px;display:grid;gap:18px}
 @media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
 .step{
-  background:#fff;border-radius:var(--r-lg);padding:28px;
+  background:#fff;border-radius:var(--r-lg);padding:32px;
   border:1px solid var(--border);box-shadow:var(--shadow-sm);
-  position:relative;overflow:hidden;transition:transform .28s var(--ease),box-shadow .28s;
+  position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s;
 }
-.step:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
 .step .n{
-  font-family:var(--display);font-size:34px;font-weight:800;line-height:1;
+  font-family:var(--display);font-size:38px;font-weight:800;line-height:1;
   background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.step h3{margin-top:14px;font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.01em}
-.step p{margin-top:8px;font-size:14.5px;color:var(--muted-fg)}
+.step h3{margin-top:16px;font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.01em}
+.step p{margin-top:10px;font-size:14.5px;color:var(--muted-fg);line-height:1.6}
 .step::after{
-  content:"";position:absolute;right:-40px;bottom:-40px;width:120px;height:120px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,183,3,.16),transparent 70%);
+  content:"";position:absolute;right:-40px;bottom:-40px;width:130px;height:130px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,179,1,.16),transparent 70%);
 }
 
+/* ============================================================
+   POR QUÉ / GARANTÍAS
+   ============================================================ */
 .why{
   border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  background:var(--grad-brand);color:#fff;position:relative;overflow:hidden;
+  background:var(--grad-brand-deep);color:#fff;position:relative;overflow:hidden;
 }
 .why::before{
-  content:"";position:absolute;width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,183,3,.18),transparent 66%);
+  content:"";position:absolute;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,179,1,.18),transparent 66%);
   right:-220px;top:-260px;
 }
-.why-grid{position:relative;z-index:1;display:grid;gap:40px;padding:64px 0}
-@media(min-width:768px){.why-grid{grid-template-columns:repeat(2,1fr);align-items:center;padding:84px 0}}
-.why .eyebrow{color:rgba(255,255,255,.75)}
+.why-grid{position:relative;z-index:1;display:grid;gap:44px;padding:68px 0}
+@media(min-width:768px){.why-grid{grid-template-columns:repeat(2,1fr);align-items:center;padding:92px 0}}
+.why .eyebrow{color:rgba(255,255,255,.78)}
 .why .eyebrow::before{background:var(--amber)}
 .why .h2{color:#fff}
-.why p.lead{color:rgba(255,255,255,.82)}
-.why-cards{display:grid;gap:12px}
+.why p.lead{color:rgba(255,255,255,.85)}
+.why-cards{display:grid;gap:14px}
 @media(min-width:640px){.why-cards{grid-template-columns:repeat(2,1fr)}}
 .why-card{
   background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);
-  border-radius:20px;padding:22px;backdrop-filter:blur(6px);
-  transition:.25s var(--ease);
+  border-radius:20px;padding:24px;backdrop-filter:blur(8px);
+  transition:.3s var(--ease);
 }
-.why-card:hover{background:rgba(255,255,255,.17);transform:translateY(-3px)}
-.why-card h3{font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:-.01em;margin-top:12px}
-.why-card p{margin-top:5px;font-size:13.5px;color:rgba(255,255,255,.78)}
+.why-card:hover{background:rgba(255,255,255,.17);transform:translateY(-4px)}
+.why-card h3{font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:-.01em;margin-top:14px}
+.why-card p{margin-top:6px;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.55}
 .why-card .ico{
-  font-size:19px;width:40px;height:40px;border-radius:13px;display:grid;place-items:center;
+  font-size:20px;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
   background:rgba(255,255,255,.16);
 }
 
-.cov{display:grid;gap:40px}
-@media(min-width:900px){.cov{grid-template-columns:.92fr 1.08fr;align-items:start;gap:48px}}
-.cov .frame{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);border:5px solid #fff;margin-top:32px}
-.cov img,.cov .ph{margin-top:32px;border-radius:var(--r-lg);aspect-ratio:16/10}
-.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;font-size:13.5px;font-weight:600}
-.pill{border-radius:999px;padding:7px 16px;background:#fff;border:1px solid var(--border);color:var(--muted-fg)}
+/* ============================================================
+   GARANTÍAS
+   ============================================================ */
+.guarantees{
+  display:grid;gap:16px;margin-top:44px;
+}
+@media(min-width:640px){.guarantees{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.guarantees{grid-template-columns:repeat(4,1fr)}}
+.guarantee{
+  background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:26px 24px;box-shadow:var(--shadow-sm);
+  transition:.3s var(--ease);position:relative;overflow:hidden;
+}
+.guarantee:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--brand-2)}
+.guarantee .g-ic{
+  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+  font-size:24px;margin-bottom:16px;
+}
+.guarantee h3{font-family:var(--sans);font-size:15.5px;font-weight:700;letter-spacing:-.01em}
+.guarantee p{margin-top:8px;font-size:13.5px;color:var(--muted-fg);line-height:1.6}
+
+/* ============================================================
+   MÉTODOS DE PAGO
+   ============================================================ */
+.payments{
+  background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:44px 0;
+}
+.pay-in{
+  display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;
+}
+.pay-in .eyebrow{align-self:center}
+.pay-in h3{font-size:22px;margin-top:8px;font-weight:600;font-family:var(--display)}
+.pay-in h3 b{color:var(--brand)}
+.pay-methods{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+}
+.pay-chip{
+  display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(180deg,#fff,#fbf8f2);
+  border:1px solid var(--border);border-radius:16px;
+  padding:12px 20px;font-size:14px;font-weight:700;
+  box-shadow:var(--shadow-sm);transition:.25s var(--ease);color:var(--fg);
+}
+.pay-chip:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--brand-2)}
+.pay-chip .pic{
+  width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+  font-size:13px;font-weight:800;color:#fff;flex:none;
+}
+
+/* ============================================================
+   COBERTURA
+   ============================================================ */
+.cov{display:grid;gap:44px}
+@media(min-width:900px){.cov{grid-template-columns:.92fr 1.08fr;align-items:start;gap:52px}}
+.cov .frame{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);border:5px solid #fff;margin-top:36px}
+.cov img,.cov .ph{margin-top:36px;border-radius:var(--r-lg);aspect-ratio:16/10}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;font-size:13.5px;font-weight:600}
+.pill{border-radius:999px;padding:8px 18px;background:#fff;border:1px solid var(--border);color:var(--muted-fg)}
 .pill.on{background:var(--grad-brand);color:#fff;border-color:transparent}
-.deps{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.deps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 @media(min-width:600px){.deps{grid-template-columns:repeat(2,1fr)}}
 .deps li{
   display:flex;justify-content:space-between;gap:10px;align-items:center;
   background:#fff;border:1px solid var(--border);border-radius:14px;
-  padding:11px 14px;font-size:13.5px;font-weight:500;
+  padding:12px 16px;font-size:13.5px;font-weight:500;
   transition:.2s var(--ease);
 }
-.deps li:hover{border-color:var(--brand-2);transform:translateX(2px)}
+.deps li:hover{border-color:var(--brand-2);transform:translateX(3px)}
 .deps .fast{color:var(--ok);font-weight:700;font-size:12.5px}
 .deps .slow{color:var(--muted-fg);font-weight:600;font-size:12.5px}
 
@@ -642,33 +803,48 @@ select.sort:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px 
    TESTIMONIOS
    ============================================================ */
 .testi{border-top:1px solid var(--border);background:rgba(255,255,255,.55)}
-.quotes{margin-top:40px;display:grid;gap:16px}
+.quotes{margin-top:44px;display:grid;gap:18px}
 @media(min-width:768px){.quotes{grid-template-columns:repeat(3,1fr)}}
 .quote{
-  background:#fff;border-radius:var(--r-lg);padding:28px;margin:0;
+  background:#fff;border-radius:var(--r-lg);padding:30px;margin:0;
   border:1px solid var(--border);box-shadow:var(--shadow-sm);
   display:flex;flex-direction:column;
-  transition:transform .28s var(--ease),box-shadow .28s;
+  transition:transform .3s var(--ease),box-shadow .3s;
+  position:relative;overflow:hidden;
 }
-.quote:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.quote .stars{color:var(--amber);font-size:14px;letter-spacing:2px;margin-bottom:14px}
-.quote p{font-size:14.5px;line-height:1.72;color:#3d382f;flex:1}
-.quote footer{margin-top:24px;display:flex;align-items:center;gap:12px}
+.quote::before{
+  content:"”";position:absolute;top:-30px;right:14px;
+  font-family:var(--display);font-size:120px;line-height:1;
+  color:var(--brand-soft);opacity:.7;pointer-events:none;
+}
+.quote:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.quote .q-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.quote .stars{color:var(--amber);font-size:15px;letter-spacing:2px}
+.verified{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--brand-soft);color:var(--brand);
+  border-radius:999px;padding:4px 10px;font-size:10.5px;
+  font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+}
+.verified::before{content:"✓";font-weight:900}
+.quote p{font-size:14.5px;line-height:1.75;color:#3d382f;flex:1;position:relative;z-index:1}
+.quote footer{margin-top:26px;display:flex;align-items:center;gap:13px;padding-top:18px;border-top:1px dashed var(--border)}
 .avatar{
-  width:42px;height:42px;border-radius:999px;color:#fff;display:grid;place-items:center;
-  font-family:var(--display);font-size:14px;font-weight:700;flex:none;
+  width:44px;height:44px;border-radius:999px;color:#fff;display:grid;place-items:center;
+  font-family:var(--display);font-size:15px;font-weight:700;flex:none;
+  box-shadow:0 6px 14px -6px rgba(0,0,0,.4);
 }
 .quote:nth-child(1) .avatar{background:var(--grad-brand)}
 .quote:nth-child(2) .avatar{background:var(--grad-warm)}
 .quote:nth-child(3) .avatar{background:var(--grad-berry)}
 .quote .nm{font-weight:700;display:block;font-size:14.5px}
-.quote .rl{font-size:13px;color:var(--muted-fg);display:block}
+.quote .rl{font-size:13px;color:var(--muted-fg);display:block;margin-top:1px}
 
 /* ============================================================
    FAQ
    ============================================================ */
-.faq-wrap{max-width:800px;margin:0 auto}
-.faq-list{margin-top:32px;display:grid;gap:10px}
+.faq-wrap{max-width:820px;margin:0 auto}
+.faq-list{margin-top:36px;display:grid;gap:12px}
 details.f{
   background:#fff;border:1px solid var(--border);border-radius:18px;
   overflow:hidden;box-shadow:var(--shadow-sm);transition:.25s var(--ease);
@@ -676,208 +852,214 @@ details.f{
 details.f[open]{border-color:var(--brand-2);box-shadow:var(--shadow-md)}
 details.f summary{
   list-style:none;display:flex;justify-content:space-between;gap:16px;
-  padding:18px 22px;font-weight:600;font-size:15.5px;cursor:pointer;
+  padding:20px 24px;font-weight:600;font-size:15.5px;cursor:pointer;
 }
 details.f summary::-webkit-details-marker{display:none}
 details.f summary::after{
-  content:"+";color:var(--brand);font-size:20px;font-weight:700;line-height:1;
-  transition:transform .3s var(--ease);flex:none;
+  content:"+";color:var(--brand);font-size:22px;font-weight:700;line-height:1;flex:none;
+  transition:transform .3s var(--ease);
 }
 details.f[open] summary::after{transform:rotate(45deg)}
-details.f p{padding:0 22px 20px;font-size:14.5px;color:var(--muted-fg);line-height:1.7}
+details.f p{padding:0 24px 22px;font-size:14.5px;color:var(--muted-fg);line-height:1.7}
 
 /* ============================================================
    PEDIDO
    ============================================================ */
-.order{border-top:1px solid var(--border);background:rgba(255,255,255,.55);padding-bottom:130px}
-.order-grid{display:grid;gap:40px}
-@media(min-width:900px){.order-grid{grid-template-columns:.9fr 1.1fr;gap:48px}}
+.order{border-top:1px solid var(--border);background:rgba(255,255,255,.55);padding-bottom:140px}
+.order-grid{display:grid;gap:44px}
+@media(min-width:900px){.order-grid{grid-template-columns:.9fr 1.1fr;gap:52px}}
 
 .summary-card{
-  margin-top:32px;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:24px;box-shadow:var(--shadow-sm);
+  margin-top:36px;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:26px;box-shadow:var(--shadow-sm);
 }
-.summary-card h3{font-size:19px;margin-bottom:16px}
+.summary-card h3{font-size:20px;margin-bottom:18px}
 .srow{
   display:flex;justify-content:space-between;gap:16px;align-items:center;
-  padding:11px 0;border-bottom:1px dashed var(--border);font-size:14.5px;
+  padding:12px 0;border-bottom:1px dashed var(--border);font-size:14.5px;
 }
 .srow:last-of-type{border-bottom:none}
 .srow span{color:var(--muted-fg);font-weight:500}
 .srow b{font-weight:700;font-variant-numeric:tabular-nums}
 .srow.save b{color:var(--ok)}
 .srow.coupon b{color:var(--berry)}
-.srow.coupon em{font-style:normal;font-family:ui-monospace,monospace;font-size:12px;background:#ffe8ef;color:var(--berry);padding:2px 7px;border-radius:6px;margin-left:6px}
-.srow.total{border-top:2px solid var(--fg);border-bottom:none;margin-top:8px;padding-top:16px}
+.srow.coupon em{font-style:normal;font-family:ui-monospace,monospace;font-size:12px;background:#ffe8ef;color:var(--berry);padding:2px 8px;border-radius:6px;margin-left:6px}
+.srow.total{border-top:2px solid var(--fg);border-bottom:none;margin-top:10px;padding-top:18px}
 .srow.total span{color:var(--fg);font-weight:700;font-size:15.5px}
-.srow.total b{font-family:var(--display);font-size:27px;letter-spacing:-.03em}
+.srow.total b{font-family:var(--display);font-size:28px;letter-spacing:-.03em}
 
 form.card{
-  background:#fff;border-radius:var(--r-lg);padding:22px;
+  background:#fff;border-radius:var(--r-lg);padding:24px;
   border:1px solid var(--border);box-shadow:var(--shadow-md);
 }
-@media(min-width:768px){form.card{padding:30px}}
-.fields{display:grid;gap:16px}
+@media(min-width:768px){form.card{padding:34px}}
+.fields{display:grid;gap:18px}
 @media(min-width:640px){.fields{grid-template-columns:repeat(2,1fr)}.col2{grid-column:span 2}}
-label{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px;color:#3d382f}
+label{display:block;font-size:13.5px;font-weight:600;margin-bottom:8px;color:#3d382f}
 input,select,textarea{
   width:100%;border:1px solid var(--border);border-radius:14px;background:#fdfbf8;
-  padding:12px 14px;font:inherit;font-size:15px;color:inherit;transition:.2s;
+  padding:13px 15px;font:inherit;font-size:15px;color:inherit;transition:.2s;
 }
-textarea{min-height:92px;resize:vertical}
+textarea{min-height:96px;resize:vertical}
 input:focus,select:focus,textarea:focus{
   outline:none;border-color:var(--brand-2);background:#fff;box-shadow:0 0 0 4px var(--brand-soft);
 }
 .err{
-  margin-top:16px;color:var(--danger);font-size:14px;font-weight:600;
-  background:#ffeceb;border:1px solid #ffc9c9;border-radius:12px;padding:11px 14px;
+  margin-top:18px;color:var(--danger);font-size:14px;font-weight:600;
+  background:#ffeceb;border:1px solid #ffc9c9;border-radius:12px;padding:12px 16px;
 }
-.hint{margin-top:14px;text-align:center;font-size:12px;color:var(--muted-fg);line-height:1.55}
-#sentBox{margin-top:20px;background:var(--brand-soft);border:1px solid #bfe4d4;border-radius:18px;padding:18px}
+.hint{margin-top:16px;text-align:center;font-size:12px;color:var(--muted-fg);line-height:1.6}
+#sentBox{margin-top:22px;background:var(--brand-soft);border:1px solid #bfe4d4;border-radius:18px;padding:20px}
 
 /* ============================================================
    FOOTER
    ============================================================ */
-footer.site{background:#14130f;color:#f5f1ea}
-.foot{display:grid;gap:40px;padding:60px 0}
+footer.site{background:#11100d;color:#f5f1ea}
+.foot{display:grid;gap:44px;padding:64px 0}
 @media(min-width:768px){.foot{grid-template-columns:repeat(4,1fr)}.foot .c2{grid-column:span 2}}
 footer .brand .n2{color:rgba(245,241,234,.5)}
 footer .brand .logo{background:var(--grad-warm)}
-.foot p.desc{margin-top:18px;max-width:25rem;font-size:14px;color:rgba(245,241,234,.68);line-height:1.7}
+.foot p.desc{margin-top:20px;max-width:26rem;font-size:14px;color:rgba(245,241,234,.7);line-height:1.7}
 .foot .eyebrow{color:rgba(245,241,234,.45)}
 .foot .eyebrow::before{background:var(--accent)}
-.foot ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px;font-size:14px}
+.foot ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:11px;font-size:14px}
 .foot a{color:rgba(245,241,234,.85);transition:.2s}
 .foot a:hover{color:var(--amber)}
+.foot .contact-line{display:flex;align-items:center;gap:9px;font-size:14px;color:rgba(245,241,234,.75)}
+.foot .contact-line b{color:#fff}
 .copy{
-  border-top:1px solid rgba(245,241,234,.1);padding:22px 16px 100px;
-  text-align:center;font-size:12.5px;color:rgba(245,241,234,.45);
+  border-top:1px solid rgba(245,241,234,.1);padding:24px 16px 100px;
+  text-align:center;font-size:12.5px;color:rgba(245,241,234,.5);
+  line-height:1.7;
 }
-@media(min-width:768px){.copy{padding-bottom:24px}}
+@media(min-width:768px){.copy{padding-bottom:28px}}
+.copy .legal{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.copy .legal a{color:rgba(245,241,234,.5)}
+.copy .legal a:hover{color:var(--amber)}
 
 /* ============================================================
    BARRA FLOTANTE DE CUENTA
    ============================================================ */
 .cartbar{
   position:fixed;left:0;right:0;bottom:0;z-index:45;
-  background:var(--grad-brand);color:#fff;
+  background:var(--grad-brand-deep);color:#fff;
   box-shadow:0 -12px 40px -18px rgba(0,0,0,.6);
   transform:translateY(110%);transition:transform .4s var(--ease);
-  padding:10px 0 calc(10px + env(safe-area-inset-bottom));
+  padding:12px 0 calc(12px + env(safe-area-inset-bottom));
 }
 .cartbar.show{transform:translateY(0)}
 .cartbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.cb-left{display:flex;align-items:center;gap:13px;min-width:0}
+.cb-left{display:flex;align-items:center;gap:14px;min-width:0}
 .cb-icon{
-  width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.16);
+  width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.16);
   display:grid;place-items:center;flex:none;position:relative;
 }
 .cb-icon .badge{top:-4px;right:-4px;background:var(--amber);color:#3d2a00;font-weight:800}
 .cb-meta{min-width:0}
 .cb-count{font-size:12px;color:rgba(255,255,255,.72);font-weight:600;display:block;letter-spacing:.02em}
-.cb-total{font-family:var(--display);font-size:20px;font-weight:800;line-height:1.15;letter-spacing:-.02em}
+.cb-total{font-family:var(--display);font-size:21px;font-weight:800;line-height:1.15;letter-spacing:-.02em}
 .cb-save{font-size:11.5px;color:#8ff0c2;font-weight:700}
 .cb-actions{display:flex;gap:8px;flex:none}
-.cb-actions .btn{height:44px}
+.cb-actions .btn{height:46px}
 .btn-light{background:#fff;color:var(--brand)}
 .btn-light:hover{background:#f1eae0}
 .btn-amber{background:var(--grad-warm);color:#fff}
 @media(max-width:520px){
   .cb-actions .btn-light{display:none}
-  .cb-total{font-size:18px}
+  .cb-total{font-size:19px}
 }
 
 /* WhatsApp flotante */
 .wa-float{
-  position:fixed;right:16px;bottom:88px;z-index:44;
-  display:flex;align-items:center;gap:9px;height:52px;padding:0 20px;
+  position:fixed;right:16px;bottom:92px;z-index:44;
+  display:flex;align-items:center;gap:10px;height:54px;padding:0 22px;
   border-radius:999px;background:#25D366;color:#fff;font-size:15px;font-weight:700;
-  box-shadow:0 16px 34px -14px rgba(37,211,102,.95);
+  box-shadow:0 18px 36px -14px rgba(37,211,102,.95);
   transition:transform .25s var(--ease),bottom .4s var(--ease);
 }
 .wa-float:hover{transform:translateY(-3px)}
 .wa-float:active{transform:scale(.96)}
-@media(min-width:768px){.wa-float{right:28px;bottom:96px}}
+@media(min-width:768px){.wa-float{right:28px;bottom:100px}}
 @media(max-width:520px){
-  .wa-float{padding:0;width:52px;justify-content:center}
+  .wa-float{padding:0;width:54px;justify-content:center}
   .wa-float span{display:none}
 }
 
 /* ============================================================
    DRAWER CARRITO
    ============================================================ */
-.overlay{position:fixed;inset:0;background:rgba(23,21,18,.55);z-index:60;display:none;backdrop-filter:blur(3px)}
+.overlay{position:fixed;inset:0;background:rgba(20,19,16,.55);z-index:60;display:none;backdrop-filter:blur(4px)}
 .overlay.open{display:block;animation:fade .25s var(--ease)}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .drawer{
-  position:fixed;top:0;right:0;bottom:0;width:100%;max-width:440px;z-index:61;
+  position:fixed;top:0;right:0;bottom:0;width:100%;max-width:460px;z-index:61;
   background:var(--bg);display:flex;flex-direction:column;
-  transform:translateX(100%);transition:transform .38s var(--ease);
+  transform:translateX(100%);transition:transform .4s var(--ease);
   box-shadow:-30px 0 70px -30px rgba(0,0,0,.5);
 }
 .drawer.open{transform:translateX(0)}
 .drawer header{
   display:flex;align-items:center;justify-content:space-between;
-  padding:18px 20px;border-bottom:1px solid var(--border);background:#fff;
+  padding:20px 22px;border-bottom:1px solid var(--border);background:#fff;
 }
-.drawer h3{font-size:20px;display:flex;align-items:center;gap:10px}
+.drawer h3{font-size:21px;display:flex;align-items:center;gap:10px}
 .drawer h3 .cnt{
   font-family:var(--sans);font-size:12px;font-weight:700;background:var(--brand-soft);
-  color:var(--brand);border-radius:999px;padding:3px 10px;
+  color:var(--brand);border-radius:999px;padding:4px 11px;
 }
-.drawer .items{flex:1;overflow:auto;padding:18px;display:grid;gap:12px;align-content:start}
+.drawer .items{flex:1;overflow:auto;padding:20px;display:grid;gap:12px;align-content:start}
 .ci{
-  display:flex;gap:13px;background:#fff;border-radius:18px;padding:13px;
+  display:flex;gap:14px;background:#fff;border-radius:18px;padding:14px;
   border:1px solid var(--border);box-shadow:var(--shadow-sm);
   animation:fadeDown .3s var(--ease);
 }
 .ci .thumb{
-  width:52px;height:52px;border-radius:14px;flex:none;display:grid;place-items:center;
-  font-size:21px;background:var(--muted);
+  width:56px;height:56px;border-radius:14px;flex:none;display:grid;place-items:center;
+  font-size:22px;background:var(--muted);
 }
 .ci .info{flex:1;min-width:0}
 .ci .nm{font-size:14.5px;font-weight:700;line-height:1.3}
-.ci .sub{font-size:12.5px;color:var(--muted-fg);margin-top:4px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.ci .sub{font-size:12.5px;color:var(--muted-fg);margin-top:5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .ci .sub .price-old{font-size:12px}
 .ci .sub .now{color:var(--berry);font-weight:700}
-.ci .line-total{margin-top:7px;font-family:var(--display);font-size:17px;font-weight:800}
-.ci .row-b{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px}
+.ci .line-total{margin-top:8px;font-family:var(--display);font-size:17px;font-weight:800}
+.ci .row-b{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
 .ci .qty{padding:3px;background:var(--muted)}
-.ci .qty button{width:28px;height:28px;font-size:15px}
-.ci .qty .n{min-width:28px;font-size:13.5px}
+.ci .qty button{width:30px;height:30px;font-size:15px}
+.ci .qty .n{min-width:30px;font-size:13.5px}
 .ci .rm{
   background:none;border:none;color:var(--danger);font-size:12.5px;font-weight:600;
-  padding:4px 8px;border-radius:8px;transition:.2s;
+  padding:5px 9px;border-radius:8px;transition:.2s;
 }
 .ci .rm:hover{background:#ffeceb}
-.drawer footer{border-top:1px solid var(--border);padding:18px;display:grid;gap:12px;background:#fff}
+.drawer footer{border-top:1px solid var(--border);padding:20px;display:grid;gap:14px;background:#fff}
 
 /* Cupón dentro del drawer */
-.coupon-box{background:var(--bg-2);border:1px dashed var(--border);border-radius:16px;padding:14px}
-.coupon-box .cb-label{font-size:12.5px;font-weight:700;color:var(--muted-fg);display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.coupon-box{background:var(--bg-2);border:1px dashed var(--border);border-radius:16px;padding:16px}
+.coupon-box .cb-label{font-size:12.5px;font-weight:700;color:var(--muted-fg);display:flex;align-items:center;gap:7px;margin-bottom:10px}
 .coupon-row{display:flex;gap:8px}
 .coupon-row input{
-  flex:1;height:44px;border-radius:999px;border:1px solid var(--border);background:#fff;
-  padding:0 16px;font:inherit;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  flex:1;height:46px;border-radius:999px;border:1px solid var(--border);background:#fff;
+  padding:0 18px;font:inherit;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
 }
 .coupon-row input:focus{outline:none;border-color:var(--brand-2);box-shadow:0 0 0 4px var(--brand-soft)}
 .coupon-row button{
-  height:44px;padding:0 20px;border-radius:999px;border:none;
+  height:46px;padding:0 22px;border-radius:999px;border:none;
   background:var(--brand);color:#fff;font-weight:700;font-size:14px;transition:.2s;
 }
-.coupon-row button:hover{background:#114534}
+.coupon-row button:hover{background:#0a3826}
 .coupon-row button.remove{background:#fff;border:1px solid var(--border);color:var(--danger)}
-.coupon-hint{margin-top:9px;font-size:12px;color:var(--muted-fg)}
+.coupon-hint{margin-top:10px;font-size:12px;color:var(--muted-fg)}
 .coupon-hint b{color:var(--brand);cursor:pointer;text-decoration:underline dotted}
 .coupon-state{
-  margin-top:11px;font-size:13px;font-weight:700;border-radius:12px;padding:9px 13px;display:none;
+  margin-top:12px;font-size:13px;font-weight:700;border-radius:12px;padding:10px 14px;display:none;
 }
 .coupon-state.show{display:block}
 .coupon-state.ok{background:var(--brand-soft);color:var(--brand);border:1px solid #bfe4d4}
 .coupon-state.err{background:#ffeceb;color:var(--danger);border:1px solid #ffc9c9}
 
 .drawer .tot{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;font-weight:600}
-.drawer .tot b{font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-.02em}
+.drawer .tot b{font-family:var(--display);font-size:27px;font-weight:800;letter-spacing:-.02em}
 .drawer .mini-tot{display:flex;justify-content:space-between;font-size:13px;color:var(--muted-fg)}
 .drawer .mini-tot.save{color:var(--ok);font-weight:700}
 .drawer .mini-tot.coupon{color:var(--berry);font-weight:700}
@@ -886,16 +1068,16 @@ footer .brand .logo{background:var(--grad-warm)}
    TOAST
    ============================================================ */
 .toast{
-  position:fixed;left:50%;bottom:150px;transform:translate(-50%,26px);
-  background:#14130f;color:#fff;border-radius:999px;padding:13px 24px;
+  position:fixed;left:50%;bottom:160px;transform:translate(-50%,26px);
+  background:#11100d;color:#fff;border-radius:999px;padding:14px 26px;
   font-size:14.5px;font-weight:600;z-index:80;opacity:0;pointer-events:none;
-  box-shadow:0 20px 40px -18px rgba(0,0,0,.7);
+  box-shadow:0 22px 44px -18px rgba(0,0,0,.75);
   transition:opacity .3s var(--ease),transform .3s var(--ease);
   max-width:calc(100vw - 32px);text-align:center;
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.toast.ok{background:linear-gradient(135deg,#15543d,#1f7a5a)}
-.toast.warn{background:linear-gradient(135deg,#c92a2a,#e8590c)}
+.toast.ok{background:linear-gradient(135deg,#0f4d38,#1a7355)}
+.toast.warn{background:linear-gradient(135deg,#b91c1c,#e8590c)}
 
 /* Foco accesible */
 :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:8px}
@@ -904,7 +1086,10 @@ footer .brand .logo{background:var(--grad-warm)}
 <body>
 
 <div class="strip">
-  <span class="dot"></span>Pedidos mayoristas a todo Colombia · <b>Confirmación por WhatsApp +57 322 375 2541</b>
+  <div class="strip-in">
+    <span><span class="dot"></span>Pedidos mayoristas a todo Colombia</span>
+    <span>Confirmación por WhatsApp · <b>+57 322 375 2541</b></span>
+  </div>
 </div>
 
 <header class="site" id="siteHeader">
@@ -948,7 +1133,7 @@ footer .brand .logo{background:var(--grad-warm)}
     <a href="#cupones">🎟️ Cupones y descuentos</a>
     <a href="#cobertura">Cobertura nacional</a>
     <a href="#pedido">Hacer pedido</a>
-    <p style="padding:12px 14px;color:var(--muted-fg);font-size:14px;font-weight:600">Línea comercial +57 322 375 2541</p>
+    <p style="padding:14px;color:var(--muted-fg);font-size:14px;font-weight:600">Línea comercial +57 322 375 2541</p>
   </div>
 </header>
 
@@ -958,30 +1143,34 @@ footer .brand .logo{background:var(--grad-warm)}
     <div class="wrap hero">
       <div class="reveal">
         <p class="eyebrow">Distribución mayorista · Colombia</p>
-        <h1 style="margin-top:16px">El surtido de su tienda,<br><span class="grad-text">en un solo pedido.</span></h1>
-        <p class="sub">Axtoon Distribuidora S.A.S abastece tiendas, minimercados, droguerías y comercio independiente en todo el país. Arme el pedido, aplique su cupón y un asesor lo confirma por WhatsApp.</p>
+        <h1 style="margin-top:18px">El surtido de su tienda,<br><span class="grad-text">en un solo pedido.</span></h1>
+        <p class="sub">Somos la casa mayorista que abastece tiendas, minimercados, droguerías y comercio independiente en todo el país. Arme el pedido, aplique su cupón y un asesor lo confirma por WhatsApp.</p>
 
         <div class="cta">
           <a class="btn btn-primary btn-lg" href="#ofertas">Ver ofertas 🔥</a>
           <a class="btn btn-outline btn-lg" href="#catalogo">Explorar catálogo →</a>
         </div>
 
-        <div class="hero-pills">
-          <span class="hero-pill">🚚 Envío a 32 departamentos</span>
-          <span class="hero-pill">🧾 Factura electrónica</span>
-          <span class="hero-pill">⚡ Respuesta en 24 h</span>
+        <div class="trust-badges">
+          <span class="trust-badge"><span class="ic" style="background:var(--grad-brand)">🚚</span>Envío a 32 departamentos</span>
+          <span class="trust-badge"><span class="ic" style="background:var(--grad-warm)">🧾</span>Factura electrónica DIAN</span>
+          <span class="trust-badge"><span class="ic" style="background:var(--grad-berry)">⚡</span>Respuesta en 24 h</span>
         </div>
 
-        <p class="mini">Línea comercial <b>+57 322 375 2541</b> · Respuesta en horario de oficina</p>
+        <p class="mini">Línea comercial <b>+57 322 375 2541</b> · Atención en horario de oficina</p>
       </div>
 
       <div class="hero-media reveal">
         <div class="frame">
           <img class="photo" src="im1.png" alt="Centro de distribución Axtoon" data-ph="im1.png" data-wide="1">
         </div>
+        <div class="trust-seal">
+          <span class="ic">✓</span>
+          <span class="tx"><b>Proveedor verificado</b>+2.500 comercios atendidos</span>
+        </div>
         <div class="float-card fc-1">
           <span class="ic" style="background:var(--grad-warm)">📦</span>
-          <span><span class="k">Secciones</span><span class="v">20 líneas de venta</span></span>
+          <span><span class="k">Secciones</span><span class="v">21 líneas de venta</span></span>
         </div>
         <div class="float-card fc-2">
           <span class="ic" style="background:var(--grad-brand)">🏪</span>
@@ -991,11 +1180,33 @@ footer .brand .logo{background:var(--grad-warm)}
     </div>
   </section>
 
+  <!-- ================= TRUST BAR ================= -->
+  <section class="trust-bar">
+    <div class="wrap trust-bar-in">
+      <div class="trust-item">
+        <span class="ti-ic" style="background:var(--brand-soft)">🛡️</span>
+        <span class="ti-tx"><b>Compra protegida</b><span>Garantía por producto</span></span>
+      </div>
+      <div class="trust-item">
+        <span class="ti-ic" style="background:var(--accent-soft)">💳</span>
+        <span class="ti-tx"><b>Múltiples pagos</b><span>Nequi · Daviplata · Transferencia</span></span>
+      </div>
+      <div class="trust-item">
+        <span class="ti-ic" style="background:var(--amber-soft)">📄</span>
+        <span class="ti-tx"><b>Factura electrónica</b><span>Para su NIT o cédula</span></span>
+      </div>
+      <div class="trust-item">
+        <span class="ti-ic" style="background:#eef0ff">💬</span>
+        <span class="ti-tx"><b>Asesor dedicado</b><span>Un solo WhatsApp</span></span>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= STATS ================= -->
-  <section class="stats">
+  <section class="stats" style="padding-top:44px">
     <div class="wrap">
       <div class="stats-grid reveal">
-        <div class="stat"><p class="v">20</p><p class="l">Secciones de venta</p></div>
+        <div class="stat"><p class="v">21</p><p class="l">Secciones de venta</p></div>
         <div class="stat"><p class="v">32</p><p class="l">Departamentos</p></div>
         <div class="stat"><p class="v">24h</p><p class="l">Confirmación por WhatsApp</p></div>
         <div class="stat"><p class="v">100%</p><p class="l">Factura electrónica</p></div>
@@ -1009,7 +1220,7 @@ footer .brand .logo{background:var(--grad-warm)}
       <div class="ofertas-head reveal">
         <div>
           <p class="eyebrow">01 · Ofertas de la semana</p>
-          <h2 class="h2" style="margin-top:10px">Precio antes / <span class="grad-text">precio ahora</span></h2>
+          <h2 class="h2" style="margin-top:12px">Precio antes / <span class="grad-text">precio ahora</span></h2>
           <p class="lead">Descuentos de referencia sobre el precio de lista mayorista. Stock limitado: el asesor confirma disponibilidad, flete e IVA antes de facturar.</p>
           <div class="countdown">
             <span>⏳</span><span class="lbl">Terminan en</span><b id="countdown">—</b>
@@ -1029,7 +1240,7 @@ footer .brand .logo{background:var(--grad-warm)}
       <div class="reveal">
         <p class="eyebrow">02 · Secciones</p>
         <h2 class="h2">Todo el surtido que mueve el comercio en Colombia</h2>
-        <p class="lead">Veinte líneas listas para tienda de barrio, minimercado, droguería, papelería o institucional. Toque una sección para filtrar el catálogo.</p>
+        <p class="lead">Veintiuna líneas listas para tienda de barrio, minimercado, droguería, papelería, agrotienda o institucional. Toque una sección para filtrar el catálogo.</p>
       </div>
       <div class="cats" id="catsGrid"></div>
     </div>
@@ -1073,12 +1284,12 @@ footer .brand .logo{background:var(--grad-warm)}
         <div class="coupon-inner">
           <div>
             <p class="eyebrow">04 · Cupones</p>
-            <h2 class="h2" style="margin-top:10px">Tiene un cupón? <br>Aplíquelo aquí.</h2>
+            <h2 class="h2" style="margin-top:12px">Tiene un cupón? <br>Aplíquelo aquí.</h2>
             <p class="lead">Escriba el código y el descuento se suma automáticamente a su cuenta. Puede cambiarlo o quitarlo cuando quiera.</p>
 
             <div class="coupon-form">
               <input id="couponInputMain" type="text" placeholder="Escriba su código, ej: BIENVENIDO10" aria-label="Código de cupón" autocomplete="off" spellcheck="false">
-              <button class="btn btn-light" id="couponApplyMain" type="button">Aplicar cupón</button>
+              <button class="btn btn-gold" id="couponApplyMain" type="button">Aplicar cupón</button>
             </div>
             <p class="coupon-msg" id="couponMsgMain"></p>
           </div>
@@ -1115,9 +1326,58 @@ footer .brand .logo{background:var(--grad-warm)}
       <div class="why-cards reveal">
         <article class="why-card"><div class="ico">🚚</div><h3>Despacho nacional</h3><p>Cobertura en los 32 departamentos. 24 a 48 horas en las principales ciudades.</p></article>
         <article class="why-card"><div class="ico">🧾</div><h3>Factura electrónica</h3><p>Pedido a nombre de su NIT o cédula. Ideal para tienda, minimercado o institución.</p></article>
-        <article class="why-card"><div class="ico">🛡️</div><h3>Surtido de rotación</h3><p>Líneas que se venden todos los días: tecnología, hogar, belleza, ropa y accesorios.</p></article>
+        <article class="why-card"><div class="ico">🛡️</div><h3>Surtido de rotación</h3><p>Líneas que se venden todos los días: tecnología, hogar, belleza, agro y accesorios.</p></article>
         <article class="why-card"><div class="ico">📍</div><h3>Asesor en WhatsApp</h3><p>Un solo número para cotizar, ajustar el pedido y coordinar el flete.</p></article>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= GARANTÍAS ================= -->
+  <section class="sec" style="background:rgba(255,255,255,.6)">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+        <p class="eyebrow" style="justify-content:center">Nuestro compromiso</p>
+        <h2 class="h2">Compre con total tranquilidad</h2>
+        <p class="lead" style="margin-left:auto;margin-right:auto">Cada pedido está respaldado por garantías claras y un equipo humano listo para ayudarle.</p>
+      </div>
+      <div class="guarantees reveal">
+        <article class="guarantee">
+          <div class="g-ic" style="background:var(--brand-soft);color:var(--brand)">🛡️</div>
+          <h3>Garantía por producto</h3>
+          <p>Cobertura por defectos de fábrica. Reposición o nota crédito según el caso.</p>
+        </article>
+        <article class="guarantee">
+          <div class="g-ic" style="background:var(--accent-soft);color:var(--accent)">💰</div>
+          <h3>Precio mayorista real</h3>
+          <p>Sin intermediarios. Compra directa a distribuidor con precios de referencia claros.</p>
+        </article>
+        <article class="guarantee">
+          <div class="g-ic" style="background:var(--amber-soft);color:#a35a00">📦</div>
+          <h3>Empaque seguro</h3>
+          <p>Embalaje reforzado para que su mercancía llegue completa a cualquier ciudad.</p>
+        </article>
+        <article class="guarantee">
+          <div class="g-ic" style="background:#eef0ff;color:var(--violet)">🤝</div>
+          <h3>Atención personal</h3>
+          <p>Un asesor real le responde por WhatsApp. Nada de bots ni respuestas frías.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MÉTODOS DE PAGO ================= -->
+  <section class="payments">
+    <div class="wrap pay-in reveal">
+      <p class="eyebrow" style="justify-content:center">Formas de pago</p>
+      <h3>Pague como le sea más <b>fácil y seguro</b></h3>
+      <div class="pay-methods">
+        <span class="pay-chip"><span class="pic" style="background:#00b0f0">N</span>Nequi</span>
+        <span class="pay-chip"><span class="pic" style="background:#e63946">D</span>Daviplata</span>
+        <span class="pay-chip"><span class="pic" style="background:#0f4d38">🏦</span>Transferencia</span>
+        <span class="pay-chip"><span class="pic" style="background:#f5b301;color:#3a2400">💵</span>Contraentrega*</span>
+        <span class="pay-chip"><span class="pic" style="background:#6b3fd4">💳</span>PSE / Tarjeta</span>
+      </div>
+      <p style="font-size:12.5px;color:var(--muted-fg);margin-top:6px">*Contraentrega disponible en ciudades principales previo acuerdo con el asesor.</p>
     </div>
   </section>
 
@@ -1143,21 +1403,31 @@ footer .brand .logo{background:var(--grad-warm)}
       <div class="reveal">
         <p class="eyebrow">08 · Clientes</p>
         <h2 class="h2">Comercio que ya pide por este canal</h2>
+        <p class="lead">Más de 2.500 negocios en toda Colombia confían su surtido a Axtoon Distribuidora.</p>
       </div>
       <div class="quotes">
         <blockquote class="quote reveal">
-          <div class="stars">★★★★★</div>
-          <p>Pedimos accesorios de celular y tecnología cada semana. El WhatsApp nos ahorra llamadas y la factura llega con el NIT.</p>
+          <div class="q-head">
+            <div class="stars">★★★★★</div>
+            <span class="verified">Compra verificada</span>
+          </div>
+          <p>Pedimos accesorios de celular y tecnología cada semana. El WhatsApp nos ahorra llamadas y la factura llega con el NIT sin complicaciones.</p>
           <footer><span class="avatar">LR</span><span><span class="nm">Laura Restrepo</span><span class="rl">Tienda de tecnología · Medellín</span></span></footer>
         </blockquote>
         <blockquote class="quote reveal">
-          <div class="stars">★★★★★</div>
-          <p>El surtido de hogar y cocina nos cuadró. Confirmamos disponibilidad el mismo día y el flete queda claro.</p>
+          <div class="q-head">
+            <div class="stars">★★★★★</div>
+            <span class="verified">Compra verificada</span>
+          </div>
+          <p>El surtido de hogar y cocina nos cuadró. Confirmamos disponibilidad el mismo día y el flete queda totalmente claro desde el principio.</p>
           <footer><span class="avatar">CP</span><span><span class="nm">Carlos Peña</span><span class="rl">Minimercado · Cali</span></span></footer>
         </blockquote>
         <blockquote class="quote reveal">
-          <div class="stars">★★★★★</div>
-          <p>Ropa, calzado y belleza sin mínimo absurdo. Armo el carrito, aplico el cupón, lo mando y listo.</p>
+          <div class="q-head">
+            <div class="stars">★★★★★</div>
+            <span class="verified">Compra verificada</span>
+          </div>
+          <p>Ropa, calzado y belleza sin mínimo absurdo. Armo el carrito, aplico el cupón, lo mando y en horas me confirman todo. Muy profesionales.</p>
           <footer><span class="avatar">DR</span><span><span class="nm">Diana Rojas</span><span class="rl">Boutique · Bucaramanga</span></span></footer>
         </blockquote>
       </div>
@@ -1200,10 +1470,10 @@ footer .brand .logo{background:var(--grad-warm)}
           <div class="srow save" id="resSaveRow" hidden><span>Ahorro en ofertas</span><b id="resSave">$ 0</b></div>
           <div class="srow coupon" id="resCouponRow" hidden><span>Cupón <em id="resCouponCode"></em></span><b id="resCouponVal">− $ 0</b></div>
           <div class="srow total"><span>Total estimado</span><b id="resTotal">$ 0</b></div>
-          <p class="price-note" style="margin-top:14px">Precios de referencia sujetos a stock. IVA y flete se confirman por WhatsApp.</p>
+          <p class="price-note" style="margin-top:16px">Precios de referencia sujetos a stock. IVA y flete se confirman por WhatsApp.</p>
         </div>
 
-        <div class="coupon-box" style="margin-top:18px">
+        <div class="coupon-box" style="margin-top:20px">
           <p class="cb-label">🎟️ Cupón de descuento</p>
           <div class="coupon-row" id="couponRowMain">
             <input id="couponInputInline" type="text" placeholder="CÓDIGO" aria-label="Código de cupón" autocomplete="off" spellcheck="false">
@@ -1213,7 +1483,7 @@ footer .brand .logo{background:var(--grad-warm)}
           <p class="coupon-state" id="couponStateInline"></p>
         </div>
 
-        <p style="margin-top:18px;font-size:14px;color:var(--muted-fg)">Puede enviar el formulario sin productos: el asesor cotiza a partir de su ciudad y tipo de negocio.</p>
+        <p style="margin-top:20px;font-size:14px;color:var(--muted-fg)">Puede enviar el formulario sin productos: el asesor cotiza a partir de su ciudad y tipo de negocio.</p>
       </div>
 
       <form class="card reveal" id="orderForm" novalidate>
@@ -1228,15 +1498,15 @@ footer .brand .logo{background:var(--grad-warm)}
           <div class="col2"><label for="f_notes">Notas para el asesor</label><textarea id="f_notes" placeholder="Horario de recepción, marcas preferidas, cupo, etc."></textarea></div>
         </div>
         <p class="err" id="formErr" hidden></p>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:22px">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:24px">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.37 2.15 11.75c0 1.89.5 3.73 1.44 5.35L2 22l5.07-1.54A10.1 10.1 0 0 0 12.04 21.5C17.5 21.5 21.93 17.13 21.93 11.75S17.5 2 12.04 2Z"/></svg>
           Enviar pedido por WhatsApp
         </button>
         <p class="hint">Al enviar acepta que un asesor lo contacte para confirmar el pedido. Precios sujetos a stock.</p>
         <div id="sentBox" hidden>
           <p style="font-weight:700;font-size:14.5px">✅ Pedido listo para WhatsApp</p>
-          <p style="margin-top:4px;font-size:14px;color:var(--muted-fg)">Si no se abrió la conversación, use el botón siguiente.</p>
-          <a id="waSend" class="btn btn-brand btn-block" style="margin-top:14px" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          <p style="margin-top:6px;font-size:14px;color:var(--muted-fg)">Si no se abrió la conversación, use el botón siguiente.</p>
+          <a id="waSend" class="btn btn-brand btn-block" style="margin-top:16px" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
         </div>
       </form>
     </div>
@@ -1256,7 +1526,7 @@ footer .brand .logo{background:var(--grad-warm)}
         </span>
         <span><span class="n1" style="color:#fff">Axtoon</span><span class="n2">Distribuidora S.A.S</span></span>
       </a>
-      <p class="desc">Axtoon Distribuidora S.A.S. Mayorista de tecnología, accesorios, ropa, calzado, hogar, belleza y más para el comercio colombiano.</p>
+      <p class="desc">Axtoon Distribuidora S.A.S. Mayorista de tecnología, accesorios, ropa, calzado, hogar, belleza, herramientas agrícolas y más para el comercio colombiano. Cobertura nacional con factura electrónica.</p>
     </div>
     <div>
       <p class="eyebrow">Navegación</p>
@@ -1271,13 +1541,21 @@ footer .brand .logo{background:var(--grad-warm)}
     <div>
       <p class="eyebrow">Contacto</p>
       <ul>
-        <li><a class="wa-link" href="#" target="_blank" rel="noopener">+57 322 375 2541</a></li>
-        <li>Colombia · Despacho nacional</li>
-        <li>Factura electrónica</li>
+        <li><a class="wa-link" href="#" target="_blank" rel="noopener">📱 +57 322 375 2541</a></li>
+        <li class="contact-line"><span>🇨🇴</span><span>Colombia · Despacho nacional</span></li>
+        <li class="contact-line"><span>🧾</span><span>Factura electrónica DIAN</span></li>
+        <li class="contact-line"><span>⏰</span><span>Lun a sáb · 8am - 6pm</span></li>
       </ul>
     </div>
   </div>
-  <div class="copy">Axtoon Distribuidora S.A.S · Precios de referencia, sujetos a disponibilidad</div>
+  <div class="copy">
+    <p>© <span id="year"></span> Axtoon Distribuidora S.A.S · Precios de referencia, sujetos a disponibilidad y stock.</p>
+    <div class="legal">
+      <a href="#">Términos y condiciones</a>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Tratamiento de datos</a>
+    </div>
+  </div>
 </footer>
 
 <!-- ===== Barra flotante de cuenta ===== -->
@@ -1366,12 +1644,12 @@ const COUPONS = {
    CATEGORÍAS (con color e ícono)
    ============================================================ */
 const CATEGORIES = [
-  {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png",  emoji:"📱", color:"#1c7ed6"},
-  {id:"tecnologia",  name:"Tecnología y accesorios",     blurb:"Audio, smartwatch, teclados y mouse",      image:"im3.png",  emoji:"🎧", color:"#7048e8"},
-  {id:"ropa",        name:"Ropa",                        blurb:"Camisetas, jeans, deportiva y urbana",     image:"im4.png",  emoji:"👕", color:"#d6336c"},
-  {id:"calzado",     name:"Calzado",                     blurb:"Tenis, sandalias y deportivos",            image:"im5.png",  emoji:"👟", color:"#f76707"},
-  {id:"belleza",     name:"Belleza y cuidado personal",  blurb:"Perfumes, skincare y maquillaje",          image:"im6.png",  emoji:"💄", color:"#e64980"},
-  {id:"fitness",     name:"Fitness",                     blurb:"Bandas, pesas, guantes y fajas",           image:"im7.png",  emoji:"💪", color:"#2f9e44"},
+  {id:"celulares",   name:"Accesorios para celulares",   blurb:"Fundas, vidrios, cargadores y cables",     image:"im2.png",  emoji:"📱", color:"#1a72c4"},
+  {id:"tecnologia",  name:"Tecnología y accesorios",     blurb:"Audio, smartwatch, teclados y mouse",      image:"im3.png",  emoji:"🎧", color:"#6b3fd4"},
+  {id:"ropa",        name:"Ropa",                        blurb:"Camisetas, jeans, deportiva y urbana",     image:"im4.png",  emoji:"👕", color:"#c72a68"},
+  {id:"calzado",     name:"Calzado",                     blurb:"Tenis, sandalias y deportivos",            image:"im5.png",  emoji:"👟", color:"#e8590c"},
+  {id:"belleza",     name:"Belleza y cuidado personal",  blurb:"Perfumes, skincare y maquillaje",          image:"im6.png",  emoji:"💄", color:"#d6336c"},
+  {id:"fitness",     name:"Fitness",                     blurb:"Bandas, pesas, guantes y fajas",           image:"im7.png",  emoji:"💪", color:"#166534"},
   {id:"hogar",       name:"Hogar",                       blurb:"Organizadores, cocina y decoración",       image:"im8.png",  emoji:"🏠", color:"#0ca678"},
   {id:"iluminacion", name:"Iluminación",                 blurb:"LED, lámparas, solares y tiras",           image:"im9.png",  emoji:"💡", color:"#f59f00"},
   {id:"vehiculos",   name:"Accesorios para vehículos",   blurb:"Soportes, luces y cargadores",             image:"im10.png", emoji:"🚗", color:"#495057"},
@@ -1385,7 +1663,8 @@ const CATEGORIES = [
   {id:"dormitorio",  name:"Dormitorio",                  blurb:"Almohadas, cobijas y organizadores",       image:"im18.png", emoji:"🛏️", color:"#4c6ef5"},
   {id:"limpieza",    name:"Limpieza",                    blurb:"Cepillos, dispensadores y especializados", image:"im19.png", emoji:"🧽", color:"#12b886"},
   {id:"regalos",     name:"Regalos personalizados",      blurb:"Tazas, camisetas, llaveros y cuadros",     image:"im20.png", emoji:"🎁", color:"#f06595"},
-  {id:"papeleria",   name:"Papelería",                   blurb:"Resmas, bolígrafos y cuadernos",           image:"im21.png", emoji:"✏️", color:"#fab005"}
+  {id:"papeleria",   name:"Papelería",                   blurb:"Resmas, bolígrafos y cuadernos",           image:"im21.png", emoji:"✏️", color:"#fab005"},
+  {id:"agricolas",   name:"Herramientas agrícolas y del campo", blurb:"Palas, machetes, fumigadoras y más", image:"im23.png", emoji:"🌾", color:"#2f7d32"}
 ];
 
 /* ============================================================
@@ -1521,12 +1800,26 @@ const PRODUCTS = [
   {id:"pap-01",sku:"AXT-PAP-01",name:"Resma carta 500 hojas",category:"papeleria",unit:"resma",price:18900,minQty:5},
   {id:"pap-02",sku:"AXT-PAP-02",name:"Bolígrafos x12",category:"papeleria",unit:"caja",price:9500,minQty:4},
   {id:"pap-03",sku:"AXT-PAP-03",name:"Cuaderno 100 hojas x5",category:"papeleria",unit:"pack",price:14200,minQty:4},
-  {id:"pap-04",sku:"AXT-PAP-04",name:"Kit escolar básico",category:"papeleria",unit:"kit",price:28900,minQty:4}
+  {id:"pap-04",sku:"AXT-PAP-04",name:"Kit escolar básico",category:"papeleria",unit:"kit",price:28900,minQty:4},
+
+  /* Herramientas agrícolas y del campo (NUEVA SECCIÓN) */
+  {id:"agr-01",sku:"AXT-AGR-01",name:"Machete 18\" con funda",category:"agricolas",unit:"und",price:28900,minQty:4,featured:true},
+  {id:"agr-02",sku:"AXT-AGR-02",name:"Pala cuadrada con cabo",category:"agricolas",unit:"und",price:34900,minQty:3},
+  {id:"agr-03",sku:"AXT-AGR-03",name:"Azadón con cabo de madera",category:"agricolas",unit:"und",price:38900,minQty:3},
+  {id:"agr-04",sku:"AXT-AGR-04",name:"Fumigadora manual 5 L",category:"agricolas",unit:"und",price:45900,minQty:3,featured:true},
+  {id:"agr-05",sku:"AXT-AGR-05",name:"Manguera de riego 15 m",category:"agricolas",unit:"und",price:32900,minQty:3},
+  {id:"agr-06",sku:"AXT-AGR-06",name:"Guantes de trabajo x12",category:"agricolas",unit:"docena",price:24000,minQty:3},
+  {id:"agr-07",sku:"AXT-AGR-07",name:"Botas de caucho caña alta",category:"agricolas",unit:"par",price:41900,minQty:3,featured:true},
+  {id:"agr-08",sku:"AXT-AGR-08",name:"Tijeras de podar profesional",category:"agricolas",unit:"und",price:22900,minQty:4},
+  {id:"agr-09",sku:"AXT-AGR-09",name:"Rastrillo de jardín",category:"agricolas",unit:"und",price:18900,minQty:4},
+  {id:"agr-10",sku:"AXT-AGR-10",name:"Aspersor de riego x5",category:"agricolas",unit:"pack",price:19900,minQty:4},
+  {id:"agr-11",sku:"AXT-AGR-11",name:"Bebedero para animales 20 L",category:"agricolas",unit:"und",price:27900,minQty:3},
+  {id:"agr-12",sku:"AXT-AGR-12",name:"Carretilla reforzada",category:"agricolas",unit:"und",price:189000,minQty:1,featured:true}
 ];
 
 const DEPARTMENTS = ["Amazonas","Antioquia","Arauca","Atlántico","Bogotá D.C.","Bolívar","Boyacá","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Córdoba","Cundinamarca","Guainía","Guaviare","Huila","La Guajira","Magdalena","Meta","Nariño","Norte de Santander","Putumayo","Quindío","Risaralda","San Andrés y Providencia","Santander","Sucre","Tolima","Valle del Cauca","Vaupés","Vichada"];
 const FAST = new Set(["Bogotá D.C.","Cundinamarca","Antioquia","Valle del Cauca","Atlántico","Santander","Risaralda","Caldas","Quindío"]);
-const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Boutique / ropa","Tecnología y accesorios","Institución / empresa","Independiente","Otro"];
+const BUSINESS = ["Tienda de barrio","Minimercado","Droguería","Papelería","Boutique / ropa","Tecnología y accesorios","Agrotienda / insumos agrícolas","Institución / empresa","Independiente","Otro"];
 
 /* ============================================================
    PRECIOS ANTES (OFERTAS)
@@ -1535,7 +1828,9 @@ const BEFORE_PRICE = {
   "cel-01":42000,"cel-02":45000,"tec-01":69900,"tec-03":139000,
   "rop-05":95000,"cal-01":109900,"bel-01":59900,"fit-04":49900,
   "ilu-01":39900,"gam-01":74900,"inf-04":45900,"ele-04":34900,
-  "coc-01":329000,"reg-05":49900,"pap-04":39900
+  "coc-01":329000,"reg-05":49900,"pap-04":39900,
+  /* Nuevas ofertas agrícolas */
+  "agr-01":39900,"agr-04":59900,"agr-07":54900,"agr-12":249000
 };
 
 PRODUCTS.forEach(p => {
@@ -1622,7 +1917,9 @@ function addToCart(id, qty){
 function setQty(id, qty){
   const p = PROD_BY_ID[id];
   if (!p) return;
-  if (qty < p.minQty){ delete cart[id]; }
+  /* CAMBIO: antes era `qty < p.minQty`, ahora se permite bajar hasta 1
+     para que el usuario pueda reducir libremente desde el carrito. */
+  if (qty < 1){ delete cart[id]; }
   else { cart[id] = qty; }
   renderCart();
 }
@@ -1634,13 +1931,11 @@ function renderCart(){
   const disc = couponDiscount();
   const total = finalTotal();
 
-  /* Badges */
   const badge = document.getElementById("cartBadge");
   badge.textContent = n; badge.hidden = n === 0;
   const barBadge = document.getElementById("barBadge");
   barBadge.textContent = n; barBadge.hidden = n === 0;
 
-  /* Barra flotante */
   const bar = document.getElementById("cartBar");
   bar.classList.toggle("show", n > 0);
   document.getElementById("barCount").textContent = n === 1 ? "1 ítem en su cuenta" : n + " ítems en su cuenta";
@@ -1650,7 +1945,6 @@ function renderCart(){
   barSave.hidden = totalSave <= 0;
   barSave.textContent = "Ahorra " + cop(totalSave);
 
-  /* Drawer */
   document.getElementById("drawerCount").textContent = (n === 1 ? "1 ítem" : n + " ítems");
   document.getElementById("cartTotal").textContent = cop(total);
 
@@ -1669,7 +1963,6 @@ function renderCart(){
     document.getElementById("drawerCouponVal").textContent = "− " + cop(disc);
   }
 
-  /* Resumen del pedido */
   document.getElementById("resCount").textContent = n;
   document.getElementById("resSubtotal").textContent = cop(sub);
   const resSaveRow = document.getElementById("resSaveRow");
@@ -1683,19 +1976,17 @@ function renderCart(){
   }
   document.getElementById("resTotal").textContent = cop(total);
 
-  /* Cupón: estados visuales */
   renderCouponState();
 
-  /* Lista de ítems */
   const box = document.getElementById("cartItems");
   box.innerHTML = "";
 
   if (n === 0){
     box.innerHTML =
-      '<div style="text-align:center;padding:40px 16px;color:var(--muted-fg)">' +
-        '<div style="font-size:44px;margin-bottom:10px">🛒</div>' +
-        '<p style="font-weight:700;color:var(--fg);font-family:var(--display);font-size:18px">Su carrito está vacío</p>' +
-        '<p style="font-size:13.5px;margin-top:6px;line-height:1.6">Agregue productos desde el catálogo o aproveche las ofertas de la semana.</p>' +
+      '<div style="text-align:center;padding:44px 16px;color:var(--muted-fg)">' +
+        '<div style="font-size:48px;margin-bottom:12px">🛒</div>' +
+        '<p style="font-weight:700;color:var(--fg);font-family:var(--display);font-size:19px">Su carrito está vacío</p>' +
+        '<p style="font-size:13.5px;margin-top:8px;line-height:1.65">Agregue productos desde el catálogo o aproveche las ofertas de la semana.</p>' +
       '</div>';
     return;
   }
@@ -1780,13 +2071,11 @@ function renderCouponState(){
     }
   });
 
-  /* Inputs */
   ["couponInput","couponInputInline","couponInputMain"].forEach(id => {
     const inp = document.getElementById(id);
     if (inp) inp.value = appliedCoupon || "";
   });
 
-  /* Botones aplicar/quitar */
   const btns = [
     {row:"couponRowDrawer", btn:"couponApply"},
     {row:"couponRowMain",   btn:"couponApplyInline"}
@@ -1899,7 +2188,7 @@ function productCard(p, variant){
   const cat = CAT_BY_ID[p.category];
   const isDeal = !!p.beforePrice;
   const art = document.createElement("article");
-  art.className = "prod";
+  art.className = "prod" + (isDeal ? " deal" : "");
   art.style.setProperty("--cat", cat.color);
 
   const priceBlock = isDeal
@@ -1951,8 +2240,14 @@ function productCard(p, variant){
   const sync = () => { link.href = waUrl(msg()); };
   sync();
 
+  /* ==========================================================
+     CAMBIO CLAVE: el botón "−" ahora baja hasta 1 (antes se
+     bloqueaba en el mínimo del producto, por eso en ofertas con
+     mínimos altos no se podía reducir). Igual pasa en el carrito
+     gracias al cambio en setQty().
+     ========================================================== */
   art.querySelector(".minus").addEventListener("click", () => {
-    nEl.textContent = Math.max(p.minQty, +nEl.textContent - 1); sync();
+    nEl.textContent = Math.max(1, +nEl.textContent - 1); sync();
   });
   art.querySelector(".plus").addEventListener("click", () => {
     nEl.textContent = +nEl.textContent + 1; sync();
@@ -2155,6 +2450,9 @@ document.getElementById("couponQuick").addEventListener("click", () => applyCoup
 document.getElementById("couponScroll").addEventListener("click", () => {
   document.getElementById("cupones").scrollIntoView({behavior:"smooth", block:"start"});
 });
+
+/* Año dinámico */
+document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ============================================================
    CUENTA REGRESIVA DE OFERTAS
