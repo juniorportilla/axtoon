@@ -97,9 +97,19 @@ button{font:inherit;cursor:pointer}
   display:flex;align-items:center;justify-content:center;
   color:#f97316;font-size:16px;flex-shrink:0;cursor:pointer;
   position:relative;overflow:hidden;transition:.2s;
+  padding:2px;
 }
 .ax-logo-box:hover{background:#ffe8d6;border-color:#f97316;transform:scale(1.05)}
-.ax-logo-box img{width:100%;height:100%;object-fit:contain;padding:3px}
+.ax-logo-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  image-rendering:auto;
+  image-rendering:-webkit-optimize-contrast;
+  border-radius:7px;
+}
 .ax-logo-box .upload-hint{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   background:rgba(249,115,22,.88);color:#fff;font-size:7.5px;font-weight:700;
@@ -947,8 +957,8 @@ button{font:inherit;cursor:pointer}
 <aside class="ax-sidebar" id="axSidebar">
   <div class="ax-logo-area">
     <label class="ax-logo-box" for="logoUpload" title="Subir logo">
-      <img id="logoPreview" src="" alt="" style="display:none">
-      <i class="fas fa-camera" id="logoIcon"></i>
+      <img id="logoPreview" src="im1.jpg" alt="Logo Axtoon">
+      <i class="fas fa-camera" id="logoIcon" style="display:none"></i>
       <span class="upload-hint">SUBIR<br>LOGO</span>
     </label>
     <input type="file" id="logoUpload" accept="image/*" hidden>
@@ -1620,9 +1630,20 @@ function renderCart(){
     if(saved && logoPreview){
       logoPreview.src = saved;
       logoPreview.style.display = 'block';
-      logoIcon.style.display = 'none';
+      if(logoIcon) logoIcon.style.display = 'none';
+    } else if(logoPreview){
+      // Si no hay logo guardado, usar im1.jpg por defecto
+      logoPreview.src = 'im1.jpg';
+      logoPreview.style.display = 'block';
+      if(logoIcon) logoIcon.style.display = 'none';
     }
-  } catch(e){}
+  } catch(e){
+    if(logoPreview){
+      logoPreview.src = 'im1.jpg';
+      logoPreview.style.display = 'block';
+      if(logoIcon) logoIcon.style.display = 'none';
+    }
+  }
 
   if(logoUpload){
     logoUpload.addEventListener('change', e => {
@@ -1633,7 +1654,7 @@ function renderCart(){
         const dataUrl = ev.target.result;
         logoPreview.src = dataUrl;
         logoPreview.style.display = 'block';
-        logoIcon.style.display = 'none';
+        if(logoIcon) logoIcon.style.display = 'none';
         try { localStorage.setItem(logoKey, dataUrl); } catch(err){}
       };
       reader.readAsDataURL(file);
