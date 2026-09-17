@@ -567,6 +567,52 @@ button{font:inherit;cursor:pointer}
   z-index:49;backdrop-filter:blur(3px);
 }
 .ax-overlay.open{display:block}
+
+/* ============================================================
+   IMÁGENES ADAPTABLES 1-3 EN TARJETA
+   ============================================================ */
+.ax-card-gallery {
+  display: grid;
+  gap: 2px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0e9dd;
+}
+.ax-card-gallery[data-count="1"] {
+  grid-template-columns: 1fr;
+}
+.ax-card-gallery[data-count="2"] {
+  grid-template-columns: 1fr 1fr;
+}
+.ax-card-gallery[data-count="3"] {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.ax-card-gallery[data-count="3"] .ax-card-gallery-img:first-child {
+  grid-row: span 2;
+}
+.ax-card-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #f0e9dd;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+.ax-card-gallery[data-count="1"] .ax-card-gallery-img {
+  aspect-ratio: 4/3;
+}
+.ax-card-gallery[data-count="2"] .ax-card-gallery-img {
+  aspect-ratio: 4/3;
+}
+.ax-card-gallery[data-count="3"] .ax-card-gallery-img {
+  aspect-ratio: 1/1;
+}
+.ax-card-gallery[data-count="3"] .ax-card-gallery-img:first-child {
+  aspect-ratio: auto;
+  height: 100%;
+}
 </style>
 </head>
 <body>
@@ -788,107 +834,108 @@ AX_SECTIONS.forEach(s => { AX_SECTION_MAP[s.id] = s; });
    PRODUCTOS DEMO (62 productos, 20 secciones)
    ============================================================ */
 const AX_PRODUCTS = [
-  // 1. Accesorios para celular
-  { id:'p01', sku:'ACC-001', name:'Cargador rápido 20W USB-C',      category:'accesorios-celular', price:18500, beforePrice:24900, minQty:6,  unit:'und', featured:true  },
-  { id:'p02', sku:'ACC-002', name:'Vidrio templado universal',       category:'accesorios-celular', price:3200,  beforePrice:4500,  minQty:24, unit:'und', featured:false },
-  { id:'p03', sku:'ACC-003', name:'Cable trenzado 1m Lightning',     category:'accesorios-celular', price:7800,  beforePrice:0,     minQty:12, unit:'und', featured:true  },
-  { id:'p04', sku:'ACC-004', name:'Soporte de celular para carro',   category:'accesorios-celular', price:14900, beforePrice:19900, minQty:6,  unit:'und', featured:false },
+  // 1. Accesorios para celular (ACTUALIZADOS según imágenes)
+  { id:'p01', sku:'ACC-001', name:'Bolso Portacelular',              category:'accesorios-celular', price:23000, beforePrice:45000, minQty:6,  unit:'und', featured:true,  images:['im1.jpg','im2.jpg','im3.jpg'] },
+  { id:'p02', sku:'ACC-002', name:'Holder Para Celular',              category:'accesorios-celular', price:7000,  beforePrice:9000,  minQty:24, unit:'und', featured:false, images:['im1.jpg','im2.jpg','im3.jpg'] },
+  { id:'p03', sku:'ACC-003', name:'Holder De Celular Para Computador',category:'accesorios-celular', price:18000, beforePrice:40000, minQty:12, unit:'und', featured:true,  images:['im1.jpg','im2.jpg','im3.jpg'] },
+  { id:'p04', sku:'ACC-004', name:'Soporte Para Celular',             category:'accesorios-celular', price:15000, beforePrice:35000, minQty:6,  unit:'und', featured:false, images:['im1.jpg','im2.jpg','im3.jpg'] },
+  { id:'p05', sku:'ACC-005', name:'Cases Celular',                    category:'accesorios-celular', price:17000, beforePrice:20000, minQty:4,  unit:'und', featured:true,  images:['im1.jpg','im2.jpg','im3.jpg'] },
 
   // 2. Tecnología
-  { id:'p05', sku:'TEC-001', name:'Audífonos Bluetooth TWS Pro',     category:'tecnologia', price:45900, beforePrice:59900,  minQty:4, unit:'und', featured:true  },
-  { id:'p06', sku:'TEC-002', name:'Parlante portátil 10W',           category:'tecnologia', price:68900, beforePrice:0,      minQty:3, unit:'und', featured:false },
-  { id:'p07', sku:'TEC-003', name:'Reloj inteligente Smart Band',    category:'tecnologia', price:89900, beforePrice:119900, minQty:2, unit:'und', featured:true  },
-  { id:'p08', sku:'TEC-004', name:'Power bank 10.000 mAh',           category:'tecnologia', price:39900, beforePrice:49900,  minQty:5, unit:'und', featured:false },
+  { id:'p06', sku:'TEC-001', name:'Audífonos Bluetooth TWS Pro',     category:'tecnologia', price:45900, beforePrice:59900,  minQty:4, unit:'und', featured:true  },
+  { id:'p07', sku:'TEC-002', name:'Parlante portátil 10W',           category:'tecnologia', price:68900, beforePrice:0,      minQty:3, unit:'und', featured:false },
+  { id:'p08', sku:'TEC-003', name:'Reloj inteligente Smart Band',    category:'tecnologia', price:89900, beforePrice:119900, minQty:2, unit:'und', featured:true  },
+  { id:'p09', sku:'TEC-004', name:'Power bank 10.000 mAh',           category:'tecnologia', price:39900, beforePrice:49900,  minQty:5, unit:'und', featured:false },
 
   // 3. Iluminación
-  { id:'p09', sku:'ILU-001', name:'Bombillo LED 9W luz fría',        category:'iluminacion', price:2800,  beforePrice:0,     minQty:50, unit:'und', featured:false },
-  { id:'p10', sku:'ILU-002', name:'Tira LED RGB 5m con control',     category:'iluminacion', price:22900, beforePrice:32900, minQty:6,  unit:'und', featured:true  },
-  { id:'p11', sku:'ILU-003', name:'Lámpara solar para exterior',     category:'iluminacion', price:18900, beforePrice:0,     minQty:8,  unit:'und', featured:false },
+  { id:'p10', sku:'ILU-001', name:'Bombillo LED 9W luz fría',        category:'iluminacion', price:2800,  beforePrice:0,     minQty:50, unit:'und', featured:false },
+  { id:'p11', sku:'ILU-002', name:'Tira LED RGB 5m con control',     category:'iluminacion', price:22900, beforePrice:32900, minQty:6,  unit:'und', featured:true  },
+  { id:'p12', sku:'ILU-003', name:'Lámpara solar para exterior',     category:'iluminacion', price:18900, beforePrice:0,     minQty:8,  unit:'und', featured:false },
 
   // 4. Belleza
-  { id:'p12', sku:'BEL-001', name:'Crema hidratante facial 120ml',   category:'belleza', price:12500, beforePrice:16900, minQty:12, unit:'und', featured:true  },
-  { id:'p13', sku:'BEL-002', name:'Kit de brochas profesionales',    category:'belleza', price:28900, beforePrice:39900, minQty:6,  unit:'kit', featured:false },
-  { id:'p14', sku:'BEL-003', name:'Sérum vitamina C 30ml',           category:'belleza', price:19900, beforePrice:0,     minQty:8,  unit:'und', featured:true  },
+  { id:'p13', sku:'BEL-001', name:'Crema hidratante facial 120ml',   category:'belleza', price:12500, beforePrice:16900, minQty:12, unit:'und', featured:true  },
+  { id:'p14', sku:'BEL-002', name:'Kit de brochas profesionales',    category:'belleza', price:28900, beforePrice:39900, minQty:6,  unit:'kit', featured:false },
+  { id:'p15', sku:'BEL-003', name:'Sérum vitamina C 30ml',           category:'belleza', price:19900, beforePrice:0,     minQty:8,  unit:'und', featured:true  },
 
   // 5. Joyería
-  { id:'p15', sku:'JOY-001', name:'Collar acero dorado cadena',      category:'joyeria', price:15900, beforePrice:22900, minQty:10, unit:'und', featured:true  },
-  { id:'p16', sku:'JOY-002', name:'Aretes circonia premium',         category:'joyeria', price:8900,  beforePrice:0,     minQty:20, unit:'par', featured:false },
-  { id:'p17', sku:'JOY-003', name:'Pulsera ajustable unisex',        category:'joyeria', price:11900, beforePrice:15900, minQty:12, unit:'und', featured:false },
+  { id:'p16', sku:'JOY-001', name:'Collar acero dorado cadena',      category:'joyeria', price:15900, beforePrice:22900, minQty:10, unit:'und', featured:true  },
+  { id:'p17', sku:'JOY-002', name:'Aretes circonia premium',         category:'joyeria', price:8900,  beforePrice:0,     minQty:20, unit:'par', featured:false },
+  { id:'p18', sku:'JOY-003', name:'Pulsera ajustable unisex',        category:'joyeria', price:11900, beforePrice:15900, minQty:12, unit:'und', featured:false },
 
   // 6. Prendas de vestir
-  { id:'p18', sku:'PRE-001', name:'Camiseta algodón unisex',         category:'prendas-vestir', price:18900, beforePrice:24900, minQty:12, unit:'und',  featured:true  },
-  { id:'p19', sku:'PRE-002', name:'Gorra plana bordada',             category:'prendas-vestir', price:14900, beforePrice:0,     minQty:12, unit:'und',  featured:false },
-  { id:'p20', sku:'PRE-003', name:'Medias deportivas pack x3',       category:'prendas-vestir', price:12900, beforePrice:16900, minQty:10, unit:'pack', featured:false },
+  { id:'p19', sku:'PRE-001', name:'Camiseta algodón unisex',         category:'prendas-vestir', price:18900, beforePrice:24900, minQty:12, unit:'und',  featured:true  },
+  { id:'p20', sku:'PRE-002', name:'Gorra plana bordada',             category:'prendas-vestir', price:14900, beforePrice:0,     minQty:12, unit:'und',  featured:false },
+  { id:'p21', sku:'PRE-003', name:'Medias deportivas pack x3',       category:'prendas-vestir', price:12900, beforePrice:16900, minQty:10, unit:'pack', featured:false },
 
   // 7. Bolsos
-  { id:'p21', sku:'BOL-001', name:'Bolso mochila antirrobo USB',     category:'bolsos', price:59900, beforePrice:79900, minQty:4, unit:'und', featured:true  },
-  { id:'p22', sku:'BOL-002', name:'Cartera cuero sintético',         category:'bolsos', price:34900, beforePrice:0,     minQty:6, unit:'und', featured:false },
-  { id:'p23', sku:'BOL-003', name:'Neceser organizador viaje',       category:'bolsos', price:22900, beforePrice:29900, minQty:8, unit:'und', featured:false },
+  { id:'p22', sku:'BOL-001', name:'Bolso mochila antirrobo USB',     category:'bolsos', price:59900, beforePrice:79900, minQty:4, unit:'und', featured:true  },
+  { id:'p23', sku:'BOL-002', name:'Cartera cuero sintético',         category:'bolsos', price:34900, beforePrice:0,     minQty:6, unit:'und', featured:false },
+  { id:'p24', sku:'BOL-003', name:'Neceser organizador viaje',       category:'bolsos', price:22900, beforePrice:29900, minQty:8, unit:'und', featured:false },
 
   // 8. Mascotas
-  { id:'p24', sku:'MAS-001', name:'Juguete mordedor perro',          category:'mascotas', price:7900,  beforePrice:0,     minQty:24, unit:'und', featured:false },
-  { id:'p25', sku:'MAS-002', name:'Collar antipulgas gato',          category:'mascotas', price:13900, beforePrice:18900, minQty:12, unit:'und', featured:true  },
-  { id:'p26', sku:'MAS-003', name:'Plato comedero doble',            category:'mascotas', price:10900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+  { id:'p25', sku:'MAS-001', name:'Juguete mordedor perro',          category:'mascotas', price:7900,  beforePrice:0,     minQty:24, unit:'und', featured:false },
+  { id:'p26', sku:'MAS-002', name:'Collar antipulgas gato',          category:'mascotas', price:13900, beforePrice:18900, minQty:12, unit:'und', featured:true  },
+  { id:'p27', sku:'MAS-003', name:'Plato comedero doble',            category:'mascotas', price:10900, beforePrice:0,     minQty:12, unit:'und', featured:false },
 
   // 9. Juguetes
-  { id:'p27', sku:'JUG-001', name:'Pelota antiestrés premium',       category:'juguetes', price:5900,  beforePrice:0,     minQty:30, unit:'und', featured:false },
-  { id:'p28', sku:'JUG-002', name:'Rompecabezas 500 piezas',         category:'juguetes', price:19900, beforePrice:25900, minQty:8,  unit:'und', featured:true  },
-  { id:'p29', sku:'JUG-003', name:'Llavero LED personalizado',       category:'juguetes', price:3500,  beforePrice:4900,  minQty:50, unit:'und', featured:false },
+  { id:'p28', sku:'JUG-001', name:'Pelota antiestrés premium',       category:'juguetes', price:5900,  beforePrice:0,     minQty:30, unit:'und', featured:false },
+  { id:'p29', sku:'JUG-002', name:'Rompecabezas 500 piezas',         category:'juguetes', price:19900, beforePrice:25900, minQty:8,  unit:'und', featured:true  },
+  { id:'p30', sku:'JUG-003', name:'Llavero LED personalizado',       category:'juguetes', price:3500,  beforePrice:4900,  minQty:50, unit:'und', featured:false },
 
   // 10. Gaming
-  { id:'p30', sku:'GAM-001', name:'Mouse gamer RGB 7200 DPI',        category:'gaming', price:45900,  beforePrice:59900,  minQty:4, unit:'und', featured:true  },
-  { id:'p31', sku:'GAM-002', name:'Teclado mecánico 60%',            category:'gaming', price:129900, beforePrice:159900, minQty:2, unit:'und', featured:true  },
-  { id:'p32', sku:'GAM-003', name:'Diadema gamer con micrófono',     category:'gaming', price:79900,  beforePrice:0,      minQty:3, unit:'und', featured:false },
+  { id:'p31', sku:'GAM-001', name:'Mouse gamer RGB 7200 DPI',        category:'gaming', price:45900,  beforePrice:59900,  minQty:4, unit:'und', featured:true  },
+  { id:'p32', sku:'GAM-002', name:'Teclado mecánico 60%',            category:'gaming', price:129900, beforePrice:159900, minQty:2, unit:'und', featured:true  },
+  { id:'p33', sku:'GAM-003', name:'Diadema gamer con micrófono',     category:'gaming', price:79900,  beforePrice:0,      minQty:3, unit:'und', featured:false },
 
   // 11. Fitness
-  { id:'p33', sku:'FIT-001', name:'Bandas elásticas set x5',         category:'fitness', price:22900, beforePrice:32900, minQty:8,  unit:'set', featured:true  },
-  { id:'p34', sku:'FIT-002', name:'Botella deportiva 1L',            category:'fitness', price:14900, beforePrice:0,     minQty:12, unit:'und', featured:false },
-  { id:'p35', sku:'FIT-003', name:'Cuerda para saltar profesional',  category:'fitness', price:12900, beforePrice:17900, minQty:10, unit:'und', featured:false },
+  { id:'p34', sku:'FIT-001', name:'Bandas elásticas set x5',         category:'fitness', price:22900, beforePrice:32900, minQty:8,  unit:'set', featured:true  },
+  { id:'p35', sku:'FIT-002', name:'Botella deportiva 1L',            category:'fitness', price:14900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+  { id:'p36', sku:'FIT-003', name:'Cuerda para saltar profesional',  category:'fitness', price:12900, beforePrice:17900, minQty:10, unit:'und', featured:false },
 
   // 12. Hogar
-  { id:'p36', sku:'HOG-001', name:'Organizador de closet 6 cajones', category:'hogar', price:39900, beforePrice:49900, minQty:4,  unit:'und',  featured:true  },
-  { id:'p37', sku:'HOG-002', name:'Ganchos adhesivos pack x10',      category:'hogar', price:9900,  beforePrice:0,     minQty:20, unit:'pack', featured:false },
-  { id:'p38', sku:'HOG-003', name:'Canasta apilable multiuso',       category:'hogar', price:15900, beforePrice:19900, minQty:12, unit:'und',  featured:false },
+  { id:'p37', sku:'HOG-001', name:'Organizador de closet 6 cajones', category:'hogar', price:39900, beforePrice:49900, minQty:4,  unit:'und',  featured:true  },
+  { id:'p38', sku:'HOG-002', name:'Ganchos adhesivos pack x10',      category:'hogar', price:9900,  beforePrice:0,     minQty:20, unit:'pack', featured:false },
+  { id:'p39', sku:'HOG-003', name:'Canasta apilable multiuso',       category:'hogar', price:15900, beforePrice:19900, minQty:12, unit:'und',  featured:false },
 
   // 13. Cocina
-  { id:'p39', sku:'COC-001', name:'Juego de cuchillos x5',           category:'cocina', price:34900, beforePrice:45900, minQty:4, unit:'set', featured:true  },
-  { id:'p40', sku:'COC-002', name:'Tabla de cortar bambú',           category:'cocina', price:18900, beforePrice:0,     minQty:8, unit:'und', featured:false },
-  { id:'p41', sku:'COC-003', name:'Organizador de especias',         category:'cocina', price:22900, beforePrice:29900, minQty:6, unit:'und', featured:false },
+  { id:'p40', sku:'COC-001', name:'Juego de cuchillos x5',           category:'cocina', price:34900, beforePrice:45900, minQty:4, unit:'set', featured:true  },
+  { id:'p41', sku:'COC-002', name:'Tabla de cortar bambú',           category:'cocina', price:18900, beforePrice:0,     minQty:8, unit:'und', featured:false },
+  { id:'p42', sku:'COC-003', name:'Organizador de especias',         category:'cocina', price:22900, beforePrice:29900, minQty:6, unit:'und', featured:false },
 
   // 14. Automóvil
-  { id:'p42', sku:'AUT-001', name:'Aspiradora portátil para carro',  category:'automovil', price:54900, beforePrice:69900, minQty:3,  unit:'und', featured:true  },
-  { id:'p43', sku:'AUT-002', name:'Soporte celular magnético',       category:'automovil', price:12900, beforePrice:0,     minQty:12, unit:'und', featured:false },
-  { id:'p44', sku:'AUT-003', name:'Organizador maletero plegable',   category:'automovil', price:29900, beforePrice:39900, minQty:4,  unit:'und', featured:false },
+  { id:'p43', sku:'AUT-001', name:'Aspiradora portátil para carro',  category:'automovil', price:54900, beforePrice:69900, minQty:3,  unit:'und', featured:true  },
+  { id:'p44', sku:'AUT-002', name:'Soporte celular magnético',       category:'automovil', price:12900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+  { id:'p45', sku:'AUT-003', name:'Organizador maletero plegable',   category:'automovil', price:29900, beforePrice:39900, minQty:4,  unit:'und', featured:false },
 
   // 15. Cabello
-  { id:'p45', sku:'CAB-001', name:'Secador de cabello 2200W',        category:'cabello', price:69900, beforePrice:89900, minQty:3,  unit:'und', featured:true  },
-  { id:'p46', sku:'CAB-002', name:'Plancha alisadora cerámica',      category:'cabello', price:54900, beforePrice:0,     minQty:4,  unit:'und', featured:false },
-  { id:'p47', sku:'CAB-003', name:'Kit pinzas y clips cabello',      category:'cabello', price:9900,  beforePrice:13900, minQty:20, unit:'kit', featured:false },
+  { id:'p46', sku:'CAB-001', name:'Secador de cabello 2200W',        category:'cabello', price:69900, beforePrice:89900, minQty:3,  unit:'und', featured:true  },
+  { id:'p47', sku:'CAB-002', name:'Plancha alisadora cerámica',      category:'cabello', price:54900, beforePrice:0,     minQty:4,  unit:'und', featured:false },
+  { id:'p48', sku:'CAB-003', name:'Kit pinzas y clips cabello',      category:'cabello', price:9900,  beforePrice:13900, minQty:20, unit:'kit', featured:false },
 
   // 16. Fotografía
-  { id:'p48', sku:'FOT-001', name:'Trípode flexible universal',      category:'fotografia', price:25900, beforePrice:34900, minQty:6,  unit:'und', featured:true  },
-  { id:'p49', sku:'FOT-002', name:'Anillo de luz LED 10"',           category:'fotografia', price:44900, beforePrice:0,     minQty:4,  unit:'und', featured:false },
-  { id:'p50', sku:'FOT-003', name:'Correa ajustable para cámara',    category:'fotografia', price:15900, beforePrice:19900, minQty:10, unit:'und', featured:false },
+  { id:'p49', sku:'FOT-001', name:'Trípode flexible universal',      category:'fotografia', price:25900, beforePrice:34900, minQty:6,  unit:'und', featured:true  },
+  { id:'p50', sku:'FOT-002', name:'Anillo de luz LED 10"',           category:'fotografia', price:44900, beforePrice:0,     minQty:4,  unit:'und', featured:false },
+  { id:'p51', sku:'FOT-003', name:'Correa ajustable para cámara',    category:'fotografia', price:15900, beforePrice:19900, minQty:10, unit:'und', featured:false },
 
   // 17. Herramientas agro
-  { id:'p51', sku:'AGR-001', name:'Machete agrícola profesional',    category:'herramientas-agro', price:28900, beforePrice:0,     minQty:6,  unit:'und', featured:false },
-  { id:'p52', sku:'AGR-002', name:'Tijeras de podar acero',          category:'herramientas-agro', price:19900, beforePrice:25900, minQty:8,  unit:'und', featured:true  },
-  { id:'p53', sku:'AGR-003', name:'Guantes jardinería reforzados',   category:'herramientas-agro', price:8900,  beforePrice:0,     minQty:24, unit:'par', featured:false },
+  { id:'p52', sku:'AGR-001', name:'Machete agrícola profesional',    category:'herramientas-agro', price:28900, beforePrice:0,     minQty:6,  unit:'und', featured:false },
+  { id:'p53', sku:'AGR-002', name:'Tijeras de podar acero',          category:'herramientas-agro', price:19900, beforePrice:25900, minQty:8,  unit:'und', featured:true  },
+  { id:'p54', sku:'AGR-003', name:'Guantes jardinería reforzados',   category:'herramientas-agro', price:8900,  beforePrice:0,     minQty:24, unit:'par', featured:false },
 
   // 18. Limpieza
-  { id:'p54', sku:'LIM-001', name:'Trapeador giratorio 360°',        category:'limpieza', price:32900, beforePrice:42900, minQty:4,  unit:'und',  featured:true  },
-  { id:'p55', sku:'LIM-002', name:'Paño microfibra pack x5',         category:'limpieza', price:11900, beforePrice:0,     minQty:20, unit:'pack', featured:false },
-  { id:'p56', sku:'LIM-003', name:'Cepillo multiuso baño',           category:'limpieza', price:7900,  beforePrice:10900, minQty:24, unit:'und',  featured:false },
+  { id:'p55', sku:'LIM-001', name:'Trapeador giratorio 360°',        category:'limpieza', price:32900, beforePrice:42900, minQty:4,  unit:'und',  featured:true  },
+  { id:'p56', sku:'LIM-002', name:'Paño microfibra pack x5',         category:'limpieza', price:11900, beforePrice:0,     minQty:20, unit:'pack', featured:false },
+  { id:'p57', sku:'LIM-003', name:'Cepillo multiuso baño',           category:'limpieza', price:7900,  beforePrice:10900, minQty:24, unit:'und',  featured:false },
 
   // 19. Perfumes
-  { id:'p57', sku:'PER-001', name:'Perfume floral mujer 100ml',      category:'perfumes', price:49900, beforePrice:69900, minQty:4, unit:'und', featured:true  },
-  { id:'p58', sku:'PER-002', name:'Perfume amaderado hombre 100ml',  category:'perfumes', price:52900, beforePrice:0,     minQty:4, unit:'und', featured:true  },
-  { id:'p59', sku:'PER-003', name:'Body splash frutal 250ml',        category:'perfumes', price:18900, beforePrice:24900, minQty:8, unit:'und', featured:false },
+  { id:'p58', sku:'PER-001', name:'Perfume floral mujer 100ml',      category:'perfumes', price:49900, beforePrice:69900, minQty:4, unit:'und', featured:true  },
+  { id:'p59', sku:'PER-002', name:'Perfume amaderado hombre 100ml',  category:'perfumes', price:52900, beforePrice:0,     minQty:4, unit:'und', featured:true  },
+  { id:'p60', sku:'PER-003', name:'Body splash frutal 250ml',        category:'perfumes', price:18900, beforePrice:24900, minQty:8, unit:'und', featured:false },
 
   // 20. Viajes
-  { id:'p60', sku:'VIA-001', name:'Almohada cervical de viaje',      category:'viajes', price:15900, beforePrice:21900, minQty:8,  unit:'und', featured:false },
-  { id:'p61', sku:'VIA-002', name:'Organizador de maleta set x6',    category:'viajes', price:29900, beforePrice:39900, minQty:4,  unit:'set', featured:true  },
-  { id:'p62', sku:'VIA-003', name:'Botella plegable silicona',       category:'viajes', price:12900, beforePrice:0,     minQty:12, unit:'und', featured:false },
+  { id:'p61', sku:'VIA-001', name:'Almohada cervical de viaje',      category:'viajes', price:15900, beforePrice:21900, minQty:8,  unit:'und', featured:false },
+  { id:'p62', sku:'VIA-002', name:'Organizador de maleta set x6',    category:'viajes', price:29900, beforePrice:39900, minQty:4,  unit:'set', featured:true  },
+  { id:'p63', sku:'VIA-003', name:'Botella plegable silicona',       category:'viajes', price:12900, beforePrice:0,     minQty:12, unit:'und', featured:false },
 ];
 
 /* Aliases para compatibilidad con posibles variables globales */
@@ -1220,9 +1267,20 @@ function renderCart(){
       card.className = 'ax-card';
       const favActive = favorites.has(p.id);
 
+      // Construir galería de imágenes adaptable (1 a 3 imágenes)
+      let galleryHtml = '';
+      if (p.images && p.images.length > 0) {
+        const imgs = p.images.slice(0, 3); // máximo 3 imágenes
+        galleryHtml = '<div class="ax-card-gallery" data-count="' + imgs.length + '">' +
+          imgs.map(src => '<img class="ax-card-gallery-img" src="' + src + '" alt="' + p.name + '" loading="lazy">').join('') +
+          '</div>';
+      } else {
+        galleryHtml = '<div class="ph" style="font-size:0"></div>';
+      }
+
       card.innerHTML =
         '<div class="ax-card-media">' +
-          '<div class="ph" style="font-size:0"></div>' +
+          galleryHtml +
           (isDeal ? '<span class="ax-card-tag">Oferta</span>' : (p.featured ? '<span class="ax-card-tag verified">✓ Verificado</span>' : '')) +
           '<span class="ax-card-fav'+(favActive?' active':'')+'" data-fav="'+p.id+'"><i class="fas fa-heart"></i></span>' +
         '</div>' +
