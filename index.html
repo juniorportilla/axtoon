@@ -163,8 +163,23 @@ button{font:inherit;cursor:pointer}
 .ax-topbar .lang{display:flex;align-items:center;gap:5px;cursor:pointer}
 .ax-topbar .lang:hover{color:#f97316}
 .ax-topbar .currency{
-  display:flex;align-items:center;gap:5px;background:#f1f5f9;
-  padding:5px 12px;border-radius:30px;font-weight:600;white-space:nowrap;
+  display:flex;align-items:center;gap:8px;background:#f1f5f9;
+  padding:6px 14px;border-radius:30px;font-weight:600;white-space:nowrap;
+}
+.ax-topbar .currency > i{
+  color:#0f4d38;font-size:13px;flex-shrink:0;
+}
+.currency-info{
+  display:flex;flex-direction:column;line-height:1.15;
+  align-items:flex-start;
+}
+.currency-value{
+  font-family:var(--display);font-size:14px;font-weight:800;
+  color:#0b1f33;letter-spacing:-.01em;
+}
+.currency-label{
+  font-size:8.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;color:#8f9fb2;margin-top:1px;
 }
 .ax-topbar .user{display:flex;align-items:center;gap:10px;cursor:pointer;min-width:0}
 .ax-topbar .user > span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -805,6 +820,8 @@ button{font:inherit;cursor:pointer}
   .ax-topbar{padding:10px 14px;padding-top:calc(10px + env(safe-area-inset-top,0px));gap:10px}
   .ax-avatar{width:36px;height:36px}
   .user-role{font-size:7.5px}
+  .currency-value{font-size:13px}
+  .currency-label{font-size:7.5px}
   .ax-search-row{flex-direction:column;align-items:stretch}
   .ax-search-box{max-width:100%;min-width:auto}
   .ax-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
@@ -843,7 +860,9 @@ button{font:inherit;cursor:pointer}
   .ax-topbar .user > span:first-child{display:none}
   .ax-topbar .lang span{display:none}
   .ax-topbar{gap:8px}
-  .ax-topbar .currency{padding:5px 9px;font-size:12px}
+  .ax-topbar .currency{padding:5px 9px}
+  .currency-value{font-size:12px}
+  .currency-label{font-size:7px}
   .ax-search-by-img span{display:none}
   .ax-search-by-img{padding:8px}
 }
@@ -1306,7 +1325,7 @@ button{font:inherit;cursor:pointer}
     <button type="button" class="ax-nav-item" data-view="dashboard"><i class="fas fa-chart-pie"></i><span>Dashboard</span></button>
     <button type="button" class="ax-nav-item active" data-view="productos"><i class="fas fa-box"></i><span>Productos</span><span class="badge-new">Nuevo</span></button>
     <button type="button" class="ax-nav-item" data-view="catalogo"><i class="fas fa-list-ul"></i><span>Catálogo</span></button>
-    <button type="button" class="ax-nav-item" data-soon="Proveedores"><i class="fas fa-truck"></i><span>Proveedores</span></button>
+    <button type="button" class="ax-nav-item" id="axOpenCart"><i class="fas fa-shopping-cart"></i><span>Carrito</span><span class="badge-count" id="axCartCount" style="display:none">0</span></button>
     <button type="button" class="ax-nav-item" data-soon="Caza productos"><i class="fas fa-search"></i><span>Caza productos</span></button>
     <div class="ax-nav-divider"></div>
     <div class="ax-nav-label">Ventas</div>
@@ -1323,7 +1342,7 @@ button{font:inherit;cursor:pointer}
     <button type="button" class="ax-nav-item" data-soon="ROAX"><i class="fas fa-chart-line"></i><span>ROAX</span></button>
     <button type="button" class="ax-nav-item" data-soon="Reportes"><i class="fas fa-file-alt"></i><span>Reportes</span></button>
     <div class="ax-nav-divider"></div>
-    <button type="button" class="ax-nav-item" id="axOpenCart"><i class="fas fa-shopping-cart"></i><span>Carrito</span><span class="badge-count" id="axCartCount" style="display:none">0</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Proveedores"><i class="fas fa-truck"></i><span>Proveedores</span></button>
   </nav>
 </aside>
 
@@ -1333,7 +1352,13 @@ button{font:inherit;cursor:pointer}
   <div class="ax-topbar">
     <button class="ax-hamburger" id="axHamburger" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
     <div class="lang"><i class="fas fa-globe-americas"></i><span> Español</span></div>
-    <div class="currency" title="Total estimado del carrito"><i class="fas fa-dollar-sign"></i> <span id="axTopTotal">0</span></div>
+    <div class="currency" title="Valor total a pagar del carrito">
+      <i class="fas fa-dollar-sign"></i>
+      <div class="currency-info">
+        <span class="currency-value" id="axTopTotal">0</span>
+        <span class="currency-label">Valor a pagar</span>
+      </div>
+    </div>
     <div class="user">
       <span>junior estiben portilla</span>
       <div class="user-profile">
@@ -1994,7 +2019,7 @@ const AX_PRODUCTS = [
 
   { id:'p61', sku:'VIA-001', name:'Almohada cervical de viaje',      category:'viajes', price:15900, beforePrice:21900, minQty:1,  unit:'und', featured:false, images:['im119.jpg','im120.jpg'] },
   { id:'p62', sku:'VIA-002', name:'Organizador de maleta set x6',    category:'viajes', price:29900, beforePrice:39900, minQty:1,  unit:'set', featured:true,  images:['im121.jpg','im122.jpg','im123.jpg'] },
-  { id:'p63', sku:'VIA-003', name:'Botella plegable silicona',       category:'viajes', price:12900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im124.jpg'] },
+  { id:'p63', sku:'VIA-003', name:'Botella plegable silicona',       category:'viajes', price:12900, beforePrice:0,     minQty:1,  unit:'und', featured:false, images:['im124.jpg'] },
 ];
 
 const PRODUCTS = AX_PRODUCTS;
@@ -2076,7 +2101,7 @@ function renderCart(){
   const n = cartCount();
   if(badge){ badge.textContent = n; badge.style.display = n>0 ? 'inline-block' : 'none'; }
   const topTotal = document.getElementById('axTopTotal');
-  if(topTotal) topTotal.textContent = finalTotal().toLocaleString('es-CO');
+  if(topTotal) topTotal.textContent = '$ ' + finalTotal().toLocaleString('es-CO');
 
   const waConfirmBtn = document.getElementById('btnWaConfirm');
   if(waConfirmBtn) waConfirmBtn.disabled = CART.length === 0;
