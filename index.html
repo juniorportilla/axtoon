@@ -539,7 +539,6 @@ button{font:inherit;cursor:pointer}
 }
 .ax-section-chip.all-chip:hover{color:#fff;background:#0a3826}
 
-/* Encabezado de sección */
 .ax-section-header{
   display:flex;align-items:center;justify-content:space-between;
   gap:16px;margin-bottom:16px;padding:14px 18px;
@@ -830,7 +829,6 @@ button{font:inherit;cursor:pointer}
   .cat-card{padding:20px 12px 18px}
   .cat-card .cat-emoji{font-size:30px}
 
-  /* === FIX BOTÓN AGREGAR EN MÓVIL === */
   .ax-card{padding:9px}
   .ax-card-actions{flex-direction:column;align-items:stretch;gap:6px}
   .ax-card-qty{justify-content:center;align-self:center}
@@ -1119,6 +1117,171 @@ button{font:inherit;cursor:pointer}
   .order-body{grid-template-columns:1fr;gap:18px}
   .order-card{max-height:94vh}
 }
+
+/* ============================================================
+   VISTA MIS PEDIDOS
+   ============================================================ */
+.pedido-toolbar{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  flex-wrap:wrap;margin:6px 0 16px 0;
+}
+.pedido-list{display:flex;flex-direction:column;gap:12px}
+.pedido-item{
+  display:flex;gap:14px;align-items:center;padding:14px;
+  background:#fff;border:1px solid #eef2f8;border-radius:16px;
+  box-shadow:var(--shadow-xs);transition:.2s var(--ease);
+}
+.pedido-item:hover{border-color:#ffd9b8;box-shadow:var(--shadow-sm);transform:translateX(3px)}
+.pedido-item-img{
+  width:72px;height:72px;border-radius:12px;overflow:hidden;flex-shrink:0;
+  background:var(--muted);border:1px solid #eef2f8;
+}
+.pedido-item-img img{width:100%;height:100%;object-fit:cover}
+.pedido-item-info{flex:1;min-width:0}
+.pedido-item-name{font-size:13.5px;font-weight:700;color:#0b1f33;letter-spacing:-.01em}
+.pedido-item-sku{font-size:11px;color:#8f9fb2;margin-top:2px}
+.pedido-item-qty{font-size:11.5px;color:#5a6b80;margin-top:5px}
+.pedido-item-price{font-family:var(--display);font-size:16px;font-weight:800;color:#0f4d38;white-space:nowrap}
+.pedido-item-remove{
+  background:none;border:none;color:#c4d0de;font-size:14px;cursor:pointer;
+  padding:8px;border-radius:8px;transition:.2s;
+}
+.pedido-item-remove:hover{color:#ef4444;background:#fef2f2}
+
+.pedido-empty{
+  text-align:center;padding:50px 20px;background:#fff;border:1px dashed #e7ddcd;
+  border-radius:20px;color:#8f9fb2;
+}
+.pedido-empty i{font-size:44px;color:#ffd9b8;margin-bottom:14px;display:block}
+.pedido-empty h3{font-family:var(--display);font-size:20px;color:#0b1f33;margin-bottom:8px}
+.pedido-empty p{font-size:13px;margin-bottom:18px}
+.pedido-empty .hero-cta{display:inline-flex}
+
+/* ============================================================
+   VISTA MIS GARANTÍAS
+   ============================================================ */
+.garantia-hero{
+  background:var(--grad-brand-deep);color:#fff;border-radius:22px;
+  padding:36px 30px;position:relative;overflow:hidden;margin-bottom:22px;
+  box-shadow:var(--shadow-lg);
+}
+.garantia-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(500px 260px at 90% 20%, rgba(255,106,61,.4), transparent 60%),
+    radial-gradient(420px 220px at 6% 90%, rgba(47,158,122,.5), transparent 60%);
+}
+.garantia-hero h2{
+  font-family:var(--display);font-size:30px;font-weight:700;
+  letter-spacing:-.025em;margin-bottom:10px;position:relative;
+}
+.garantia-hero h2 em{
+  font-style:normal;background:var(--grad-warm);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.garantia-hero p{font-size:14px;opacity:.9;max-width:600px;position:relative;margin-bottom:18px}
+.garantia-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);
+  padding:6px 14px;border-radius:30px;font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;position:relative;
+}
+
+.garantia-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;margin-bottom:26px;
+}
+.garantia-card{
+  background:#fff;border:1px solid #eef2f8;border-radius:18px;padding:22px;
+  box-shadow:var(--shadow-xs);transition:.28s var(--ease);position:relative;overflow:hidden;
+}
+.garantia-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad-brand);opacity:.85;
+}
+.garantia-card.amber::before{background:var(--grad-gold)}
+.garantia-card.warm::before{background:var(--grad-warm)}
+.garantia-card.cool::before{background:var(--grad-cool)}
+.garantia-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#ffd9b8}
+.garantia-card .gc-ico{
+  width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
+  background:var(--brand-soft);color:var(--brand);font-size:19px;margin-bottom:14px;
+}
+.garantia-card.amber .gc-ico{background:var(--amber-soft);color:var(--gold)}
+.garantia-card.warm .gc-ico{background:#fff4eb;color:#f97316}
+.garantia-card.cool .gc-ico{background:#eef2ff;color:var(--violet)}
+.garantia-card h4{
+  font-family:var(--display);font-size:16px;font-weight:700;
+  color:#0b1f33;margin-bottom:6px;letter-spacing:-.015em;
+}
+.garantia-card p{font-size:12.5px;color:#5a6b80;line-height:1.6}
+
+.garantia-faq{display:flex;flex-direction:column;gap:10px}
+.garantia-faq-item{
+  background:#fff;border:1px solid #eef2f8;border-radius:14px;
+  overflow:hidden;box-shadow:var(--shadow-xs);transition:.2s;
+}
+.garantia-faq-item:hover{border-color:#ffd9b8}
+.garantia-faq-q{
+  width:100%;text-align:left;background:none;border:none;
+  padding:16px 18px;font-family:var(--ui);font-size:13.5px;font-weight:700;
+  color:#0b1f33;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;
+}
+.garantia-faq-q i{color:#f97316;font-size:13px;transition:.3s}
+.garantia-faq-item.open .garantia-faq-q i{transform:rotate(180deg)}
+.garantia-faq-a{
+  padding:0 18px 16px;font-size:12.5px;color:#5a6b80;line-height:1.65;
+  display:none;
+}
+.garantia-faq-item.open .garantia-faq-a{display:block}
+
+.garantia-stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:14px;margin-bottom:26px;
+}
+.garantia-stat{
+  background:#fff;border:1px solid #eef2f8;border-radius:16px;
+  padding:20px;text-align:center;box-shadow:var(--shadow-xs);
+}
+.garantia-stat b{
+  display:block;font-family:var(--display);font-size:30px;font-weight:800;
+  line-height:1;color:#0f4d38;letter-spacing:-.02em;margin-bottom:6px;
+}
+.garantia-stat span{
+  font-size:11px;text-transform:uppercase;letter-spacing:.08em;
+  color:#8f9fb2;font-weight:700;
+}
+
+/* Modal detalle pedido */
+.pedido-modal{
+  position:fixed;inset:0;z-index:125;display:none;align-items:center;justify-content:center;
+  padding:18px;background:rgba(11,31,51,.6);backdrop-filter:blur(5px);
+}
+.pedido-modal.open{display:flex}
+.pedido-modal-card{
+  background:#fff;border-radius:22px;width:min(760px,100%);
+  max-height:92vh;overflow:hidden;display:flex;flex-direction:column;
+  font-family:var(--ui);box-shadow:0 40px 100px -30px rgba(0,0,0,.5);
+}
+.pedido-modal-head{
+  padding:20px 24px;border-bottom:1px solid #edf1f7;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.pedido-modal-head h3{font-family:var(--display);font-size:20px;color:#0b1f33}
+.pedido-modal-close{
+  background:#f1f5f9;border:none;width:34px;height:34px;border-radius:50%;
+  color:#43566b;font-size:15px;cursor:pointer;transition:.2s;
+}
+.pedido-modal-close:hover{background:#ffe8d6;color:#e05e00}
+.pedido-modal-body{flex:1;overflow-y:auto;padding:20px 24px}
+
+@media(max-width:768px){
+  .pedido-item{flex-wrap:wrap}
+  .pedido-item-price{width:100%;text-align:right}
+  .garantia-hero{padding:26px 20px}
+  .garantia-hero h2{font-size:22px}
+}
 </style>
 </head>
 <body>
@@ -1147,8 +1310,8 @@ button{font:inherit;cursor:pointer}
     <button type="button" class="ax-nav-item" data-soon="Caza productos"><i class="fas fa-search"></i><span>Caza productos</span></button>
     <div class="ax-nav-divider"></div>
     <div class="ax-nav-label">Ventas</div>
-    <button type="button" class="ax-nav-item" data-soon="Mis Pedidos"><i class="fas fa-shopping-bag"></i><span>Mis Pedidos</span></button>
-    <button type="button" class="ax-nav-item" data-soon="Mis Garantías"><i class="fas fa-shield-alt"></i><span>Mis Garantías</span></button>
+    <button type="button" class="ax-nav-item" data-view="pedidos"><i class="fas fa-shopping-bag"></i><span>Mis Pedidos</span></button>
+    <button type="button" class="ax-nav-item" data-view="garantias"><i class="fas fa-shield-alt"></i><span>Mis Garantías</span></button>
     <button type="button" class="ax-nav-item" data-soon="Clientes"><i class="fas fa-users"></i><span>Clientes</span></button>
     <button type="button" class="ax-nav-item" data-soon="Mis Integraciones"><i class="fas fa-plug"></i><span>Mis Integraciones</span></button>
     <button type="button" class="ax-nav-item" data-soon="Historial de Cartera"><i class="fas fa-history"></i><span>Historial de Cartera</span></button>
@@ -1261,7 +1424,7 @@ button{font:inherit;cursor:pointer}
 
       <div class="dash-welcome">
         <div>
-          <h2>¡Hola, <em>Junior</em>! 👋</h2>
+          <h2>Hola, <em>Estimado Cliente</em> 👋</h2>
           <p>Este es un resumen rápido de tu actividad y del catálogo Axtoon.</p>
         </div>
         <div class="dash-avatar">
@@ -1410,6 +1573,131 @@ button{font:inherit;cursor:pointer}
       <div class="cat-grid" id="axCatGrid"></div>
     </div>
 
+    <!-- ==================== VISTA: MIS PEDIDOS ==================== -->
+    <div class="ax-view" id="view-pedidos" hidden>
+      <h1 class="ax-page-title">Mis Pedidos</h1>
+
+      <div class="dash-grid">
+        <div class="dash-card brand">
+          <div class="dc-ico"><i class="fas fa-shopping-bag"></i></div>
+          <div class="dc-label">Productos en pedido</div>
+          <div class="dc-value" id="pedidosCountItems">0</div>
+          <div class="dc-sub">Ítems pendientes de confirmar</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-ico"><i class="fas fa-cubes"></i></div>
+          <div class="dc-label">Unidades totales</div>
+          <div class="dc-value" id="pedidosCountUnits">0</div>
+          <div class="dc-sub">Suma de cantidades</div>
+        </div>
+        <div class="dash-card berry">
+          <div class="dc-ico"><i class="fas fa-tag"></i></div>
+          <div class="dc-label">Categorías</div>
+          <div class="dc-value" id="pedidosCountCats">0</div>
+          <div class="dc-sub">Variedad en tu pedido</div>
+        </div>
+        <div class="dash-card gold">
+          <div class="dc-ico"><i class="fas fa-dollar-sign"></i></div>
+          <div class="dc-label">Total estimado</div>
+          <div class="dc-value" id="pedidosTotal">$ 0</div>
+          <div class="dc-sub">Antes de aplicar cupón</div>
+        </div>
+      </div>
+
+      <div class="pedido-toolbar">
+        <h3 class="ax-block-title" style="margin:0">Tu pedido en curso</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button type="button" class="hero-cta ghost" id="pedidoVerDetalleBtn" style="background:#fff;color:#0f4d38;border:1px solid #dfe7f0;padding:10px 18px;box-shadow:var(--shadow-xs)">
+            <i class="fas fa-eye"></i> Ver detalle
+          </button>
+          <button type="button" class="hero-cta primary" id="pedidoComprarBtn" style="padding:10px 18px">
+            <i class="fas fa-shopping-cart"></i> Realizar compra
+          </button>
+        </div>
+      </div>
+
+      <div class="pedido-list" id="pedidoItemsList"></div>
+
+      <h3 class="ax-block-title" style="margin-top:28px">Productos relacionados que puedes adquirir</h3>
+      <p class="ax-block-sub">Sugerencias basadas en los productos de tu pedido actual.</p>
+      <div class="ax-grid" id="pedidoRelatedGrid"></div>
+    </div>
+
+    <!-- ==================== VISTA: MIS GARANTÍAS ==================== -->
+    <div class="ax-view" id="view-garantias" hidden>
+      <h1 class="ax-page-title">Mis Garantías</h1>
+
+      <section class="garantia-hero">
+        <span class="garantia-hero-badge"><i class="fas fa-shield-halved"></i> Respaldo Axtoon</span>
+        <h2>Compra con <em>total tranquilidad</em>.</h2>
+        <p>Todos nuestros productos cuentan con garantía por defectos de fábrica. Trabajamos con proveedores verificados y respaldamos cada pedido con atención personalizada.</p>
+      </section>
+
+      <div class="garantia-stats">
+        <div class="garantia-stat"><b>100%</b><span>Productos garantizados</span></div>
+        <div class="garantia-stat"><b>+63</b><span>Productos cubiertos</span></div>
+        <div class="garantia-stat"><b>30 días</b><span>Para reclamar</span></div>
+        <div class="garantia-stat"><b>+2.400</b><span>Clientes satisfechos</span></div>
+      </div>
+
+      <div class="garantia-grid">
+        <div class="garantia-card">
+          <div class="gc-ico"><i class="fas fa-certificate"></i></div>
+          <h4>Garantía de fábrica</h4>
+          <p>Cubre defectos de fabricación, materiales y funcionamiento desde el primer día de uso.</p>
+        </div>
+        <div class="garantia-card warm">
+          <div class="gc-ico"><i class="fas fa-rotate-left"></i></div>
+          <h4>Cambio sin complicaciones</h4>
+          <p>Si tu producto presenta fallas dentro del periodo de garantía, gestionamos el cambio sin costos adicionales.</p>
+        </div>
+        <div class="garantia-card amber">
+          <div class="gc-ico"><i class="fas fa-truck-fast"></i></div>
+          <h4>Envíos protegidos</h4>
+          <p>Empacamos cada pedido con protección reforzada para que llegue en perfectas condiciones a tu negocio.</p>
+        </div>
+        <div class="garantia-card cool">
+          <div class="gc-ico"><i class="fab fa-whatsapp"></i></div>
+          <h4>Atención personalizada</h4>
+          <p>Escríbenos por WhatsApp y te acompañamos durante todo el proceso de garantía, paso a paso.</p>
+        </div>
+      </div>
+
+      <h3 class="ax-block-title">Productos garantizados destacados</h3>
+      <p class="ax-block-sub">Una muestra de productos respaldados con garantía Axtoon.</p>
+      <div class="ax-grid" id="garantiaProductsGrid"></div>
+
+      <h3 class="ax-block-title" style="margin-top:28px">Datos interesantes y preguntas frecuentes</h3>
+      <p class="ax-block-sub">Todo lo que necesitas saber sobre nuestras garantías.</p>
+
+      <div class="garantia-faq" id="garantiaFaq">
+        <div class="garantia-faq-item">
+          <button class="garantia-faq-q" type="button">¿Qué cubre la garantía Axtoon? <i class="fas fa-chevron-down"></i></button>
+          <div class="garantia-faq-a">Cubre defectos de fábrica, fallas en materiales o funcionamiento del producto desde el primer uso. No cubre daños ocasionados por mal uso, humedad, golpes, sobrecargas eléctricas o manipulación indebida.</div>
+        </div>
+        <div class="garantia-faq-item">
+          <button class="garantia-faq-q" type="button">¿Cuánto tiempo tengo para reclamar? <i class="fas fa-chevron-down"></i></button>
+          <div class="garantia-faq-a">Tienes hasta 30 días calendario desde la recepción del pedido para reportar cualquier inconveniente. Para productos de tecnología, aplica el tiempo de garantía directa del fabricante cuando sea mayor.</div>
+        </div>
+        <div class="garantia-faq-item">
+          <button class="garantia-faq-q" type="button">¿Cómo hago efectiva la garantía? <i class="fas fa-chevron-down"></i></button>
+          <div class="garantia-faq-a">Escríbenos por WhatsApp adjuntando fotos o video del producto y tu número de pedido. Nuestro equipo revisará el caso y te indicará los pasos a seguir en menos de 24 horas hábiles.</div>
+        </div>
+        <div class="garantia-faq-item">
+          <button class="garantia-faq-q" type="button">¿Los envíos están asegurados? <i class="fas fa-chevron-down"></i></button>
+          <div class="garantia-faq-a">Sí. Todos nuestros envíos van protegidos con empaque reforzado. Si el producto llega averiado por el transporte, gestionamos el reemplazo sin costo, siempre que se reporte dentro de las 48 horas siguientes a la entrega.</div>
+        </div>
+        <div class="garantia-faq-item">
+          <button class="garantia-faq-q" type="button">¿Sabías que...? <i class="fas fa-chevron-down"></i></button>
+          <div class="garantia-faq-a">Más del 97% de nuestros clientes mayoristas renuevan su pedido dentro del mismo mes. Trabajamos con inventario verificado producto por producto antes de cada despacho, lo que reduce a menos del 1% los reportes por defectos.</div>
+        </div>
+        <div class="garantia-faq-item">
+          <button class="garantia-faq-q" type="button">Dato interesante: vida útil promedio <i class="fas fa-chevron-down"></i></button>
+          <div class="garantia-faq-a">Nuestros productos de tecnología y accesorios tienen una vida útil promedio superior a los 18 meses con uso comercial normal, y nuestros productos de hogar y cocina superan los 3 años cuando se utilizan según las recomendaciones del fabricante.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1543,6 +1831,17 @@ button{font:inherit;cursor:pointer}
         <i class="fab fa-whatsapp"></i> Confirmar pedido
       </button>
     </div>
+  </div>
+</div>
+
+<!-- MODAL DETALLE PEDIDO -->
+<div class="pedido-modal" id="pedidoModal">
+  <div class="pedido-modal-card">
+    <div class="pedido-modal-head">
+      <h3><i class="fas fa-receipt" style="color:#f97316;margin-right:8px"></i>Detalle de tu pedido</h3>
+      <button class="pedido-modal-close" id="pedidoModalClose" type="button" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="pedido-modal-body" id="pedidoModalBody"></div>
   </div>
 </div>
 
@@ -1723,11 +2022,13 @@ function addToCart(productId, qty){
   renderCart();
   showToast('✓ ' + p.name + ' agregado al pedido');
   if(typeof window.axRefreshDashboard === 'function') window.axRefreshDashboard();
+  if(typeof window.axRefreshPedidos === 'function') window.axRefreshPedidos();
 }
 function removeFromCart(productId){
   CART = CART.filter(x => x.id !== productId);
   saveCart(); renderCart();
   if(typeof window.axRefreshDashboard === 'function') window.axRefreshDashboard();
+  if(typeof window.axRefreshPedidos === 'function') window.axRefreshPedidos();
 }
 
 /* ============================================================
@@ -2480,6 +2781,184 @@ function renderOrderProducts(){
     if(currentView === 'dashboard') renderDashboard();
   };
 
+  /* --- Helpers para MIS PEDIDOS --- */
+  function productImage(p){
+    return (p && p.images && p.images[0]) ? p.images[0] : 'im1.jpg';
+  }
+
+  function getRelatedProducts(){
+    const cartCats = new Set();
+    CART.forEach(i => {
+      const p = PRODUCTS.find(x => x.id === i.id);
+      if(p) cartCats.add(p.category);
+    });
+    const cartIds = new Set(CART.map(i => i.id));
+    let related = PRODUCTS.filter(p => !cartIds.has(p.id) && cartCats.has(p.category));
+    if(related.length < 4){
+      const extra = PRODUCTS.filter(p => !cartIds.has(p.id) && !related.includes(p) && p.featured);
+      related = related.concat(extra);
+    }
+    const seen = new Set();
+    related = related.filter(p => {
+      if(seen.has(p.id)) return false;
+      seen.add(p.id); return true;
+    });
+    return related.slice(0, 8);
+  }
+
+  /* --- VISTA MIS PEDIDOS --- */
+  function renderPedidosView(){
+    const countItemsEl = document.getElementById('pedidosCountItems');
+    const countUnitsEl = document.getElementById('pedidosCountUnits');
+    const countCatsEl  = document.getElementById('pedidosCountCats');
+    const totalEl      = document.getElementById('pedidosTotal');
+    const listWrap     = document.getElementById('pedidoItemsList');
+    const relatedWrap  = document.getElementById('pedidoRelatedGrid');
+
+    const totalUnits = cartCount();
+    const total = finalTotal();
+    const cats = new Set();
+    CART.forEach(i => {
+      const p = PRODUCTS.find(x => x.id === i.id);
+      if(p) cats.add(p.category);
+    });
+
+    if(countItemsEl) countItemsEl.textContent = CART.length;
+    if(countUnitsEl) countUnitsEl.textContent = totalUnits;
+    if(countCatsEl)  countCatsEl.textContent  = cats.size;
+    if(totalEl)      totalEl.textContent      = '$ ' + total.toLocaleString('es-CO');
+
+    if(listWrap){
+      if(!CART.length){
+        listWrap.innerHTML =
+          '<div class="pedido-empty">' +
+            '<i class="fas fa-shopping-bag"></i>' +
+            '<h3>Tu pedido está vacío</h3>' +
+            '<p>Explora el catálogo y agrega productos para armar tu pedido mayorista.</p>' +
+            '<button type="button" class="hero-cta primary" data-goto-pedido="productos"><i class="fas fa-box-open"></i> Ver productos</button>' +
+          '</div>';
+        listWrap.querySelectorAll('[data-goto-pedido]').forEach(btn => {
+          btn.addEventListener('click', () => navigateTo(btn.dataset.gotoPedido));
+        });
+      } else {
+        listWrap.innerHTML = CART.map(item => {
+          const p = PRODUCTS.find(x => x.id === item.id);
+          const img = p ? productImage(p) : 'im1.jpg';
+          return '<div class="pedido-item">' +
+            '<div class="pedido-item-img"><img src="' + img + '" alt="' + item.name + '"></div>' +
+            '<div class="pedido-item-info">' +
+              '<div class="pedido-item-name">' + item.name + '</div>' +
+              '<div class="pedido-item-sku">SKU: ' + (item.sku||item.id) + '</div>' +
+              '<div class="pedido-item-qty">' + item.qty + ' ' + (item.unit||'und') + ' × $' + item.price.toLocaleString('es-CO') + '</div>' +
+            '</div>' +
+            '<div class="pedido-item-price">$ ' + (item.price*item.qty).toLocaleString('es-CO') + '</div>' +
+            '<button type="button" class="pedido-item-remove" data-remove-pedido="' + item.id + '" aria-label="Quitar"><i class="fas fa-trash-alt"></i></button>' +
+          '</div>';
+        }).join('');
+        listWrap.querySelectorAll('[data-remove-pedido]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            removeFromCart(btn.dataset.removePedido);
+            renderPedidosView();
+          });
+        });
+      }
+    }
+
+    if(relatedWrap){
+      relatedWrap.innerHTML = '';
+      const related = getRelatedProducts();
+      related.forEach(p => relatedWrap.appendChild(createProductCard(p)));
+    }
+  }
+
+  window.axRefreshPedidos = function(){
+    if(currentView === 'pedidos') renderPedidosView();
+  };
+
+  /* --- VISTA MIS GARANTÍAS --- */
+  function renderGarantiasView(){
+    const wrap = document.getElementById('garantiaProductsGrid');
+    if(!wrap) return;
+    wrap.innerHTML = '';
+    const guaranteed = PRODUCTS.filter(p => p.featured).slice(0, 8);
+    guaranteed.forEach(p => wrap.appendChild(createProductCard(p)));
+  }
+
+  /* --- MODAL DETALLE PEDIDO --- */
+  function openPedidoModal(){
+    const modal = document.getElementById('pedidoModal');
+    const body = document.getElementById('pedidoModalBody');
+    if(!modal || !body) return;
+
+    if(!CART.length){
+      body.innerHTML = '<p style="text-align:center;color:#8f9fb2;padding:30px;font-size:13px">Tu pedido está vacío. Agrega productos para ver el detalle.</p>';
+    } else {
+      const subtotal = cartSubtotal();
+      const total = finalTotal();
+      body.innerHTML =
+        CART.map(item => {
+          const p = PRODUCTS.find(x => x.id === item.id);
+          const img = p ? productImage(p) : 'im1.jpg';
+          return '<div class="pedido-item" style="margin-bottom:10px">' +
+            '<div class="pedido-item-img"><img src="' + img + '" alt="' + item.name + '"></div>' +
+            '<div class="pedido-item-info">' +
+              '<div class="pedido-item-name">' + item.name + '</div>' +
+              '<div class="pedido-item-sku">SKU: ' + (item.sku||item.id) + '</div>' +
+              '<div class="pedido-item-qty">' + item.qty + ' ' + (item.unit||'und') + ' × $' + item.price.toLocaleString('es-CO') + '</div>' +
+            '</div>' +
+            '<div class="pedido-item-price">$ ' + (item.price*item.qty).toLocaleString('es-CO') + '</div>' +
+          '</div>';
+        }).join('') +
+        '<div class="order-summary-block" style="margin-top:16px;border-top:1px solid #edf1f7;padding-top:14px">' +
+          '<div class="order-summary-row"><span>Subtotal</span><span>$ ' + subtotal.toLocaleString('es-CO') + '</span></div>' +
+          '<div class="order-summary-row order-summary-total"><span>Total a pagar</span><b>$ ' + total.toLocaleString('es-CO') + '</b></div>' +
+        '</div>';
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePedidoModal(){
+    const modal = document.getElementById('pedidoModal');
+    if(modal){
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  window.closePedidoModal = closePedidoModal;
+
+  /* --- Listeners pedidos + garantías (una sola vez) --- */
+  const pedidoVerDetalleBtn = document.getElementById('pedidoVerDetalleBtn');
+  if(pedidoVerDetalleBtn){
+    pedidoVerDetalleBtn.addEventListener('click', openPedidoModal);
+  }
+  const pedidoComprarBtn = document.getElementById('pedidoComprarBtn');
+  if(pedidoComprarBtn){
+    pedidoComprarBtn.addEventListener('click', () => {
+      if(!CART.length){ showToast('Tu pedido está vacío'); return; }
+      openOrderModal(CART.map(i => ({ id:i.id, name:i.name, sku:i.sku, price:i.price, unit:i.unit, qty:i.qty })));
+    });
+  }
+  const pedidoModalClose = document.getElementById('pedidoModalClose');
+  if(pedidoModalClose){
+    pedidoModalClose.addEventListener('click', closePedidoModal);
+  }
+  const pedidoModalEl = document.getElementById('pedidoModal');
+  if(pedidoModalEl){
+    pedidoModalEl.addEventListener('click', e => {
+      if(e.target === pedidoModalEl) closePedidoModal();
+    });
+  }
+
+  /* --- FAQ Garantías (acordeón) --- */
+  document.querySelectorAll('.garantia-faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.garantia-faq-item');
+      if(item) item.classList.toggle('open');
+    });
+  });
+
   /* --- NAVEGACIÓN ENTRE VISTAS --- */
   function navigateTo(viewName){
     const target = document.getElementById('view-' + viewName);
@@ -2495,6 +2974,8 @@ function renderOrderProducts(){
     if(viewName === 'inicio') renderInicioFeatured();
     if(viewName === 'dashboard') renderDashboard();
     if(viewName === 'catalogo') renderCatalogo();
+    if(viewName === 'pedidos') renderPedidosView();
+    if(viewName === 'garantias') renderGarantiasView();
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -2538,7 +3019,8 @@ function renderOrderProducts(){
     renderCatalogo();
     renderDashboard();
     renderCart();
-    // Vista inicial: productos
+    renderPedidosView();
+    renderGarantiasView();
     navigateTo('productos');
   }
   if(document.readyState === 'loading'){
@@ -2557,11 +3039,13 @@ document.addEventListener('keydown', function(e){
   if(e.key !== 'Escape') return;
   const orderModal = document.getElementById('orderModal');
   const quickModal = document.getElementById('quickViewModal');
+  const pedidoModal = document.getElementById('pedidoModal');
   const drawer = document.getElementById('drawer');
   const sidebar = document.getElementById('axSidebar');
   const axOverlay = document.getElementById('axOverlay');
 
   if(orderModal && orderModal.classList.contains('open')){ closeOrderModal(); return; }
+  if(pedidoModal && pedidoModal.classList.contains('open')){ if(window.closePedidoModal) window.closePedidoModal(); return; }
   if(quickModal && quickModal.classList.contains('open')){ if(window.closeQuickView) window.closeQuickView(); return; }
   if(drawer && drawer.classList.contains('open')){ if(window.closeDrawer) window.closeDrawer(); return; }
   if(sidebar && sidebar.classList.contains('open')){ sidebar.classList.remove('open'); if(axOverlay) axOverlay.classList.remove('open'); return; }
