@@ -115,8 +115,6 @@ button{font:inherit;cursor:pointer}
   object-fit:contain;
   object-position:center;
   display:block;
-  image-rendering:auto;
-  image-rendering:-webkit-optimize-contrast;
   border-radius:7px;
 }
 .ax-logo-text{
@@ -211,6 +209,243 @@ button{font:inherit;cursor:pointer}
   font-family:var(--display);font-size:24px;font-weight:700;
   letter-spacing:-.025em;color:#0b1f33;margin-bottom:18px;
 }
+.ax-view[hidden]{display:none}
+
+/* ============================================================
+   VISTA INICIO
+   ============================================================ */
+.hero-inicio{
+  background:var(--grad-brand-deep);color:#fff;border-radius:24px;
+  padding:44px 34px;position:relative;overflow:hidden;margin-bottom:26px;
+  box-shadow:var(--shadow-lg);
+}
+.hero-inicio::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(620px 320px at 92% 18%, rgba(255,106,61,.42), transparent 62%),
+    radial-gradient(520px 260px at 8% 88%, rgba(47,158,122,.55), transparent 62%);
+  pointer-events:none;
+}
+.hero-inicio .hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
+  padding:6px 14px;border-radius:30px;font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;position:relative;
+}
+.hero-inicio .hero-tag .dot{
+  width:7px;height:7px;border-radius:50%;background:#7ce7b6;
+  animation:pulse 2s infinite;
+}
+.hero-inicio h2{
+  font-family:var(--display);font-size:36px;font-weight:700;
+  line-height:1.05;letter-spacing:-.03em;margin-bottom:14px;
+  position:relative;max-width:720px;
+}
+.hero-inicio h2 em{
+  font-style:normal;background:var(--grad-warm);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-inicio p.lead{
+  font-size:15px;opacity:.92;max-width:640px;position:relative;
+  margin-bottom:24px;font-weight:400;
+}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;position:relative}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:30px;
+  font-weight:700;font-size:13.5px;transition:.25s var(--ease);
+  border:none;cursor:pointer;font-family:var(--ui);white-space:nowrap;
+}
+.hero-cta.primary{background:var(--grad-warm);color:#fff;box-shadow:var(--shadow-glow)}
+.hero-cta.primary:hover{transform:translateY(-2px)}
+.hero-cta.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.32)}
+.hero-cta.ghost:hover{background:rgba(255,255,255,.24)}
+.hero-stats{
+  display:flex;gap:28px;flex-wrap:wrap;position:relative;
+  margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);
+}
+.hero-stat b{
+  display:block;font-family:var(--display);font-size:26px;font-weight:800;
+  line-height:1;letter-spacing:-.02em;
+}
+.hero-stat span{font-size:11px;opacity:.75;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+
+.ax-block-title{
+  font-family:var(--display);font-size:22px;font-weight:700;
+  letter-spacing:-.025em;color:#0b1f33;margin:8px 0 4px 0;
+}
+.ax-block-sub{font-size:13px;color:#8f9fb2;margin-bottom:18px;font-weight:500}
+
+.benefits-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;margin:26px 0;
+}
+.benefit-card{
+  background:#fff;border-radius:18px;padding:20px;border:1px solid #eef2f8;
+  box-shadow:var(--shadow-xs);transition:.25s var(--ease);
+}
+.benefit-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#ffd9b8}
+.benefit-ico{
+  width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  background:var(--grad-warm);color:#fff;font-size:19px;margin-bottom:12px;
+  box-shadow:var(--shadow-glow);
+}
+.benefit-card h4{font-family:var(--ui);font-size:14px;font-weight:700;color:#0b1f33;margin-bottom:5px;letter-spacing:-.01em}
+.benefit-card p{font-size:12.5px;color:#5a6b80;line-height:1.55}
+
+.cta-final{
+  background:var(--grad-brand);color:#fff;border-radius:22px;
+  padding:32px 28px;display:flex;align-items:center;justify-content:space-between;
+  gap:22px;flex-wrap:wrap;margin-top:26px;box-shadow:var(--shadow-lg);
+  position:relative;overflow:hidden;
+}
+.cta-final::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(500px 240px at 88% 20%, rgba(255,106,61,.35), transparent 60%);
+}
+.cta-final h3{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.02em;position:relative}
+.cta-final p{font-size:13.5px;opacity:.88;margin-top:6px;position:relative}
+.cta-final .hero-cta{position:relative}
+
+/* ============================================================
+   VISTA DASHBOARD
+   ============================================================ */
+.dash-welcome{
+  background:#fff;border:1px solid #eef2f8;border-radius:22px;
+  padding:24px 26px;margin-bottom:20px;box-shadow:var(--shadow-xs);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+.dash-welcome h2{
+  font-family:var(--display);font-size:26px;font-weight:700;
+  letter-spacing:-.025em;color:#0b1f33;margin-bottom:6px;
+}
+.dash-welcome h2 em{font-style:normal;color:#f97316}
+.dash-welcome p{font-size:13.5px;color:#5a6b80}
+.dash-welcome .dash-avatar{
+  width:64px;height:64px;border-radius:50%;overflow:hidden;
+  border:3px solid #ffd9b8;box-shadow:0 6px 20px -8px rgba(249,115,22,.5);
+  flex-shrink:0;
+}
+.dash-welcome .dash-avatar img{width:100%;height:100%;object-fit:cover}
+
+.dash-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:16px;margin-bottom:22px;
+}
+.dash-card{
+  background:#fff;border-radius:18px;padding:20px;border:1px solid #eef2f8;
+  box-shadow:var(--shadow-xs);transition:.25s var(--ease);position:relative;overflow:hidden;
+}
+.dash-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad-warm);opacity:.85;
+}
+.dash-card.brand::before{background:var(--grad-brand)}
+.dash-card.berry::before{background:var(--grad-berry)}
+.dash-card.cool::before{background:var(--grad-cool)}
+.dash-card.gold::before{background:var(--grad-gold)}
+.dash-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.dash-card .dc-ico{
+  width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:#fff4eb;color:#f97316;font-size:16px;margin-bottom:12px;
+}
+.dash-card.brand .dc-ico{background:var(--brand-soft);color:var(--brand)}
+.dash-card.berry .dc-ico{background:#fdeaf2;color:var(--berry)}
+.dash-card.cool .dc-ico{background:#eef2ff;color:var(--violet)}
+.dash-card.gold .dc-ico{background:var(--amber-soft);color:var(--gold)}
+.dash-card .dc-label{
+  font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;
+  color:#8f9fb2;font-weight:700;margin-bottom:6px;
+}
+.dash-card .dc-value{
+  font-family:var(--display);font-size:28px;font-weight:800;
+  color:#0b1f33;line-height:1;letter-spacing:-.02em;
+}
+.dash-card .dc-sub{font-size:11.5px;color:#8f9fb2;margin-top:7px}
+
+.dash-panels{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:18px;
+}
+.dash-panel{
+  background:#fff;border:1px solid #eef2f8;border-radius:20px;
+  padding:22px;box-shadow:var(--shadow-xs);
+}
+.dash-panel h3{
+  font-family:var(--display);font-size:17px;font-weight:700;
+  color:#0b1f33;letter-spacing:-.02em;margin-bottom:4px;
+}
+.dash-panel .panel-sub{font-size:12px;color:#8f9fb2;margin-bottom:16px}
+.dash-actions{display:flex;flex-direction:column;gap:10px}
+.dash-action{
+  display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:14px;
+  background:#fafbfd;border:1px solid #eef2f8;cursor:pointer;transition:.2s;
+  font-family:var(--ui);text-align:left;width:100%;color:var(--fg);
+}
+.dash-action:hover{background:#fff4eb;border-color:#ffd9b8;transform:translateX(3px)}
+.dash-action .da-ico{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  background:var(--grad-warm);color:#fff;display:grid;place-items:center;font-size:14px;
+}
+.dash-action .da-txt{flex:1;min-width:0}
+.dash-action .da-title{font-size:13px;font-weight:700;color:#0b1f33;letter-spacing:-.01em}
+.dash-action .da-sub{font-size:11px;color:#8f9fb2;margin-top:2px}
+.dash-action > i.fa-chevron-right{color:#c4d0de;font-size:12px;flex-shrink:0}
+
+.dash-top-list{display:flex;flex-direction:column;gap:10px}
+.dash-top-item{
+  display:flex;align-items:center;gap:12px;padding:10px;border-radius:12px;
+  background:#fafbfd;border:1px solid #eef2f8;
+}
+.dash-top-thumb{
+  width:44px;height:44px;border-radius:10px;flex-shrink:0;
+  overflow:hidden;background:var(--muted);
+}
+.dash-top-thumb img{width:100%;height:100%;object-fit:cover}
+.dash-top-info{flex:1;min-width:0}
+.dash-top-name{
+  font-size:12.5px;font-weight:600;color:#0b1f33;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.dash-top-price{
+  font-family:var(--display);font-size:14px;font-weight:800;color:var(--brand);
+  margin-top:2px;
+}
+
+/* ============================================================
+   VISTA CATÁLOGO
+   ============================================================ */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;
+}
+.cat-card{
+  background:#fff;border-radius:20px;padding:26px 18px 22px;text-align:center;
+  border:1px solid #eef2f8;cursor:pointer;transition:.28s var(--ease);
+  box-shadow:var(--shadow-xs);position:relative;overflow:hidden;
+}
+.cat-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--grad-warm);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.cat-card:hover{
+  transform:translateY(-6px);border-color:#ffd9b8;box-shadow:var(--shadow-md);
+}
+.cat-card:hover::before{transform:scaleX(1)}
+.cat-card .cat-emoji{
+  font-size:36px;line-height:1;margin-bottom:12px;display:block;
+  transition:transform .35s var(--ease);
+}
+.cat-card:hover .cat-emoji{transform:scale(1.15) rotate(-6deg)}
+.cat-card .cat-name{
+  font-family:var(--display);font-size:15px;font-weight:700;
+  color:#0b1f33;margin-bottom:6px;line-height:1.28;letter-spacing:-.015em;
+}
+.cat-card .cat-count{
+  font-size:11.5px;color:#8f9fb2;font-weight:600;
+  display:inline-flex;align-items:center;gap:5px;
+  background:#f1f5f9;padding:3px 11px;border-radius:20px;
+}
+.cat-card .cat-count i{font-size:10px;color:#f97316}
 
 /* ============================================================
    SEARCH ROW
@@ -455,10 +690,10 @@ button{font:inherit;cursor:pointer}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,231,182,.6)}70%{box-shadow:0 0 0 9px rgba(124,231,182,0)}100%{box-shadow:0 0 0 0 rgba(124,231,182,0)}}
 
 /* ============================================================
-   FLOTANTES / DRAWER / TOAST / ADMIN
+   FLOTANTES / DRAWER / TOAST
    ============================================================ */
 .wa-float{
-  position:fixed;right:20px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:60;
+  position:fixed;right:20px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:60;
   display:inline-flex;align-items:center;gap:9px;
   background:#25D366;color:#fff;font-weight:700;font-size:13px;
   padding:11px 18px;border-radius:40px;font-family:var(--ui);
@@ -467,15 +702,6 @@ button{font:inherit;cursor:pointer}
 }
 .wa-float:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 18px 40px -12px rgba(37,211,102,.8)}
 .wa-float svg{flex-shrink:0}
-
-#adminFab{
-  position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:60;
-  width:48px;height:48px;border-radius:50%;border:none;
-  background:var(--grad-warm);color:#fff;font-size:20px;
-  box-shadow:var(--shadow-glow);cursor:pointer;
-  transition:.25s var(--ease);
-}
-#adminFab:hover{transform:scale(1.08) rotate(15deg)}
 
 .toast{
   position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(30px);
@@ -551,35 +777,6 @@ button{font:inherit;cursor:pointer}
 .btn-wa-confirm:hover{background:#1eb455;transform:translateY(-1px)}
 .btn-wa-confirm:disabled{background:#c9d3dc;cursor:not-allowed;transform:none}
 
-.admin-modal{
-  position:fixed;inset:0;z-index:90;display:none;
-  align-items:center;justify-content:center;padding:18px;
-  background:rgba(11,31,51,.6);backdrop-filter:blur(5px);
-}
-.admin-modal.open{display:flex}
-.admin-card{
-  background:#fff;border-radius:22px;width:min(560px,100%);
-  max-height:90vh;overflow-y:auto;padding:26px;font-family:var(--ui);
-  box-shadow:0 40px 100px -30px rgba(0,0,0,.5);
-}
-.admin-card h3{font-family:var(--display);font-size:22px;margin-bottom:6px;color:#0b1f33}
-.admin-card p.sub{font-size:12.5px;color:#8f9fb2;margin-bottom:18px}
-.admin-card label{display:block;font-size:11.5px;font-weight:600;color:#5a6b80;margin:12px 0 5px}
-.admin-card input,.admin-card textarea{
-  width:100%;padding:10px 14px;border-radius:12px;border:1px solid #dfe7f0;
-  font-family:var(--ui);font-size:13px;outline:none;transition:.2s;
-}
-.admin-card input:focus,.admin-card textarea:focus{border-color:#f97316;box-shadow:0 0 0 3px #fff1e6}
-.admin-actions{display:flex;gap:10px;margin-top:22px}
-.admin-actions button{
-  flex:1;height:44px;border-radius:30px;border:none;font-weight:700;font-size:13px;
-  cursor:pointer;transition:.2s;font-family:var(--ui);
-}
-.btn-primary{background:var(--brand);color:#fff}
-.btn-primary:hover{background:#0a3826}
-.btn-ghost{background:#f1f5f9;color:#43566b}
-.btn-ghost:hover{background:#e2e8f0}
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -591,6 +788,7 @@ button{font:inherit;cursor:pointer}
   .ax-nav-item i{width:auto;font-size:17px}
   .ax-nav-divider{margin:8px 10px}
   .ax-content{padding:18px 20px 36px}
+  .dash-panels{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   body{display:block}
@@ -618,35 +816,30 @@ button{font:inherit;cursor:pointer}
   .wa-float span{display:none}
   .wa-float{padding:14px;border-radius:50%}
 
+  .hero-inicio{padding:30px 22px;border-radius:20px}
+  .hero-inicio h2{font-size:26px}
+  .hero-inicio p.lead{font-size:13.5px}
+  .hero-stats{gap:18px}
+  .hero-stat b{font-size:22px}
+
+  .dash-welcome{padding:20px}
+  .dash-welcome h2{font-size:22px}
+  .dash-card .dc-value{font-size:24px}
+
+  .cat-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .cat-card{padding:20px 12px 18px}
+  .cat-card .cat-emoji{font-size:30px}
+
   /* === FIX BOTÓN AGREGAR EN MÓVIL === */
-  .ax-card{
-    padding:9px;
-  }
-  .ax-card-actions{
-    flex-direction:column;
-    align-items:stretch;
-    gap:6px;
-  }
-  .ax-card-qty{
-    justify-content:center;
-    align-self:center;
-  }
-  .ax-card-add{
-    width:100%;
-    font-size:11px;
-    height:34px;
-    padding:0 10px;
-  }
-  .ax-card-send{
-    font-size:10.5px;
-    height:30px;
-  }
-  .ax-card-title{
-    font-size:13px;
-  }
-  .ax-card-price-now{
-    font-size:16px;
-  }
+  .ax-card{padding:9px}
+  .ax-card-actions{flex-direction:column;align-items:stretch;gap:6px}
+  .ax-card-qty{justify-content:center;align-self:center}
+  .ax-card-add{width:100%;font-size:11px;height:34px;padding:0 10px}
+  .ax-card-send{font-size:10.5px;height:30px}
+  .ax-card-title{font-size:13px}
+  .ax-card-price-now{font-size:16px}
+
+  .cta-final{flex-direction:column;align-items:flex-start;text-align:left}
 }
 @media(max-width:480px){
   .ax-topbar .user > span:first-child{display:none}
@@ -663,8 +856,7 @@ button{font:inherit;cursor:pointer}
 .ax-overlay.open{display:block}
 
 /* ============================================================
-   IMÁGENES ADAPTABLES 1-3 EN TARJETA (rellenan el contenedor
-   de forma absoluta para evitar huecos o desbordes)
+   IMÁGENES ADAPTABLES 1-3 EN TARJETA
    ============================================================ */
 .ax-card-gallery {
   position: absolute;
@@ -674,356 +866,161 @@ button{font:inherit;cursor:pointer}
   overflow: hidden;
   background: #f0e9dd;
 }
-.ax-card-gallery[data-count="1"] {
-  grid-template-columns: 1fr;
-}
-.ax-card-gallery[data-count="2"] {
-  grid-template-columns: 1fr 1fr;
-}
+.ax-card-gallery[data-count="1"] { grid-template-columns: 1fr; }
+.ax-card-gallery[data-count="2"] { grid-template-columns: 1fr 1fr; }
 .ax-card-gallery[data-count="3"] {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
-.ax-card-gallery[data-count="3"] .ax-card-gallery-img:first-child {
-  grid-row: span 2;
-}
+.ax-card-gallery[data-count="3"] .ax-card-gallery-img:first-child { grid-row: span 2; }
 .ax-card-gallery-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  background: #f0e9dd;
+  width: 100%; height: 100%; object-fit: cover; display: block; background: #f0e9dd;
 }
 
 /* ============================================================
    MODAL DE VISTA RÁPIDA (QUICK VIEW)
    ============================================================ */
 .quick-view-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 120;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-  background: rgba(11, 31, 51, .6);
-  backdrop-filter: blur(5px);
+  position: fixed; inset: 0; z-index: 120; display: none;
+  align-items: center; justify-content: center; padding: 18px;
+  background: rgba(11, 31, 51, .6); backdrop-filter: blur(5px);
 }
-.quick-view-modal.open {
-  display: flex;
-}
+.quick-view-modal.open { display: flex; }
 .quick-view-card {
-  background: #fff;
-  border-radius: 22px;
-  width: min(900px, 100%);
-  max-height: 92vh;
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  background: #fff; border-radius: 22px; width: min(900px, 100%);
+  max-height: 92vh; overflow-y: auto; display: grid;
+  grid-template-columns: 1fr 1fr; gap: 0;
   font-family: var(--ui);
   box-shadow: 0 40px 100px -30px rgba(0, 0, 0, .5);
   position: relative;
 }
 .quick-view-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 10;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: #f1f5f9;
-  color: #43566b;
-  font-size: 16px;
-  cursor: pointer;
-  transition: .2s;
-  display: grid;
-  place-items: center;
+  position: absolute; top: 14px; right: 14px; z-index: 10;
+  width: 36px; height: 36px; border-radius: 50%; border: none;
+  background: #f1f5f9; color: #43566b; font-size: 16px;
+  cursor: pointer; transition: .2s; display: grid; place-items: center;
 }
-.quick-view-close:hover {
-  background: #ffe8d6;
-  color: #e05e00;
-}
+.quick-view-close:hover { background: #ffe8d6; color: #e05e00; }
 .quick-view-gallery {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #fafbfd;
-  border-radius: 22px 0 0 22px;
+  padding: 20px; display: flex; flex-direction: column; gap: 10px;
+  background: #fafbfd; border-radius: 22px 0 0 22px;
 }
 .quick-view-main-img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: contain;
-  border-radius: 14px;
-  background: #fff;
-  border: 1px solid #eef2f8;
-  padding: 8px;
+  width: 100%; aspect-ratio: 1/1; object-fit: contain;
+  border-radius: 14px; background: #fff; border: 1px solid #eef2f8; padding: 8px;
 }
-.quick-view-thumbs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+.quick-view-thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
 .quick-view-thumb {
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  object-fit: cover;
-  border: 2px solid transparent;
-  cursor: pointer;
-  background: #fff;
-  transition: .2s;
-  padding: 2px;
+  width: 60px; height: 60px; border-radius: 10px; object-fit: cover;
+  border: 2px solid transparent; cursor: pointer; background: #fff;
+  transition: .2s; padding: 2px;
 }
-.quick-view-thumb:hover,
-.quick-view-thumb.active {
-  border-color: #f97316;
-}
+.quick-view-thumb:hover, .quick-view-thumb.active { border-color: #f97316; }
 .quick-view-info {
-  padding: 26px 26px 26px 20px;
-  display: flex;
-  flex-direction: column;
+  padding: 26px 26px 26px 20px; display: flex; flex-direction: column;
 }
 .quick-view-sku {
-  font-size: 11px;
-  color: #a0b1c5;
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
+  font-size: 11px; color: #a0b1c5; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px;
 }
 .quick-view-cat {
-  font-size: 11px;
-  color: #f97316;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  margin-bottom: 6px;
+  font-size: 11px; color: #f97316; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em; margin-bottom: 6px;
 }
 .quick-view-title {
-  font-family: var(--display);
-  font-size: 24px;
-  font-weight: 700;
-  color: #0b1f33;
-  line-height: 1.2;
-  margin-bottom: 10px;
+  font-family: var(--display); font-size: 24px; font-weight: 700;
+  color: #0b1f33; line-height: 1.2; margin-bottom: 10px;
 }
 .quick-view-prices {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px;
 }
 .quick-view-price-old {
-  font-size: 14px;
-  color: #a0b1c5;
-  text-decoration: line-through;
+  font-size: 14px; color: #a0b1c5; text-decoration: line-through;
   text-decoration-color: #ef4444;
 }
 .quick-view-price-now {
-  font-family: var(--display);
-  font-size: 28px;
-  font-weight: 800;
-  color: #0b1f33;
-  line-height: 1;
+  font-family: var(--display); font-size: 28px; font-weight: 800;
+  color: #0b1f33; line-height: 1;
 }
 .quick-view-price-now.discount {
   background: var(--grad-berry);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.quick-view-subtotal{
-  font-size:13px;color:#5a6b80;font-weight:500;margin-bottom:14px;
-}
+.quick-view-subtotal{ font-size:13px;color:#5a6b80;font-weight:500;margin-bottom:14px; }
 .quick-view-subtotal b{color:#0f4d38;font-weight:700}
 .quick-view-stock {
-  font-size: 12px;
-  color: #8f9fb2;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 18px;
+  font-size: 12px; color: #8f9fb2; display: flex; align-items: center;
+  gap: 6px; margin-bottom: 18px;
 }
-.quick-view-stock .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #22c55e;
-}
-.quick-view-stock .dot.low {
-  background: #f59e0b;
-}
+.quick-view-stock .dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+.quick-view-stock .dot.low { background: #f59e0b; }
 .quick-view-actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 14px;
+  display: flex; gap: 10px; align-items: center; margin-bottom: 14px;
 }
 .quick-view-qty {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  background: #f1f5f9;
-  border-radius: 30px;
-  padding: 3px;
-  flex-shrink: 0;
+  display: flex; align-items: center; gap: 2px; background: #f1f5f9;
+  border-radius: 30px; padding: 3px; flex-shrink: 0;
 }
 .quick-view-qty button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
-  background: #fff;
-  box-shadow: var(--shadow-xs);
-  font-size: 15px;
-  font-weight: 700;
-  color: #0f4d38;
-  display: grid;
-  place-items: center;
-  line-height: 1;
-  transition: .15s;
-  cursor: pointer;
+  width: 32px; height: 32px; border-radius: 50%; border: none; background: #fff;
+  box-shadow: var(--shadow-xs); font-size: 15px; font-weight: 700; color: #0f4d38;
+  display: grid; place-items: center; line-height: 1; transition: .15s; cursor: pointer;
 }
-.quick-view-qty button:hover {
-  background: #0f4d38;
-  color: #fff;
-}
+.quick-view-qty button:hover { background: #0f4d38; color: #fff; }
 .quick-view-qty .n {
-  min-width: 32px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 700;
+  min-width: 32px; text-align: center; font-size: 14px; font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 .quick-view-add {
-  flex: 1;
-  height: 40px;
-  border-radius: 30px;
-  border: none;
-  background: var(--brand);
-  color: #fff;
-  font-weight: 700;
-  font-size: 13px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: .2s;
-  font-family: var(--ui);
-  cursor: pointer;
+  flex: 1; height: 40px; border-radius: 30px; border: none;
+  background: var(--brand); color: #fff; font-weight: 700; font-size: 13px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  transition: .2s; font-family: var(--ui); cursor: pointer;
 }
-.quick-view-add:hover {
-  background: #0a3826;
-}
-.quick-view-add.done {
-  background: var(--ok);
-}
+.quick-view-add:hover { background: #0a3826; }
+.quick-view-add.done { background: var(--ok); }
 .quick-view-wa {
-  width: 100%;
-  height: 40px;
-  border-radius: 30px;
-  border: 1px solid #ffd9b8;
-  background: #fff8f2;
-  color: #e05e00;
-  font-weight: 600;
-  font-size: 12.5px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: .2s;
-  font-family: var(--ui);
-  cursor: pointer;
-  margin-bottom: 16px;
+  width: 100%; height: 40px; border-radius: 30px; border: 1px solid #ffd9b8;
+  background: #fff8f2; color: #e05e00; font-weight: 600; font-size: 12.5px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  transition: .2s; font-family: var(--ui); cursor: pointer; margin-bottom: 16px;
 }
-.quick-view-wa:hover {
-  background: var(--grad-warm);
-  color: #fff;
-  border-color: transparent;
-}
+.quick-view-wa:hover { background: var(--grad-warm); color: #fff; border-color: transparent; }
 .quick-view-desc {
-  font-size: 12.5px;
-  color: #5a6b80;
-  line-height: 1.6;
-  border-top: 1px solid #eef2f8;
-  padding-top: 14px;
+  font-size: 12.5px; color: #5a6b80; line-height: 1.6;
+  border-top: 1px solid #eef2f8; padding-top: 14px;
 }
 .quick-view-desc h4 {
-  font-family: var(--ui);
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: #0b1f33;
-  margin-bottom: 8px;
+  font-family: var(--ui); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; color: #0b1f33; margin-bottom: 8px;
 }
-.quick-view-desc p {
-  margin-bottom: 8px;
-}
+.quick-view-desc p { margin-bottom: 8px; }
 .quick-view-tabs {
-  display: flex;
-  gap: 4px;
-  border-bottom: 1px solid #eef2f8;
-  margin-bottom: 10px;
+  display: flex; gap: 4px; border-bottom: 1px solid #eef2f8; margin-bottom: 10px;
 }
 .quick-view-tab {
-  padding: 6px 12px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #8f9fb2;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: .2s;
-  background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  padding: 6px 12px; font-size: 11.5px; font-weight: 600; color: #8f9fb2;
+  cursor: pointer; border-bottom: 2px solid transparent; transition: .2s;
+  background: none; border-top: none; border-left: none; border-right: none;
   font-family: var(--ui);
 }
-.quick-view-tab.active {
-  color: #f97316;
-  border-bottom-color: #f97316;
-}
-.quick-view-tab:hover {
-  color: #e05e00;
-}
+.quick-view-tab.active { color: #f97316; border-bottom-color: #f97316; }
+.quick-view-tab:hover { color: #e05e00; }
 .quick-view-tab-content {
-  font-size: 12.5px;
-  color: #5a6b80;
-  line-height: 1.6;
+  font-size: 12.5px; color: #5a6b80; line-height: 1.6;
 }
-.quick-view-tab-content[hidden] {
-  display: none;
-}
+.quick-view-tab-content[hidden] { display: none; }
 
 @media (max-width: 768px) {
-  .quick-view-card {
-    grid-template-columns: 1fr;
-    max-height: 94vh;
-  }
-  .quick-view-gallery {
-    border-radius: 22px 22px 0 0;
-    padding: 16px;
-  }
-  .quick-view-info {
-    padding: 18px 16px 22px;
-  }
-  .quick-view-title {
-    font-size: 20px;
-  }
-  .quick-view-price-now {
-    font-size: 24px;
-  }
+  .quick-view-card { grid-template-columns: 1fr; max-height: 94vh; }
+  .quick-view-gallery { border-radius: 22px 22px 0 0; padding: 16px; }
+  .quick-view-info { padding: 18px 16px 22px; }
+  .quick-view-title { font-size: 20px; }
+  .quick-view-price-now { font-size: 24px; }
 }
 
 /* ============================================================
-   MODAL CREAR ORDEN (DATOS DEL CLIENTE + CONFIRMAR PEDIDO)
+   MODAL CREAR ORDEN
    ============================================================ */
 .order-modal{
   position:fixed;inset:0;z-index:130;display:none;
@@ -1142,29 +1139,28 @@ button{font:inherit;cursor:pointer}
   </div>
 
   <nav class="ax-nav">
-    <button type="button" class="ax-nav-item"><i class="fas fa-home"></i><span>Inicio</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-chart-pie"></i><span>Dashboard</span></button>
-    <button type="button" class="ax-nav-item active"><i class="fas fa-box"></i><span>Productos</span><span class="badge-new">Nuevo</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-list-ul"></i><span>Catálogo</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-truck"></i><span>Proveedores</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-search"></i><span>Caza productos</span></button>
+    <button type="button" class="ax-nav-item" data-view="inicio"><i class="fas fa-home"></i><span>Inicio</span></button>
+    <button type="button" class="ax-nav-item" data-view="dashboard"><i class="fas fa-chart-pie"></i><span>Dashboard</span></button>
+    <button type="button" class="ax-nav-item active" data-view="productos"><i class="fas fa-box"></i><span>Productos</span><span class="badge-new">Nuevo</span></button>
+    <button type="button" class="ax-nav-item" data-view="catalogo"><i class="fas fa-list-ul"></i><span>Catálogo</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Proveedores"><i class="fas fa-truck"></i><span>Proveedores</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Caza productos"><i class="fas fa-search"></i><span>Caza productos</span></button>
     <div class="ax-nav-divider"></div>
     <div class="ax-nav-label">Ventas</div>
-    <button type="button" class="ax-nav-item"><i class="fas fa-shopping-bag"></i><span>Mis Pedidos</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-shield-alt"></i><span>Mis Garantías</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-users"></i><span>Clientes</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-plug"></i><span>Mis Integraciones</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-history"></i><span>Historial de Cartera</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-user-cog"></i><span>Mis usuarios</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Mis Pedidos"><i class="fas fa-shopping-bag"></i><span>Mis Pedidos</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Mis Garantías"><i class="fas fa-shield-alt"></i><span>Mis Garantías</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Clientes"><i class="fas fa-users"></i><span>Clientes</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Mis Integraciones"><i class="fas fa-plug"></i><span>Mis Integraciones</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Historial de Cartera"><i class="fas fa-history"></i><span>Historial de Cartera</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Mis usuarios"><i class="fas fa-user-cog"></i><span>Mis usuarios</span></button>
     <div class="ax-nav-divider"></div>
-    <button type="button" class="ax-nav-item"><i class="fas fa-cog"></i><span>Configuraciones</span><span class="badge-new">Nuevo</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-calendar-alt"></i><span>Calendario</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-bullhorn"></i><span>Marketing</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-chart-line"></i><span>ROAX</span><span class="badge-new">Nuevo</span></button>
-    <button type="button" class="ax-nav-item"><i class="fas fa-file-alt"></i><span>Reportes</span><span class="badge-new">Nuevo</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Configuraciones"><i class="fas fa-cog"></i><span>Configuraciones</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Calendario"><i class="fas fa-calendar-alt"></i><span>Calendario</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Marketing"><i class="fas fa-bullhorn"></i><span>Marketing</span></button>
+    <button type="button" class="ax-nav-item" data-soon="ROAX"><i class="fas fa-chart-line"></i><span>ROAX</span></button>
+    <button type="button" class="ax-nav-item" data-soon="Reportes"><i class="fas fa-file-alt"></i><span>Reportes</span></button>
     <div class="ax-nav-divider"></div>
     <button type="button" class="ax-nav-item" id="axOpenCart"><i class="fas fa-shopping-cart"></i><span>Carrito</span><span class="badge-count" id="axCartCount" style="display:none">0</span></button>
-    <button type="button" class="ax-nav-item" id="axOpenAdmin"><i class="fas fa-cog"></i><span>Panel Admin</span></button>
   </nav>
 </aside>
 
@@ -1195,59 +1191,224 @@ button{font:inherit;cursor:pointer}
 
   <div class="ax-content">
 
-    <h1 class="ax-page-title">Catálogo de productos</h1>
+    <!-- ==================== VISTA: INICIO ==================== -->
+    <div class="ax-view" id="view-inicio" hidden>
+      <section class="hero-inicio">
+        <span class="hero-tag"><span class="dot"></span> Distribuidora mayorista · Colombia</span>
+        <h2>Abastece tu tienda con <em>calidad y precio</em> de mayorista.</h2>
+        <p class="lead">
+          En <b>Axtoon Distribuidora S.A.S</b> conectamos tiendas, minimercados y comercio independiente
+          con productos de alta rotación. Arme su pedido en minutos, aplique su cupón y confírmelo
+          directamente por WhatsApp.
+        </p>
+        <div class="hero-ctas">
+          <button type="button" class="hero-cta primary" data-goto="productos">
+            <i class="fas fa-box-open"></i> Ver productos
+          </button>
+          <button type="button" class="hero-cta ghost" data-goto="catalogo">
+            <i class="fas fa-list-ul"></i> Explorar catálogo
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>+63</b><span>Productos activos</span></div>
+          <div class="hero-stat"><b>20</b><span>Categorías</span></div>
+          <div class="hero-stat"><b>32</b><span>Departamentos</span></div>
+          <div class="hero-stat"><b>100%</b><span>Confirmación WhatsApp</span></div>
+        </div>
+      </section>
 
-    <div class="ax-search-row">
-      <div class="ax-toggles">
-        <label><i class="fas fa-heart" style="color:#f97316"></i> Favoritos <input type="checkbox" id="axToggleFav"></label>
-        <label><i class="fas fa-lock"></i> Privado <input type="checkbox"></label>
-        <label><i class="fas fa-shopping-cart"></i> Con órdenes <input type="checkbox"></label>
-      </div>
-      <div class="ax-search-box">
-        <i class="fas fa-search"></i>
-        <input type="text" id="axSearchInput" placeholder="Buscar producto, SKU o categoría…" aria-label="Buscar producto, SKU o categoría">
-        <button class="ax-search-by-img" type="button" id="axSearchByImg"><i class="fas fa-camera"></i><span> Buscar por imagen</span></button>
-      </div>
-    </div>
+      <h3 class="ax-block-title">Productos destacados</h3>
+      <p class="ax-block-sub">Una selección de nuestros productos más vendidos entre comercios independientes.</p>
+      <div class="ax-grid" id="axInicioFeatured"></div>
 
-    <!-- BARRA DE SECCIONES -->
-    <div class="ax-sections-bar" id="axSectionsBar" role="tablist" aria-label="Secciones de productos"></div>
-
-    <!-- ENCABEZADO DE SECCIÓN -->
-    <div class="ax-section-header" id="axSectionHeader" hidden>
-      <div class="ax-section-header-left">
-        <div class="ax-section-header-emoji" id="axSectionEmoji">📦</div>
-        <div>
-          <div class="ax-section-header-title" id="axSectionTitle">Todas las secciones</div>
-          <div class="ax-section-header-sub" id="axSectionSub">Explora todo el catálogo mayorista</div>
+      <div class="benefits-row">
+        <div class="benefit-card">
+          <div class="benefit-ico"><i class="fas fa-truck-fast"></i></div>
+          <h4>Envíos a todo el país</h4>
+          <p>Despachamos a los 32 departamentos con aliados logísticos de confianza.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-ico"><i class="fas fa-tags"></i></div>
+          <h4>Precios de mayorista</h4>
+          <p>Márgenes reales para tiendas, minimercados y comercio independiente.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-ico"><i class="fab fa-whatsapp"></i></div>
+          <h4>Pedido por WhatsApp</h4>
+          <p>Confirme su pedido en un clic y reciba respuesta personalizada.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-ico"><i class="fas fa-shield-halved"></i></div>
+          <h4>Garantía respaldada</h4>
+          <p>Productos verificados con garantía por defectos de fábrica.</p>
         </div>
       </div>
-      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <span class="ax-section-header-count" id="axSectionCount">0 productos</span>
-        <button class="ax-section-header-clear" id="axSectionClear" type="button">
-          <i class="fas fa-times-circle"></i> Ver todas
+
+      <div class="cta-final">
+        <div>
+          <h3>¿Listo para armar su pedido?</h3>
+          <p>Explore el catálogo completo o escríbanos directamente por WhatsApp.</p>
+        </div>
+        <button type="button" class="hero-cta primary" data-goto="productos">
+          <i class="fas fa-shopping-bag"></i> Ir a productos
         </button>
       </div>
     </div>
 
-    <div class="ax-order-row">
-      <span>Ordenar por:</span>
-      <select id="axSortSelect" aria-label="Ordenar productos por">
-        <option value="rel">Aleatorio</option>
-        <option value="precio-asc">Menor precio</option>
-        <option value="precio-desc">Mayor precio</option>
-        <option value="nombre">Nombre A–Z</option>
-        <option value="descuento">Mayor descuento</option>
-      </select>
-      <span>Vista:</span>
-      <div class="ax-view-icons">
-        <i class="fas fa-th-large active" role="button" tabindex="0" aria-label="Vista en cuadrícula"></i>
-        <i class="fas fa-list" role="button" tabindex="0" aria-label="Vista en lista"></i>
+    <!-- ==================== VISTA: DASHBOARD ==================== -->
+    <div class="ax-view" id="view-dashboard" hidden>
+      <h1 class="ax-page-title">Dashboard</h1>
+
+      <div class="dash-welcome">
+        <div>
+          <h2>¡Hola, <em>Junior</em>! 👋</h2>
+          <p>Este es un resumen rápido de tu actividad y del catálogo Axtoon.</p>
+        </div>
+        <div class="dash-avatar">
+          <img src="ing1.jpg" alt="Propietario">
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card brand">
+          <div class="dc-ico"><i class="fas fa-box"></i></div>
+          <div class="dc-label">Productos en catálogo</div>
+          <div class="dc-value" id="dashTotalProducts">63</div>
+          <div class="dc-sub">Disponibles para pedido inmediato</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-ico"><i class="fas fa-list-ul"></i></div>
+          <div class="dc-label">Categorías</div>
+          <div class="dc-value" id="dashTotalCategories">20</div>
+          <div class="dc-sub">Secciones activas</div>
+        </div>
+        <div class="dash-card berry">
+          <div class="dc-ico"><i class="fas fa-shopping-cart"></i></div>
+          <div class="dc-label">Ítems en carrito</div>
+          <div class="dc-value" id="dashCartCount">0</div>
+          <div class="dc-sub">Productos pendientes de confirmar</div>
+        </div>
+        <div class="dash-card gold">
+          <div class="dc-ico"><i class="fas fa-dollar-sign"></i></div>
+          <div class="dc-label">Total estimado</div>
+          <div class="dc-value" id="dashCartTotal">$ 0</div>
+          <div class="dc-sub">Según productos en carrito</div>
+        </div>
+      </div>
+
+      <div class="dash-panels">
+        <div class="dash-panel">
+          <h3>Acciones rápidas</h3>
+          <p class="panel-sub">Atajos a las secciones más usadas.</p>
+          <div class="dash-actions">
+            <button type="button" class="dash-action" data-goto="productos">
+              <span class="da-ico"><i class="fas fa-box-open"></i></span>
+              <span class="da-txt">
+                <span class="da-title">Explorar productos</span>
+                <span class="da-sub">Ver todo el catálogo mayorista</span>
+              </span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <button type="button" class="dash-action" data-goto="catalogo">
+              <span class="da-ico"><i class="fas fa-list-ul"></i></span>
+              <span class="da-txt">
+                <span class="da-title">Ver catálogo por categorías</span>
+                <span class="da-sub">Navega por las 20 secciones</span>
+              </span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <button type="button" class="dash-action" id="dashOpenCart">
+              <span class="da-ico"><i class="fas fa-shopping-bag"></i></span>
+              <span class="da-txt">
+                <span class="da-title">Revisar mi carrito</span>
+                <span class="da-sub">Confirmar pedido por WhatsApp</span>
+              </span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <a class="dash-action" id="dashWaAction" href="https://wa.me/573223752547" target="_blank" rel="noopener">
+              <span class="da-ico"><i class="fab fa-whatsapp"></i></span>
+              <span class="da-txt">
+                <span class="da-title">Hablar por WhatsApp</span>
+                <span class="da-sub">Atención personalizada inmediata</span>
+              </span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <h3>Productos destacados</h3>
+          <p class="panel-sub">Los mejor valorados de esta semana.</p>
+          <div class="dash-top-list" id="dashTopList"></div>
+        </div>
       </div>
     </div>
 
-    <div class="ax-grid" id="axProductGrid"></div>
-    <p class="empty" id="axEmpty" hidden style="text-align:center;padding:40px;color:var(--muted-fg);background:#fff;border:1px dashed var(--border);border-radius:var(--r-lg)">No hay productos que coincidan.</p>
+    <!-- ==================== VISTA: PRODUCTOS ==================== -->
+    <div class="ax-view" id="view-productos">
+      <h1 class="ax-page-title">Catálogo de productos</h1>
+
+      <div class="ax-search-row">
+        <div class="ax-toggles">
+          <label><i class="fas fa-heart" style="color:#f97316"></i> Favoritos <input type="checkbox" id="axToggleFav"></label>
+          <label><i class="fas fa-lock"></i> Privado <input type="checkbox"></label>
+          <label><i class="fas fa-shopping-cart"></i> Con órdenes <input type="checkbox"></label>
+        </div>
+        <div class="ax-search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="axSearchInput" placeholder="Buscar producto, SKU o categoría…" aria-label="Buscar producto, SKU o categoría">
+          <button class="ax-search-by-img" type="button" id="axSearchByImg"><i class="fas fa-camera"></i><span> Buscar por imagen</span></button>
+        </div>
+      </div>
+
+      <!-- BARRA DE SECCIONES -->
+      <div class="ax-sections-bar" id="axSectionsBar" role="tablist" aria-label="Secciones de productos"></div>
+
+      <!-- ENCABEZADO DE SECCIÓN -->
+      <div class="ax-section-header" id="axSectionHeader" hidden>
+        <div class="ax-section-header-left">
+          <div class="ax-section-header-emoji" id="axSectionEmoji">📦</div>
+          <div>
+            <div class="ax-section-header-title" id="axSectionTitle">Todas las secciones</div>
+            <div class="ax-section-header-sub" id="axSectionSub">Explora todo el catálogo mayorista</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span class="ax-section-header-count" id="axSectionCount">0 productos</span>
+          <button class="ax-section-header-clear" id="axSectionClear" type="button">
+            <i class="fas fa-times-circle"></i> Ver todas
+          </button>
+        </div>
+      </div>
+
+      <div class="ax-order-row">
+        <span>Ordenar por:</span>
+        <select id="axSortSelect" aria-label="Ordenar productos por">
+          <option value="rel">Aleatorio</option>
+          <option value="precio-asc">Menor precio</option>
+          <option value="precio-desc">Mayor precio</option>
+          <option value="nombre">Nombre A–Z</option>
+          <option value="descuento">Mayor descuento</option>
+        </select>
+        <span>Vista:</span>
+        <div class="ax-view-icons">
+          <i class="fas fa-th-large active" role="button" tabindex="0" aria-label="Vista en cuadrícula"></i>
+          <i class="fas fa-list" role="button" tabindex="0" aria-label="Vista en lista"></i>
+        </div>
+      </div>
+
+      <div class="ax-grid" id="axProductGrid"></div>
+      <p class="empty" id="axEmpty" hidden style="text-align:center;padding:40px;color:var(--muted-fg);background:#fff;border:1px dashed var(--border);border-radius:var(--r-lg)">No hay productos que coincidan.</p>
+    </div>
+
+    <!-- ==================== VISTA: CATÁLOGO ==================== -->
+    <div class="ax-view" id="view-catalogo" hidden>
+      <h1 class="ax-page-title">Catálogo por categorías</h1>
+      <p class="ax-block-sub" style="margin-top:-10px;margin-bottom:22px">
+        Explora las 20 secciones disponibles. Al hacer clic en una categoría verás todos los productos que la componen.
+      </p>
+      <div class="cat-grid" id="axCatGrid"></div>
+    </div>
 
   </div>
 </div>
@@ -1257,8 +1418,6 @@ button{font:inherit;cursor:pointer}
   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.37 2.15 11.75c0 1.89.5 3.73 1.44 5.35L2 22l5.07-1.54A10.1 10.1 0 0 0 12.04 21.5C17.5 21.5 21.93 17.13 21.93 11.75S17.5 2 12.04 2Zm5.73 14.36c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.93-1.26-4.83-4.18-4.98-4.38-.14-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.24-.27.64-.4 1.02-.4.12 0 .24 0 .34.01.3.01.45.03.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.15-.29.31-.12.6.16.3.73 1.2 1.56 1.94 1.08.96 1.98 1.26 2.3 1.4.3.13.48.11.66-.07.18-.18.77-.9.98-1.2.2-.3.41-.25.68-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.34.08.13.08.73-.16 1.4Z"/></svg>
   <span>Pedir ahora</span>
 </a>
-
-<button id="adminFab" title="Panel de administración" aria-label="Abrir panel admin">⚙️</button>
 
 <!-- DRAWER CARRITO -->
 <div class="overlay" id="overlay"></div>
@@ -1280,28 +1439,6 @@ button{font:inherit;cursor:pointer}
     </button>
   </div>
 </aside>
-
-<!-- MODAL ADMIN -->
-<div class="admin-modal" id="adminModal">
-  <div class="admin-card">
-    <h3>Panel de administración</h3>
-    <p class="sub">Ajustes rápidos de la tienda Axtoon.</p>
-
-    <label for="adminWa">Número de WhatsApp (con indicativo, solo números)</label>
-    <input type="tel" id="adminWa" placeholder="573223752547">
-
-    <label for="adminMsg">Mensaje inicial para el cliente</label>
-    <textarea id="adminMsg" rows="3" placeholder="Hola, quiero confirmar mi pedido mayorista:"></textarea>
-
-    <label for="adminCoupon">Cupón activo (el número final define el % de descuento)</label>
-    <input type="text" id="adminCoupon" placeholder="AXTOON10">
-
-    <div class="admin-actions">
-      <button class="btn-ghost" id="adminCancel" type="button">Cancelar</button>
-      <button class="btn-primary" id="adminSave" type="button">Guardar</button>
-    </div>
-  </div>
-</div>
 
 <!-- MODAL VISTA RÁPIDA (QUICK VIEW) -->
 <div class="quick-view-modal" id="quickViewModal">
@@ -1416,10 +1553,8 @@ button{font:inherit;cursor:pointer}
    CONFIGURACIÓN GLOBAL
    ============================================================ */
 const WA = '573223752547';
-let COUPON = 'AXTOON10';
+const COUPON = 'AXTOON10';
 
-/* ---- Helpers de configuración (leen ajustes guardados por el admin,
-       con valores por defecto de respaldo) ---- */
 function safeLocalGet(key, fallback){
   try{
     const v = localStorage.getItem(key);
@@ -1431,16 +1566,9 @@ function safeLocalSet(key, value){
 }
 function digitsOnly(str){ return (str || '').replace(/[^0-9]/g, ''); }
 
-function getWaNumber(){
-  const raw = safeLocalGet('axtoon_wa', WA);
-  return digitsOnly(raw) || WA;
-}
-function getInitialMsg(){
-  return safeLocalGet('axtoon_msg', 'Hola, quiero confirmar mi pedido mayorista:');
-}
-function getActiveCouponCode(){
-  return (safeLocalGet('axtoon_coupon', COUPON) || '').trim();
-}
+function getWaNumber(){ return WA; }
+function getInitialMsg(){ return 'Hola, quiero confirmar mi pedido mayorista:'; }
+function getActiveCouponCode(){ return COUPON; }
 function couponPercentFromCode(code){
   const m = (code || '').match(/(\d{1,2})\s*$/);
   let pct = m ? parseInt(m[1], 10) : 10;
@@ -1454,7 +1582,7 @@ function updateWaFloatHref(){
 }
 
 /* ============================================================
-   SECCIONES (20 categorías)
+   SECCIONES
    ============================================================ */
 const AX_SECTIONS = [
   { id:'accesorios-celular',   name:'Accesorios para celular',    emoji:'📱' },
@@ -1484,115 +1612,92 @@ AX_SECTIONS.forEach(s => { AX_SECTION_MAP[s.id] = s; });
 
 /* ============================================================
    PRODUCTOS DEMO (63 productos, 20 secciones)
-   Todos inician en 1 unidad (minQty:1). El subtotal por producto
-   se recalcula en vivo según la cantidad que elija el cliente.
    ============================================================ */
 const AX_PRODUCTS = [
-  // 1. Accesorios para celular
   { id:'p01', sku:'ACC-001', name:'Bolso Portacelular',              category:'accesorios-celular', price:50999, beforePrice:60999, minQty:1,  unit:'und', featured:true,  images:['im1.jpg','im2.jpg','im3.jpg'] },
   { id:'p02', sku:'ACC-002', name:'Holder Para Celular',              category:'accesorios-celular', price:12999,  beforePrice:15999,  minQty:1, unit:'und', featured:false, images:['im4.jpg','im5.jpg','im6.jpg'] },
   { id:'p03', sku:'ACC-003', name:'Holder De Celular Para Computador',category:'accesorios-celular', price:45999, beforePrice:57999, minQty:1, unit:'und', featured:true,  images:['im7.jpg','im8.jpg','im9.jpg'] },
   { id:'p04', sku:'ACC-004', name:'Soporte Para Celular',             category:'accesorios-celular', price:37999, beforePrice:42000, minQty:1,  unit:'und', featured:false, images:['im10.jpg','im11.jpg','im12.jpg'] },
   { id:'p05', sku:'ACC-005', name:'Cases Celular',                    category:'accesorios-celular', price:24999, beforePrice:27999, minQty:1,  unit:'und', featured:true,  images:['im13.jpg','im14.jpg','im15.jpg'] },
 
-  // 2. Tecnología
   { id:'p06', sku:'TEC-001', name:'Audífonos Bluetooth TWS Pro',     category:'tecnologia', price:45900, beforePrice:59900,  minQty:1, unit:'und', featured:true,  images:['im16.jpg','im17.jpg'] },
   { id:'p07', sku:'TEC-002', name:'Parlante portátil 10W',           category:'tecnologia', price:68900, beforePrice:0,      minQty:1, unit:'und', featured:false, images:['im18.jpg'] },
   { id:'p08', sku:'TEC-003', name:'Reloj inteligente Smart Band',    category:'tecnologia', price:89900, beforePrice:119900, minQty:1, unit:'und', featured:true,  images:['im19.jpg','im20.jpg','im21.jpg'] },
   { id:'p09', sku:'TEC-004', name:'Power bank 10.000 mAh',           category:'tecnologia', price:39900, beforePrice:49900,  minQty:1, unit:'und', featured:false, images:['im22.jpg','im23.jpg'] },
 
-  // 3. Iluminación
   { id:'p10', sku:'ILU-001', name:'Bombillo LED 9W luz fría',        category:'iluminacion', price:2800,  beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im24.jpg'] },
   { id:'p11', sku:'ILU-002', name:'Tira LED RGB 5m con control',     category:'iluminacion', price:22900, beforePrice:32900, minQty:1,  unit:'und', featured:true,  images:['im25.jpg','im26.jpg'] },
   { id:'p12', sku:'ILU-003', name:'Lámpara solar para exterior',     category:'iluminacion', price:18900, beforePrice:0,     minQty:1,  unit:'und', featured:false, images:['im27.jpg','im28.jpg','im29.jpg'] },
 
-  // 4. Belleza
   { id:'p13', sku:'BEL-001', name:'Crema hidratante facial 120ml',   category:'belleza', price:12500, beforePrice:16900, minQty:1, unit:'und', featured:true,  images:['im30.jpg'] },
   { id:'p14', sku:'BEL-002', name:'Kit de brochas profesionales',    category:'belleza', price:28900, beforePrice:39900, minQty:1,  unit:'kit', featured:false, images:['im31.jpg','im32.jpg'] },
   { id:'p15', sku:'BEL-003', name:'Sérum vitamina C 30ml',           category:'belleza', price:19900, beforePrice:0,     minQty:1,  unit:'und', featured:true,  images:['im33.jpg','im34.jpg','im35.jpg'] },
 
-  // 5. Joyería
   { id:'p16', sku:'JOY-001', name:'Collar acero dorado cadena',      category:'joyeria', price:15900, beforePrice:22900, minQty:1, unit:'und', featured:true,  images:['im36.jpg','im37.jpg'] },
   { id:'p17', sku:'JOY-002', name:'Aretes circonia premium',         category:'joyeria', price:8900,  beforePrice:0,     minQty:1, unit:'par', featured:false, images:['im38.jpg'] },
   { id:'p18', sku:'JOY-003', name:'Pulsera ajustable unisex',        category:'joyeria', price:11900, beforePrice:15900, minQty:1, unit:'und', featured:false, images:['im39.jpg','im40.jpg'] },
 
-  // 6. Prendas de vestir
   { id:'p19', sku:'PRE-001', name:'Camiseta algodón unisex',         category:'prendas-vestir', price:18900, beforePrice:24900, minQty:1, unit:'und',  featured:true,  images:['im41.jpg','im42.jpg','im43.jpg'] },
   { id:'p20', sku:'PRE-002', name:'Gorra plana bordada',             category:'prendas-vestir', price:14900, beforePrice:0,     minQty:1, unit:'und',  featured:false, images:['im44.jpg','im45.jpg'] },
   { id:'p21', sku:'PRE-003', name:'Medias deportivas pack x3',       category:'prendas-vestir', price:12900, beforePrice:16900, minQty:1, unit:'pack', featured:false, images:['im46.jpg'] },
 
-  // 7. Bolsos
   { id:'p22', sku:'BOL-001', name:'Bolso mochila antirrobo USB',     category:'bolsos', price:59900, beforePrice:79900, minQty:1, unit:'und', featured:true,  images:['im47.jpg','im48.jpg'] },
   { id:'p23', sku:'BOL-002', name:'Cartera cuero sintético',         category:'bolsos', price:34900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im49.jpg','im50.jpg','im51.jpg'] },
   { id:'p24', sku:'BOL-003', name:'Neceser organizador viaje',       category:'bolsos', price:22900, beforePrice:29900, minQty:1, unit:'und', featured:false, images:['im52.jpg'] },
 
-  // 8. Mascotas
   { id:'p25', sku:'MAS-001', name:'Juguete mordedor perro',          category:'mascotas', price:7900,  beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im53.jpg','im54.jpg'] },
   { id:'p26', sku:'MAS-002', name:'Collar antipulgas gato',          category:'mascotas', price:13900, beforePrice:18900, minQty:1, unit:'und', featured:true,  images:['im55.jpg','im56.jpg'] },
   { id:'p27', sku:'MAS-003', name:'Plato comedero doble',            category:'mascotas', price:10900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im57.jpg'] },
 
-  // 9. Juguetes
   { id:'p28', sku:'JUG-001', name:'Pelota antiestrés premium',       category:'juguetes', price:5900,  beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im58.jpg','im59.jpg'] },
   { id:'p29', sku:'JUG-002', name:'Rompecabezas 500 piezas',         category:'juguetes', price:19900, beforePrice:25900, minQty:1,  unit:'und', featured:true,  images:['im60.jpg','im61.jpg','im62.jpg'] },
   { id:'p30', sku:'JUG-003', name:'Llavero LED personalizado',       category:'juguetes', price:3500,  beforePrice:4900,  minQty:1, unit:'und', featured:false, images:['im63.jpg'] },
 
-  // 10. Gaming
   { id:'p31', sku:'GAM-001', name:'Mouse gamer RGB 7200 DPI',        category:'gaming', price:45900,  beforePrice:59900,  minQty:1, unit:'und', featured:true,  images:['im64.jpg','im65.jpg'] },
   { id:'p32', sku:'GAM-002', name:'Teclado mecánico 60%',            category:'gaming', price:129900, beforePrice:159900, minQty:1, unit:'und', featured:true,  images:['im66.jpg','im67.jpg','im68.jpg'] },
   { id:'p33', sku:'GAM-003', name:'Diadema gamer con micrófono',     category:'gaming', price:79900,  beforePrice:0,      minQty:1, unit:'und', featured:false, images:['im69.jpg','im70.jpg'] },
 
-  // 11. Fitness
   { id:'p34', sku:'FIT-001', name:'Bandas elásticas set x5',         category:'fitness', price:22900, beforePrice:32900, minQty:1,  unit:'set', featured:true,  images:['im71.jpg','im72.jpg'] },
   { id:'p35', sku:'FIT-002', name:'Botella deportiva 1L',            category:'fitness', price:14900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im73.jpg'] },
   { id:'p36', sku:'FIT-003', name:'Cuerda para saltar profesional',  category:'fitness', price:12900, beforePrice:17900, minQty:1, unit:'und', featured:false, images:['im74.jpg','im75.jpg'] },
 
-  // 12. Hogar
   { id:'p37', sku:'HOG-001', name:'Organizador de closet 6 cajones', category:'hogar', price:39900, beforePrice:49900, minQty:1,  unit:'und',  featured:true,  images:['im76.jpg','im77.jpg','im78.jpg'] },
   { id:'p38', sku:'HOG-002', name:'Ganchos adhesivos pack x10',      category:'hogar', price:9900,  beforePrice:0,     minQty:1, unit:'pack', featured:false, images:['im79.jpg','im80.jpg'] },
   { id:'p39', sku:'HOG-003', name:'Canasta apilable multiuso',       category:'hogar', price:15900, beforePrice:19900, minQty:1, unit:'und',  featured:false, images:['im81.jpg'] },
 
-  // 13. Cocina
   { id:'p40', sku:'COC-001', name:'Juego de cuchillos x5',           category:'cocina', price:34900, beforePrice:45900, minQty:1, unit:'set', featured:true,  images:['im82.jpg','im83.jpg'] },
   { id:'p41', sku:'COC-002', name:'Tabla de cortar bambú',           category:'cocina', price:18900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im84.jpg','im85.jpg'] },
   { id:'p42', sku:'COC-003', name:'Organizador de especias',         category:'cocina', price:22900, beforePrice:29900, minQty:1, unit:'und', featured:false, images:['im86.jpg'] },
 
-  // 14. Automóvil
   { id:'p43', sku:'AUT-001', name:'Aspiradora portátil para carro',  category:'automovil', price:54900, beforePrice:69900, minQty:1,  unit:'und', featured:true,  images:['im87.jpg','im88.jpg'] },
   { id:'p44', sku:'AUT-002', name:'Soporte celular magnético',       category:'automovil', price:12900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im89.jpg'] },
   { id:'p45', sku:'AUT-003', name:'Organizador maletero plegable',   category:'automovil', price:29900, beforePrice:39900, minQty:1,  unit:'und', featured:false, images:['im90.jpg','im91.jpg','im92.jpg'] },
 
-  // 15. Cabello
   { id:'p46', sku:'CAB-001', name:'Secador de cabello 2200W',        category:'cabello', price:69900, beforePrice:89900, minQty:1,  unit:'und', featured:true,  images:['im93.jpg','im94.jpg'] },
   { id:'p47', sku:'CAB-002', name:'Plancha alisadora cerámica',      category:'cabello', price:54900, beforePrice:0,     minQty:1,  unit:'und', featured:false, images:['im95.jpg'] },
   { id:'p48', sku:'CAB-003', name:'Kit pinzas y clips cabello',      category:'cabello', price:9900,  beforePrice:13900, minQty:1, unit:'kit', featured:false, images:['im96.jpg','im97.jpg'] },
 
-  // 16. Fotografía
   { id:'p49', sku:'FOT-001', name:'Trípode flexible universal',      category:'fotografia', price:25900, beforePrice:34900, minQty:1,  unit:'und', featured:true,  images:['im98.jpg','im99.jpg'] },
   { id:'p50', sku:'FOT-002', name:'Anillo de luz LED 10"',           category:'fotografia', price:44900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im100.jpg','im101.jpg'] },
   { id:'p51', sku:'FOT-003', name:'Correa ajustable para cámara',    category:'fotografia', price:15900, beforePrice:19900, minQty:1, unit:'und', featured:false, images:['im102.jpg'] },
 
-  // 17. Herramientas agro
   { id:'p52', sku:'AGR-001', name:'Machete agrícola profesional',    category:'herramientas-agro', price:28900, beforePrice:0,     minQty:1,  unit:'und', featured:false, images:['im103.jpg'] },
   { id:'p53', sku:'AGR-002', name:'Tijeras de podar acero',          category:'herramientas-agro', price:19900, beforePrice:25900, minQty:1, unit:'und', featured:true,  images:['im104.jpg','im105.jpg'] },
   { id:'p54', sku:'AGR-003', name:'Guantes jardinería reforzados',   category:'herramientas-agro', price:8900,  beforePrice:0,     minQty:1, unit:'par', featured:false, images:['im106.jpg','im107.jpg'] },
 
-  // 18. Limpieza
   { id:'p55', sku:'LIM-001', name:'Trapeador giratorio 360°',        category:'limpieza', price:32900, beforePrice:42900, minQty:1,  unit:'und',  featured:true,  images:['im108.jpg','im109.jpg'] },
   { id:'p56', sku:'LIM-002', name:'Paño microfibra pack x5',         category:'limpieza', price:11900, beforePrice:0,     minQty:1, unit:'pack', featured:false, images:['im110.jpg'] },
   { id:'p57', sku:'LIM-003', name:'Cepillo multiuso baño',           category:'limpieza', price:7900,  beforePrice:10900, minQty:1, unit:'und',  featured:false, images:['im111.jpg','im112.jpg'] },
 
-  // 19. Perfumes
   { id:'p58', sku:'PER-001', name:'Perfume floral mujer 100ml',      category:'perfumes', price:49900, beforePrice:69900, minQty:1, unit:'und', featured:true,  images:['im113.jpg','im114.jpg'] },
   { id:'p59', sku:'PER-002', name:'Perfume amaderado hombre 100ml',  category:'perfumes', price:52900, beforePrice:0,     minQty:1, unit:'und', featured:true,  images:['im115.jpg'] },
   { id:'p60', sku:'PER-003', name:'Body splash frutal 250ml',        category:'perfumes', price:18900, beforePrice:24900, minQty:1, unit:'und', featured:false, images:['im116.jpg','im117.jpg','im118.jpg'] },
 
-  // 20. Viajes
   { id:'p61', sku:'VIA-001', name:'Almohada cervical de viaje',      category:'viajes', price:15900, beforePrice:21900, minQty:1,  unit:'und', featured:false, images:['im119.jpg','im120.jpg'] },
   { id:'p62', sku:'VIA-002', name:'Organizador de maleta set x6',    category:'viajes', price:29900, beforePrice:39900, minQty:1,  unit:'set', featured:true,  images:['im121.jpg','im122.jpg','im123.jpg'] },
   { id:'p63', sku:'VIA-003', name:'Botella plegable silicona',       category:'viajes', price:12900, beforePrice:0,     minQty:1, unit:'und', featured:false, images:['im124.jpg'] },
 ];
 
-/* Aliases para compatibilidad con posibles variables globales */
 const PRODUCTS = AX_PRODUCTS;
 const CAT_BY_ID = {};
 AX_SECTIONS.forEach(s => { CAT_BY_ID[s.id] = { name:s.name, emoji:s.emoji }; });
@@ -1617,10 +1722,12 @@ function addToCart(productId, qty){
   saveCart();
   renderCart();
   showToast('✓ ' + p.name + ' agregado al pedido');
+  if(typeof window.axRefreshDashboard === 'function') window.axRefreshDashboard();
 }
 function removeFromCart(productId){
   CART = CART.filter(x => x.id !== productId);
   saveCart(); renderCart();
+  if(typeof window.axRefreshDashboard === 'function') window.axRefreshDashboard();
 }
 
 /* ============================================================
@@ -1675,10 +1782,10 @@ function renderCart(){
 }
 
 /* ============================================================
-   MODAL "CREAR ORDEN" (datos del cliente + confirmar pedido)
+   MODAL "CREAR ORDEN"
    ============================================================ */
 let ORDER_ITEMS = [];
-let ORDER_COUPON = null; // { code, percent } | null
+let ORDER_COUPON = null;
 
 function openOrderModal(items){
   if(!items || !items.length){ showToast('No hay productos para esta orden'); return; }
@@ -1707,15 +1814,9 @@ function closeOrderModal(){
   }
 }
 
-function orderItemsTotal(){
-  return ORDER_ITEMS.reduce((s,i)=> s + (i.price*i.qty), 0);
-}
-function orderDiscountAmount(){
-  return ORDER_COUPON ? Math.round(orderItemsTotal() * ORDER_COUPON.percent / 100) : 0;
-}
-function orderFinalTotal(){
-  return orderItemsTotal() - orderDiscountAmount();
-}
+function orderItemsTotal(){ return ORDER_ITEMS.reduce((s,i)=> s + (i.price*i.qty), 0); }
+function orderDiscountAmount(){ return ORDER_COUPON ? Math.round(orderItemsTotal() * ORDER_COUPON.percent / 100) : 0; }
+function orderFinalTotal(){ return orderItemsTotal() - orderDiscountAmount(); }
 
 function renderOrderProducts(){
   const wrap = document.getElementById('orderProducts');
@@ -1867,9 +1968,9 @@ function renderOrderProducts(){
 })();
 
 /* ============================================================
-   DRAWER + OVERLAY + ADMIN MODAL
+   DRAWER + OVERLAY
    ============================================================ */
-(function initDrawerAndAdmin(){
+(function initDrawer(){
   const drawer = document.getElementById('drawer');
   const overlay = document.getElementById('overlay');
   const drawerClose = document.getElementById('drawerClose');
@@ -1886,14 +1987,11 @@ function renderOrderProducts(){
   }
 
   if(drawerClose) drawerClose.addEventListener('click', closeDrawer);
-  if(overlay) overlay.addEventListener('click', () => {
-    closeDrawer();
-  });
+  if(overlay) overlay.addEventListener('click', closeDrawer);
 
   window.openDrawer = openDrawer;
   window.closeDrawer = closeDrawer;
 
-  // REALIZAR COMPRA (carrito completo) → abre el modal de datos del cliente
   const btnWa = document.getElementById('btnWaConfirm');
   if(btnWa){
     btnWa.addEventListener('click', () => {
@@ -1902,46 +2000,6 @@ function renderOrderProducts(){
       openOrderModal(CART.map(i => ({ id:i.id, name:i.name, sku:i.sku, price:i.price, unit:i.unit, qty:i.qty })));
     });
   }
-
-  // Admin modal
-  const adminModal = document.getElementById('adminModal');
-  const adminFab = document.getElementById('adminFab');
-  const adminCancel = document.getElementById('adminCancel');
-  const adminSave = document.getElementById('adminSave');
-  const adminWa = document.getElementById('adminWa');
-  const adminMsg = document.getElementById('adminMsg');
-  const adminCoupon = document.getElementById('adminCoupon');
-
-  adminWa.value = safeLocalGet('axtoon_wa', WA);
-  adminMsg.value = safeLocalGet('axtoon_msg', 'Hola, quiero confirmar mi pedido mayorista:');
-  adminCoupon.value = safeLocalGet('axtoon_coupon', COUPON);
-
-  function openAdmin(){ adminModal.classList.add('open'); }
-  function closeAdminModal(){ adminModal.classList.remove('open'); }
-
-  if(adminFab) adminFab.addEventListener('click', openAdmin);
-  if(adminCancel) adminCancel.addEventListener('click', closeAdminModal);
-  if(adminSave) adminSave.addEventListener('click', () => {
-    const waDigits = digitsOnly(adminWa.value) || WA;
-    safeLocalSet('axtoon_wa', waDigits);
-    safeLocalSet('axtoon_msg', adminMsg.value.trim());
-    safeLocalSet('axtoon_coupon', adminCoupon.value.trim() || COUPON);
-    COUPON = adminCoupon.value.trim() || COUPON;
-    adminWa.value = waDigits;
-    updateWaFloatHref();
-    showToast('✓ Ajustes guardados');
-    closeAdminModal();
-  });
-  adminModal && adminModal.addEventListener('click', e => {
-    if(e.target === adminModal) closeAdminModal();
-  });
-
-  // Atajo Ctrl+Shift+A
-  document.addEventListener('keydown', e => {
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a'){ e.preventDefault(); openAdmin(); }
-  });
-
-  window.closeAdminModal = closeAdminModal;
 
   updateWaFloatHref();
   renderCart();
@@ -1982,7 +2040,6 @@ function renderOrderProducts(){
     const isDeal = !!product.beforePrice && product.beforePrice > product.price;
     const imgs = (product.images && product.images.length) ? product.images.slice(0, 3) : ['im1.jpg'];
 
-    // Galería
     mainImg.src = imgs[0];
     mainImg.alt = product.name;
     thumbsWrap.innerHTML = '';
@@ -2004,7 +2061,6 @@ function renderOrderProducts(){
       thumbsWrap.appendChild(t);
     });
 
-    // Info
     skuEl.textContent = 'SKU: ' + (product.sku || product.id);
     catEl.textContent = cat.emoji + ' ' + cat.name;
     titleEl.textContent = product.name;
@@ -2017,9 +2073,9 @@ function renderOrderProducts(){
 
     descEl.textContent = 'El ' + product.name.toLowerCase() + ' es la solución ideal para quienes buscan comodidad y funcionalidad. Producto mayorista disponible para tiendas y comercio independiente. Fabricado con materiales resistentes y duraderos, perfecto para el uso diario. Compatible con una amplia gama de modelos y situaciones.';
 
-    // Reset tabs
     document.querySelectorAll('.quick-view-tab').forEach(t => t.classList.remove('active'));
-    document.querySelector('.quick-view-tab[data-tab="detalles"]').classList.add('active');
+    const dTab = document.querySelector('.quick-view-tab[data-tab="detalles"]');
+    if(dTab) dTab.classList.add('active');
     document.getElementById('quickViewTabDetalles').hidden = false;
     document.getElementById('quickViewTabGarantias').hidden = true;
     document.getElementById('quickViewTabRecursos').hidden = true;
@@ -2058,7 +2114,6 @@ function renderOrderProducts(){
     }, 1400);
   });
 
-  // REALIZAR COMPRA (vista rápida) → abre el modal de datos del cliente con este producto
   waBtn.addEventListener('click', () => {
     if (!currentProduct) return;
     closeQuickView();
@@ -2072,7 +2127,6 @@ function renderOrderProducts(){
     }]);
   });
 
-  // Tabs
   document.querySelectorAll('.quick-view-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.quick-view-tab').forEach(t => t.classList.remove('active'));
@@ -2089,7 +2143,7 @@ function renderOrderProducts(){
 })();
 
 /* ============================================================
-   UI PRINCIPAL: sidebar + grid + secciones
+   UI PRINCIPAL: sidebar + navegación entre vistas + grid + secciones
    ============================================================ */
 (function initAxUI(){
   const sidebar = document.getElementById('axSidebar');
@@ -2109,7 +2163,7 @@ function renderOrderProducts(){
     });
   }
 
-  /* --- CARRITO / ADMIN desde sidebar --- */
+  /* --- CARRITO desde sidebar --- */
   const openCartBtn = document.getElementById('axOpenCart');
   if(openCartBtn){
     openCartBtn.addEventListener('click', () => {
@@ -2118,27 +2172,21 @@ function renderOrderProducts(){
       axOverlay.classList.remove('open');
     });
   }
-  const openAdminBtn = document.getElementById('axOpenAdmin');
-  if(openAdminBtn){
-    openAdminBtn.addEventListener('click', () => {
-      const fab = document.getElementById('adminFab');
-      if(fab) fab.click();
-      sidebar.classList.remove('open');
-      axOverlay.classList.remove('open');
-    });
-  }
 
-  /* --- Ítems de navegación sin funcionalidad propia todavía:
-         dan retroalimentación en vez de quedar "muertos" --- */
+  /* --- Sidebar: navegación entre vistas + "próximamente" --- */
   document.querySelectorAll('.ax-nav-item').forEach(item => {
-    if(item.id === 'axOpenCart' || item.id === 'axOpenAdmin') return;
+    if(item.id === 'axOpenCart') return;
     item.addEventListener('click', () => {
-      document.querySelectorAll('.ax-nav-item').forEach(i => {
-        if(i.id !== 'axOpenCart' && i.id !== 'axOpenAdmin') i.classList.remove('active');
-      });
-      item.classList.add('active');
-      const label = item.querySelector('span') ? item.querySelector('span').textContent : '';
-      showToast('🔧 "' + label + '" estará disponible próximamente');
+      const view = item.dataset.view;
+      const soon = item.dataset.soon;
+
+      if(view){
+        navigateTo(view);
+      } else if(soon){
+        document.querySelectorAll('.ax-nav-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        showToast('🔧 "' + soon + '" estará disponible próximamente');
+      }
       if(window.innerWidth <= 768){
         sidebar.classList.remove('open');
         axOverlay.classList.remove('open');
@@ -2153,7 +2201,7 @@ function renderOrderProducts(){
     });
   }
 
-  /* --- GRID + SECCIONES --- */
+  /* --- REFERENCIAS GRID + SECCIONES --- */
   const grid = document.getElementById('axProductGrid');
   const empty = document.getElementById('axEmpty');
   const searchInp = document.getElementById('axSearchInput');
@@ -2172,7 +2220,102 @@ function renderOrderProducts(){
   let axSort = 'rel';
   let axSearch = '';
   let axActiveSection = 'all';
+  let currentView = 'productos';
 
+  /* --- Crear tarjeta de producto (reutilizable) --- */
+  function createProductCard(p){
+    const cat = AX_SECTION_MAP[p.category] || { name:'General', emoji:'📦' };
+    const isDeal = !!p.beforePrice && p.beforePrice > p.price;
+    const card = document.createElement('div');
+    card.className = 'ax-card';
+    const favActive = favorites.has(p.id);
+    const startQty = p.minQty || 1;
+
+    let galleryHtml = '';
+    if (p.images && p.images.length > 0) {
+      const imgs = p.images.slice(0, 3);
+      galleryHtml = '<div class="ax-card-gallery" data-count="' + imgs.length + '">' +
+        imgs.map(src => '<img class="ax-card-gallery-img" src="' + src + '" alt="' + p.name + '" loading="lazy">').join('') +
+        '</div>';
+    } else {
+      galleryHtml = '<div class="ph" style="font-size:0"></div>';
+    }
+
+    card.innerHTML =
+      '<div class="ax-card-media">' +
+        galleryHtml +
+        (isDeal ? '<span class="ax-card-tag">Oferta</span>' : (p.featured ? '<span class="ax-card-tag verified">✓ Verificado</span>' : '')) +
+        '<button type="button" class="ax-card-fav'+(favActive?' active':'')+'" data-fav="'+p.id+'" aria-label="Agregar a favoritos" aria-pressed="'+(favActive?'true':'false')+'"><i class="fas fa-heart"></i></button>' +
+      '</div>' +
+      '<div class="ax-card-body">' +
+        '<span class="ax-card-cat">'+cat.emoji+' '+cat.name+'</span>' +
+        '<h3 class="ax-card-title">'+p.name+'</h3>' +
+        '<p class="ax-card-provider">SKU: <b>'+(p.sku||p.id)+'</b></p>' +
+        '<div class="ax-card-prices">' +
+          (isDeal ? '<span class="ax-card-price-old">$ '+p.beforePrice.toLocaleString('es-CO')+'</span>' : '') +
+          '<span class="ax-card-price-now'+(isDeal?' discount':'')+'">$ '+p.price.toLocaleString('es-CO')+'</span>' +
+        '</div>' +
+        '<p class="ax-card-subtotal"><span class="sub-label">Total x <span class="sub-qty">'+startQty+'</span></span>: <b class="sub-value">$ '+(p.price*startQty).toLocaleString('es-CO')+'</b></p>' +
+        '<p class="ax-card-stock"><span class="dot'+(p.featured?'':' low')+'"></span> Stock: '+(p.featured ? '540' : '123')+'</p>' +
+        '<div class="ax-card-actions">' +
+          '<div class="ax-card-qty"><button type="button" class="mn" aria-label="Disminuir cantidad">−</button><span class="n">'+startQty+'</span><button type="button" class="pl" aria-label="Aumentar cantidad">+</button></div>' +
+          '<button type="button" class="ax-card-add"><i class="fas fa-cart-plus"></i> Agregar</button>' +
+        '</div>' +
+        '<button type="button" class="ax-card-send"><i class="fas fa-shopping-cart"></i> REALIZAR COMPRA</button>' +
+      '</div>';
+
+    card.querySelector('.ax-card-media').addEventListener('click', (e) => {
+      if (e.target.closest('.ax-card-fav')) return;
+      if (window.openQuickView) window.openQuickView(p);
+    });
+
+    const nEl = card.querySelector('.n');
+    const subQtyEl = card.querySelector('.sub-qty');
+    const subValueEl = card.querySelector('.sub-value');
+
+    function updateCardSubtotal(){
+      const qty = +nEl.textContent || 1;
+      if(subQtyEl) subQtyEl.textContent = qty;
+      if(subValueEl) subValueEl.textContent = '$ ' + (p.price*qty).toLocaleString('es-CO');
+    }
+
+    card.querySelector('.mn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      nEl.textContent = Math.max(1, +nEl.textContent - 1);
+      updateCardSubtotal();
+    });
+    card.querySelector('.pl').addEventListener('click', (e) => {
+      e.stopPropagation();
+      nEl.textContent = +nEl.textContent + 1;
+      updateCardSubtotal();
+    });
+
+    card.querySelector('.ax-card-add').addEventListener('click', function(e){
+      e.stopPropagation();
+      addToCart(p.id, +nEl.textContent);
+      this.classList.add('done'); this.innerHTML = '<i class="fas fa-check"></i> Agregado';
+      setTimeout(()=>{ this.classList.remove('done'); this.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar'; }, 1300);
+    });
+
+    card.querySelector('.ax-card-send').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openOrderModal([{
+        id: p.id, name: p.name, sku: p.sku,
+        price: p.price, unit: p.unit, qty: +nEl.textContent
+      }]);
+    });
+
+    card.querySelector('.ax-card-fav').addEventListener('click', function(e){
+      e.stopPropagation();
+      if(favorites.has(p.id)){ favorites.delete(p.id); this.classList.remove('active'); this.setAttribute('aria-pressed','false'); }
+      else { favorites.add(p.id); this.classList.add('active'); this.setAttribute('aria-pressed','true'); }
+      safeLocalSet('axtoon_favs', JSON.stringify([...favorites]));
+    });
+
+    return card;
+  }
+
+  /* --- Secciones bar --- */
   function buildSectionsBar(){
     if(!sectionsBar) return;
     const counts = {};
@@ -2242,108 +2385,129 @@ function renderOrderProducts(){
     if(empty) empty.hidden = list.length > 0;
 
     list.forEach(p => {
-      const cat = AX_SECTION_MAP[p.category] || { name:'General', emoji:'📦' };
-      const isDeal = !!p.beforePrice && p.beforePrice > p.price;
-      const card = document.createElement('div');
-      card.className = 'ax-card';
-      const favActive = favorites.has(p.id);
-      const startQty = p.minQty || 1;
-
-      // Construir galería de imágenes adaptable (1 a 3 imágenes)
-      let galleryHtml = '';
-      if (p.images && p.images.length > 0) {
-        const imgs = p.images.slice(0, 3); // máximo 3 imágenes
-        galleryHtml = '<div class="ax-card-gallery" data-count="' + imgs.length + '">' +
-          imgs.map(src => '<img class="ax-card-gallery-img" src="' + src + '" alt="' + p.name + '" loading="lazy">').join('') +
-          '</div>';
-      } else {
-        galleryHtml = '<div class="ph" style="font-size:0"></div>';
-      }
-
-      card.innerHTML =
-        '<div class="ax-card-media">' +
-          galleryHtml +
-          (isDeal ? '<span class="ax-card-tag">Oferta</span>' : (p.featured ? '<span class="ax-card-tag verified">✓ Verificado</span>' : '')) +
-          '<button type="button" class="ax-card-fav'+(favActive?' active':'')+'" data-fav="'+p.id+'" aria-label="Agregar a favoritos" aria-pressed="'+(favActive?'true':'false')+'"><i class="fas fa-heart"></i></button>' +
-        '</div>' +
-        '<div class="ax-card-body">' +
-          '<span class="ax-card-cat">'+cat.emoji+' '+cat.name+'</span>' +
-          '<h3 class="ax-card-title">'+p.name+'</h3>' +
-          '<p class="ax-card-provider">SKU: <b>'+(p.sku||p.id)+'</b></p>' +
-          '<div class="ax-card-prices">' +
-            (isDeal ? '<span class="ax-card-price-old">$ '+p.beforePrice.toLocaleString('es-CO')+'</span>' : '') +
-            '<span class="ax-card-price-now'+(isDeal?' discount':'')+'">$ '+p.price.toLocaleString('es-CO')+'</span>' +
-          '</div>' +
-          '<p class="ax-card-subtotal"><span class="sub-label">Total x <span class="sub-qty">'+startQty+'</span></span>: <b class="sub-value">$ '+(p.price*startQty).toLocaleString('es-CO')+'</b></p>' +
-          '<p class="ax-card-stock"><span class="dot'+(p.featured?'':' low')+'"></span> Stock: '+(p.featured ? '540' : '123')+'</p>' +
-          '<div class="ax-card-actions">' +
-            '<div class="ax-card-qty"><button type="button" class="mn" aria-label="Disminuir cantidad">−</button><span class="n">'+startQty+'</span><button type="button" class="pl" aria-label="Aumentar cantidad">+</button></div>' +
-            '<button type="button" class="ax-card-add"><i class="fas fa-cart-plus"></i> Agregar</button>' +
-          '</div>' +
-          '<button type="button" class="ax-card-send"><i class="fas fa-shopping-cart"></i> REALIZAR COMPRA</button>' +
-        '</div>';
-
-      // Abrir vista rápida al hacer clic en la imagen
-      card.querySelector('.ax-card-media').addEventListener('click', (e) => {
-        // Evitar que se abra si se hace clic en favorito
-        if (e.target.closest('.ax-card-fav')) return;
-        if (window.openQuickView) window.openQuickView(p);
-      });
-
-      const nEl = card.querySelector('.n');
-      const subQtyEl = card.querySelector('.sub-qty');
-      const subValueEl = card.querySelector('.sub-value');
-
-      function updateCardSubtotal(){
-        const qty = +nEl.textContent || 1;
-        if(subQtyEl) subQtyEl.textContent = qty;
-        if(subValueEl) subValueEl.textContent = '$ ' + (p.price*qty).toLocaleString('es-CO');
-      }
-
-      card.querySelector('.mn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        nEl.textContent = Math.max(1, +nEl.textContent - 1);
-        updateCardSubtotal();
-      });
-      card.querySelector('.pl').addEventListener('click', (e) => {
-        e.stopPropagation();
-        nEl.textContent = +nEl.textContent + 1;
-        updateCardSubtotal();
-      });
-
-      card.querySelector('.ax-card-add').addEventListener('click', function(e){
-        e.stopPropagation();
-        addToCart(p.id, +nEl.textContent);
-        this.classList.add('done'); this.innerHTML = '<i class="fas fa-check"></i> Agregado';
-        setTimeout(()=>{ this.classList.remove('done'); this.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar'; }, 1300);
-      });
-
-      // REALIZAR COMPRA (tarjeta) → abre el modal de datos del cliente con este producto
-      card.querySelector('.ax-card-send').addEventListener('click', (e) => {
-        e.stopPropagation();
-        openOrderModal([{
-          id: p.id,
-          name: p.name,
-          sku: p.sku,
-          price: p.price,
-          unit: p.unit,
-          qty: +nEl.textContent
-        }]);
-      });
-
-      card.querySelector('.ax-card-fav').addEventListener('click', function(e){
-        e.stopPropagation();
-        if(favorites.has(p.id)){ favorites.delete(p.id); this.classList.remove('active'); this.setAttribute('aria-pressed','false'); }
-        else { favorites.add(p.id); this.classList.add('active'); this.setAttribute('aria-pressed','true'); }
-        safeLocalSet('axtoon_favs', JSON.stringify([...favorites]));
-      });
-
-      grid.appendChild(card);
+      grid.appendChild(createProductCard(p));
     });
 
     updateSectionHeader();
   }
 
+  /* --- VISTA INICIO (destacados) --- */
+  function renderInicioFeatured(){
+    const wrap = document.getElementById('axInicioFeatured');
+    if(!wrap) return;
+    wrap.innerHTML = '';
+    const featured = PRODUCTS.filter(p => p.featured).slice(0, 8);
+    featured.forEach(p => wrap.appendChild(createProductCard(p)));
+  }
+
+  /* --- VISTA CATÁLOGO (categorías) --- */
+  function renderCatalogo(){
+    const wrap = document.getElementById('axCatGrid');
+    if(!wrap) return;
+    const counts = {};
+    PRODUCTS.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+    wrap.innerHTML = '';
+    AX_SECTIONS.forEach(s => {
+      const n = counts[s.id] || 0;
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'cat-card';
+      card.innerHTML =
+        '<span class="cat-emoji">' + s.emoji + '</span>' +
+        '<div class="cat-name">' + s.name + '</div>' +
+        '<span class="cat-count"><i class="fas fa-box"></i> ' + n + ' producto' + (n !== 1 ? 's' : '') + '</span>';
+      card.addEventListener('click', () => {
+        axActiveSection = s.id;
+        buildSectionsBar();
+        renderAxGrid();
+        navigateTo('productos');
+        setTimeout(() => {
+          if(grid) grid.scrollIntoView({ behavior:'smooth', block:'start' });
+        }, 100);
+      });
+      wrap.appendChild(card);
+    });
+  }
+
+  /* --- VISTA DASHBOARD --- */
+  function renderDashboard(){
+    const totalProductsEl = document.getElementById('dashTotalProducts');
+    const totalCatEl = document.getElementById('dashTotalCategories');
+    const cartCountEl = document.getElementById('dashCartCount');
+    const cartTotalEl = document.getElementById('dashCartTotal');
+    if(totalProductsEl) totalProductsEl.textContent = PRODUCTS.length;
+    if(totalCatEl) totalCatEl.textContent = AX_SECTIONS.length;
+    if(cartCountEl) cartCountEl.textContent = cartCount();
+    if(cartTotalEl) cartTotalEl.textContent = '$ ' + finalTotal().toLocaleString('es-CO');
+
+    const topList = document.getElementById('dashTopList');
+    if(topList){
+      topList.innerHTML = '';
+      const featured = PRODUCTS.filter(p => p.featured).slice(0, 4);
+      featured.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'dash-top-item';
+        const img = (p.images && p.images[0]) ? p.images[0] : '';
+        item.innerHTML =
+          '<div class="dash-top-thumb">' + (img ? '<img src="'+img+'" alt="'+p.name+'">' : '') + '</div>' +
+          '<div class="dash-top-info">' +
+            '<div class="dash-top-name">' + p.name + '</div>' +
+            '<div class="dash-top-price">$ ' + p.price.toLocaleString('es-CO') + '</div>' +
+          '</div>';
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => {
+          axActiveSection = p.category;
+          buildSectionsBar();
+          renderAxGrid();
+          navigateTo('productos');
+        });
+        topList.appendChild(item);
+      });
+    }
+
+    const dashWa = document.getElementById('dashWaAction');
+    if(dashWa) dashWa.href = 'https://wa.me/' + getWaNumber();
+
+    const dashCartBtn = document.getElementById('dashOpenCart');
+    if(dashCartBtn){
+      dashCartBtn.onclick = () => {
+        if(window.openDrawer) window.openDrawer();
+      };
+    }
+  }
+
+  window.axRefreshDashboard = function(){
+    if(currentView === 'dashboard') renderDashboard();
+  };
+
+  /* --- NAVEGACIÓN ENTRE VISTAS --- */
+  function navigateTo(viewName){
+    const target = document.getElementById('view-' + viewName);
+    if(!target) return;
+    document.querySelectorAll('.ax-view').forEach(v => v.hidden = true);
+    target.hidden = false;
+    currentView = viewName;
+
+    document.querySelectorAll('.ax-nav-item[data-view]').forEach(i => {
+      i.classList.toggle('active', i.dataset.view === viewName);
+    });
+
+    if(viewName === 'inicio') renderInicioFeatured();
+    if(viewName === 'dashboard') renderDashboard();
+    if(viewName === 'catalogo') renderCatalogo();
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* --- data-goto (botones dentro de las vistas) --- */
+  document.querySelectorAll('[data-goto]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.goto;
+      if(v) navigateTo(v);
+    });
+  });
+
+  /* --- Filtros y orden --- */
   if(searchInp) searchInp.addEventListener('input', e => { axSearch = e.target.value; renderAxGrid(); });
   if(sortSel) sortSel.addEventListener('change', e => { axSort = e.target.value; renderAxGrid(); });
   if(toggleFav) toggleFav.addEventListener('change', renderAxGrid);
@@ -2370,30 +2534,35 @@ function renderOrderProducts(){
   function initAx(){
     buildSectionsBar();
     renderAxGrid();
+    renderInicioFeatured();
+    renderCatalogo();
+    renderDashboard();
     renderCart();
+    // Vista inicial: productos
+    navigateTo('productos');
   }
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', () => setTimeout(initAx, 200));
   } else {
     setTimeout(initAx, 200);
   }
+
+  window.axNavigateTo = navigateTo;
 })();
 
 /* ============================================================
-   CIERRE CON TECLA ESCAPE (accesibilidad de teclado)
+   CIERRE CON TECLA ESCAPE
    ============================================================ */
 document.addEventListener('keydown', function(e){
   if(e.key !== 'Escape') return;
   const orderModal = document.getElementById('orderModal');
   const quickModal = document.getElementById('quickViewModal');
-  const adminModal = document.getElementById('adminModal');
   const drawer = document.getElementById('drawer');
   const sidebar = document.getElementById('axSidebar');
   const axOverlay = document.getElementById('axOverlay');
 
   if(orderModal && orderModal.classList.contains('open')){ closeOrderModal(); return; }
   if(quickModal && quickModal.classList.contains('open')){ if(window.closeQuickView) window.closeQuickView(); return; }
-  if(adminModal && adminModal.classList.contains('open')){ if(window.closeAdminModal) window.closeAdminModal(); return; }
   if(drawer && drawer.classList.contains('open')){ if(window.closeDrawer) window.closeDrawer(); return; }
   if(sidebar && sidebar.classList.contains('open')){ sidebar.classList.remove('open'); if(axOverlay) axOverlay.classList.remove('open'); return; }
 });
