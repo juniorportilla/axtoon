@@ -1398,7 +1398,7 @@ button{font:inherit;cursor:pointer}
           </button>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><b>+63</b><span>Productos activos</span></div>
+          <div class="hero-stat"><b>+75</b><span>Productos activos</span></div>
           <div class="hero-stat"><b>20</b><span>Categorías</span></div>
           <div class="hero-stat"><b>32</b><span>Departamentos</span></div>
           <div class="hero-stat"><b>100%</b><span>Confirmación WhatsApp</span></div>
@@ -1461,7 +1461,7 @@ button{font:inherit;cursor:pointer}
         <div class="dash-card brand">
           <div class="dc-ico"><i class="fas fa-box"></i></div>
           <div class="dc-label">Productos en catálogo</div>
-          <div class="dc-value" id="dashTotalProducts">63</div>
+          <div class="dc-value" id="dashTotalProducts">75</div>
           <div class="dc-sub">Disponibles para pedido inmediato</div>
         </div>
         <div class="dash-card">
@@ -1660,7 +1660,7 @@ button{font:inherit;cursor:pointer}
 
       <div class="garantia-stats">
         <div class="garantia-stat"><b>100%</b><span>Productos garantizados</span></div>
-        <div class="garantia-stat"><b>+63</b><span>Productos cubiertos</span></div>
+        <div class="garantia-stat"><b>+75</b><span>Productos cubiertos</span></div>
         <div class="garantia-stat"><b>30 días</b><span>Para reclamar</span></div>
         <div class="garantia-stat"><b>+2.400</b><span>Clientes satisfechos</span></div>
       </div>
@@ -1935,7 +1935,7 @@ const AX_SECTION_MAP = {};
 AX_SECTIONS.forEach(s => { AX_SECTION_MAP[s.id] = s; });
 
 /* ============================================================
-   PRODUCTOS DEMO (63 productos, 20 secciones)
+   PRODUCTOS DEMO (75 productos, 20 secciones)
    ============================================================ */
 const AX_PRODUCTS = [
   { id:'p01', sku:'ACC-001', name:'Bolso Portacelular',              category:'accesorios-celular', price:50999, beforePrice:60999, minQty:1,  unit:'und', featured:true,  images:['im1.jpg','im2.jpg','im3.jpg'] },
@@ -2020,6 +2020,213 @@ const AX_PRODUCTS = [
   { id:'p61', sku:'VIA-001', name:'Almohada cervical de viaje',      category:'viajes', price:15900, beforePrice:21900, minQty:1,  unit:'und', featured:false, images:['im119.jpg','im120.jpg'] },
   { id:'p62', sku:'VIA-002', name:'Organizador de maleta set x6',    category:'viajes', price:29900, beforePrice:39900, minQty:1,  unit:'set', featured:true,  images:['im121.jpg','im122.jpg','im123.jpg'] },
   { id:'p63', sku:'VIA-003', name:'Botella plegable silicona',       category:'viajes', price:12900, beforePrice:0,     minQty:1,  unit:'und', featured:false, images:['im124.jpg'] },
+
+  /* ====== NUEVOS PRODUCTOS DROPI ====== */
+
+  {
+    id:'dropi-1255119',
+    sku:'DROP-1255119',
+    name:'Alien Proyector de Galaxia Portátil',
+    category:'tecnologia',
+    price:120000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1255119/1727382692Alien%20proyector.jpeg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1255119/1727382692Alien%20proyector.jpeg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1255119/1727382692Alien%20proyector.jpeg'
+    ]
+  },
+
+  {
+    id:'dropi-880955',
+    sku:'DROP-880955',
+    name:'Audífonos de Conducción Ósea Inalámbricos',
+    category:'tecnologia',
+    price:99200,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/880955/1716479099photo1716398002.jpeg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/880955/1716479099photo1716398002.jpeg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/880955/1716479099photo1716398002.jpeg'
+    ]
+  },
+
+  {
+    id:'dropi-2116868',
+    sku:'DROP-2116868',
+    name:'Cámara de Seguridad 3 Antenas Dropi Cup',
+    category:'tecnologia',
+    price:70000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2116868/17794725861774555934315y-ByHKDL._AC_SX425_-dropicup.png',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2116868/17794725861774555934315y-ByHKDL._AC_SX425_-dropicup.png',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2116868/17794725861774555934315y-ByHKDL._AC_SX425_-dropicup.png'
+    ]
+  },
+
+  {
+    id:'dropi-1661898',
+    sku:'DROP-1661898',
+    name:'Combo Inalámbrico Mini Teclado y Mouse',
+    category:'tecnologia',
+    price:94800,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1661898/17389611982.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1661898/17389611982.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1661898/17389611982.jpg'
+    ]
+  },
+
+  {
+    id:'dropi-2115916',
+    sku:'DROP-2115916',
+    name:'Luz con Soporte RGB LED E30 para Celular',
+    category:'iluminacion',
+    price:70000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2115916/1774552614Image_2026-03-26_14-16-11.png',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2115916/1774552614Image_2026-03-26_14-16-11.png',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2115916/1774552614Image_2026-03-26_14-16-11.png'
+    ]
+  },
+
+  {
+    id:'dropi-2098821',
+    sku:'DROP-2098821',
+    name:'Consola Retro Q9 Pro',
+    category:'gaming',
+    price:120000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2098821/1772568093Consola%20Q9%20Pro%202.jpeg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2098821/1772568093Consola%20Q9%20Pro%202.jpeg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2098821/1772568093Consola%20Q9%20Pro%202.jpeg'
+    ]
+  },
+
+  {
+    id:'dropi-2076855',
+    sku:'DROP-2076855',
+    name:'Trípode Estabilizador para Celular',
+    category:'fotografia',
+    price:89000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2076855/1770331086b23c72798fade586aece0252d35f4ab4.jpg_720x720q80.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2076855/1770331086b23c72798fade586aece0252d35f4ab4.jpg_720x720q80.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2076855/1770331086b23c72798fade586aece0252d35f4ab4.jpg_720x720q80.jpg'
+    ]
+  },
+
+  {
+    id:'dropi-2206430',
+    sku:'DROP-2206430',
+    name:'Coctelera Eléctrica Gym con Filtro',
+    category:'fitness',
+    price:90000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2206430/1784319168gift1%2017-07.gif',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2206430/1784319168gift1%2017-07.gif',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2206430/1784319168gift1%2017-07.gif'
+    ]
+  },
+
+  {
+    id:'dropi-2142159',
+    sku:'DROP-2142159',
+    name:'Cargador de Carro 5 en 1',
+    category:'automovil',
+    price:72200,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2142159/177757907282.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2142159/177757907282.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2142159/177757907282.jpg'
+    ]
+  },
+
+  {
+    id:'dropi-2132420',
+    sku:'DROP-2132420',
+    name:'Ejercitador Muscular Abdominal',
+    category:'fitness',
+    price:82000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2132420/1776529796images%20%2841%29.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2132420/1776529796images%20%2841%29.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/2132420/1776529796images%20%2841%29.jpg'
+    ]
+  },
+
+  {
+    id:'dropi-749035',
+    sku:'DROP-749035',
+    name:'Parlante Bluetooth My576BT Azul Militar',
+    category:'tecnologia',
+    price:90000,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/749035/1712245786WhatsApp%20Image%202024-04-03%20at%202.00-Photoroom.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/749035/1712245786WhatsApp%20Image%202024-04-03%20at%202.00-Photoroom.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/749035/1712245786WhatsApp%20Image%202024-04-03%20at%202.00-Photoroom.jpg'
+    ]
+  },
+
+  {
+    id:'dropi-1686886',
+    sku:'DROP-1686886',
+    name:'Audífonos Multicolor Inpods 12',
+    category:'tecnologia',
+    price:42500,
+    beforePrice:0,
+    minQty:1,
+    unit:'und',
+    featured:true,
+    images:[
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1686886/1740604224Captura%20de%20pantalla%202025-02-26%20160913.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1686886/1740604224Captura%20de%20pantalla%202025-02-26%20160913.jpg',
+      'https://d39ru7awumhhs2.cloudfront.net/colombia/products/1686886/1740604224Captura%20de%20pantalla%202025-02-26%20160913.jpg'
+    ]
+  }
+
 ];
 
 const PRODUCTS = AX_PRODUCTS;
